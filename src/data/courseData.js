@@ -111,6 +111,229 @@ export const courseData = {
         "IDs are typically used for JavaScript manipulation and styling specific elements, while classes are used for styling groups of elements with similar characteristics.",
       ],
     },
+
+    {
+      title: "Difference between HTML and HTML5",
+      definition: [
+        "HTML is the standard markup language used to create web pages, while HTML5 is the latest version with new features and improvements.",
+        "HTML5 supports multimedia elements like <audio> and <video> without plugins, whereas older HTML required external tools like Flash.",
+        "HTML5 also introduces new semantic tags like <article>, <section>, and <nav>.",
+      ],
+    },
+
+    {
+      title: "Local Storage vs Session Storage",
+      definition: [
+        "Both are part of Web Storage API used to store data in the browser.",
+        "Local Storage stores data with no expiration time (persists even after browser is closed).",
+        "Session Storage stores data only for the duration of the page session (cleared when tab is closed).",
+      ],
+    },
+
+    {
+      title: "Difference between <div> and <span>",
+      definition: [
+        "<div> is a block-level element and takes full width.",
+        "<span> is an inline element and takes only required width.",
+        "<div> is used for layout, while <span> is used for styling small parts of text.",
+      ],
+    },
+
+    {
+      title: "Iframe",
+      definition: [
+        "The <iframe> tag is used to embed another HTML page within the current page.",
+        "It is commonly used to embed videos, maps, and external content.",
+      ],
+    },
+
+    {
+      title: "Alt attribute in image",
+      definition: [
+        "The alt attribute provides alternative text for an image.",
+        "It is useful for accessibility (screen readers) and SEO.",
+        "If the image fails to load, the alt text will be displayed.",
+      ],
+    },
+
+    {
+      title: "Difference between id and class",
+      definition: [
+        "id is unique and used for one element only.",
+        "class can be used for multiple elements.",
+        "id has higher specificity than class in CSS.",
+      ],
+    },
+
+    {
+      title: "Data Attributes",
+      definition: [
+        "Custom attributes used to store extra information in HTML elements.",
+        "They start with 'data-' (e.g., data-id, data-name).",
+        "Accessible using JavaScript via dataset property.",
+      ],
+    },
+
+    {
+      title: "Viewport Meta Tag",
+      definition: [
+        "Used to control layout on mobile browsers.",
+        "Example: <meta name='viewport' content='width=device-width, initial-scale=1.0'>",
+        "Helps in responsive design.",
+      ],
+    },
+
+    {
+      title: "Accessibility (a11y)",
+      definition: [
+        "Accessibility ensures websites are usable by people with disabilities.",
+        "Includes using semantic HTML, alt text, labels, and proper structure.",
+        "Improves SEO and user experience.",
+      ],
+    },
+
+    {
+      title: "Difference between GET and POST",
+      definition: [
+        "GET sends data in URL, POST sends data in request body.",
+        "GET is less secure compared to POST.",
+        "POST is used for sensitive data like passwords.",
+      ],
+    },
+
+    {
+      title: "Required attribute",
+      definition: [
+        "Used in form inputs to make a field mandatory.",
+        "Browser prevents form submission if the field is empty.",
+      ],
+    },
+
+    {
+      title: "Placeholder attribute",
+      definition: [
+        "Provides a hint inside input fields.",
+        "Disappears when the user starts typing.",
+      ],
+    },
+
+    {
+      title: "Autocomplete attribute",
+      definition: [
+        "Used to enable or disable autofill feature in forms.",
+        "Example: autocomplete='on' or 'off'.",
+      ],
+    },
+
+    {
+      title: "Difference between <strong> and <b>",
+      definition: [
+        "<strong> has semantic importance (important text).",
+        "<b> is only for bold styling without meaning.",
+      ],
+    },
+
+    {
+      title: "Difference between <em> and <i>",
+      definition: [
+        "<em> adds emphasis (semantic meaning).",
+        "<i> is just italic styling.",
+      ],
+    },
+
+    {
+      title: "Lazy Loading",
+      definition: [
+        "Technique to load images only when they are visible on screen.",
+        "Improves performance and page speed.",
+        "Example: <img src='image.jpg' loading='lazy' />",
+      ],
+    },
+
+    {
+      title: "Favicon",
+      definition: [
+        "Small icon displayed in browser tab.",
+        "Added using <link rel='icon' href='favicon.ico'>",
+      ],
+    },
+
+    {
+      title: "Canvas vs SVG",
+      definition: [
+        "Canvas is pixel-based and used for dynamic graphics.",
+        "SVG is vector-based and scalable without losing quality.",
+        "Canvas is better for games, SVG for UI graphics.",
+      ],
+    },
+
+    {
+      title: "Drag and Drop API",
+      definition: [
+        "Allows elements to be draggable and droppable.",
+        "Uses attributes like draggable='true'.",
+        "Handled with JavaScript events like dragstart, dragover, drop.",
+      ],
+    },
+
+    {
+      title: "Progressive Enhancement",
+      definition: [
+        "Building a basic version first, then adding advanced features.",
+        "Ensures compatibility across all browsers.",
+      ],
+    },
+  ],
+  css: [
+    {
+      title: "CSS",
+      definition:
+        "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.",
+    },
+    {
+      title: "Selector",
+      definition: [
+        "A CSS selector is a pattern used to select the element(s) you want to style. It can be based on element type, class, ID, attribute, or a combination of these.",
+        "Examples of CSS selectors include element selectors (e.g., p), class selectors (e.g., .my-class), ID selectors (e.g., #my-id), and attribute selectors (e.g., [type='text']).",
+      ],
+    },
+
+    {
+      title: "Box Model",
+      definition: [
+        "The box model is a model used to style HTML elements. It includes the content, padding, border, and margin of an element.",
+        "It defines the layout and spacing of elements.",
+      ],
+    },
+
+    {
+      title: "Display Property",
+      definition: [
+        "The display property specifies how an element is displayed on the page (e.g., block, inline, inline-block, flex, grid).",
+        "The display property is essential for controlling the layout and visibility of elements on a web page.",
+      ],
+    },
+    {
+      title: "Flexbox",
+      definition: [
+        "Flexbox is a one-dimensional layout system used to arrange elements in a row or column.",
+        "It provides an efficient way to align, distribute space, and control layout even  when their size is unknown and/or dynamic.",
+        "Flexbox is commonly used for building responsive layouts and aligning elements easily.",
+      ],
+    },
+    {
+      title: "Grid",
+      definition: [
+        "CSS Grid is a two-dimensional layout system used to create layouts with rows and columns.",
+        "It allows developers to build complex and responsive grid-based designs with ease.",
+        "CSS Grid provides powerful control over the placement and alignment of elements within a grid container.",
+      ],
+    },
+    {
+      title: "Position",
+      definition:
+        "The position property specifies how an element is positioned (static, relative, absolute, fixed, sticky).",
+    },
     {
       title: "Padding vs Margin",
       definition: [
@@ -119,13 +342,7 @@ export const courseData = {
         "Padding can affect the size of an element, while margin does not affect the size of an element.",
       ],
     },
-    {
-      title: "Box Model",
-      definition: [
-        "The box model is a model used to style HTML elements. It includes the content, padding, border, and margin of an element.",
-        "The box model is used to determine the final size and position of an element on a web page.",
-      ],
-    },
+
     {
       title: "Relative vs Absolute Units",
       definition: [
@@ -133,34 +350,7 @@ export const courseData = {
         "Relative units allow for more flexible and responsive designs, while absolute units provide precise control over the size of elements.",
       ],
     },
-    {
-      title: "Z-index",
-      definition: [
-        "Z-index is a property used to determine the stacking order of positioned elements. Elements with a higher z-index are displayed on top of elements with a lower z-index.",
-        "Z-index can be used to create overlapping or layered content.",
-      ],
-    },
-    {
-      title: "Flexbox",
-      definition: [
-        "Flexbox is a CSS layout module that provides a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic.",
-        "Flexbox allows for responsive design and can be used to create complex layouts with ease.",
-      ],
-    },
-    {
-      title: "Grid",
-      definition: [
-        "CSS Grid Layout is a two-dimensional layout system for the web. It allows developers to create complex and responsive grid-based layouts with ease.",
-        "CSS Grid provides a powerful way to control the placement and alignment of elements within a grid container.",
-      ],
-    },
-    {
-      title: "Media Queries",
-      definition: [
-        "Media queries are a CSS technique used to apply different styles to a web page based on the characteristics of the device or screen size. They allow for responsive design and can be used to create layouts that adapt to different screen sizes.",
-        "Media queries use the @media rule and can include conditions such as min-width, max-width, and orientation.",
-      ],
-    },
+
     {
       title: "Absolute Positioning",
       definition: [
@@ -189,33 +379,72 @@ export const courseData = {
         "Sticky positioning is useful for creating elements that stick to the top of the page when scrolling down and return to their normal position when scrolling back up.",
       ],
     },
+    {
+      title: "Z-Index",
+      definition: [
+        "Z-index controls the vertical stacking order of positioned elements.",
+        "Elements with a higher z-index are displayed on top of elements with a lower z-index.",
+        "Z-index can be used to create overlapping or layered content.",
+      ],
+    },
+    {
+      title: "CSS Specificity",
+      definition:
+        "CSS Specificity determines which style rule is applied when multiple rules target the same element. It follows a priority system based on selector types.",
+    },
+    {
+      title: "Specificity Order",
+      definition: [
+        "Inline styles (style='') → Highest priority",
+        "ID selectors (#id)",
+        "Class, attribute, pseudo-class (.class, [type='text'], :hover)",
+        "Element and pseudo-elements (div, p, ::before) → Lowest priority",
+      ],
+    },
+    {
+      title: "Specificity Value",
 
+      definition: [
+        "Inline → 1-0-0-0",
+        "ID → 0-1-0-0",
+        "Class → 0-0-1-0",
+        "Element → 0-0-0-1",
+      ],
+    },
+    {
+      title: "Responsive Design",
+      definition:
+        "Responsive design ensures that web pages look good on all devices using media queries and flexible layouts.",
+    },
+    {
+      title: "Media Queries",
+      definition: [
+        "Media queries are a CSS technique used to apply different styles based on device characteristics such as screen size, width, height, or orientation.",
+        "They are essential for building responsive designs that adapt to different devices.",
+        "Media queries use the @media rule with conditions like min-width, max-width, and orientation.",
+      ],
+    },
+    {
+      title: "Pseudo Classes",
+      definition:
+        "Pseudo-classes define a special state of an element (e.g., :hover, :active, :focus).",
+    },
+    {
+      title: "Pseudo Elements",
+      definition:
+        "Pseudo-elements style specific parts of an element (e.g., ::before, ::after).",
+    },
     {
       title: "Overflow",
       definition: [
-        "Overflow is a CSS property that controls what happens to content that exceeds the dimensions of its container. It can be set to values such as visible, hidden, scroll, and auto.",
+        " It can be set to values such as visible, hidden, scroll, and auto.",
         "The overflow property is useful for managing content that may not fit within a container and can help prevent layout issues.",
       ],
     },
     {
       title: "Opacity",
       definition: [
-        "Opacity is a CSS property that controls the transparency of an element. It can be set to a value between 0 (completely transparent) and 1 (completely opaque).",
-        "The opacity property is useful for creating visual effects such as fading and layering elements on top of each other.",
-      ],
-    },
-    {
-      title: "Display Property",
-      definition: [
-        "The display property in CSS is used to determine how an element is displayed on the web page. It can take various values such as block, inline, inline-block, none, flex, grid, and more.",
-        "The display property is essential for controlling the layout and visibility of elements on a web page.",
-      ],
-    },
-    {
-      title: "Flexbox",
-      definition: [
-        "Flexbox is a CSS layout module that provides a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic.",
-        "Flexbox allows for responsive design and can be used to create complex layouts with ease.",
+        "that controls the transparency of an element. It can be set to a value between 0 (completely transparent) and 1 (completely opaque).",
       ],
     },
     {
@@ -226,35 +455,14 @@ export const courseData = {
       ],
     },
     {
-      title: "Z-index",
-      definition: [
-        "Z-index is a CSS property that controls the stacking order of positioned elements. Elements with a higher z-index are displayed on top of elements with a lower z-index.",
-      ],
-    },
-    {
       title: "Box Shadow",
       definition: [
-        "Box-shadow is a CSS property that creates a shadow around an element. It can be used to add depth and elevation to elements on a web page.",
+        "Box shadow creates a shadow around an element. It can be used to add depth and elevation to elements on a web page.",
       ],
-    },
-  ],
-  css: [
-    {
-      id: 1,
-      title: "CSS",
-      definition:
-        "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.",
-    },
-    {
-      id: 2,
-      title: "Selector",
-      definition:
-        "A CSS selector is a part of a CSS rule-set that chooses the content you want to style.",
     },
   ],
   javascript: [
     {
-      id: 1,
       title: "JavaScript",
       definition: [
         "JavaScript is a lightweight, high-level, interpreted programming language primarily used to create interactive effects within web browsers.",
@@ -271,10 +479,160 @@ export const courseData = {
       //               `,
     },
     {
-      id: 2,
       title: "Object",
       definition:
-        "An object is a collection of key-value pairs used to store data.",
+        "An object is a collection of properties, where each property consists of a key-value pair. Objects are used to store and organize data, and they can hold various data types such as strings, numbers, arrays, and even other objects.",
+    },
+
+    {
+      title: "Array",
+      definition: [
+        "In JavaScript, an array is a special type of object used to store multiple values in a single variable. Arrays help manage and manipulate groups of data efficiently.",
+        "Arrays can hold any data type, including numbers, strings, objects, and even other arrays.",
+        "Arrays have built-in methods for adding, removing, and iterating over elements, making them a powerful tool for handling collections of data in JavaScript.",
+        "Arrays in JavaScript are dynamic in size (they are not fixed).",
+        "Elements in an array are accessed using index numbers (starting from 0)",
+      ],
+    },
+
+    {
+      title: "Function",
+      definition:
+        "JavaScript functions are blocks of reusable code designed to perform a particular task or calculate a value. They can take inputs (parameters), perform actions, and return a result.",
+    },
+
+    {
+      title: "Closure",
+      definition:
+        "A closure gives you access to an outer function's scope from an inner function. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
+    },
+
+    {
+      title: "Asynchronous JavaScript",
+      definition:
+        "Asynchronous JavaScript is a technique that allows JavaScript code to execute in the background without blocking the main thread of execution.",
+    },
+    {
+      title: "Event Loop",
+      definition: [
+        "The event loop is a mechanism that handles asynchronous operations in JavaScript.",
+        "It allows JavaScript to perform non-blocking operations by offloading tasks to the browser or Node.js environment and executing them when they are ready.",
+        "The event loop continuously checks the call stack and the task queue, executing tasks from the queue when the call stack is empty.",
+        "The event loop is responsible for handling callbacks, timers, and other asynchronous operations in JavaScript.",
+      ],
+    },
+    {
+      title: "Promise",
+      definition: [
+        "A Promise is an object that represents the eventual completion or failure of an asynchronous operation.",
+        "It is used to handle asynchronous operations in a more readable and maintainable way.",
+        "A Promise can be in one of three states: pending, fulfilled, or rejected.",
+        "A Promise can be used to handle the success or failure of an asynchronous operation.",
+        "Promises can be chained together to handle multiple asynchronous operations in a sequence.",
+        "The Promise API provides methods such as then(), catch(), and finally() to handle the resolution or rejection of a Promise.",
+      ],
+    },
+    {
+      title: "Async/Await",
+      definition: [
+        "Async/Await is a syntax that allows you to write asynchronous code in a more readable and maintainable way.",
+        "Async functions return a Promise, and the await keyword can be used to wait for the resolution of a Promise before proceeding with the execution of the code.",
+        "Async/Await makes it easier to handle asynchronous operations and can help avoid callback hell.",
+      ],
+    },
+    {
+      title: "Generator",
+      definition:
+        "A generator is a special kind of function that can be paused and resumed.",
+    },
+    {
+      title: "Iterator",
+      definition: [
+        "An iterator is an object that allows you to iterate over a collection of values.",
+        "Iterators are used to iterate over collections, such as arrays, objects, or strings, and they provide a way to access each element of the collection one at a time.",
+        "Iterators have a next() method that returns an object with two properties: value (the current element) and done (a boolean indicating whether the iteration is complete),",
+      ],
+    },
+    {
+      title: "Generator",
+      definition:
+        "A generator is a special kind of function that can be paused and resumed.",
+    },
+
+    {
+      title: "Event Delegation",
+      definition: [
+        "Event delegation is a technique that allows you to handle events on a parent element instead of individual child elements.",
+        "This is useful when you have a large number of child elements and want to handle events on a common parent element.",
+        "With event delegation, you can attach a single event listener to the parent element and let it handle events for all child elements.",
+        "This can help improve performance and reduce code complexity.",
+        "Event delegation is also known as event bubbling or event capturing.",
+      ],
+    },
+    {
+      title: "Hoisting",
+      definition: [
+        "Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase.",
+        "This means that you can use variables and functions before they are declared in the code.",
+        "However, only the declarations are hoisted, not the initializations. This can lead to unexpected behavior if you try to access a variable before it has been assigned a value.",
+      ],
+    },
+    {
+      title: "Scope",
+      definition:
+        "Scope is the context in which variables and functions are accessible in JavaScript.",
+    },
+    {
+      title: "This Keyword",
+      definition:
+        "The this keyword refers to the object that is currently executing the code.",
+    },
+    {
+      title: "Prototype",
+      definition: [
+        "Prototype என்பது JavaScript-ல் ஒரு object மற்றொரு object-இலிருந்து properties மற்றும் methods inherit பண்ணும் mechanism.",
+
+        "🧠 Prototype-based Design (Simple Meaning): JavaScript-ல் objects, மற்ற objects-லிருந்து properties மற்றும் methods inherit பண்ணும் — இதை prototype-based design என்று சொல்வாங்க.",
+
+        "Prototype is a powerful feature in JavaScript that allows objects to inherit properties and methods from other objects.",
+
+        "ஒரு property object-ல் கிடைக்கலனா, JavaScript அதன் prototype-ல் தேடும் — இதை prototype chain என்று சொல்வாங்க.",
+
+        "JavaScript is prototype-based, not class-based.",
+      ],
+    },
+    {
+      title: "Inheritance",
+      definition:
+        "Inheritance is a mechanism in JavaScript that allows one object to inherit properties and methods from another object.",
+    },
+    {
+      title: "ES6 Features",
+      definition: [
+        "ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions for concise function syntax, template literals for easier string interpolation, destructuring assignment for object and array destructuring, and class syntax for defining classes.",
+      ],
+    },
+    {
+      title: "JavaScript Modules",
+      definition:
+        "JavaScript modules are a way to organize and encapsulate code into reusable pieces. They allow you to export and import functions, objects, or values between different files.",
+    },
+
+    {
+      title: "JavaScript Frameworks and Libraries",
+      definition: [
+        "JavaScript frameworks and libraries are pre-written code that provides a structure and set of tools for building web applications. Examples include React, Angular, Vue.js, and jQuery.",
+      ],
+    },
+    {
+      title: "JavaScript Engines",
+      definition:
+        "JavaScript engines are programs that execute JavaScript code. Examples include V8 (used in Chrome and Node.js), SpiderMonkey (used in Firefox), and JavaScriptCore (used in Safari).",
+    },
+    {
+      title: "JavaScript Runtime Environment",
+      definition:
+        "A JavaScript runtime environment is an environment in which JavaScript code can be executed. It includes the JavaScript engine, as well as additional APIs and libraries that provide functionality for tasks such as DOM manipulation, network requests, and file system access. Examples include web browsers and Node.js.",
     },
   ],
   reactjs: [
@@ -540,18 +898,150 @@ export const courseData = {
   ],
   cicd: [
     {
-      id: 1,
       title: "CI/CD",
-      definition:
-        "CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development.",
+      definition: [
+        "What is CI/CD?",
+        "CI/CD is a method to frequently deliver applications by automating stages like building, testing, and deployment.",
+      ],
+    },
+    {
+      title: "Continuous Integration (CI)",
+      definition: [
+        "What is Continuous Integration?",
+        "Continuous Integration is the practice of automatically integrating code changes into a shared repository and running tests to detect issues early.",
+      ],
+    },
+    {
+      title: "Continuous Delivery (CD)",
+      definition: [
+        "What is Continuous Delivery?",
+        "Continuous Delivery ensures that code changes are automatically prepared for release to production.",
+      ],
+    },
+    {
+      title: "Continuous Deployment",
+      definition: [
+        "What is Continuous Deployment?",
+        "Continuous Deployment automatically deploys every change that passes testing directly to production without manual approval.",
+      ],
+    },
+    {
+      title: "CI/CD Pipeline",
+      definition: [
+        "What is a CI/CD pipeline?",
+        "A CI/CD pipeline is a sequence of automated steps like build, test, and deploy that code goes through before reaching production.",
+      ],
+    },
+    {
+      title: "Benefits of CI/CD",
+      definition: [
+        "What are the benefits of CI/CD?",
+        "CI/CD improves code quality, reduces bugs, speeds up delivery, enables faster feedback, and ensures reliable deployments.",
+      ],
+    },
+    {
+      title: "CI vs CD",
+      definition: [
+        "What is the difference between CI and CD?",
+        "CI focuses on integrating and testing code changes, while CD focuses on delivering or deploying the code to production.",
+      ],
+    },
+    {
+      title: "CI/CD Tools",
+      definition: [
+        "Name some popular CI/CD tools.",
+        "Popular tools include Jenkins, GitHub Actions, GitLab CI/CD, CircleCI, and Azure DevOps.",
+      ],
     },
   ],
   docker: [
     {
-      id: 1,
+      title: "Docker Fundamentals",
+      definition: ["https://resources.criodo.com/courses/docker-fundamentals/"],
+    },
+    {
       title: "Docker",
-      definition:
-        "Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.",
+      definition: [
+        "What is Docker?",
+        "Docker is a platform that uses OS-level virtualization to deliver software in packages called containers.",
+      ],
+    },
+    {
+      title: "Docker Container",
+      definition: [
+        "What is a Docker container?",
+        "A Docker container is a lightweight, standalone, executable package that includes everything needed to run an application.",
+      ],
+    },
+    {
+      title: "Docker Image",
+      definition: [
+        "What is a Docker image?",
+        "A Docker image is a read-only template used to create containers, containing code, libraries, and dependencies.",
+      ],
+    },
+    {
+      title: "Dockerfile",
+      definition: [
+        "What is a Dockerfile?",
+        "A Dockerfile is a script with instructions used to build Docker images automatically.",
+      ],
+    },
+    {
+      title: "Docker Compose",
+      definition: [
+        "What is Docker Compose?",
+        "Docker Compose is a tool used to define and run multi-container Docker applications using a docker-compose.yml file.",
+      ],
+    },
+    {
+      title: "docker-compose.yml",
+      definition: [
+        "What is docker-compose.yml?",
+        "docker-compose.yml is a configuration file where services, networks, and volumes for multi-container apps are defined.",
+      ],
+    },
+    {
+      title: "Docker vs Virtual Machine",
+      definition: [
+        "What is the difference between Docker and Virtual Machine?",
+        "Docker containers are lightweight and share the host OS, while Virtual Machines are heavier and include a full OS.",
+      ],
+    },
+    {
+      title: "Docker Commands - Basics",
+      definition: [
+        "What are basic Docker commands?",
+        "docker --version, docker pull <image>, docker images, docker ps, docker ps -a",
+      ],
+    },
+    {
+      title: "Docker Commands - Run & Stop",
+      definition: [
+        "How to run and stop containers?",
+        "docker run <image>, docker run -d <image>, docker stop <container_id>, docker start <container_id>",
+      ],
+    },
+    {
+      title: "Docker Commands - Build & Remove",
+      definition: [
+        "How to build and remove resources?",
+        "docker build -t <name> ., docker rmi <image_id>, docker rm <container_id>",
+      ],
+    },
+    {
+      title: "Docker Commands - Logs & Exec",
+      definition: [
+        "How to check logs and access container?",
+        "docker logs <container_id>, docker exec -it <container_id> bash",
+      ],
+    },
+    {
+      title: "Docker Compose Commands",
+      definition: [
+        "What are Docker Compose commands?",
+        "docker-compose up (start services), docker-compose up -d (run in background), docker-compose down (stop and remove), docker-compose build (build services), docker-compose ps (list services)",
+      ],
     },
   ],
 };
