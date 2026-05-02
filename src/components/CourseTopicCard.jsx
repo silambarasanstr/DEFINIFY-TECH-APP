@@ -12,12 +12,12 @@ const CourseTopicCard = ({
   const descriptions = Array.isArray(topic.definition)
     ? topic.definition.map((desc, i) => (
         <p key={i} className="text-sm text-gray-600 leading-relaxed">
-          • {desc}
+          ✅ {desc}
         </p>
       ))
     : [
         <p key="single" className="text-sm text-gray-600">
-          {topic.definition}
+          ✅ {topic.definition}
         </p>,
       ];
 
@@ -36,10 +36,14 @@ const CourseTopicCard = ({
       {/* HEADER */}
       <div
         onClick={onClick}
-        className="flex justify-between items-center w-full px-3 py-2 cursor-pointer"
+        className="flex justify-between items-center w-full px-3 py-2 cursor-pointer bg-gray-100"
       >
-        <h3 className="font-bold text-xs">
-          {index}. {topic.title}
+        <h3 className="font-bold text-xs flex gap-3 items-center">
+          <span className="border border-gray-300 bg-gray-100  rounded-full flex justify-center items-center  w-6 h-6  p-1">
+            {" "}
+            {index}{" "}
+          </span>{" "}
+          {topic.title}
         </h3>
 
         <ChevronDown
@@ -52,7 +56,7 @@ const CourseTopicCard = ({
 
       {/* CONTENT */}
       {isOpen && (
-        <div className="w-full px-3 py-2 space-y-2">
+        <div className="w-full px-4 py-3 space-y-2">
           {/* Definition */}
           <div className="space-y-1">{descriptions}</div>
 
@@ -70,7 +74,7 @@ const CourseTopicCard = ({
           )}
 
           {/* ACTIONS */}
-          <div className="flex gap-2 pt-1">
+          {/* <div className="flex gap-2 pt-1">
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -92,7 +96,7 @@ const CourseTopicCard = ({
               <Trash2 className="w-3.5 h-3.5" />
               Delete
             </button>
-          </div>
+          </div> */}
         </div>
       )}
     </div>

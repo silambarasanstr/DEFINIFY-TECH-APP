@@ -470,35 +470,126 @@ export const courseData = {
         "JavaScript is a single-threaded language.",
         "JavaScript has three core components: ECMAScript (the language specification), DOM (Document Object Model), and BOM (Browser Object Model).",
       ],
-
-      // definition: `
-      //               JavaScript is a lightweight, high-level, interpreted programming language primarily used to create interactive effects within web browsers.
-      //               •	JavaScript is a dynamic programming language.
-      //               •	JavaScript is a single-threaded language.
-      //               •	JavaScript has three core components: ECMAScript (the language specification), DOM (Document Object Model), and BOM (Browser Object Model).
-      //               `,
+    },
+    {
+      title: "Class",
+      definition: [
+        "A class is a blueprint for creating objects. It defines properties (data) and methods (functions) that the objects will have.",
+        "Classes were introduced in ES6 as a cleaner and more readable syntax for working with objects and prototypes.",
+        "Creating a class → class Person {}",
+        "Constructor method → constructor() is used to initialize object properties",
+        "Creating an object (instance) → const obj = new ClassName()",
+        "Adding methods → methods are defined inside the class",
+        "Using 'this' keyword → refers to the current instance of the class",
+        "Class inheritance → using 'extends' to inherit from another class",
+        "Calling parent constructor → using super()",
+        "Method overriding → child class can override parent methods",
+        "Static methods → methods that belong to the class, not instances",
+        "Getters and setters → get and set keywords for controlled access",
+        "Encapsulation → hiding internal details using private fields (#)",
+        "Classes are syntactic sugar over JavaScript prototypes",
+      ],
+    },
+    {
+      title: "OOP Concepts",
+      definition: [
+        "Encapsulation → bundling data and methods together inside a class and restricting direct access to some details.",
+        "Encapsulation helps in data hiding and protecting object integrity using private fields (#) or controlled access (get/set).",
+        "Polymorphism → ability of a method to behave differently based on the object or context.",
+        "Polymorphism can be achieved through method overriding or method overloading (JS mostly uses overriding).",
+        "Abstraction → hiding complex implementation details and showing only the necessary features.",
+        "Abstraction helps in reducing complexity and improving code maintainability.",
+        "Encapsulation example → using private fields and getters/setters",
+        "Polymorphism example → same method name with different behavior in child class",
+        "Abstraction example → exposing only essential methods and hiding internal logic",
+      ],
     },
     {
       title: "Object",
-      definition:
+      definition: [
         "An object is a collection of properties, where each property consists of a key-value pair. Objects are used to store and organize data, and they can hold various data types such as strings, numbers, arrays, and even other objects.",
+        "Objects can be created using the Object constructor (e.g., const user = new Object()) or using object literals ({}).",
+        "Accessing object properties (dot notation and bracket notation).",
+        "Adding and modifying properties in an object.",
+        "Deleting properties using the delete keyword.",
+        "Object Methods → Functions defined inside objects.",
+        "Object Prototypes → Shared properties and methods between objects.",
+        "Object Inheritance → Objects can inherit properties and methods from other objects.",
+        "Object Composition → Combining multiple objects into one.",
+        "Object Equality → Objects are compared by reference, not by value.",
+        "Looping over object properties using for...in or Object methods.",
+        "Checking property existence using 'in' operator or hasOwnProperty().",
+        "Object Destructuring → Extracting values from objects into variables.",
+        "Object Spread Operator → Copying and merging objects (...).",
+        "Object Rest Operator → Collecting remaining properties into a new object.",
+      ],
     },
 
     {
       title: "Array",
       definition: [
-        "In JavaScript, an array is a special type of object used to store multiple values in a single variable. Arrays help manage and manipulate groups of data efficiently.",
-        "Arrays can hold any data type, including numbers, strings, objects, and even other arrays.",
-        "Arrays have built-in methods for adding, removing, and iterating over elements, making them a powerful tool for handling collections of data in JavaScript.",
+        "An array is a data structure used to store multiple values in a single variable. These values can be of any data type, such as numbers, strings, objects, or even other arrays.",
+        "Arrays help manage and manipulate groups of data efficiently",
+        "Arrays are ordered and indexed collections, where each element is accessed using its index (starting from 0).",
+        "Arrays can be created using array literals (e.g., const arr = []) or using the Array constructor (e.g., const arr = new Array()).",
         "Arrays in JavaScript are dynamic in size (they are not fixed).",
-        "Elements in an array are accessed using index numbers (starting from 0)",
+        "Accessing array elements",
+        "Adding and removing elements",
+        "Updating array elements",
+        "Array methods → built-in functions like push, pop, map, filter, reduce",
+        "Array iteration → looping using for, forEach, map",
+        "Array destructuring",
+        "Spread operator with arrays",
+        "Rest operator with arrays",
+        "Searching in arrays → includes, indexOf, find",
+        "Sorting and reversing arrays",
+        "Array length property",
+        "Interview One-Liner",
+        "Encapsulation → data hiding",
+        "Polymorphism → same method, different behavior",
+        "Abstraction → hide complexity",
       ],
     },
 
     {
       title: "Function",
-      definition:
-        "JavaScript functions are blocks of reusable code designed to perform a particular task or calculate a value. They can take inputs (parameters), perform actions, and return a result.",
+      definition: [
+        "A function is a reusable block of code designed to perform a specific task. It helps in organizing code, improving readability, and avoiding repetition.",
+        "Functions can take inputs (parameters) and return an output (return value).",
+        "Functions can be created using function declarations, function expressions, or arrow functions.",
+        "Function declaration → function greet() {}",
+        "Function expression → const greet = function() {}",
+        "Arrow function → const greet = () => {}",
+        "Parameters and arguments",
+        "Return statement",
+        "Default parameters",
+        "Rest parameters",
+        "Callback functions → passing a function as an argument",
+        "Higher-order functions → functions that take or return other functions",
+        "Closures → functions remembering their outer scope",
+        "Immediately Invoked Function Expression (IIFE)",
+        "Pure and impure functions",
+      ],
+    },
+
+    {
+      title: "String",
+      definition: [
+        "A string is a sequence of characters used to represent text. It can include letters, numbers, symbols, and spaces.",
+        "Strings are immutable in JavaScript, meaning their values cannot be changed directly.",
+        "Strings can be created using single quotes (' '), double quotes (\" \"), or template literals (` `).",
+        "Accessing string characters using index",
+        "String length property",
+        "Common string methods → toUpperCase, toLowerCase, trim",
+        "Searching in strings → includes, indexOf, startsWith, endsWith",
+        "Extracting parts of a string → slice, substring",
+        "Replacing content → replace, replaceAll",
+        "Template literals → string interpolation using `${}`",
+        "String concatenation → using + operator or template literals",
+        "Splitting and joining strings → split, join",
+        "Escape characters in strings",
+        "Comparing strings",
+      ],
     },
 
     {
@@ -524,12 +615,22 @@ export const courseData = {
     {
       title: "Promise",
       definition: [
-        "A Promise is an object that represents the eventual completion or failure of an asynchronous operation.",
-        "It is used to handle asynchronous operations in a more readable and maintainable way.",
-        "A Promise can be in one of three states: pending, fulfilled, or rejected.",
-        "A Promise can be used to handle the success or failure of an asynchronous operation.",
-        "Promises can be chained together to handle multiple asynchronous operations in a sequence.",
-        "The Promise API provides methods such as then(), catch(), and finally() to handle the resolution or rejection of a Promise.",
+        "A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.",
+        "A Promise has three states → pending, fulfilled, and rejected.",
+        "Promises are used to handle asynchronous operations like API calls, file reading, or timers.",
+        "Creating a Promise → new Promise((resolve, reject) => {})",
+        "Resolving a Promise → resolve(value)",
+        "Rejecting a Promise → reject(error)",
+        "Handling success → .then()",
+        "Handling errors → .catch()",
+        "Finally block → .finally() runs regardless of success or failure",
+        "Promise chaining → multiple .then() calls in sequence",
+        "Async/Await → cleaner syntax to work with Promises",
+        "Error handling with try...catch in async/await",
+        "Promise.all → runs multiple promises in parallel (fails if one fails)",
+        "Promise.allSettled → waits for all promises (success + failure)",
+        "Promise.race → returns the first completed promise",
+        "Promise.any → returns the first fulfilled promise",
       ],
     },
     {
@@ -634,12 +735,90 @@ export const courseData = {
       definition:
         "A JavaScript runtime environment is an environment in which JavaScript code can be executed. It includes the JavaScript engine, as well as additional APIs and libraries that provide functionality for tasks such as DOM manipulation, network requests, and file system access. Examples include web browsers and Node.js.",
     },
+
+    {
+      title: "Map",
+      definition: [
+        "A Map is a collection of key-value pairs where keys can be of any data type (objects, functions, primitives).",
+        "Maps maintain insertion order and allow efficient data retrieval.",
+        "Creating a Map → const map = new Map()",
+        "Adding values → map.set(key, value)",
+        "Accessing values → map.get(key)",
+        "Checking key existence → map.has(key)",
+        "Removing values → map.delete(key)",
+        "Map size → map.size",
+        "Clearing all entries → map.clear()",
+        "Iterating over Map → map.forEach(), for...of",
+        "Keys, values, entries → map.keys(), map.values(), map.entries()",
+        "Map vs Object → Map allows any type as key, Object only allows string/symbol keys",
+      ],
+    },
+    {
+      title: "Set",
+      definition: [
+        "A Set is a collection of unique values, meaning duplicate values are not allowed.",
+        "Sets can store any data type such as numbers, strings, or objects.",
+        "Creating a Set → const set = new Set()",
+        "Adding values → set.add(value)",
+        "Checking existence → set.has(value)",
+        "Removing values → set.delete(value)",
+        "Set size → set.size",
+        "Clearing all values → set.clear()",
+        "Iterating over Set → set.forEach(), for...of",
+        "Removing duplicates → new Set(array)",
+        "Set vs Array → Set stores unique values, Array allows duplicates",
+      ],
+    },
+
+    {
+      title: "WeakMap",
+      definition: [
+        "A WeakMap is a collection of key-value pairs where keys must be objects only.",
+        "WeakMap does not prevent garbage collection, meaning if the key object is no longer referenced, it can be removed automatically.",
+        "Creating a WeakMap → const wm = new WeakMap()",
+        "Adding values → wm.set(keyObject, value)",
+        "Accessing values → wm.get(keyObject)",
+        "Checking existence → wm.has(keyObject)",
+        "Removing values → wm.delete(keyObject)",
+        "WeakMap keys are not iterable → no forEach, no keys(), values(), entries()",
+        "Use case → storing private data or metadata for objects without memory leaks",
+      ],
+    },
+
+    {
+      title: "WeakSet",
+      definition: [
+        "A WeakSet is a collection of unique objects only (no primitive values allowed).",
+        "WeakSet does not prevent garbage collection of its objects.",
+        "Creating a WeakSet → const ws = new WeakSet()",
+        "Adding values → ws.add(object)",
+        "Checking existence → ws.has(object)",
+        "Removing values → ws.delete(object)",
+        "WeakSet is not iterable → no forEach, no keys(), values(), entries()",
+        "Use case → tracking object references without preventing memory cleanup",
+      ],
+    },
   ],
   reactjs: [
+    {
+      title: "React 19",
+      definition: [
+        "use hook for promises",
+        "useActionState for Forms",
+        "useOptimistic for instant UI",
+        "Server Component & Action",
+        "React Compiler (auto-optimization)",
+        "Advanced Hooks : useRef,useMemo,useCallback,useReducer",
+        "Performance:Code splitting,lazy loading,Virtualization",
+        "Advanced Router : useParams,useNavigate,Protected routes",
+        "Suspense & Error Boundaries",
+      ],
+    },
     {
       title: "React Links",
       definition: [
         "https://github.com/muazimmaqbool/Reactjs-with-Me/tree/master",
+        "https://github.com/AhsanAyaz/react-in-90ish",
       ],
     },
     {
@@ -831,42 +1010,451 @@ export const courseData = {
       definition: [
         "https://github.com/machadop1407/event-planner-nextjs-course/tree/main",
         "https://event-planner-nextjs-course.vercel.app/events",
+        "json-server --watch db.json --port 5000",
+        "Example: fetch('http://localhost:5000/events')",
       ],
     },
     {
       title: "Next.js",
-      definition:
-        "Next.js is a React framework that enables several extra features, including server-side rendering and generating static websites.",
+      definition: [
+        "Next.js is a React framework that supports multiple rendering methods.",
+        "Example: npx create-next-app@latest my-app",
+      ],
+    },
+
+    // 🔥 RENDERING TYPES START
+
+    {
+      title: "CSR (Client Side Rendering)",
+      definition: [
+        "Rendering happens in the browser using JavaScript.",
+        "Example: useEffect(() => { fetch('/api').then(res => res.json()).then(setData); }, [])",
+      ],
+    },
+    {
+      title: "SSR (Server Side Rendering)",
+      definition: [
+        "Page is rendered on server for every request.",
+        "Example: export async function getServerSideProps() { return { props: {} }; }",
+      ],
+    },
+    {
+      title: "SSG (Static Site Generation)",
+      definition: [
+        "Pages are pre-rendered at build time.",
+        "Example: export async function getStaticProps() { return { props: {} }; }",
+      ],
+    },
+    {
+      title: "ISR (Incremental Static Regeneration)",
+      definition: [
+        "Static pages are updated after deployment without rebuilding.",
+        "Example: export async function getStaticProps() { return { props: {}, revalidate: 10 }; }",
+      ],
+    },
+    {
+      title: "Streaming",
+      definition: [
+        "Allows sending HTML in chunks while data is loading.",
+        "Example: return <Suspense fallback='Loading...'><Data /></Suspense>",
+      ],
+    },
+    {
+      title: "Edge Rendering",
+      definition: [
+        "Rendering happens at edge locations closer to user.",
+        "Example: export const runtime = 'edge';",
+      ],
+    },
+    {
+      title: "Hybrid Rendering",
+      definition: [
+        "Combination of SSR, SSG, and CSR in one app.",
+        "Example: Home page SSG + Dashboard SSR",
+      ],
+    },
+
+    // 🔥 OTHER CORE CONCEPTS
+
+    {
+      title: "File-based Routing",
+      definition: [
+        "Routes are created using file structure.",
+        "Example: pages/about.js → /about",
+      ],
+    },
+    {
+      title: "App Router",
+      definition: [
+        "New routing system using app directory.",
+        "Example: app/page.tsx",
+      ],
+    },
+    {
+      title: "Server Components",
+      definition: [
+        "Runs on server and reduces JS bundle.",
+        "Example: async function Page() { const data = await fetch(...); }",
+      ],
+    },
+    {
+      title: "Client Components",
+      definition: [
+        "Runs in browser and supports hooks.",
+        "Example: 'use client'; useState()",
+      ],
+    },
+    {
+      title: "API Routes",
+      definition: [
+        "Create backend APIs inside Next.js.",
+        "Example: pages/api/user.js",
+      ],
+    },
+    {
+      title: "Dynamic Routes",
+      definition: ["Create routes with params.", "Example: pages/blog/[id].js"],
+    },
+    {
+      title: "Link Component",
+      definition: [
+        "Client-side navigation.",
+        "Example: <Link href='/about'>Go</Link>",
+      ],
+    },
+    {
+      title: "Image Optimization",
+      definition: [
+        "Built-in optimized images.",
+        "Example: <Image src='/img.png' width={200} height={200} />",
+      ],
     },
   ],
   typescript: [
     {
-      id: 1,
       title: "TypeScript",
-      definition:
-        "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+      definition: [
+        "TypeScript is a strongly typed programming language that builds on JavaScript.",
+        "Example: let name: string = 'Simbu';",
+      ],
+    },
+    {
+      title: "Static Typing",
+      definition: [
+        "Static typing allows you to define variable types at compile time.",
+        "Example: let age: number = 25;",
+      ],
+    },
+    {
+      title: "Type Inference",
+      definition: [
+        "Type inference automatically detects the type based on value.",
+        "Example: let count = 10; // inferred as number",
+      ],
+    },
+    {
+      title: "Interface",
+      definition: [
+        "Interface defines structure of an object.",
+        "Example: interface User { name: string; age: number }",
+      ],
+    },
+    {
+      title: "Type Alias",
+      definition: [
+        "A Type Alias in TypeScript is used to create a new name for an existing type.",
+        "It helps make complex or repeated types more readable and reusable.",
+        "Example: type User = { name: string; age: number };",
+      ],
+    },
+    {
+      title: "Union Type",
+      definition: [
+        "A Union Type in TypeScript allows a variable to have multiple possible types or values.",
+        "It is defined using the '|' (pipe) symbol.",
+
+        "React Example (ID): type ID = string | number; const [id, setId] = useState<ID>(1);",
+
+        "React Example (Status): type Status = 'loading' | 'success' | 'error'; const [status, setStatus] = useState<Status>('loading');",
+      ],
+    },
+    {
+      title: "Intersection Type",
+      definition: [
+        "Intersection combines multiple types using '&'.",
+        "Example: type A = { name: string }; type B = { age: number }; type C = A & B;",
+      ],
+    },
+    {
+      title: "Generics",
+      definition: [
+        "Generics create reusable components.",
+        "Example: function identity<T>(value: T): T { return value; }",
+      ],
+    },
+    {
+      title: "Enum",
+      definition: [
+        "An Enum in TypeScript is used to define a set of named constant values.",
+        "It helps make code more readable and prevents invalid values.",
+
+        "Example: enum Status { Loading = 'LOADING', Success = 'SUCCESS', Error = 'ERROR' };",
+
+        "React Example: const [status, setStatus] = useState<Status>(Status.Loading);",
+      ],
+    },
+    {
+      title: "Tuple",
+      definition: [
+        "A Tuple in TypeScript is a fixed-length array where each element has a specific type.",
+        "It ensures the order and type of values are maintained.",
+
+        "Example: type User = [string, number]; const user: User = ['Simbu', 22];",
+
+        "React Example: type User = [string, number]; const [user, setUser] = useState<User>(['Simbu', 22]);",
+      ],
+    },
+    {
+      title: "Any",
+      definition: [
+        "Any disables type checking.",
+        "Example: let data: any = 10; data = 'hello';",
+      ],
+    },
+    {
+      title: "Unknown",
+      definition: [
+        "Unknown is safer than any and requires checking.",
+        "Example: let value: unknown = 'test'; if(typeof value === 'string') console.log(value);",
+      ],
+    },
+    {
+      title: "Void",
+      definition: [
+        "Void represents no return value.",
+        "Example: function log(): void { console.log('hi'); }",
+      ],
+    },
+    {
+      title: "Never",
+      definition: [
+        "Never represents values that never occur.",
+        "Example: function error(): never { throw new Error('error'); }",
+      ],
+    },
+    {
+      title: "Type Assertion",
+      definition: [
+        "Type Assertion in TypeScript is used to tell the compiler the exact type of a value.",
+        "It is useful when you know more about the type than TypeScript can infer.",
+        "It does not change the value at runtime, only helps during type checking.",
+        "Syntax: value as Type",
+        "Example: let value: unknown = 'Hello'; let length = (value as string).length;",
+        "React Example: const inputRef = useRef<HTMLInputElement | null>(null); const value = inputRef.current?.value as string;",
+      ],
     },
   ],
   nodeexpress: [
     {
-      id: 1,
       title: "Node.js",
-      definition:
+      definition: [
         "Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside a web browser.",
+        "Example: const http = require('http'); http.createServer((req,res)=>res.end('Hello')).listen(3000);",
+      ],
     },
     {
-      id: 2,
       title: "Express",
-      definition:
+      definition: [
         "Express.js is a back end web application framework for Node.js, designed for building web applications and APIs.",
+        "Example: const express = require('express'); const app = express(); app.get('/', (req,res)=>res.send('Hello'));",
+      ],
+    },
+    {
+      title: "NPM",
+      definition: [
+        "NPM (Node Package Manager) is a tool used to install, manage, and share JavaScript packages.",
+        "Example: npm install express",
+      ],
+    },
+    {
+      title: "Package.json",
+      definition: [
+        "package.json is a configuration file that contains metadata about a Node.js project and its dependencies.",
+        'Example: { "name": "app", "version": "1.0.0", "dependencies": { "express": "^4.0.0" } }',
+      ],
+    },
+    {
+      title: "Middleware",
+      definition: [
+        "Middleware functions execute during the request-response cycle and have access to req, res, and next.",
+        "Example: app.use((req,res,next)=>{ console.log('Middleware'); next(); });",
+      ],
+    },
+    {
+      title: "Routing",
+      definition: [
+        "Routing defines endpoints (URLs) and how the app responds to client requests.",
+        "Example: app.get('/user', (req,res)=>res.send('User Page'));",
+      ],
+    },
+    {
+      title: "REST API",
+      definition: [
+        "REST API uses HTTP methods like GET, POST, PUT, DELETE.",
+        "Example: app.post('/users', (req,res)=>res.send('User Created'));",
+      ],
+    },
+    {
+      title: "Request Object (req)",
+      definition: [
+        "The request object contains information about the HTTP request.",
+        "Example: app.get('/', (req,res)=>{ console.log(req.query); res.send('ok'); });",
+      ],
+    },
+    {
+      title: "Response Object (res)",
+      definition: [
+        "The response object is used to send data back to client.",
+        "Example: res.status(200).json({ message: 'Success' });",
+      ],
+    },
+    {
+      title: "Environment Variables",
+      definition: [
+        "Environment variables store sensitive data outside code.",
+        "Example: process.env.PORT",
+      ],
+    },
+    {
+      title: "CORS",
+      definition: [
+        "CORS allows or restricts resources from different domains.",
+        "Example: const cors = require('cors'); app.use(cors());",
+      ],
+    },
+    {
+      title: "Body Parser",
+      definition: [
+        "Body parser parses incoming request bodies.",
+        "Example: app.use(express.json());",
+      ],
+    },
+    {
+      title: "Async/Await",
+      definition: [
+        "Async/Await handles asynchronous operations.",
+        "Example: const data = await fetchData();",
+      ],
+    },
+    {
+      title: "Error Handling",
+      definition: [
+        "Error handling uses middleware with (err, req, res, next).",
+        "Example: app.use((err,req,res,next)=>{ res.status(500).send(err.message); });",
+      ],
+    },
+    {
+      title: "MVC Architecture",
+      definition: [
+        "MVC separates logic into Model, View, Controller.",
+        "Example: Model -> User.js, Controller -> userController.js, Route -> userRoutes.js",
+      ],
     },
   ],
   mongodb: [
     {
-      id: 1,
+      title: "MongoDB Commands",
+      definition: ["net stop MongoDB Server", "net start MongoDB"],
+    },
+    {
       title: "MongoDB",
-      definition:
+      definition: [
         "MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program.",
+      ],
+    },
+    {
+      title: "NoSQL",
+      definition: [
+        "NoSQL databases store data in non-tabular formats like documents, key-value pairs, graphs, or wide-columns.",
+      ],
+    },
+    {
+      title: "Collection",
+      definition: [
+        "A collection is a group of MongoDB documents, similar to a table in relational databases.",
+      ],
+    },
+    {
+      title: "Document",
+      definition: [
+        "A document is a record in MongoDB stored in BSON format (Binary JSON), containing key-value pairs.",
+      ],
+    },
+    {
+      title: "BSON",
+      definition: [
+        "BSON is a binary representation of JSON-like documents used by MongoDB for data storage.",
+      ],
+    },
+    {
+      title: "Mongoose",
+      definition: [
+        "Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js used to define schemas and interact with the database.",
+      ],
+    },
+    {
+      title: "Schema",
+      definition: [
+        "A schema defines the structure of documents in a collection, including fields and data types.",
+      ],
+    },
+    {
+      title: "Model",
+      definition: [
+        "A model is a wrapper for the schema that provides an interface to interact with the database.",
+      ],
+    },
+    {
+      title: "CRUD Operations",
+      definition: [
+        "CRUD stands for Create, Read, Update, and Delete operations used to manage data in MongoDB.",
+      ],
+    },
+    {
+      title: "Indexing",
+      definition: [
+        "Indexing improves the performance of search queries by creating efficient data retrieval paths.",
+      ],
+    },
+    {
+      title: "Aggregation",
+      definition: [
+        "Aggregation is used to process data and return computed results using pipelines.",
+      ],
+    },
+    {
+      title: "Atlas",
+      definition: [
+        "MongoDB Atlas is a cloud-based database service for hosting MongoDB databases.",
+      ],
+    },
+    {
+      title: "Replica Set",
+      definition: [
+        "A replica set is a group of MongoDB servers that maintain the same data for high availability.",
+      ],
+    },
+    {
+      title: "Sharding",
+      definition: [
+        "Sharding is a method for distributing data across multiple machines to handle large datasets.",
+      ],
+    },
+    {
+      title: "ObjectId",
+      definition: [
+        "ObjectId is a unique identifier automatically generated for each document in MongoDB.",
+      ],
     },
   ],
   gitgithub: [
@@ -893,6 +1481,15 @@ export const courseData = {
         "git config user.email",
         `git config --global user.name "silambarasanstr"`,
         `git config --global user.email "your-email@gmail.com"`,
+        "Repo Check : git remote -v",
+        " ✅ 1. New branch create : git branch feature-login     ",
+        " ✅ 2. Branchக்கு switch ஆக : git checkout feature-login    ",
+        " ⚡ Shortcut (create + switch ஒரே command) git checkout -b feature-login      ",
+        " 🔍 Current branch check : git branch             ",
+        "  🚀 Branch push பண்ணுவது: git push -u origin feature-login     ",
+        "  🔀 Merge branch (important) : git merge feature-login  ",
+        "  🗑️ Branch delete :   Local:git branch -d feature-login   ",
+        " GitHub:  git push origin --delete feature-login",
       ],
     },
   ],
@@ -957,91 +1554,165 @@ export const courseData = {
   docker: [
     {
       title: "Docker Fundamentals",
-      definition: ["https://resources.criodo.com/courses/docker-fundamentals/"],
+      definition: [
+        "https://resources.criodo.com/courses/docker-fundamentals/",
+        "Example: Learn basics and run your first container using 'docker run hello-world'",
+      ],
     },
     {
       title: "Docker",
       definition: [
         "What is Docker?",
         "Docker is a platform that uses OS-level virtualization to deliver software in packages called containers.",
+        "Example: docker run hello-world",
+      ],
+    },
+    {
+      title: "Docker Command",
+      definition: [
+        "Example: docker run -d -p 8080:80 --name docker-learn-container docker-learn-app",
+        "Example : docker stop docker-learn-container && docker rm docker-learn-container",
+        "Example: docker build -t docker-learn-app .",
+        "Example : docker stop docker-learn-container; docker rm docker-learn-container",
       ],
     },
     {
       title: "Docker Container",
       definition: [
         "What is a Docker container?",
-        "A Docker container is a lightweight, standalone, executable package that includes everything needed to run an application.",
+        "A Docker container is a lightweight, standalone package that includes everything needed to run an application.",
+        "Example: docker run -d nginx",
       ],
     },
     {
       title: "Docker Image",
       definition: [
         "What is a Docker image?",
-        "A Docker image is a read-only template used to create containers, containing code, libraries, and dependencies.",
+        "A Docker image is a read-only template used to create containers.",
+        "Example: docker pull node",
       ],
     },
     {
       title: "Dockerfile",
       definition: [
         "What is a Dockerfile?",
-        "A Dockerfile is a script with instructions used to build Docker images automatically.",
+        "A Dockerfile is a script with instructions to build Docker images.",
+        "Example: FROM node:18\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD ['node','app.js']",
       ],
     },
     {
       title: "Docker Compose",
       definition: [
         "What is Docker Compose?",
-        "Docker Compose is a tool used to define and run multi-container Docker applications using a docker-compose.yml file.",
+        "Docker Compose is a tool to run multi-container applications.",
+        "Example: docker-compose up",
       ],
     },
     {
       title: "docker-compose.yml",
       definition: [
         "What is docker-compose.yml?",
-        "docker-compose.yml is a configuration file where services, networks, and volumes for multi-container apps are defined.",
+        "It is a config file to define services, networks, and volumes.",
+        "Example: version: '3'\nservices:\n  app:\n    image: node\n    ports:\n      - '3000:3000'",
       ],
     },
     {
       title: "Docker vs Virtual Machine",
       definition: [
-        "What is the difference between Docker and Virtual Machine?",
-        "Docker containers are lightweight and share the host OS, while Virtual Machines are heavier and include a full OS.",
+        "What is the difference?",
+        "Docker containers share OS, VMs include full OS.",
+        "Example: Docker starts in seconds, VM takes minutes",
       ],
     },
     {
       title: "Docker Commands - Basics",
       definition: [
         "What are basic Docker commands?",
-        "docker --version, docker pull <image>, docker images, docker ps, docker ps -a",
+        "docker --version, docker pull <image>, docker images, docker ps",
+        "Example: docker pull nginx",
       ],
     },
     {
       title: "Docker Commands - Run & Stop",
       definition: [
         "How to run and stop containers?",
-        "docker run <image>, docker run -d <image>, docker stop <container_id>, docker start <container_id>",
+        "docker run <image>, docker stop <container_id>",
+        "Example: docker run -d nginx && docker stop <id>",
       ],
     },
     {
       title: "Docker Commands - Build & Remove",
       definition: [
-        "How to build and remove resources?",
-        "docker build -t <name> ., docker rmi <image_id>, docker rm <container_id>",
+        "How to build and remove?",
+        "docker build -t <name> ., docker rm <id>",
+        "Example: docker build -t myapp .",
       ],
     },
     {
       title: "Docker Commands - Logs & Exec",
       definition: [
         "How to check logs and access container?",
-        "docker logs <container_id>, docker exec -it <container_id> bash",
+        "docker logs <id>, docker exec -it <id> bash",
+        "Example: docker exec -it mycontainer bash",
       ],
     },
     {
       title: "Docker Compose Commands",
       definition: [
-        "What are Docker Compose commands?",
-        "docker-compose up (start services), docker-compose up -d (run in background), docker-compose down (stop and remove), docker-compose build (build services), docker-compose ps (list services)",
+        "Docker Compose commands?",
+        "docker-compose up, down, build, ps",
+        "Example: docker-compose up -d",
       ],
     },
+  ],
+  npm: [
+    {
+      title: "Docker  Commands",
+      definition: ["npm run dev:all"],
+    },
+  ],
+  Jenkins: [
+    {
+      title: "Jenkins",
+      definition: [
+        "What is Jenkins?",
+        "Jenkins is an open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration, and continuous delivery.",
+        "Example: Jenkins is a continuous integration server.",
+      ],
+    },
+    {
+      title: "Jenkins Command",
+      definition: [
+        "Example: jenkins --version",
+        "Example: jenkins --version",
+        "Example: jenkins --version",
+        "Example: jenkins --version",
+      ],
+    },
+    {
+      title: "Jenkins Job",
+      definition: [
+        "What is a Jenkins job?",
+        "A Jenkins job is a set of instructions that Jenkins executes to build, test, and deploy software.",
+        "Example: Jenkins job",
+      ],
+    },
+    {
+      title: "Jenkins Pipeline",
+      definition: [
+        "What is a Jenkins pipeline?",
+        "A Jenkins pipeline is a series of steps that Jenkins executes to build, test, and deploy software.",
+        "Example: Jenkins pipeline",
+      ],
+    },
+    {
+      title: "Jenkins Plugin",
+      definition: [
+        "What is a Jenkins plugin?",
+        "A Jenkins plugin is a set of instructions that Jenkins executes to build, test, and deploy software.",
+        "Example: Jenkins plugin",
+      ],
+    },
+    {},
   ],
 };

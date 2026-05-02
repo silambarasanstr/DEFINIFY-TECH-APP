@@ -87,7 +87,7 @@ const CourseContainer = () => {
           </h2>
         </div>
 
-        {!isAdding && !editingTopic && (
+        {/* {!isAdding && !editingTopic && (
           <button
             onClick={() => setIsAdding(true)}
             className="text-sm flex items-center gap-2 bg-primary-600 cursor-pointer hover:bg-primary-500 text-white font-bold py-3 px-3 rounded"
@@ -95,7 +95,7 @@ const CourseContainer = () => {
             <Plus className="w-3 h-3" />
             Add New Topic
           </button>
-        )}
+        )} */}
       </header>
 
       {(isAdding || editingTopic) && (
