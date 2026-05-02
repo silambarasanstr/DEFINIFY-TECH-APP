@@ -2,61 +2,57 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { courseData as initialData } from "../data/courseData";
 import CourseTopicCard from "../components/CourseTopicCard";
-import TopicForm from "../components/TopicForm";
-import { Plus, List } from "lucide-react";
+import { List } from "lucide-react";
 
 const CourseContainer = () => {
   const { courseId } = useParams();
+
   const [topics, setTopics] = useState([]);
-  const [isAdding, setIsAdding] = useState(false);
-  const [editingTopic, setEditingTopic] = useState(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (!courseId) return null;
 
   useEffect(() => {
-    if (initialData[courseId]) {
-      setTopics(initialData[courseId]);
+    setIsLoading(true);
 
-      // ✅ ADD THIS LINE (safe check)
-      setActiveIndex(initialData[courseId].length ? 0 : null);
-    } else {
-      setTopics([]);
+    setTimeout(() => {
+      const data = initialData[courseId];
 
-      // ✅ ADD THIS ALSO
-      setActiveIndex(null);
-    }
+      if (data) {
+        setTopics(data);
+        setActiveIndex(data.length ? 0 : null);
+      } else {
+        setTopics([]);
+        setActiveIndex(null);
+      }
 
-    setIsAdding(false);
-    setEditingTopic(null);
+      setIsLoading(false);
+    }, 500); // 0.5 sec delay
   }, [courseId]);
-
-  const handleAddTopic = (newTopicData) => {
-    const newTopic = {
-      id: topics.length > 0 ? Math.max(...topics.map((t) => t.id)) + 1 : 1,
-      ...newTopicData,
-    };
-
-    setTopics((prev) => [...prev, newTopic]);
-    setIsAdding(false);
-  };
-
-  const handleEditTopic = (updatedTopicData) => {
-    setTopics((prev) =>
-      prev.map((t) =>
-        t.id === editingTopic.id ? { ...t, ...updatedTopicData } : t,
-      ),
-    );
-    setEditingTopic(null);
-  };
-
-  const handleDeleteTopic = (id) => {
-    if (window.confirm("Are you sure you want to delete this topic?")) {
-      setTopics((prev) => prev.filter((t) => t.id !== id));
-    }
-  };
 
   const handleClick = (index) => {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
+
+  // ✅ Better mapping approach
+  // const formatCourseName = (id) => {
+  //   const map = {
+  //     html: "HTML",
+  //     css: "CSS",
+  //     js: "JavaScript",
+  //     react: "React JS",
+  //     nextjs: "Next JS",
+  //     typescript: "TypeScript",
+  //     node_and_express: "Node & Express",
+  //     mongodb: "MongoDB",
+  //     git: "Git & GitHub",
+  //     cicd: "CI/CD",
+  //     docker: "Docker",
+  //   };
+
+  //   return map[id] || id;
+  // };
 
   const formatCourseName = (id) => {
     if (!id) return "";
@@ -65,18 +61,29 @@ const CourseContainer = () => {
       .replace("node", "Node")
       .replace("git", "Git")
       .replace(/^\w/, (c) => c.toUpperCase())
-      .replace("Nodeexpress", "Node Express");
+      .replace("Node express", "Node Express");
   };
 
   const courseName = formatCourseName(courseId);
 
-  return (
-    <div className="space-y-5 ">
-      <div>Today : {new Date().toDateString()}</div>
+  if (isLoading) {
+    return <div className="text-center p-10">⏳ Loading topics...</div>;
+  }
 
-      <header className="flex flex-col md:flex-row md:items-center justify-between gap-6  ">
+  return (
+    <div className="space-y-5">
+      <div className="space-y-1">
+        <div className="text-gray-600 ">
+          📅 Today: {new Date().toDateString()}
+        </div>
+        <div className="text-blue-500  font-bold">
+          ⏰ Time : {new Date().toLocaleTimeString()}
+        </div>
+      </div>
+
+      <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <nav className="text-sm text-slate-500  flex items-center gap-2">
+          <nav className="text-sm text-slate-500 flex items-center gap-2">
             <span>Courses</span>
             <span>/</span>
             <span className="text-primary-500 font-medium">{courseName}</span>
@@ -86,54 +93,25 @@ const CourseContainer = () => {
             {courseName} <span className="text-primary-500">Definitions</span>
           </h2>
         </div>
-
-        {/* {!isAdding && !editingTopic && (
-          <button
-            onClick={() => setIsAdding(true)}
-            className="text-sm flex items-center gap-2 bg-primary-600 cursor-pointer hover:bg-primary-500 text-white font-bold py-3 px-3 rounded"
-          >
-            <Plus className="w-3 h-3" />
-            Add New Topic
-          </button>
-        )} */}
       </header>
 
-      {(isAdding || editingTopic) && (
-        <div className="max-w-2xl mx-auto">
-          <TopicForm
-            onSubmit={editingTopic ? handleEditTopic : handleAddTopic}
-            initialData={editingTopic}
-            onCancel={() => {
-              setIsAdding(false);
-              setEditingTopic(null);
-            }}
-          />
+      {topics.length > 0 ? (
+        <div className="space-y-4">
+          {topics.map((topic, index) => (
+            <CourseTopicCard
+              key={index} // ✅ FIX (no id in data)
+              index={index + 1}
+              topic={topic}
+              onClick={() => handleClick(index)}
+              isOpen={activeIndex === index}
+            />
+          ))}
         </div>
-      )}
-
-      {!isAdding && !editingTopic && (
-        <>
-          {topics.length > 0 ? (
-            <div className="space-y-4">
-              {topics.map((topic, index) => (
-                <CourseTopicCard
-                  key={topic.id}
-                  index={index + 1}
-                  topic={topic}
-                  onEdit={setEditingTopic}
-                  onDelete={handleDeleteTopic}
-                  onClick={() => handleClick(index)} // ✅ FIX
-                  isOpen={activeIndex === index}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center p-10 border-dashed border-2">
-              <List className="mx-auto mb-4" />
-              <p>No topics found</p>
-            </div>
-          )}
-        </>
+      ) : (
+        <div className="text-center p-10 border-dashed border-2">
+          <List className="mx-auto mb-4" />
+          <p>No topics found</p>
+        </div>
       )}
     </div>
   );

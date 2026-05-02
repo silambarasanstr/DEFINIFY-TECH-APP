@@ -502,6 +502,7 @@ export const courseData = {
         "Encapsulation example → using private fields and getters/setters",
         "Polymorphism example → same method name with different behavior in child class",
         "Abstraction example → exposing only essential methods and hiding internal logic",
+        " Inheritance is a mechanism in JavaScript that allows one object to inherit properties and methods from another object.",
       ],
     },
     {
@@ -593,23 +594,208 @@ export const courseData = {
     },
 
     {
-      title: "Closure",
-      definition:
-        "A closure gives you access to an outer function's scope from an inner function. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
+      title: "Callback Function",
+      definition: [
+        "A callback function is a function that is passed as an argument to another function and is executed later.",
+        "Callbacks are used to handle asynchronous operations like API calls, timers, and events.",
+        "It helps to run code only after a task is completed.",
+
+        "Example (Basic): function greet(name, callback) { console.log('Hi ' + name); callback(); }",
+        "greet('Simbu', () => console.log('Welcome!'));",
+
+        "Example (setTimeout): setTimeout(() => { console.log('Runs after 2 seconds'); }, 2000);",
+
+        "Example (Event): button.addEventListener('click', () => { console.log('Button clicked'); });",
+      ],
     },
 
     {
-      title: "Asynchronous JavaScript",
-      definition:
-        "Asynchronous JavaScript is a technique that allows JavaScript code to execute in the background without blocking the main thread of execution.",
+      title: "Higher-Order Function",
+      definition: [
+        "A higher-order function is a function that takes another function as an argument or returns a function.",
+        "It is used to make code more reusable, flexible, and clean.",
+
+        "Example (Function as Argument): function greet(name, callback) { console.log('Hi ' + name); callback(); }",
+        "greet('Simbu', () => console.log('Welcome!'));",
+
+        "Example (Function Returning Function): function multiplyBy(x) { return function(y) { return x * y; }; }",
+        "const double = multiplyBy(2); console.log(double(5)); // 10",
+
+        "Example (Array HOF): const nums = [1,2,3,4]; const result = nums.map(n => n * 2);",
+      ],
     },
+    {
+      title: "Closures Function",
+      definition: [
+        " A closure gives you access to an outer function's scope from an inner function. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
+        "A closure is a function that remembers variables from its outer scope even after the outer function has finished execution.",
+        "Closures allow you to access and preserve data privately.",
+        "It is commonly used in data encapsulation, counters, and function factories.",
+
+        "Example (Basic): function outer() { let count = 0; return function inner() { count++; console.log(count); }; }",
+        "const counter = outer(); counter(); // 1, counter(); // 2",
+
+        "Example (Private Variable): function secret() { let msg = 'Hidden'; return () => console.log(msg); }",
+        "const reveal = secret(); reveal(); // Hidden",
+      ],
+    },
+
+    {
+      title: "Recursive Function",
+      definition: [
+        "A recursive function is a function that calls itself until a base condition is met.",
+        "It is used to solve problems that can be broken down into smaller sub-problems.",
+        "Every recursive function must have a base case to stop infinite calls.",
+
+        "Example (Factorial): function factorial(n) { if (n === 0) return 1; return n * factorial(n - 1); }",
+        "factorial(5); // 120",
+
+        "Example (Countdown): function countDown(n) { if (n === 0) return; console.log(n); countDown(n - 1); }",
+        "countDown(5); // 5,4,3,2,1",
+      ],
+    },
+    {
+      title: "Function Currying",
+      definition: [
+        "Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.",
+        "It helps in creating reusable and specialized functions.",
+        "Instead of passing all arguments at once, you pass them one by one.",
+
+        "Example (Normal): function add(a, b) { return a + b; }",
+        "add(2, 3); // 5",
+
+        "Example (Curried): function add(a) { return function(b) { return a + b; }; }",
+        "add(2)(3); // 5",
+
+        "Example (Reusable): const multiply = a => b => a * b;",
+        "const double = multiply(2); console.log(double(5)); // 10",
+      ],
+    },
+
+    {
+      title: "Generator Function",
+      definition: [
+        "A generator function is a special function that can pause and resume its execution using the 'yield' keyword.",
+        "It returns an iterator object that can be used to control execution step-by-step.",
+        "Defined using function* syntax.",
+
+        "Example (Basic): function* gen() { yield 1; yield 2; yield 3; }",
+        "const g = gen(); g.next(); // { value: 1, done: false }",
+        "g.next(); // { value: 2, done: false }",
+
+        "Example (Loop): function* count(n) { for (let i = 1; i <= n; i++) { yield i; } }",
+        "for (let num of count(3)) { console.log(num); } // 1,2,3",
+      ],
+    },
+
+    {
+      title: "Memoization",
+      definition: [
+        "Memoization is an optimization technique used to store the results of expensive function calls and return the cached result when the same inputs occur again.",
+        "It avoids repeated calculations and improves performance.",
+        "Works best with pure functions (same input → same output).",
+
+        "Example (Without Memoization): function slowSquare(n) { console.log('Calculating...'); return n * n; }",
+        "slowSquare(5); slowSquare(5); // Calculates twice ❌",
+
+        "Example (With Memoization): function memoize(fn) { const cache = {}; return function(n) { if (cache[n]) return cache[n]; const result = fn(n); cache[n] = result; return result; }; }",
+        "const fastSquare = memoize((n) => { console.log('Calculating...'); return n * n; });",
+        "fastSquare(5); // Calculates",
+        "fastSquare(5); // Uses cache ✅",
+      ],
+    },
+
+    {
+      title: "Debouncing",
+      definition: [
+        "Debouncing is a technique that delays the execution of a function until after a specified delay has passed since the last time it was invoked.",
+        "It prevents unnecessary function calls when an event is triggered repeatedly.",
+        "Commonly used in search inputs, resize events, and API calls to improve performance.",
+
+        "Example (Basic): function debounce(fn, delay) { let timer; return function(...args) { clearTimeout(timer); timer = setTimeout(() => fn(...args), delay); }; }",
+
+        "Usage: const handleSearch = debounce((text) => { console.log('API call:', text); }, 500);",
+
+        "handleSearch('h'); handleSearch('he'); handleSearch('hel'); // Only last call runs after delay",
+      ],
+    },
+    {
+      title: "Throttling",
+      definition: [
+        "Throttling is a technique that ensures a function is executed at most once in a specified time interval.",
+        "It limits how often a function can run, even if the event is triggered many times.",
+        "Used in scroll events, resize events, and button clicks to improve performance.",
+
+        "Example (Basic): function throttle(fn, limit) { let lastCall = 0; return function(...args) { const now = Date.now(); if (now - lastCall >= limit) { lastCall = now; fn(...args); } }; }",
+
+        "Usage: const handleScroll = throttle(() => { console.log('Scroll event'); }, 1000);",
+
+        "window.addEventListener('scroll', handleScroll);",
+      ],
+    },
+
     {
       title: "Event Loop",
       definition: [
-        "The event loop is a mechanism that handles asynchronous operations in JavaScript.",
-        "It allows JavaScript to perform non-blocking operations by offloading tasks to the browser or Node.js environment and executing them when they are ready.",
-        "The event loop continuously checks the call stack and the task queue, executing tasks from the queue when the call stack is empty.",
-        "The event loop is responsible for handling callbacks, timers, and other asynchronous operations in JavaScript.",
+        "The Event Loop is a mechanism that allows JavaScript to handle asynchronous operations while running in a single-threaded environment.",
+        "JavaScript executes code using a Call Stack, where functions are pushed and popped during execution.",
+        "Asynchronous operations (like setTimeout, Promises, API calls) are handled by Web APIs and moved to callback queues.",
+        "Callback Queue (Task Queue) → stores callbacks from setTimeout, setInterval, DOM events.",
+        "Microtask Queue → stores Promise callbacks (.then, .catch, .finally) and runs before the callback queue.",
+        "Event Loop continuously checks if the Call Stack is empty and moves tasks from queues to the stack.",
+        "Execution order → Call Stack → Microtask Queue → Callback Queue",
+        "Promises (microtasks) have higher priority than setTimeout (macrotasks).",
+        "setTimeout does not guarantee exact timing, it only ensures minimum delay.",
+        "Use case → handling async tasks like API calls, timers, user events without blocking the main thread",
+      ],
+    },
+    {
+      title: "Deep Copy vs Shallow Copy",
+      definition: [
+        "Shallow Copy creates a new object but copies only the first level. Nested objects are still referenced (shared).",
+        "Deep Copy creates a completely independent copy, including all nested objects.",
+
+        "Example (Shallow Copy): const obj1 = { name: 'Simbu', address: { city: 'Chennai' } };",
+        "const obj2 = { ...obj1 }; obj2.address.city = 'Madurai'; console.log(obj1.address.city); // Madurai ❌",
+
+        "Example (Deep Copy - JSON): const obj3 = JSON.parse(JSON.stringify(obj1));",
+        "obj3.address.city = 'Trichy'; console.log(obj1.address.city); // Chennai ✅",
+
+        "Example (Deep Copy - structuredClone): const obj4 = structuredClone(obj1);",
+      ],
+    },
+    {
+      title: "Session Storage vs Local Storage",
+      definition: [
+        "Both are Web Storage APIs used to store data in the browser as key-value pairs.",
+        "Local Storage stores data with no expiration and persists even after the browser is closed.",
+        "Session Storage stores data only for the session and is cleared when the tab/browser is closed.",
+
+        "Example (Local Storage): localStorage.setItem('name', 'Simbu');",
+        "localStorage.getItem('name'); // 'Simbu'",
+        "localStorage.removeItem('name');",
+        "localStorage.clear();",
+
+        "Example (Session Storage): sessionStorage.setItem('user', 'Admin');",
+        "sessionStorage.getItem('user');",
+        "sessionStorage.removeItem('user');",
+      ],
+    },
+    {
+      title: "Asynchronous JavaScript",
+      definition: [
+        "Asynchronous JavaScript allows code to run without blocking the execution of other code.",
+        "It is used for tasks that take time like API calls, timers, and file operations.",
+
+        "JavaScript uses async mechanisms like callbacks, promises, and async/await.",
+
+        "Example (setTimeout): console.log('Start'); setTimeout(() => console.log('Async'), 2000); console.log('End');",
+
+        "Output: Start → End → Async",
+
+        "Example (Promise): new Promise(resolve => resolve('Done')).then(console.log);",
+
+        "Example (async/await): async function test() { const res = await fetch(url); console.log(res); }",
       ],
     },
     {
@@ -633,6 +819,7 @@ export const courseData = {
         "Promise.any → returns the first fulfilled promise",
       ],
     },
+
     {
       title: "Async/Await",
       definition: [
@@ -641,10 +828,20 @@ export const courseData = {
         "Async/Await makes it easier to handle asynchronous operations and can help avoid callback hell.",
       ],
     },
+
     {
-      title: "Generator",
-      definition:
-        "A generator is a special kind of function that can be paused and resumed.",
+      title: "Prototype",
+      definition: [
+        "In JavaScript, every object has a hidden property called [[Prototype]] that links to another object.",
+        "This allows objects to inherit properties and methods from other objects.",
+        "This mechanism is called prototypal inheritance.",
+
+        "Example (Basic): function Person(name) { this.name = name; }",
+        "Person.prototype.greet = function() { console.log('Hi ' + this.name); };",
+        "const user = new Person('Simbu'); user.greet();",
+
+        "Example (Prototype Chain): const obj = {}; console.log(obj.toString()); // inherited from Object.prototype",
+      ],
     },
     {
       title: "Iterator",
@@ -653,11 +850,6 @@ export const courseData = {
         "Iterators are used to iterate over collections, such as arrays, objects, or strings, and they provide a way to access each element of the collection one at a time.",
         "Iterators have a next() method that returns an object with two properties: value (the current element) and done (a boolean indicating whether the iteration is complete),",
       ],
-    },
-    {
-      title: "Generator",
-      definition:
-        "A generator is a special kind of function that can be paused and resumed.",
     },
 
     {
@@ -673,15 +865,35 @@ export const courseData = {
     {
       title: "Hoisting",
       definition: [
-        "Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase.",
-        "This means that you can use variables and functions before they are declared in the code.",
-        "However, only the declarations are hoisted, not the initializations. This can lead to unexpected behavior if you try to access a variable before it has been assigned a value.",
+        "Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope before code execution.",
+        "This means you can use variables and functions before they are declared in the code (depending on type).",
+
+        "Function Hoisting: function greet() { console.log('Hello'); } greet(); // Works",
+
+        "Variable Hoisting (var): console.log(a); var a = 10; // undefined (not error)",
+
+        "let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal Dead Zone)",
+
+        "Only declarations are hoisted, not initializations.",
       ],
     },
     {
-      title: "Scope",
-      definition:
-        "Scope is the context in which variables and functions are accessible in JavaScript.",
+      title: "Scope in JavaScript",
+      definition: [
+        "Scope defines the accessibility (visibility) of variables in different parts of the code.",
+        "It determines where a variable can be used and where it cannot.",
+
+        "1. Global Scope: Variables declared outside any function or block. Accessible everywhere.",
+        "Example: let a = 10; function test() { console.log(a); }",
+
+        "2. Function Scope: Variables declared inside a function are accessible only inside that function.",
+        "Example: function test() { let b = 20; console.log(b); }",
+
+        "3. Block Scope: Variables declared using let and const inside {} are accessible only within that block.",
+        "Example: if(true) { let c = 30; }",
+
+        "4. Lexical Scope: Inner functions can access variables of outer functions.",
+      ],
     },
     {
       title: "This Keyword",
@@ -702,40 +914,113 @@ export const courseData = {
         "JavaScript is prototype-based, not class-based.",
       ],
     },
-    {
-      title: "Inheritance",
-      definition:
-        "Inheritance is a mechanism in JavaScript that allows one object to inherit properties and methods from another object.",
-    },
+
     {
       title: "ES6 Features",
       definition: [
-        "ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions for concise function syntax, template literals for easier string interpolation, destructuring assignment for object and array destructuring, and class syntax for defining classes.",
+        "ES6 (ECMAScript 2015) introduced major improvements to JavaScript to make it cleaner, faster, and easier to write.",
+
+        "1. let and const → Block scoped variables",
+        "Example: let a = 10; const b = 20;",
+
+        "2. Arrow Functions → Short syntax for functions",
+        "Example: const add = (a, b) => a + b;",
+
+        "3. Template Literals → String interpolation using backticks",
+        "Example: `Hello ${name}`",
+
+        "4. Destructuring → Extract values from arrays/objects",
+        "Example: const { name } = user;",
+
+        "5. Spread Operator (...) → Expand arrays/objects",
+        "Example: const newArr = [...arr];",
+
+        "6. Rest Parameter → Collect multiple arguments",
+        "Example: function sum(...nums) {}",
+
+        "7. Modules → import/export system",
+        "Example: import { add } from './math.js';",
+
+        "8. Promises → Handle async operations",
+        "Example: new Promise((resolve) => resolve('Done'));",
       ],
     },
     {
       title: "JavaScript Modules",
-      definition:
-        "JavaScript modules are a way to organize and encapsulate code into reusable pieces. They allow you to export and import functions, objects, or values between different files.",
+      definition: [
+        "JavaScript Modules are a way to split code into separate files and reuse them where needed.",
+        "Each module has its own scope, so variables/functions are not global by default.",
+        "Modules help in organizing, maintaining, and scaling applications.",
+
+        "Export: Used to share variables, functions, or classes from a file.",
+        "Import: Used to bring exported code into another file.",
+
+        "Example (Named Export): export const name = 'Simbu';",
+        "Example (Named Import): import { name } from './file.js';",
+
+        "Example (Default Export): export default function greet() { console.log('Hello'); }",
+        "Example (Default Import): import greet from './file.js';",
+
+        "Modules are supported using ES6 (import/export).",
+      ],
     },
 
     {
       title: "JavaScript Frameworks and Libraries",
       definition: [
-        "JavaScript frameworks and libraries are pre-written code that provides a structure and set of tools for building web applications. Examples include React, Angular, Vue.js, and jQuery.",
+        "JavaScript Frameworks and Libraries are tools that help developers build web applications faster and more efficiently.",
+
+        "Framework: A complete structure that controls how your application is built.",
+        "It provides rules, patterns, and architecture (you follow its structure).",
+
+        "Library: A collection of reusable functions you can call when needed.",
+        "You control the flow of the application.",
+
+        "Example Frameworks: Angular, Next.js, Vue.js, Svelte",
+
+        "Example Libraries: React.js, Lodash, Axios, jQuery",
+
+        "React example (Library): const element = <h1>Hello</h1>;",
+        "Angular example (Framework): Full MVC structure with built-in routing and services",
       ],
     },
     {
       title: "JavaScript Engines",
-      definition:
-        "JavaScript engines are programs that execute JavaScript code. Examples include V8 (used in Chrome and Node.js), SpiderMonkey (used in Firefox), and JavaScriptCore (used in Safari).",
+      definition: [
+        "A JavaScript Engine is a program that executes JavaScript code.",
+        "It converts JavaScript code into machine code so the computer can understand and run it.",
+        "Every browser has its own JavaScript engine.",
+
+        "Main components of a JS Engine:",
+        "1. Parser → Reads JS code and converts it into Abstract Syntax Tree (AST)",
+        "2. Interpreter → Executes code line by line",
+        "3. Compiler (JIT) → Converts code into optimized machine code",
+        "4. Memory Heap → Stores variables and objects",
+        "5. Call Stack → Executes function calls",
+
+        "Example Engines:",
+        "Chrome → V8 Engine",
+        "Firefox → SpiderMonkey",
+        "Safari → JavaScriptCore",
+      ],
     },
     {
       title: "JavaScript Runtime Environment",
-      definition:
-        "A JavaScript runtime environment is an environment in which JavaScript code can be executed. It includes the JavaScript engine, as well as additional APIs and libraries that provide functionality for tasks such as DOM manipulation, network requests, and file system access. Examples include web browsers and Node.js.",
-    },
+      definition: [
+        "A JavaScript Runtime Environment is the system that allows JavaScript code to run outside or inside a browser.",
+        "It provides everything needed to execute JS: engine, APIs, event loop, and memory management.",
 
+        "Main components:",
+        "1. JavaScript Engine (e.g., V8) → Executes JS code",
+        "2. Call Stack → Keeps track of function execution",
+        "3. Heap → Memory storage",
+        "4. Web APIs (Browser) / Node APIs → setTimeout, fetch, fs, etc.",
+        "5. Callback Queue & Microtask Queue → Manages async tasks",
+        "6. Event Loop → Moves tasks between queues and call stack",
+
+        "Example: setTimeout(() => console.log('Hello'), 1000); runs via Web APIs + Event Loop",
+      ],
+    },
     {
       title: "Map",
       definition: [
@@ -1006,18 +1291,20 @@ export const courseData = {
   ],
   nextjs: [
     {
-      title: "Next Theams Link",
+      title: "Next Themes Link",
       definition: [
-        "https://github.com/machadop1407/event-planner-nextjs-course/tree/main",
-        "https://event-planner-nextjs-course.vercel.app/events",
-        "json-server --watch db.json --port 5000",
+        "Useful resources and example project links for learning Next.js.",
+        "Example: https://github.com/machadop1407/event-planner-nextjs-course/tree/main",
+        "Example: https://event-planner-nextjs-course.vercel.app/events",
+        "Run local API: json-server --watch db.json --port 5000",
         "Example: fetch('http://localhost:5000/events')",
       ],
     },
     {
       title: "Next.js",
       definition: [
-        "Next.js is a React framework that supports multiple rendering methods.",
+        "Next.js is a React framework that enables building full-stack applications with features like routing, rendering strategies, and API handling.",
+        "It supports multiple rendering methods such as CSR, SSR, SSG, and ISR.",
         "Example: npx create-next-app@latest my-app",
       ],
     },
@@ -1027,49 +1314,56 @@ export const courseData = {
     {
       title: "CSR (Client Side Rendering)",
       definition: [
-        "Rendering happens in the browser using JavaScript.",
+        "Rendering happens in the browser using JavaScript after the page loads.",
+        "Useful for highly interactive applications.",
         "Example: useEffect(() => { fetch('/api').then(res => res.json()).then(setData); }, [])",
       ],
     },
     {
       title: "SSR (Server Side Rendering)",
       definition: [
-        "Page is rendered on server for every request.",
+        "The page is rendered on the server for every request and sent as HTML.",
+        "Good for SEO and dynamic data.",
         "Example: export async function getServerSideProps() { return { props: {} }; }",
       ],
     },
     {
       title: "SSG (Static Site Generation)",
       definition: [
-        "Pages are pre-rendered at build time.",
+        "Pages are pre-rendered at build time and served as static files.",
+        "Best for performance and static content.",
         "Example: export async function getStaticProps() { return { props: {} }; }",
       ],
     },
     {
       title: "ISR (Incremental Static Regeneration)",
       definition: [
-        "Static pages are updated after deployment without rebuilding.",
+        "Static pages are updated after deployment without rebuilding the entire site.",
+        "Combines benefits of SSG and SSR.",
         "Example: export async function getStaticProps() { return { props: {}, revalidate: 10 }; }",
       ],
     },
     {
       title: "Streaming",
       definition: [
-        "Allows sending HTML in chunks while data is loading.",
+        "Allows sending HTML in chunks while data is loading using Suspense.",
+        "Improves perceived performance.",
         "Example: return <Suspense fallback='Loading...'><Data /></Suspense>",
       ],
     },
     {
       title: "Edge Rendering",
       definition: [
-        "Rendering happens at edge locations closer to user.",
+        "Rendering happens at edge locations closer to the user for low latency.",
+        "Improves speed and performance globally.",
         "Example: export const runtime = 'edge';",
       ],
     },
     {
       title: "Hybrid Rendering",
       definition: [
-        "Combination of SSR, SSG, and CSR in one app.",
+        "Combination of multiple rendering strategies (CSR, SSR, SSG) in a single app.",
+        "Used to optimize performance and flexibility.",
         "Example: Home page SSG + Dashboard SSR",
       ],
     },
@@ -1079,53 +1373,62 @@ export const courseData = {
     {
       title: "File-based Routing",
       definition: [
-        "Routes are created using file structure.",
+        "Routes are automatically created based on the file structure.",
         "Example: pages/about.js → /about",
       ],
     },
     {
       title: "App Router",
       definition: [
-        "New routing system using app directory.",
+        "New routing system using the app directory (Next.js 13+).",
+        "Supports layouts, server components, and nested routing.",
         "Example: app/page.tsx",
       ],
     },
     {
       title: "Server Components",
       definition: [
-        "Runs on server and reduces JS bundle.",
+        "Components that run on the server and reduce JavaScript sent to the browser.",
+        "Used for data fetching and better performance.",
         "Example: async function Page() { const data = await fetch(...); }",
       ],
     },
     {
       title: "Client Components",
       definition: [
-        "Runs in browser and supports hooks.",
+        "Components that run in the browser and support React hooks like useState.",
+        "Required for interactivity.",
         "Example: 'use client'; useState()",
       ],
     },
     {
       title: "API Routes",
       definition: [
-        "Create backend APIs inside Next.js.",
+        "Allows creating backend API endpoints inside a Next.js app.",
+        "Used for handling server-side logic.",
         "Example: pages/api/user.js",
       ],
     },
     {
       title: "Dynamic Routes",
-      definition: ["Create routes with params.", "Example: pages/blog/[id].js"],
+      definition: [
+        "Create routes with dynamic parameters.",
+        "Example: pages/blog/[id].js",
+      ],
     },
     {
       title: "Link Component",
       definition: [
-        "Client-side navigation.",
+        "Used for client-side navigation without full page reload.",
+        "Improves performance and user experience.",
         "Example: <Link href='/about'>Go</Link>",
       ],
     },
     {
       title: "Image Optimization",
       definition: [
-        "Built-in optimized images.",
+        "Built-in feature for optimized image loading and performance.",
+        "Supports lazy loading and responsive images.",
         "Example: <Image src='/img.png' width={200} height={200} />",
       ],
     },
@@ -1254,110 +1557,125 @@ export const courseData = {
       ],
     },
   ],
-  nodeexpress: [
+  node_and_express: [
     {
       title: "Node.js",
       definition: [
-        "Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside a web browser.",
+        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows running JavaScript outside the browser.",
+        "It is built on Chrome's V8 engine and is widely used for building scalable server-side applications.",
         "Example: const http = require('http'); http.createServer((req,res)=>res.end('Hello')).listen(3000);",
       ],
     },
     {
       title: "Express",
       definition: [
-        "Express.js is a back end web application framework for Node.js, designed for building web applications and APIs.",
+        "Express.js is a minimal and flexible web framework for Node.js used to build APIs and web applications.",
+        "It simplifies routing, middleware handling, and server creation.",
         "Example: const express = require('express'); const app = express(); app.get('/', (req,res)=>res.send('Hello'));",
       ],
     },
     {
       title: "NPM",
       definition: [
-        "NPM (Node Package Manager) is a tool used to install, manage, and share JavaScript packages.",
+        "NPM (Node Package Manager) is used to install, manage, and share JavaScript packages.",
+        "It helps manage project dependencies efficiently.",
         "Example: npm install express",
       ],
     },
     {
-      title: "Package.json",
+      title: "package.json",
       definition: [
-        "package.json is a configuration file that contains metadata about a Node.js project and its dependencies.",
+        "package.json is a configuration file that stores project metadata and dependencies.",
+        "It defines scripts, versions, and package information.",
         'Example: { "name": "app", "version": "1.0.0", "dependencies": { "express": "^4.0.0" } }',
       ],
     },
     {
       title: "Middleware",
       definition: [
-        "Middleware functions execute during the request-response cycle and have access to req, res, and next.",
+        "Middleware functions run during the request-response cycle and have access to req, res, and next.",
+        "They are used for logging, authentication, parsing, etc.",
         "Example: app.use((req,res,next)=>{ console.log('Middleware'); next(); });",
       ],
     },
     {
       title: "Routing",
       definition: [
-        "Routing defines endpoints (URLs) and how the app responds to client requests.",
+        "Routing defines how an application responds to client requests at specific endpoints (URLs).",
+        "Different HTTP methods can be handled for different routes.",
         "Example: app.get('/user', (req,res)=>res.send('User Page'));",
       ],
     },
     {
       title: "REST API",
       definition: [
-        "REST API uses HTTP methods like GET, POST, PUT, DELETE.",
+        "REST API is an architectural style that uses HTTP methods like GET, POST, PUT, DELETE.",
+        "It is used for communication between client and server.",
         "Example: app.post('/users', (req,res)=>res.send('User Created'));",
       ],
     },
     {
       title: "Request Object (req)",
       definition: [
-        "The request object contains information about the HTTP request.",
+        "The request object contains information about the incoming HTTP request.",
+        "It includes query params, body, headers, and more.",
         "Example: app.get('/', (req,res)=>{ console.log(req.query); res.send('ok'); });",
       ],
     },
     {
       title: "Response Object (res)",
       definition: [
-        "The response object is used to send data back to client.",
+        "The response object is used to send data back to the client.",
+        "It supports methods like send, json, status, etc.",
         "Example: res.status(200).json({ message: 'Success' });",
       ],
     },
     {
       title: "Environment Variables",
       definition: [
-        "Environment variables store sensitive data outside code.",
+        "Environment variables are used to store sensitive data like API keys and ports outside the code.",
+        "They improve security and flexibility.",
         "Example: process.env.PORT",
       ],
     },
     {
       title: "CORS",
       definition: [
-        "CORS allows or restricts resources from different domains.",
+        "CORS (Cross-Origin Resource Sharing) allows or restricts requests from different domains.",
+        "It is used to enable frontend-backend communication across origins.",
         "Example: const cors = require('cors'); app.use(cors());",
       ],
     },
     {
       title: "Body Parser",
       definition: [
-        "Body parser parses incoming request bodies.",
+        "Body parser middleware parses incoming request bodies into JSON format.",
+        "It allows accessing req.body in APIs.",
         "Example: app.use(express.json());",
       ],
     },
     {
       title: "Async/Await",
       definition: [
-        "Async/Await handles asynchronous operations.",
+        "Async/Await is used to handle asynchronous operations in a cleaner and readable way.",
+        "It works on top of Promises.",
         "Example: const data = await fetchData();",
       ],
     },
     {
       title: "Error Handling",
       definition: [
-        "Error handling uses middleware with (err, req, res, next).",
+        "Error handling in Express is done using middleware with four parameters (err, req, res, next).",
+        "It helps manage application errors centrally.",
         "Example: app.use((err,req,res,next)=>{ res.status(500).send(err.message); });",
       ],
     },
     {
       title: "MVC Architecture",
       definition: [
-        "MVC separates logic into Model, View, Controller.",
-        "Example: Model -> User.js, Controller -> userController.js, Route -> userRoutes.js",
+        "MVC (Model-View-Controller) separates application logic into three parts.",
+        "It improves code organization and scalability.",
+        "Example: Model → User.js, Controller → userController.js, Route → userRoutes.js",
       ],
     },
   ],
