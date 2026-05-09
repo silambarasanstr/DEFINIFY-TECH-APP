@@ -142,7 +142,7 @@ export const courseData = {
     {
       title: "Iframe",
       definition: [
-        "The <iframe> tag is used to embed another HTML page within the current page.",
+        "The <iframe>(Inline Frame) is an HTMl Element  used to embed another Webpage or external content in side your current page.",
         "It is commonly used to embed videos, maps, and external content.",
       ],
     },
@@ -1086,7 +1086,18 @@ export const courseData = {
   ],
   reactjs: [
     {
-      title: "React 19",
+      title: "React Server Components",
+      definition: [
+        "React server comonenents is now the default in Next js",
+        "Server Components are components that run on the server and reduce JavaScript sent to the browser",
+      ],
+    },
+    {
+      title: "React js Version",
+      definition: ["react : ^18.2.0"],
+    },
+    {
+      title: "Latest version React 19",
       definition: [
         "use hook for promises",
         "useActionState for Forms",
@@ -1288,103 +1299,89 @@ export const courseData = {
       title: "React Query Devtools",
       definition: "React Query Devtools is a tool for debugging React Query.",
     },
+    {
+      title: "Refactoring a React component",
+      definition: [
+        "Refactoring a React component means improving the code structure, readability, and maintainability without changing how it works.",
+        "Refactoring is a process of modifying the existing code to make it more efficient, maintainable, and reusable.",
+        "large component split panrathu",
+        "repeated code remove panrathu",
+        "reusable component create panrathu",
+        "better naming use panrathu",
+      ],
+    },
+    {
+      title: "What is the React Render Cycle? (Mental Visualizer)",
+      definition: [
+        "The React Render Cycle is the process by which React updates the DOM when the state or props of a component change.",
+        "It involves several steps including the component's render method being called, the virtual DOM being updated, and the actual DOM being synchronized.",
+      ],
+    },
   ],
   nextjs: [
     {
-      title: "Next Themes Link",
+      title: "Next Commands",
       definition: [
-        "Useful resources and example project links for learning Next.js.",
-        "Example: https://github.com/machadop1407/event-planner-nextjs-course/tree/main",
-        "Example: https://event-planner-nextjs-course.vercel.app/events",
         "Run local API: json-server --watch db.json --port 5000",
-        "Example: fetch('http://localhost:5000/events')",
+        "Run development server: npm run dev",
+        "Run production build: npm run build",
+        "Run production server: npm run start",
+        "Run lint: npm run lint",
+        "Run format: npm run format",
+        "Run check: npm run check",
+        "Run deploy: npm run deploy",
+        "useRouter : https://nextjs.org/docs/api-reference/next/router",
+        "useSearchParams: https://nextjs.org/docs/pages/api-reference/functions/use-search-params",
+        "useParams : https://nextjs.org/docs/pages/api-reference/functions/use-params",
+        "usePathname: https://nextjs.org/docs/api-reference/next/link",
+        "API Routes : https://nextjs.org/docs/api-routes/introduction",
+        "SSR : https://nextjs.org/docs/basic-features/data-fetching/get-static-props",
+        "SSG : https://nextjs.org/docs/basic-features/data-fetching/get-static-props",
+        "CSR : https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props",
+        "Static Page Generation : https://nextjs.org/docs/basic-features/data-fetching/get-static-props",
+      ],
+    },
+    {
+      title: "Next js Github link",
+      definition: [
+        "https://github.com/machadop1407/event-planner-nextjs-course/tree/main",
+        "https://event-planner-nextjs-course.vercel.app/events",
+      ],
+    },
+    {
+      title: "Next js Youtube link",
+      definition: [
+        "AI SaaS App with Next.js 16, Prisma, Modal, Neon, Better Auth, and Stripe: https://youtu.be/XGIR6iZLEYk",
+        "Microservices vs Monolithic Architecture https://youtu.be/fbuHoZ2pb-k",
+      ],
+    },
+
+    {
+      title: "Next js Version",
+      definition: [
+        "Next.js 12 → Introduced Middleware, improved performance, and better support for edge functions",
+        "Next.js 13 → Introduced App Router, Server Components, and improved data fetching",
+        "Next.js 14 → Improved stability of App Router, better caching, and performance optimizations",
+        "Next.js 15 (latest) → Focus on performance, partial prerendering (PPR), and enhanced developer experience",
+        "Next.js 16 → Introduced Middleware, improved performance, and better support for edge functions",
       ],
     },
     {
       title: "Next.js",
       definition: [
-        "Next.js is a React framework that enables building full-stack applications with features like routing, rendering strategies, and API handling.",
         "It supports multiple rendering methods such as CSR, SSR, SSG, and ISR.",
-        "Example: npx create-next-app@latest my-app",
+        "Next.js is a React framework used to build fast, scalable, and SEO-friendly web applications.",
+        "It provides built-in features like routing, server-side rendering, and API handling.",
+        "File-based Routing → Pages are created using files inside the 'pages' or 'app' folder.",
+        "Server-Side Rendering (SSR) → Pages are rendered on the server before sending to browser.",
+        "Static Site Generation (SSG) → Pages are pre-built at build time for faster performance.",
+        "API Routes → Backend APIs can be created inside Next.js project.",
+        "Image Optimization → Built-in Image component for faster loading.",
+        "Full-stack support → Frontend + Backend in same project",
+        "File-based Routing → Pages are created using files inside the 'pages' or 'app' folder.",
       ],
     },
 
-    // 🔥 RENDERING TYPES START
-
-    {
-      title: "CSR (Client Side Rendering)",
-      definition: [
-        "Rendering happens in the browser using JavaScript after the page loads.",
-        "Useful for highly interactive applications.",
-        "Example: useEffect(() => { fetch('/api').then(res => res.json()).then(setData); }, [])",
-      ],
-    },
-    {
-      title: "SSR (Server Side Rendering)",
-      definition: [
-        "The page is rendered on the server for every request and sent as HTML.",
-        "Good for SEO and dynamic data.",
-        "Example: export async function getServerSideProps() { return { props: {} }; }",
-      ],
-    },
-    {
-      title: "SSG (Static Site Generation)",
-      definition: [
-        "Pages are pre-rendered at build time and served as static files.",
-        "Best for performance and static content.",
-        "Example: export async function getStaticProps() { return { props: {} }; }",
-      ],
-    },
-    {
-      title: "ISR (Incremental Static Regeneration)",
-      definition: [
-        "Static pages are updated after deployment without rebuilding the entire site.",
-        "Combines benefits of SSG and SSR.",
-        "Example: export async function getStaticProps() { return { props: {}, revalidate: 10 }; }",
-      ],
-    },
-    {
-      title: "Streaming",
-      definition: [
-        "Allows sending HTML in chunks while data is loading using Suspense.",
-        "Improves perceived performance.",
-        "Example: return <Suspense fallback='Loading...'><Data /></Suspense>",
-      ],
-    },
-    {
-      title: "Edge Rendering",
-      definition: [
-        "Rendering happens at edge locations closer to the user for low latency.",
-        "Improves speed and performance globally.",
-        "Example: export const runtime = 'edge';",
-      ],
-    },
-    {
-      title: "Hybrid Rendering",
-      definition: [
-        "Combination of multiple rendering strategies (CSR, SSR, SSG) in a single app.",
-        "Used to optimize performance and flexibility.",
-        "Example: Home page SSG + Dashboard SSR",
-      ],
-    },
-
-    // 🔥 OTHER CORE CONCEPTS
-
-    {
-      title: "File-based Routing",
-      definition: [
-        "Routes are automatically created based on the file structure.",
-        "Example: pages/about.js → /about",
-      ],
-    },
-    {
-      title: "App Router",
-      definition: [
-        "New routing system using the app directory (Next.js 13+).",
-        "Supports layouts, server components, and nested routing.",
-        "Example: app/page.tsx",
-      ],
-    },
     {
       title: "Server Components",
       definition: [
@@ -1401,21 +1398,285 @@ export const courseData = {
         "Example: 'use client'; useState()",
       ],
     },
+
+    {
+      title: "Client Side Rendering (CSR) ",
+      definition: [
+        "Order பண்ணுங்க... cooking start ஆகும் 😂🔥",
+        "Page first empty… then data entry… full build-up scene 😂🔥",
+        "Client Side Rendering (CSR) is a rendering technique where the browser loads a minimal HTML page and uses JavaScript to render the content.",
+        "All UI rendering happens in the browser (client side), not on the server.",
+
+        "1. Initial load → Minimal or empty HTML is loaded",
+        "2. JavaScript bundle is downloaded",
+        "3. JavaScript executes in the browser",
+        "4. Data is fetched from an API",
+        "5. UI is rendered dynamically",
+
+        "Example: React single-page applications (SPA) use CSR by default",
+        "Flow: HTML → JS loads → API call → UI renders",
+        "Example: useEffect(() => { fetch('/api').then(res => res.json()).then(setData); }, [])",
+      ],
+
+      example: `import React, { useEffect, useState } from "react";
+
+export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.example.com/data")
+      .then(res => res.json())
+      .then(setData);
+  }, []);
+
+  return (
+    <div>
+      <h1>CSR Example</h1>
+      {data.map((item, index) => (
+        <p key={index}>{item.name}</p>
+      ))}
+    </div>
+  );
+}`,
+    },
+    {
+      title: "Server Side Rendering (SSR) ",
+      definition: [
+        "Customer வந்தவுடனே full meals ready 🍛😎",
+        "Server Side Rendering (SSR) is a technique where the HTML page is generated on the server for every request and sent to the browser.",
+        "The browser receives a fully rendered page, so content is visible immediately.",
+
+        "1. User sends a request to the server",
+        "2. Server fetches required data",
+        "3. Server generates complete HTML",
+        "4. HTML is sent to the browser",
+        "5. Browser displays content instantly",
+        "6. JavaScript hydrates the page to enable interactivity",
+
+        "Example: Next.js uses SSR with getServerSideProps (Pages Router)",
+        "In App Router, SSR is handled using Server Components and async data fetching",
+
+        "SSR improves SEO and provides better initial load performance, but may be slower than CSR for repeated requests",
+      ],
+
+      example: `export async function getServerSideProps() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+
+  return {
+    props: { data }
+  };
+}
+
+export default function Page({ data }) {
+  return (
+    <div>
+      <h1>SSR Example</h1>
+      {data.map((item, index) => (
+        <p key={index}>{item.name}</p>
+      ))}
+    </div>
+  );
+}`,
+    },
+    {
+      title: "Static Site Generation (SSG) ",
+      definition: [
+        "Static Site Generation (SSG) is a rendering technique where HTML pages are generated at build time and reused for every request.",
+        "The pages are pre-rendered and served as static files, making them extremely fast.",
+
+        "1. During build time, data is fetched",
+        "2. HTML pages are generated in advance",
+        "3. Static files are deployed to a CDN/server",
+        "4. When a user requests the page, the pre-built HTML is served instantly",
+
+        "Example: Next.js uses SSG with getStaticProps (Pages Router)",
+        "In App Router, SSG is achieved using fetch with cache: 'force-cache' or default static behavior",
+
+        "SSG provides excellent performance and SEO because content is ready before the user request",
+        "Best suited for pages where data does not change frequently (blogs, landing pages, documentation)",
+      ],
+
+      example: `export async function getStaticProps() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+
+  return {
+    props: { data }
+  };
+}
+
+export default function Page({ data }) {
+  return (
+    <div>
+      <h1>SSG Example</h1>
+      {data.map((item, index) => (
+        <p key={index}>{item.name}</p>
+      ))}
+    </div>
+  );
+}`,
+    },
+    {
+      title: "Incremental Static Regeneration (ISR) ",
+      definition: [
+        "Incremental Static Regeneration (ISR) is a technique that allows static pages to be updated after they are built, without rebuilding the entire site.",
+        "It combines the benefits of SSG (fast performance) and SSR (fresh data).",
+
+        "1. Page is generated at build time (like SSG)",
+        "2. User requests the page → static HTML is served instantly",
+        "3. After a specified time (revalidate), Next.js regenerates the page in the background",
+        "4. New requests receive the updated page once regeneration is complete",
+
+        "Example: Next.js uses ISR with getStaticProps and the 'revalidate' option",
+
+        "ISR provides fast performance with the ability to keep content updated",
+        "Best suited for pages where data changes occasionally (e-commerce, blogs, news sites)",
+      ],
+
+      example: `export async function getStaticProps() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+
+  return {
+    props: { data },
+    revalidate: 10 // Re-generate page every 10 seconds
+  };
+}
+
+export default function Page({ data }) {
+  return (
+    <div>
+      <h1>ISR Example</h1>
+      {data.map((item, index) => (
+        <p key={index}>{item.name}</p>
+      ))}
+    </div>
+  );
+}`,
+    },
+    {
+      title: "Streaming",
+      definition: [
+        "Streaming is a rendering technique where parts of a webpage are sent to the browser progressively as they are ready, instead of waiting for the entire page to be generated.",
+        "It improves user experience by showing content faster.",
+        "UI updates progressively in the browser",
+        "Streaming is enabled using React Suspense and Server Components in Next.js App Router",
+        "It improves perceived performance by reducing waiting time",
+        "Best suited for pages with slow or multiple data sources",
+      ],
+
+      example: `import { Suspense } from "react";
+
+async function SlowData() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+
+  return <div>{data[0].name}</div>;
+}
+
+export default function Page() {
+  return (
+    <div>
+      <h1>Streaming Example</h1>
+
+      <Suspense fallback={<p>Loading...</p>}>
+        <SlowData />
+      </Suspense>
+      
+    </div>
+  );
+}`,
+    },
+
+    {
+      title: "Hybrid Rendering",
+      definition: [
+        "CSR + SSR + SSG + ISR எல்லாத்தையும் mix பண்ணி use பண்ணுறது",
+        "Hybrid Rendering is a technique where multiple rendering methods (CSR, SSR, SSG, ISR) are used together in the same application.",
+        "It allows developers to choose the best rendering strategy for each page or component.",
+
+        "1. Some pages are pre-rendered (SSG)",
+        "2. Some pages are rendered on request (SSR)",
+        "3. Some parts load on client side (CSR)",
+        "4. ISR can update static pages in the background",
+
+        "Example: Next.js supports hybrid rendering by default, allowing different strategies per route",
+
+        "It provides flexibility, performance, and scalability",
+        "Best suited for real-world applications like e-commerce, dashboards, and large platforms",
+        `🏠 Home Page → SSG (fast load)
+📄 Product Page → ISR (updated data)
+👤 User Dashboard → SSR (dynamic data)
+🔍 Filters / Search → CSR (instant UI)`,
+      ],
+
+      example: `// SSG Page
+export async function getStaticProps() {
+  return { props: { type: "SSG Page" } };
+}
+
+// SSR Page
+export async function getServerSideProps() {
+  return { props: { type: "SSR Page" } };
+}
+
+// CSR Component
+import { useEffect, useState } from "react";
+
+function CSRComponent() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("/api").then(res => res.json()).then(setData);
+  }, []);
+
+  return <div>CSR Data Loaded</div>;
+}`,
+    },
+
+    // 🔥 OTHER CORE CONCEPTS
+
+    {
+      title: "File-based Routing",
+      definition: [
+        "Routes are automatically created based on the file structure.",
+        "Example: pages/about.js → /about",
+      ],
+    },
+
+    {
+      title: "App Router",
+      definition: [
+        "App Router is the modern routing system introduced in Next.js 13 using the 'app' directory.",
+        "It supports layouts, Server Components, nested routing, and advanced data fetching.",
+        "Uses file-based routing with folders and special files like page.js, layout.js, loading.js.",
+        "Example: app/page.js",
+      ],
+    },
     {
       title: "API Routes",
       definition: [
-        "Allows creating backend API endpoints inside a Next.js app.",
-        "Used for handling server-side logic.",
-        "Example: pages/api/user.js",
+        "API Routes allow you to create backend API endpoints inside a Next.js application.",
+        "In the Pages Router, APIs are created inside the 'pages/api' folder.",
+        "In the App Router, APIs are created using route handlers inside 'app/api'.",
+        "Used for handling server-side logic like authentication, database operations, etc.",
+        "Example (Pages Router): pages/api/user.js",
+        "Example (App Router): app/api/user/route.js",
       ],
     },
     {
       title: "Dynamic Routes",
       definition: [
-        "Create routes with dynamic parameters.",
-        "Example: pages/blog/[id].js",
+        "Dynamic Routes allow you to create pages with dynamic parameters.",
+        "Used when route paths depend on data (e.g., blog ID, product ID).",
+        "In the Pages Router: use [param].js",
+        "In the App Router: use folder names like [param]/page.js",
+        "Example (Pages Router): pages/blog/[id].js",
+        "Example (App Router): app/blog/[id]/page.js",
       ],
     },
+
     {
       title: "Link Component",
       definition: [
@@ -1559,12 +1820,107 @@ export const courseData = {
   ],
   node_and_express: [
     {
+      title: "Rate Limiting",
+      definition: [
+        "Rate Limiting is a technique used to control the number of requests that can be made to a server within a certain period of time.",
+        "It is often used to prevent abuse or spamming of the server.",
+        "Example: app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));",
+        "Express Example: app.use(express.rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));",
+      ],
+    },
+    {
+      title: "Caching",
+      definition: [
+        "Caching is a technique used to store and retrieve data from a server.",
+        "It is often used to improve performance and reduce load on the server.",
+        "Example: app.use(cache('1 day'));",
+        "Express Example: app.use(cache('1 day'));",
+      ],
+    },
+    {
+      title: "Error Handling",
+      definition: [
+        "Error Handling is a technique used to handle errors that occur in a server.",
+        "It is often used to improve performance and reduce load on the server.",
+        "Example: app.use(errorHandler());",
+        "Express Example: app.use(errorHandler());",
+      ],
+    },
+    {
+      title: "Security",
+      definition: [
+        "Security is a technique used to protect a server from attacks.",
+        "It is often used to improve performance and reduce load on the server.",
+        "Example: app.use(helmet());",
+        "Express Example: app.use(helmet());",
+      ],
+    },
+    {
+      title: "Compression",
+      definition: [
+        "Compression is a technique used to compress data.",
+
+        "Example: app.use(compression());",
+        "Express Example: app.use(compression());",
+      ],
+    },
+    {
+      title: "Logging",
+      definition: [
+        "Logging is a technique used to log information about requests and responses.",
+        "It is often used to improve performance and reduce load on the server.",
+        "Example: app.use(morgan('combined'));",
+        "Express Example: app.use(morgan('combined'));",
+      ],
+    },
+    {
+      title: "Authentication / Authorization",
+      definition: [
+        "Authentication is the process of verifying a user's identity.",
+        "Authorization is the process of determining what a user is allowed to access.",
+        "Both are often used to secure applications and protect resources.",
+
+        "These techniques are commonly used to secure applications and protect resources.",
+        "Example: app.use(auth());",
+        "Express Example: app.use(auth());",
+      ],
+    },
+    {
+      title: "CORS",
+      definition: [
+        "CORS is a technique used to allow cross-origin requests.",
+        "It is often used to improve performance and reduce load on the server.",
+        "Example: app.use(cors());",
+        "Express Example: app.use(cors());",
+      ],
+    },
+
+    {
+      title: "Node.js Commands",
+      definition: [
+        "Node  version: node --version",
+        "npm version: npm --version",
+        "npm init: npm init",
+        "npm install: npm install",
+        "npm start: npm start",
+        "npm run dev: npm run dev",
+        "npm run build: npm run build",
+        "npm run test: npm run test",
+        "npm run lint: npm run lint",
+        "npm run format: npm run format",
+        "npm run check: npm run check",
+        "npm run deploy: npm run deploy",
+        "Handle 1 Million Requests per Second (MRPS): app.use(express.json({limit: '10mb'}));",
+      ],
+    },
+    {
       title: "Node.js",
       definition: [
         "Node.js is an open-source, cross-platform JavaScript runtime environment that allows running JavaScript outside the browser.",
         "It is built on Chrome's V8 engine and is widely used for building scalable server-side applications.",
-        "Example: const http = require('http'); http.createServer((req,res)=>res.end('Hello')).listen(3000);",
       ],
+      example: `       const http = require('http'); 
+      http.createServer((req,res)=>res.end('Hello')).listen(3000);`,
     },
     {
       title: "Express",
@@ -1573,13 +1929,15 @@ export const courseData = {
         "It simplifies routing, middleware handling, and server creation.",
         "Example: const express = require('express'); const app = express(); app.get('/', (req,res)=>res.send('Hello'));",
       ],
+      example: `      const express = require('express'); 
+      const app = express(); 
+      app.get('/', (req,res)=>res.send('Hello'));`,
     },
     {
       title: "NPM",
       definition: [
         "NPM (Node Package Manager) is used to install, manage, and share JavaScript packages.",
         "It helps manage project dependencies efficiently.",
-        "Example: npm install express",
       ],
     },
     {
@@ -1874,6 +2232,8 @@ export const courseData = {
       title: "Docker Fundamentals",
       definition: [
         "https://resources.criodo.com/courses/docker-fundamentals/",
+        "https://youtu.be/rhD12yd5VyI",
+        "https://github.com/theshubhamgour/docker-tutorial",
         "Example: Learn basics and run your first container using 'docker run hello-world'",
       ],
     },
@@ -1985,11 +2345,15 @@ export const courseData = {
   ],
   npm: [
     {
-      title: "Docker  Commands",
-      definition: ["npm run dev:all"],
+      title: "npm packages",
+      definition: [
+        "npm run dev:all",
+        "npm -g autocannon",
+        "autocannon -m GET -c 10 -d 10 -p 10 http://localhost:3000/simple",
+      ],
     },
   ],
-  Jenkins: [
+  jenkins: [
     {
       title: "Jenkins",
       definition: [
@@ -2031,6 +2395,11 @@ export const courseData = {
         "Example: Jenkins plugin",
       ],
     },
-    {},
+  ],
+  dataStructure: [
+    {
+      title: "DSA Speedio Meter ",
+      definition: ["O(n2)", "O(n)", "O(log n)", "O(1)"],
+    },
   ],
 };

@@ -13,9 +13,11 @@ import {
   Cpu,
   Box,
   X,
+  Settings,
 } from "lucide-react";
 
 const Sidebar = ({ open, setOpen }) => {
+  
   const navItems = [
     { name: "HTML", path: "/html", icon: Code },
     { name: "CSS", path: "/css", icon: Palette },
@@ -28,6 +30,9 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "Git & GitHub", path: "/gitgithub", icon: GitBranch },
     { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Docker", path: "/docker", icon: Box },
+    { name: "npm", path: "/npm", icon: Box },
+    { name: "Jenkins", path: "/jenkins", icon: Settings },
+    { name: "dataStructure", path: "/dataStructure", icon: Database },
   ];
 
   return (

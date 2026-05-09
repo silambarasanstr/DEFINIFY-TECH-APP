@@ -57,10 +57,7 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
             </div>
           )}
 
-          {/* Types */}
-          {topic.types?.length > 0 && (
-            <div className="grid gap-2">{typesUI}</div>
-          )}
+          <pre className="text-sm text-gray-600 font-semibold">{topic.example}</pre>
         </div>
       )}
     </div>

@@ -16,19 +16,21 @@ const CourseContainer = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    setTimeout(() => {
-      const data = initialData[courseId];
+    const timer = setTimeout(() => {
+      const data = initialData?.[courseId];
 
-      if (data) {
+      if (Array.isArray(data)) {
         setTopics(data);
-        setActiveIndex(data.length ? 0 : null);
+        setActiveIndex(data.length > 0 ? 0 : null);
       } else {
         setTopics([]);
         setActiveIndex(null);
       }
 
       setIsLoading(false);
-    }, 500); // 0.5 sec delay
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, [courseId]);
 
   const handleClick = (index) => {
