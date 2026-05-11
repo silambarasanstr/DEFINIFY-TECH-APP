@@ -27,7 +27,7 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
       {/* HEADER */}
       <div
         onClick={onClick}
-        className="flex justify-between items-center w-full px-3 py-2 cursor-pointer bg-gray-100"
+        className="flex justify-between items-center w-full px-3 py-2 cursor-pointer bg-gray-100 rounded"
       >
         <h3 className="font-bold text-xs flex gap-3 items-center">
           <span className="border border-gray-300 bg-gray-100  rounded-full flex justify-center items-center  w-6 h-6  p-1">
