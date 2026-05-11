@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 
 const Sidebar = ({ open, setOpen }) => {
-  
   const navItems = [
     { name: "HTML", path: "/html", icon: Code },
     { name: "CSS", path: "/css", icon: Palette },
@@ -33,6 +32,7 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "npm", path: "/npm", icon: Box },
     { name: "Jenkins", path: "/jenkins", icon: Settings },
     { name: "dataStructure", path: "/dataStructure", icon: Database },
+    { name: "ECommerce", path: "/ECommerce", icon: Database },
   ];
 
   return (

@@ -655,13 +655,49 @@ export const courseData = {
       ],
     },
     {
+      title: "Factory Function",
+
+      definition: [
+        "Returns object",
+        "Used to create objects",
+        "Object creation pattern",
+        "A Factory Function is a function that returns an object.",
+        "It is used to create multiple objects without using class or constructor function.",
+      ],
+      example: `
+      
+      function createUser(name, age) {
+  return {
+    name,
+    age,
+    greet() {
+      console.log("Hello " + name);
+    }
+  };
+}
+
+const user1 = createUser("Simbu", 18);
+
+console.log(user1.name);
+
+user1.greet();
+      
+      
+      `,
+    },
+    {
       title: "Function Currying",
       definition: [
+        "Returns function",
+        "Used to split arguments",
+
+        "Functional programming technique",
         "Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.",
         "It helps in creating reusable and specialized functions.",
         "Instead of passing all arguments at once, you pass them one by one.",
-
-        "Example (Normal): function add(a, b) { return a + b; }",
+      ],
+      example: `
+      "Example (Normal): function add(a, b) { return a + b; }",
         "add(2, 3); // 5",
 
         "Example (Curried): function add(a) { return function(b) { return a + b; }; }",
@@ -669,7 +705,8 @@ export const courseData = {
 
         "Example (Reusable): const multiply = a => b => a * b;",
         "const double = multiply(2); console.log(double(5)); // 10",
-      ],
+      
+      `,
     },
 
     {
@@ -692,17 +729,20 @@ export const courseData = {
       title: "Memoization",
       definition: [
         "Memoization is an optimization technique used to store the results of expensive function calls and return the cached result when the same inputs occur again.",
+
+        `ஒரு function run ஆகும்போது அதற்கு அதிக time அல்லது processing செலவாகும் என்றால், அந்த function-ன் result-ஐ store (cache) செய்து வைக்கும்.
+
+பிறகு அதே input மீண்டும் வந்தால், function-ஐ மறுபடியும் execute செய்யாமல், ஏற்கனவே store செய்த result-ஐ நேராக return செய்யும்.
+
+இதனால்:
+
+performance வேகமாகும்
+unnecessary calculations குறையும்
+application efficient ஆகும்`,
+
         "It avoids repeated calculations and improves performance.",
-        "Works best with pure functions (same input → same output).",
-
-        "Example (Without Memoization): function slowSquare(n) { console.log('Calculating...'); return n * n; }",
-        "slowSquare(5); slowSquare(5); // Calculates twice ❌",
-
-        "Example (With Memoization): function memoize(fn) { const cache = {}; return function(n) { if (cache[n]) return cache[n]; const result = fn(n); cache[n] = result; return result; }; }",
-        "const fastSquare = memoize((n) => { console.log('Calculating...'); return n * n; });",
-        "fastSquare(5); // Calculates",
-        "fastSquare(5); // Uses cache ✅",
       ],
+      example: `code`,
     },
 
     {
@@ -2400,6 +2440,23 @@ function CSRComponent() {
     {
       title: "DSA Speedio Meter ",
       definition: ["O(n2)", "O(n)", "O(log n)", "O(1)"],
+    },
+  ],
+  ECommerce: [
+    {
+      title: "becodemy",
+      definition: [
+        "YoutubeLink : https://www.youtube.com/watch?v=XiD_TsGRQtE",
+        "https://www.becodemy.com/",
+      ],
+    },
+    {
+      title: "Small Town Coder",
+      definition: [
+        "YoutubeLink : https://youtu.be/79F36yYEDyo",
+        "https://www.smalltowncoder.in/",
+        "GEO LOCATION : https://drive.google.com/file/d/1jdlmcZFb9wPTVJaM0029JrkLubyeTJz9/view",
+      ],
     },
   ],
 };
