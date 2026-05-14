@@ -1862,77 +1862,117 @@ function CSRComponent() {
     {
       title: "Rate Limiting",
       definition: [
-        "Rate Limiting is a technique used to control the number of requests that can be made to a server within a certain period of time.",
-        "It is often used to prevent abuse or spamming of the server.",
-        "Example: app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));",
-        "Express Example: app.use(express.rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));",
+        "Rate limiting is a technique used to control the number of requests a client can make to a server within a specific period of time.",
+        "It is commonly used to prevent abuse, spam, and excessive traffic on the server.",
       ],
+      example: `const rateLimit = require("express-rate-limit");
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+});
+
+app.use(limiter);
+`,
     },
     {
-      title: "Caching",
+      title: "Caching (தற்காலிகச் சேமிப்பு)",
       definition: [
         "Caching is a technique used to store and retrieve data from a server.",
-        "It is often used to improve performance and reduce load on the server.",
-        "Example: app.use(cache('1 day'));",
-        "Express Example: app.use(cache('1 day'));",
+        "It is commonly used to improve application performance and reduce the load on the server.",
+        "தமிழில்: Caching என்பது server-ல் dataஐ store மற்றும் retrieve செய்வது.",
       ],
+      example: `const cache = require('express-cache-controller');  
+app.use(cache('1 day'));`,
     },
     {
-      title: "Error Handling",
+      title: "Error Handling (பிழை கையாளுதல்)",
       definition: [
-        "Error Handling is a technique used to handle errors that occur in a server.",
-        "It is often used to improve performance and reduce load on the server.",
-        "Example: app.use(errorHandler());",
-        "Express Example: app.use(errorHandler());",
+        "Error handling is a technique used to catch and manage errors that occur in an application or server.",
+        "It helps prevent application crashes and provides meaningful error responses to users.",
       ],
-    },
-    {
-      title: "Security",
-      definition: [
-        "Security is a technique used to protect a server from attacks.",
-        "It is often used to improve performance and reduce load on the server.",
-        "Example: app.use(helmet());",
-        "Express Example: app.use(helmet());",
-      ],
-    },
-    {
-      title: "Compression",
-      definition: [
-        "Compression is a technique used to compress data.",
+      example: `app.use((err, req, res, next) => {
+  console.error(err.stack);
 
-        "Example: app.use(compression());",
-        "Express Example: app.use(compression());",
-      ],
+  res.status(500).json({
+    success: false,
+    message: "Something went wrong",
+  });
+});
+`,
     },
     {
-      title: "Logging",
+      title: "Security (பாதுகாப்பு)",
       definition: [
-        "Logging is a technique used to log information about requests and responses.",
-        "It is often used to improve performance and reduce load on the server.",
-        "Example: app.use(morgan('combined'));",
-        "Express Example: app.use(morgan('combined'));",
+        "Security is the practice of protecting a server and application from unauthorized access, attacks, and vulnerabilities.",
+        "It helps secure user data, improve application safety, and prevent common web attacks.",
+        "தமிழில்: Security என்பது server மற்றும் application-ஐ attacks மற்றும் unauthorized access-இலிருந்து பாதுகாப்பது.",
       ],
+      example: `const helmet = require("helmet");
+
+app.use(helmet());
+`,
     },
     {
-      title: "Authentication / Authorization",
+      title: "Compression (சுருக்கம்)",
+      definition: [
+        "Compression is a technique used to reduce the size of response data sent from the server.",
+        "It helps improve application performance and reduces bandwidth usage.",
+      ],
+      example: `const compression = require("compression");
+
+app.use(compression());
+`,
+    },
+    {
+      title: "Logging (பதிவு செய்தல்)",
+      definition: [
+        "Logging is a technique used to record information about requests, responses, and application events.",
+        "It helps developers monitor, debug, and track server activity more effectively.",
+        "தமிழில்: Logging என்பது application அல்லது server-ல் நடக்கும் செயல்களை பதிவு செய்வது.",
+      ],
+      example: `const morgan = require("morgan");
+
+app.use(morgan("combined"));
+`,
+    },
+    {
+      title: "Authentication / Authorization (அங்கீகரிப்பு / அனுமதி)",
       definition: [
         "Authentication is the process of verifying a user's identity.",
         "Authorization is the process of determining what a user is allowed to access.",
-        "Both are often used to secure applications and protect resources.",
-
-        "These techniques are commonly used to secure applications and protect resources.",
-        "Example: app.use(auth());",
-        "Express Example: app.use(auth());",
+        "Both are commonly used to secure applications and protect resources.",
+        "தமிழில்: Authentication என்பது user's identity-ஐ verify செய்வது.",
+        "தமிழில்: Authorization என்பது user-க்கு எந்த resources-ஐ access செய்ய அனுமதி உள்ளது என்பதை நிர்ணயிப்பது.",
       ],
+      example: `const jwt = require("jsonwebtoken");
+
+const verifyToken = (req, res, next) => {
+  const token = req.headers.authorization;
+
+  if (!token) {
+    return res.status(401).json({
+      message: "Access denied",
+    });
+  }
+
+  next();
+};
+
+app.use(verifyToken);
+`,
     },
     {
-      title: "CORS",
+      title: "CORS (குறுக்கு-மூல கோரிக்கைகள்)",
       definition: [
-        "CORS is a technique used to allow cross-origin requests.",
-        "It is often used to improve performance and reduce load on the server.",
-        "Example: app.use(cors());",
-        "Express Example: app.use(cors());",
+        "CORS (Cross-Origin Resource Sharing) is a technique used to allow or restrict requests between different domains or origins.",
+        "It is commonly used to enable secure communication between frontend and backend applications running on different origins.",
+        "தமிழில்: CORS என்பது different domains அல்லது origins-களுக்கு இடையில் requests அனுமதிப்பதற்கான ஒரு பாதுகாப்பு முறை.",
       ],
+      example: `const cors = require("cors");
+
+app.use(cors());
+`,
     },
 
     {
@@ -1956,45 +1996,69 @@ function CSRComponent() {
     {
       title: "Node.js",
       definition: [
-        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows running JavaScript outside the browser.",
-        "It is built on Chrome's V8 engine and is widely used for building scalable server-side applications.",
+        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript outside the browser.",
+        "It is built on Chrome's V8 JavaScript engine and is widely used for building fast and scalable server-side applications.",
+        "தமிழில்: Node.js என்பது browser-க்கு வெளியே JavaScript-ஐ இயக்க உதவும் runtime environment.",
       ],
-      example: `       const http = require('http'); 
-      http.createServer((req,res)=>res.end('Hello')).listen(3000);`,
+      example: `const http = require("http");
+
+http.createServer((req, res) => {
+  res.end("Hello");
+}).listen(3000);
+`,
     },
     {
-      title: "Express",
+      title: "Express.js",
       definition: [
         "Express.js is a minimal and flexible web framework for Node.js used to build APIs and web applications.",
         "It simplifies routing, middleware handling, and server creation.",
-        "Example: const express = require('express'); const app = express(); app.get('/', (req,res)=>res.send('Hello'));",
+        "தமிழில்: Express.js என்பது Node.js-க்கு பயன்படுத்தப்படும் ஒரு lightweight web framework ஆகும். இது APIs மற்றும் web applications உருவாக்க உதவுகிறது.",
       ],
-      example: `      const express = require('express'); 
-      const app = express(); 
-      app.get('/', (req,res)=>res.send('Hello'));`,
+      example: `const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
+`,
     },
     {
       title: "NPM",
       definition: [
-        "NPM (Node Package Manager) is used to install, manage, and share JavaScript packages.",
-        "It helps manage project dependencies efficiently.",
+        "NPM (Node Package Manager) is a package manager used to install, manage, and share JavaScript packages.",
+        "It helps developers manage project dependencies efficiently.",
+        "தமிழில்: NPM என்பது JavaScript packages-ஐ install, manage, மற்றும் share செய்ய பயன்படும் package manager ஆகும்.",
       ],
     },
     {
       title: "package.json",
       definition: [
-        "package.json is a configuration file that stores project metadata and dependencies.",
-        "It defines scripts, versions, and package information.",
-        'Example: { "name": "app", "version": "1.0.0", "dependencies": { "express": "^4.0.0" } }',
+        "package.json is a configuration file used in Node.js projects to store project metadata and dependencies.",
+        "It defines scripts, package versions, and other project-related information.",
+        "தமிழில்: package.json என்பது project பற்றிய தகவல்கள், dependencies, scripts, மற்றும் versions-ஐ சேமிக்கும் configuration file ஆகும்.",
       ],
+      example: `{
+  "name": "app",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.0.0"
+  }
+}`,
     },
     {
       title: "Middleware",
       definition: [
         "Middleware functions run during the request-response cycle and have access to req, res, and next.",
-        "They are used for logging, authentication, parsing, etc.",
-        "Example: app.use((req,res,next)=>{ console.log('Middleware'); next(); });",
+        "They are commonly used for logging, authentication, validation, error handling, and parsing request data.",
+        "தமிழில்: Middleware என்பது request மற்றும் response இடையே இயங்கும் function ஆகும்.",
       ],
+      example: `app.use((req, res, next) => {
+  console.log("Middleware executed");
+
+  next();
+});
+`,
     },
     {
       title: "Routing",
@@ -2036,37 +2100,35 @@ function CSRComponent() {
         "Example: process.env.PORT",
       ],
     },
-    {
-      title: "CORS",
-      definition: [
-        "CORS (Cross-Origin Resource Sharing) allows or restricts requests from different domains.",
-        "It is used to enable frontend-backend communication across origins.",
-        "Example: const cors = require('cors'); app.use(cors());",
-      ],
-    },
+
     {
       title: "Body Parser",
       definition: [
-        "Body parser middleware parses incoming request bodies into JSON format.",
-        "It allows accessing req.body in APIs.",
-        "Example: app.use(express.json());",
+        "Body parser middleware parses incoming request bodies into JSON or URL-encoded format.",
+        "It allows developers to access request data using req.body in APIs.",
+        "தமிழில்: Body Parser என்பது request body data-ஐ parse செய்து req.body மூலம் access செய்ய உதவும் middleware ஆகும்.",
       ],
+      example: `app.use(express.json());
+
+app.post("/user", (req, res) => {
+  console.log(req.body);
+
+  res.send("Data received");
+});
+`,
     },
-    {
-      title: "Async/Await",
-      definition: [
-        "Async/Await is used to handle asynchronous operations in a cleaner and readable way.",
-        "It works on top of Promises.",
-        "Example: const data = await fetchData();",
-      ],
-    },
+
     {
       title: "Error Handling",
       definition: [
-        "Error handling in Express is done using middleware with four parameters (err, req, res, next).",
-        "It helps manage application errors centrally.",
-        "Example: app.use((err,req,res,next)=>{ res.status(500).send(err.message); });",
+        "Error handling in Express is done using middleware functions with four parameters: (err, req, res, next).",
+        "It helps manage and handle application errors centrally.",
+        "தமிழில்: Error Handling என்பது application-ல் வரும் errors-ஐ handle செய்து proper response அனுப்ப உதவும் முறையாகும்.",
       ],
+      example: `app.use((err, req, res, next) => {
+  res.status(500).send(err.message);
+});
+`,
     },
     {
       title: "MVC Architecture",
