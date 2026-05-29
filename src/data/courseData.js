@@ -10,28 +10,19 @@ export const courseData = {
     {
       title: "Element",
       definition: [
-        `An HTML element is a type of HTML document component, one of several types of HTML nodes.
-         An HTML element can be an HTML tag, a comment, a doctype, or a processing instruction. 
-         An HTML element is defined by a start tag, some content, and an end tag. 
-         The start tag and end tag are also called opening and closing tags, respectively. 
-         The content can be text, other HTML elements, or a combination of both.`,
+        "An HTML element can be an HTML tag, a comment, a doctype, or a processing instruction. ",
+        "it is defined by a start tag, some content, and an end tag. ",
+        "The content can be text, other HTML elements, or a combination of both.,",
       ],
     },
     {
       title: "Attribute",
       definition: [
-        "An HTML attribute is a modifier of an HTML element type. It provides additional information about the element.",
+        "It provides additional information about the element.",
         'Attributes are always specified in the start tag (or opening tag), and usually come in name/value pairs like: name="value".',
       ],
     },
-    {
-      title: "Semantic HTML",
-      definition: [
-        "Semantic HTML is HTML that conveys meaning to the user and not just appearance.",
-        "Semantic HTML elements clearly describe their meaning in a human- and machine-readable way.",
-        "Examples of semantic HTML elements include <header>, <footer>, <article>, and <section>.",
-      ],
-    },
+
     {
       title: "Block vs Inline Elements",
       definition: [
@@ -41,20 +32,25 @@ export const courseData = {
     },
     {
       title: "HTML5",
-      definition:
-        "HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and current version of the HTML standard. It was published in October 2014 and includes new features such as support for multimedia, improved support for web applications, and enhanced semantic elements.",
+      definition: [
+        "HTML5 is a markup language used for structuring and presenting content on the World Wide Web.",
+        "It is the fifth and current version of the HTML standard.",
+        "It was published in October 2014 and includes new features such as support for multimedia, improved support for web applications, and enhanced semantic elements.",
+      ],
     },
 
     {
       title: "HTML Forms",
-      definition:
-        "HTML forms are used to collect user input. They consist (அடங்கியிருத்தல்) of form elements such as text fields, checkboxes, radio buttons, and submit buttons. Forms can be submitted to a server for processing or handled client-side using JavaScript.",
+      definition: [
+        "HTML forms are used to collect user input. They consist (அடங்கியிருத்தல்) of form elements such as text fields, checkboxes, radio buttons, and submit buttons.",
+        "Forms can be submitted to a server for processing or handled client-side using JavaScript.",
+      ],
     },
 
     {
       title: "HTML5 Semantic Elements",
       definition: [
-        "Semantic elements are those that clearly describe their meaning to both the browser and the developer. Examples include <header>, <footer>, <article>, <section>, and <nav>.",
+        "HTML5 semantic elements clearly describe their meaning to both the browser and the developer. Examples include <header>, <footer>, <article>, <section>, and <nav>.",
         "Using semantic elements improves accessibility, SEO, and code readability.",
       ],
     },
@@ -1126,6 +1122,60 @@ application efficient ஆகும்`,
   ],
   reactjs: [
     {
+      title: "Refactoring a React component",
+      definition: [
+        "Refactoring a React component means improving the code structure, readability, and maintainability without changing how it works.",
+      ],
+    },
+    {
+      title: "Composition in React",
+      definition: [
+        "Building components by combining smaller components instead of inheriting from them.Composition allows components to be combined using props and children to share behavior and UI.",
+      ],
+      example: `Composition patterns
+1️⃣ Children Pattern (Most Common)
+2️⃣ Props-based Composition
+3️⃣ Slot Pattern (Named Children)
+4️⃣ Compound Components Pattern (Very Important 🔥)
+5️⃣ Render Props Pattern
+`,
+    },
+    {
+      title: "Controlled Component",
+      definition: [
+        "A controlled component is a form element controlled by React state.",
+        "React handles the input value using useState.",
+        "The value is updated using onChange event.",
+      ],
+      example: `
+const [name, setName] = useState("");
+
+<input
+  type="text"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+/>
+`,
+    },
+
+    {
+      title: "Uncontrolled Component",
+      definition: [
+        "An uncontrolled component stores form data in the DOM itself.",
+        "React does not control the input value using state.",
+        "useRef is commonly used to access the input value.",
+      ],
+      example: `
+const inputRef = useRef();
+
+<input type="text" ref={inputRef} />
+
+<button onClick={() => console.log(inputRef.current.value)}>
+  Submit
+</button>
+`,
+    },
+    {
       title: "React Server Components",
       definition: [
         "React server comonenents is now the default in Next js",
@@ -1230,6 +1280,52 @@ application efficient ஆகும்`,
       ],
     },
     {
+      title: "Virtual DOM",
+      definition: [
+        "Virtual DOM is a lightweight copy of the Real DOM.",
+        "React creates a virtual representation of the UI in memory.",
+        "When state or props change, React updates the Virtual DOM first.",
+        "React compares the old Virtual DOM with the new Virtual DOM using a process called Diffing.",
+        "Only the changed elements are updated in the Real DOM for better performance.",
+      ],
+      example: `
+const [count, setCount] = useState(0);
+
+return (
+  <div>
+    <h1>{count}</h1>
+
+    <button onClick={() => setCount(count + 1)}>
+      Increment
+    </button>
+  </div>
+);
+`,
+    },
+    {
+      title: "Real DOM",
+      definition: [
+        "Real DOM is the actual DOM shown in the browser.",
+        "It directly represents the webpage structure.",
+        "Updating the Real DOM is slower because the browser re-renders the UI.",
+        "Every change in the Real DOM can affect performance.",
+        "JavaScript can directly manipulate the Real DOM using methods like getElementById.",
+      ],
+      example: `
+<h1 id="title">Hello</h1>
+
+<button onclick="changeText()">
+  Change Text
+</button>
+
+<script>
+  function changeText() {
+    document.getElementById("title").innerText = "Welcome";
+  }
+</script>
+`,
+    },
+    {
       title: "Memoization",
       definition:
         "Memoization is a technique for speeding up application by caching the results of expensive function calls and returning them when the same inputs are used again",
@@ -1290,8 +1386,10 @@ application efficient ஆகும்`,
 
     {
       title: "Props Drilling",
-      definition: `Prop drilling is a situation where you have to pass data through multiple levels of components in order to reach the component that needs the data. 
-      This can lead to code that is difficult to maintain and understand, as it can create a lot of unnecessary props being passed down through the component tree.`,
+      definition: [
+        "Prop drilling is a situation where you have to pass data through multiple levels of components in order to reach the component that needs the data.  This can lead to code that is difficult to maintain and understand, as it can create a lot of unnecessary props being passed down through the component tree.",
+        "props Drilling refers to the process of passing data from a high-level component down to a deep-level component thought intermediate component that do need the data themselves",
+      ],
     },
 
     {
@@ -1738,127 +1836,247 @@ function CSRComponent() {
     {
       title: "TypeScript",
       definition: [
-        "TypeScript is a strongly typed programming language that builds on JavaScript.",
-        "Example: let name: string = 'Simbu';",
+        "TypeScript is a strongly typed programming language that builds on top of JavaScript.",
+        "It adds static typing, interfaces, and modern features to improve code quality and maintainability.",
+        "தமிழில்: TypeScript என்பது JavaScript-க்கு மேலாக type safety வழங்கும் programming language ஆகும்.",
       ],
+      example: `// TypeScript Example
+let name: string = "John";
+
+console.log(name);
+`,
     },
     {
       title: "Static Typing",
       definition: [
-        "Static typing allows you to define variable types at compile time.",
-        "Example: let age: number = 25;",
+        "Static typing allows developers to define variable types at compile time.",
+        "It helps detect type-related errors before the code runs and improves code reliability.",
+        "தமிழில்: Static Typing என்பது variable-களின் type-ஐ முன்கூட்டியே define செய்வது.",
       ],
+      example: `let age: number = 25;
+
+let username: string = "Simbu";
+`,
     },
     {
       title: "Type Inference",
       definition: [
-        "Type inference automatically detects the type based on value.",
-        "Example: let count = 10; // inferred as number",
+        "Type inference automatically detects a variable's type based on its assigned value.",
+        "It reduces the need to explicitly define types in TypeScript.",
+        "தமிழில்: Type Inference என்பது value அடிப்படையில் type-ஐ TypeScript தானாக கண்டறிவது.",
       ],
+      example: `let username = "Simbu";
+// TypeScript automatically infers this as string
+
+let age = 25;
+// TypeScript automatically infers this as number
+`,
     },
     {
       title: "Interface",
       definition: [
-        "Interface defines structure of an object.",
-        "Example: interface User { name: string; age: number }",
+        "An interface in TypeScript is used to define the structure and shape of an object.",
+        "It helps enforce type safety and improves code readability and maintainability.",
+        "தமிழில்: Interface என்பது object-ன் structure மற்றும் properties-ஐ define செய்ய பயன்படுத்தப்படுகிறது.",
       ],
+      example: `interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: "Simbu",
+  age: 25,
+};
+`,
     },
     {
       title: "Type Alias",
       definition: [
-        "A Type Alias in TypeScript is used to create a new name for an existing type.",
-        "It helps make complex or repeated types more readable and reusable.",
-        "Example: type User = { name: string; age: number };",
+        "A type alias in TypeScript is used to create a custom name for a type.",
+        "It can be used for primitive types, objects, unions, tuples, and more.",
+        "தமிழில்: Type Alias என்பது ஒரு type-க்கு custom பெயர் உருவாக்க பயன்படுத்தப்படுகிறது.",
       ],
+      example: `type User = {
+  name: string;
+  age: number;
+};
+
+const user: User = {
+  name: "Simbu",
+  age: 25,
+};
+`,
     },
     {
       title: "Union Type",
       definition: [
-        "A Union Type in TypeScript allows a variable to have multiple possible types or values.",
-        "It is defined using the '|' (pipe) symbol.",
-
-        "React Example (ID): type ID = string | number; const [id, setId] = useState<ID>(1);",
-
-        "React Example (Status): type Status = 'loading' | 'success' | 'error'; const [status, setStatus] = useState<Status>('loading');",
+        "A union type allows a variable to hold multiple types of values.",
+        "It is created using the | (pipe) operator in TypeScript.",
+        "தமிழில்: Union Type என்பது ஒரு variable பல type values-ஐ வைத்திருக்க அனுமதிக்கும் type ஆகும்.",
       ],
+      example: `let value: string | number;
+
+value = "Simbu";
+value = 25;
+`,
     },
     {
       title: "Intersection Type",
       definition: [
-        "Intersection combines multiple types using '&'.",
-        "Example: type A = { name: string }; type B = { age: number }; type C = A & B;",
+        "An intersection type combines multiple types into a single type.",
+        "It is created using the & (ampersand) operator in TypeScript.",
+        "All properties from the combined types must be included.",
+        "தமிழில்: Intersection Type என்பது பல types-ஐ ஒன்றாக இணைத்து ஒரு single type உருவாக்க பயன்படுகிறது.",
       ],
+      example: `type User = {
+  name: string;
+};
+
+type Admin = {
+  role: string;
+};
+
+type AdminUser = User & Admin;
+
+const user: AdminUser = {
+  name: "Simbu",
+  role: "Admin",
+};
+`,
     },
     {
       title: "Generics",
       definition: [
-        "Generics create reusable components.",
-        "Example: function identity<T>(value: T): T { return value; }",
+        "Generics allow creating reusable components, functions, and types that work with different data types.",
+        "They help provide type safety while keeping code flexible and reusable.",
+        "தமிழில்: Generics என்பது பல data types-உடன் வேலை செய்யும் reusable code உருவாக்க பயன்படுகிறது.",
       ],
+      example: `function getData<T>(value: T): T {
+  return value;
+}
+
+const result1 = getData<string>("Hello");
+const result2 = getData<number>(100);
+`,
     },
     {
       title: "Enum",
       definition: [
-        "An Enum in TypeScript is used to define a set of named constant values.",
-        "It helps make code more readable and prevents invalid values.",
-
-        "Example: enum Status { Loading = 'LOADING', Success = 'SUCCESS', Error = 'ERROR' };",
-
-        "React Example: const [status, setStatus] = useState<Status>(Status.Loading);",
+        "An enum in TypeScript is used to define a set of named constant values.",
+        "It helps improve code readability and maintainability.",
+        "தமிழில்: Enum என்பது named constant values-ஐ define செய்ய பயன்படுத்தப்படும் TypeScript feature ஆகும்.",
       ],
+      example: `enum Status {
+  Loading,
+  Success,
+  Error,
+}
+
+let currentStatus: Status = Status.Success;
+
+console.log(currentStatus);
+`,
     },
     {
       title: "Tuple",
       definition: [
-        "A Tuple in TypeScript is a fixed-length array where each element has a specific type.",
-        "It ensures the order and type of values are maintained.",
-
-        "Example: type User = [string, number]; const user: User = ['Simbu', 22];",
-
-        "React Example: type User = [string, number]; const [user, setUser] = useState<User>(['Simbu', 22]);",
+        "A tuple is a special type of array in TypeScript where the number of elements and their types are fixed.",
+        "It allows storing multiple values with different types in a specific order.",
+        "தமிழில்: Tuple என்பது fixed length மற்றும் fixed types கொண்ட special array ஆகும்.",
       ],
+      example: `let user: [string, number];
+
+user = ["Simbu", 25];
+
+console.log(user);
+`,
     },
     {
       title: "Any",
       definition: [
-        "Any disables type checking.",
-        "Example: let data: any = 10; data = 'hello';",
+        "The any type in TypeScript allows a variable to hold any type of value.",
+        "It disables type checking for that variable.",
+        "தமிழில்: Any என்பது எந்த type value-யையும் store செய்ய அனுமதிக்கும் TypeScript type ஆகும்.",
       ],
+      example: `let data: any;
+
+data = "Simbu";
+data = 25;
+data = true;
+
+console.log(data);
+`,
     },
     {
       title: "Unknown",
       definition: [
-        "Unknown is safer than any and requires checking.",
-        "Example: let value: unknown = 'test'; if(typeof value === 'string') console.log(value);",
+        "The unknown type in TypeScript represents a value whose type is not known.",
+        "It is safer than the any type because type checking is required before using the value.",
+        "தமிழில்: Unknown என்பது type தெரியாத value-ஐ represent செய்யும் TypeScript type ஆகும்.",
       ],
+      example: `let value: unknown;
+
+value = "Simbu";
+value = 25;
+
+if (typeof value === "string") {
+  console.log(value.toUpperCase());
+}
+`,
     },
     {
       title: "Void",
       definition: [
-        "Void represents no return value.",
-        "Example: function log(): void { console.log('hi'); }",
+        "The void type in TypeScript represents the absence of a return value.",
+        "It is commonly used for functions that do not return anything.",
+        "தமிழில்: Void என்பது எந்த value-யும் return செய்யாத function-களுக்கு பயன்படுத்தப்படும் TypeScript type ஆகும்.",
       ],
+      example: `function greet(): void {
+  console.log("Hello");
+}
+greet();
+`,
     },
     {
       title: "Never",
       definition: [
-        "Never represents values that never occur.",
-        "Example: function error(): never { throw new Error('error'); }",
+        "The never type in TypeScript represents values that never occur.",
+        "It is commonly used for functions that throw errors or never finish execution.",
+        "தமிழில்: Never என்பது ஒருபோதும் value return செய்யாத நிலையை குறிக்கும் TypeScript type ஆகும்.",
       ],
+      example: `function throwError(message: string): never {
+  throw new Error(message);
+}
+throwError("Something went wrong");
+`,
     },
     {
       title: "Type Assertion",
       definition: [
-        "Type Assertion in TypeScript is used to tell the compiler the exact type of a value.",
-        "It is useful when you know more about the type than TypeScript can infer.",
-        "It does not change the value at runtime, only helps during type checking.",
-        "Syntax: value as Type",
-        "Example: let value: unknown = 'Hello'; let length = (value as string).length;",
-        "React Example: const inputRef = useRef<HTMLInputElement | null>(null); const value = inputRef.current?.value as string;",
+        "Type assertion is used to tell TypeScript the specific type of a value.",
+        "It helps developers override TypeScript's inferred type when necessary.",
+        "Type assertion can be done using the as keyword or angle bracket syntax.",
+        "தமிழில்: Type Assertion என்பது value-ன் type-ஐ developer manually குறிப்பிட பயன்படுத்தப்படுகிறது.",
       ],
+      example: `let value: unknown = "Hello";
+let strLength: number = (value as string).length;
+console.log(strLength);
+`,
     },
   ],
   node_and_express: [
+    {
+      title: "Express.js",
+      definition: [
+        "Express.js is a web application framework for Node.js.",
+        "It provides a simple and flexible way to build web applications and APIs.",
+        "தமிழில்: Express.js என்பது Node.js கொண்ட web application framework ஆகும்.",
+      ],
+    },
+    {
+      title: "ex:cmd yarn install --network-timeout 100000",
+    },
     {
       title: "Rate Limiting",
       definition: [
@@ -2505,6 +2723,32 @@ app.post("/user", (req, res) => {
     },
   ],
   ECommerce: [
+    {
+      title: "POS",
+      definition: [
+        "https://www.youtube.com/watch?v=nD0IyJLKio4",
+        "Point of Sale system for managing sales transactions.",
+        "Used in retail stores to process customer purchases.",
+        "Bill podura system + payment collect pannura software/hardware",
+        "Billing software",
+        "Barcode scanner",
+        "Receipt printer",
+        "Payment machine",
+        "Inventory management",
+        "Example: Square, Shopify POS",
+      ],
+      example: `Supermarket, Restaurant, Medical shop, Clothing shop, Tea shop`,
+    },
+    {
+      title: "B2B Ecommerce",
+      definition: [
+        "Business to Business Ecommerce Website nu meaning.",
+        "Oru business, இன்னொரு business-க்கு online-ல products அல்லது services sell பண்ணுற website.",
+        "Company ➝ Company ku sell pannum",
+        "Wholesale website",
+      ],
+      example: `Alibaba, IndiaMART, Udaan`,
+    },
     {
       title: "becodemy",
       definition: [
