@@ -8,7 +8,7 @@ const CourseContainer = () => {
   const { courseId } = useParams();
 
   const [topics, setTopics] = useState([]);
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   if (!courseId) return null;
@@ -36,25 +36,6 @@ const CourseContainer = () => {
   const handleClick = (index) => {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
-
-  // ✅ Better mapping approach
-  // const formatCourseName = (id) => {
-  //   const map = {
-  //     html: "HTML",
-  //     css: "CSS",
-  //     js: "JavaScript",
-  //     react: "React JS",
-  //     nextjs: "Next JS",
-  //     typescript: "TypeScript",
-  //     node_and_express: "Node & Express",
-  //     mongodb: "MongoDB",
-  //     git: "Git & GitHub",
-  //     cicd: "CI/CD",
-  //     docker: "Docker",
-  //   };
-
-  //   return map[id] || id;
-  // };
 
   const formatCourseName = (id) => {
     if (!id) return "";

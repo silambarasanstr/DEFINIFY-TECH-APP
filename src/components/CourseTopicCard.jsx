@@ -57,7 +57,9 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
             </div>
           )}
 
-          <pre className="text-sm text-gray-600 font-semibold">{topic.example}</pre>
+          <pre className="text-sm text-gray-600 font-semibold">
+            {topic.example}
+          </pre>
         </div>
       )}
     </div>

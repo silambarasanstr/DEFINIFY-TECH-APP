@@ -31,6 +31,7 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "Docker", path: "/docker", icon: Box },
     { name: "npm", path: "/npm", icon: Box },
     { name: "Jenkins", path: "/jenkins", icon: Settings },
+    { name: "kubernetes", path: "/kubernetes", icon: Layers },
     { name: "dataStructure", path: "/dataStructure", icon: Database },
     { name: "ECommerce", path: "/ECommerce", icon: Database },
   ];

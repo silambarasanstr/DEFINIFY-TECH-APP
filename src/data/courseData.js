@@ -10,6 +10,7 @@ export const courseData = {
     {
       title: "Element",
       definition: [
+        "An HTML element is a building block of a web page. It tells the browser how to display content like text, images, links, buttons, and more.",
         "An HTML element can be an HTML tag, a comment, a doctype, or a processing instruction. ",
         "it is defined by a start tag, some content, and an end tag. ",
         "The content can be text, other HTML elements, or a combination of both.,",
@@ -26,8 +27,8 @@ export const courseData = {
     {
       title: "Block vs Inline Elements",
       definition: [
-        "Block-level elements start on a new line and take up the full width available. Examples include <div>, <p>, and <h1>.",
-        "Inline elements do not start on a new line and only take up as much width as necessary. Examples include <span>, <a>, and <strong>.",
+        "Block-level elements. Takes  full width available. Start from a new line and  ",
+        "Inline elements. Takes only required width. Stay on the same line.",
       ],
     },
     {
@@ -468,6 +469,21 @@ export const courseData = {
       ],
     },
     {
+      title: "OOP Concepts",
+      definition: [
+        "Encapsulation → bundling data and methods together inside a class and restricting direct access to some details.",
+        "Encapsulation helps in data hiding and protecting object integrity using private fields (#) or controlled access (get/set).",
+        "Polymorphism → ability of a method to behave differently based on the object or context.",
+        "Polymorphism can be achieved through method overriding or method overloading (JS mostly uses overriding).",
+        "Abstraction → hiding complex implementation details and showing only the necessary features.",
+        "Abstraction helps in reducing complexity and improving code maintainability.",
+        "Encapsulation example → using private fields and getters/setters",
+        "Polymorphism example → same method name with different behavior in child class",
+        "Abstraction example → exposing only essential methods and hiding internal logic",
+        " Inheritance is a mechanism in JavaScript that allows one object to inherit properties and methods from another object.",
+      ],
+    },
+    {
       title: "Class",
       definition: [
         "A class is a blueprint for creating objects. It defines properties (data) and methods (functions) that the objects will have.",
@@ -486,19 +502,49 @@ export const courseData = {
         "Classes are syntactic sugar over JavaScript prototypes",
       ],
     },
+
     {
-      title: "OOP Concepts",
+      title: "Variable",
       definition: [
-        "Encapsulation → bundling data and methods together inside a class and restricting direct access to some details.",
-        "Encapsulation helps in data hiding and protecting object integrity using private fields (#) or controlled access (get/set).",
-        "Polymorphism → ability of a method to behave differently based on the object or context.",
-        "Polymorphism can be achieved through method overriding or method overloading (JS mostly uses overriding).",
-        "Abstraction → hiding complex implementation details and showing only the necessary features.",
-        "Abstraction helps in reducing complexity and improving code maintainability.",
-        "Encapsulation example → using private fields and getters/setters",
-        "Polymorphism example → same method name with different behavior in child class",
-        "Abstraction example → exposing only essential methods and hiding internal logic",
-        " Inheritance is a mechanism in JavaScript that allows one object to inherit properties and methods from another object.",
+        " A Variable are named storage location that can hold data.Variable are used to store the data that can be accessed and manipulate throughout a program",
+        "you can declare a variable using the var,let and const keyword",
+      ],
+    },
+
+    {
+      title: "Hoisting",
+      definition: [
+        "Hoisting in JavaScript is the behaviour where variables and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.",
+        "This means you can use variables and functions before they are declared in the code (depending on type).",
+      ],
+      example: `Function Hoisting: function greet() { console.log('Hello'); } greet(); // Works,
+
+Variable Hoisting (var): console.log(a); var a = 10; // undefined (not error),
+
+let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal Dead Zone),
+      `,
+    },
+    {
+      title: "Scope in JavaScript",
+      definition: [
+        "Scope is the accessibility of variables, object and functions where you can use or reference them.",
+
+        "1. Global Scope: Variables declared outside any function or block. Accessible everywhere.",
+        "Example: let a = 10; function test() { console.log(a); }",
+
+        "2. Function Scope: Variables declared inside a function are accessible only inside that function.",
+        "Example: function test() { let b = 20; console.log(b); }",
+
+        "3. Block Scope: Variables declared using let and const inside {} are accessible only within that block.",
+        "Example: if(true) { let c = 30; }",
+
+        "4. Lexical Scope: Inner functions can access variables of outer functions.",
+      ],
+    },
+    {
+      title: "Temporal Dead Zone ",
+      definition: [
+        "Temporal Dead Zone is the time between entering a scope and the moment a let or const variable exists but cannot be accessed",
       ],
     },
     {
@@ -654,9 +700,8 @@ export const courseData = {
       title: "Factory Function",
 
       definition: [
-        "Returns object",
         "Used to create objects",
-        "Object creation pattern",
+
         "A Factory Function is a function that returns an object.",
         "It is used to create multiple objects without using class or constructor function.",
       ],
@@ -687,7 +732,6 @@ user1.greet();
         "Returns function",
         "Used to split arguments",
 
-        "Functional programming technique",
         "Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.",
         "It helps in creating reusable and specialized functions.",
         "Instead of passing all arguments at once, you pass them one by one.",
@@ -773,16 +817,13 @@ application efficient ஆகும்`,
     {
       title: "Event Loop",
       definition: [
-        "The Event Loop is a mechanism that allows JavaScript to handle asynchronous operations while running in a single-threaded environment.",
-        "JavaScript executes code using a Call Stack, where functions are pushed and popped during execution.",
+        "Event Loop continuously checks if the Call Stack is empty and then moves tasks from queues to the stack.",
+        "The Event Loop is a handle asynchronous operations while running in a single-threaded environment.",
         "Asynchronous operations (like setTimeout, Promises, API calls) are handled by Web APIs and moved to callback queues.",
         "Callback Queue (Task Queue) → stores callbacks from setTimeout, setInterval, DOM events.",
         "Microtask Queue → stores Promise callbacks (.then, .catch, .finally) and runs before the callback queue.",
-        "Event Loop continuously checks if the Call Stack is empty and moves tasks from queues to the stack.",
-        "Execution order → Call Stack → Microtask Queue → Callback Queue",
         "Promises (microtasks) have higher priority than setTimeout (macrotasks).",
-        "setTimeout does not guarantee exact timing, it only ensures minimum delay.",
-        "Use case → handling async tasks like API calls, timers, user events without blocking the main thread",
+        "Execution order → Call Stack → Microtask Queue → Callback Queue",
       ],
     },
     {
@@ -818,20 +859,11 @@ application efficient ஆகும்`,
       ],
     },
     {
-      title: "Asynchronous JavaScript",
+      title: "Synchronous and  Asynchronous JavaScript",
       definition: [
+        "Synchronous JavaScript runs code line by line, blocking the execution of subsequent code until the current operation is completed.",
         "Asynchronous JavaScript allows code to run without blocking the execution of other code.",
         "It is used for tasks that take time like API calls, timers, and file operations.",
-
-        "JavaScript uses async mechanisms like callbacks, promises, and async/await.",
-
-        "Example (setTimeout): console.log('Start'); setTimeout(() => console.log('Async'), 2000); console.log('End');",
-
-        "Output: Start → End → Async",
-
-        "Example (Promise): new Promise(resolve => resolve('Done')).then(console.log);",
-
-        "Example (async/await): async function test() { const res = await fetch(url); console.log(res); }",
       ],
     },
     {
@@ -840,6 +872,7 @@ application efficient ஆகும்`,
         "A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.",
         "A Promise has three states → pending, fulfilled, and rejected.",
         "Promises are used to handle asynchronous operations like API calls, file reading, or timers.",
+        "own-a Promise create pannalam",
         "Creating a Promise → new Promise((resolve, reject) => {})",
         "Resolving a Promise → resolve(value)",
         "Rejecting a Promise → reject(error)",
@@ -847,8 +880,7 @@ application efficient ஆகும்`,
         "Handling errors → .catch()",
         "Finally block → .finally() runs regardless of success or failure",
         "Promise chaining → multiple .then() calls in sequence",
-        "Async/Await → cleaner syntax to work with Promises",
-        "Error handling with try...catch in async/await",
+
         "Promise.all → runs multiple promises in parallel (fails if one fails)",
         "Promise.allSettled → waits for all promises (success + failure)",
         "Promise.race → returns the first completed promise",
@@ -898,39 +930,7 @@ application efficient ஆகும்`,
         "Event delegation is also known as event bubbling or event capturing.",
       ],
     },
-    {
-      title: "Hoisting",
-      definition: [
-        "Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope before code execution.",
-        "This means you can use variables and functions before they are declared in the code (depending on type).",
 
-        "Function Hoisting: function greet() { console.log('Hello'); } greet(); // Works",
-
-        "Variable Hoisting (var): console.log(a); var a = 10; // undefined (not error)",
-
-        "let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal Dead Zone)",
-
-        "Only declarations are hoisted, not initializations.",
-      ],
-    },
-    {
-      title: "Scope in JavaScript",
-      definition: [
-        "Scope defines the accessibility (visibility) of variables in different parts of the code.",
-        "It determines where a variable can be used and where it cannot.",
-
-        "1. Global Scope: Variables declared outside any function or block. Accessible everywhere.",
-        "Example: let a = 10; function test() { console.log(a); }",
-
-        "2. Function Scope: Variables declared inside a function are accessible only inside that function.",
-        "Example: function test() { let b = 20; console.log(b); }",
-
-        "3. Block Scope: Variables declared using let and const inside {} are accessible only within that block.",
-        "Example: if(true) { let c = 30; }",
-
-        "4. Lexical Scope: Inner functions can access variables of outer functions.",
-      ],
-    },
     {
       title: "This Keyword",
       definition:
@@ -1020,43 +1020,7 @@ application efficient ஆகும்`,
         "Angular example (Framework): Full MVC structure with built-in routing and services",
       ],
     },
-    {
-      title: "JavaScript Engines",
-      definition: [
-        "A JavaScript Engine is a program that executes JavaScript code.",
-        "It converts JavaScript code into machine code so the computer can understand and run it.",
-        "Every browser has its own JavaScript engine.",
 
-        "Main components of a JS Engine:",
-        "1. Parser → Reads JS code and converts it into Abstract Syntax Tree (AST)",
-        "2. Interpreter → Executes code line by line",
-        "3. Compiler (JIT) → Converts code into optimized machine code",
-        "4. Memory Heap → Stores variables and objects",
-        "5. Call Stack → Executes function calls",
-
-        "Example Engines:",
-        "Chrome → V8 Engine",
-        "Firefox → SpiderMonkey",
-        "Safari → JavaScriptCore",
-      ],
-    },
-    {
-      title: "JavaScript Runtime Environment",
-      definition: [
-        "A JavaScript Runtime Environment is the system that allows JavaScript code to run outside or inside a browser.",
-        "It provides everything needed to execute JS: engine, APIs, event loop, and memory management.",
-
-        "Main components:",
-        "1. JavaScript Engine (e.g., V8) → Executes JS code",
-        "2. Call Stack → Keeps track of function execution",
-        "3. Heap → Memory storage",
-        "4. Web APIs (Browser) / Node APIs → setTimeout, fetch, fs, etc.",
-        "5. Callback Queue & Microtask Queue → Manages async tasks",
-        "6. Event Loop → Moves tasks between queues and call stack",
-
-        "Example: setTimeout(() => console.log('Hello'), 1000); runs via Web APIs + Event Loop",
-      ],
-    },
     {
       title: "Map",
       definition: [
@@ -1121,6 +1085,46 @@ application efficient ஆகும்`,
     },
   ],
   reactjs: [
+    {
+      title: "Memory Leaks",
+      definition: [
+        "Memory leaks occur when objects are not properly cleaned up or released from memory.",
+        "Memory leaks can increase memory usage and cause the application to become slow, unstable, or crash.",
+        "A memory leak occurs when memory that is no longer needed is not released.",
+        "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
+        "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
+      ],
+      example: `
+useEffect(() => {
+  const interval = setInterval(() => {
+    console.log("Running...");
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, []);
+`,
+    },
+    {
+      title: "State Lifting (Lifting State Up)",
+      definition: [
+        "Lifting State Up is a React pattern where state is moved from a child component to its closest common parent component.",
+        "This allows multiple child components to access and share the same state through props.",
+        "It helps keep related data in a single source of truth and ensures UI consistency across components.",
+      ],
+      example: "",
+    },
+    {
+      title: "React Context",
+      definition: [
+        "React Context is a way to pass data through the component tree without having to pass props down manually at every level.",
+      ],
+    },
+    {
+      title: "React Testing Library",
+      definition: [
+        "React Testing Library is a set of utilities for testing React components.",
+      ],
+    },
     {
       title: "Refactoring a React component",
       definition: [
@@ -1840,9 +1844,7 @@ function CSRComponent() {
         "It adds static typing, interfaces, and modern features to improve code quality and maintainability.",
         "தமிழில்: TypeScript என்பது JavaScript-க்கு மேலாக type safety வழங்கும் programming language ஆகும்.",
       ],
-      example: `// TypeScript Example
-let name: string = "John";
-
+      example: `let name: string = "John";
 console.log(name);
 `,
     },
@@ -1854,7 +1856,6 @@ console.log(name);
         "தமிழில்: Static Typing என்பது variable-களின் type-ஐ முன்கூட்டியே define செய்வது.",
       ],
       example: `let age: number = 25;
-
 let username: string = "Simbu";
 `,
     },
@@ -1879,14 +1880,15 @@ let age = 25;
         "It helps enforce type safety and improves code readability and maintainability.",
         "தமிழில்: Interface என்பது object-ன் structure மற்றும் properties-ஐ define செய்ய பயன்படுத்தப்படுகிறது.",
       ],
-      example: `interface User {
-  name: string;
-  age: number;
+      example: `
+interface User {
+    name: string;
+    age: number;
 }
 
 const user: User = {
-  name: "Simbu",
-  age: 25,
+    name: "Simbu",
+    age: 25,
 };
 `,
     },
@@ -1897,15 +1899,17 @@ const user: User = {
         "It can be used for primitive types, objects, unions, tuples, and more.",
         "தமிழில்: Type Alias என்பது ஒரு type-க்கு custom பெயர் உருவாக்க பயன்படுத்தப்படுகிறது.",
       ],
-      example: `type User = {
-  name: string;
-  age: number;
+      example: `
+type User = {
+    name: string;
+    age: number;
 };
 
 const user: User = {
-  name: "Simbu",
-  age: 25,
+    name: "Simbu",
+    age: 25,
 };
+
 `,
     },
     {
@@ -1915,10 +1919,65 @@ const user: User = {
         "It is created using the | (pipe) operator in TypeScript.",
         "தமிழில்: Union Type என்பது ஒரு variable பல type values-ஐ வைத்திருக்க அனுமதிக்கும் type ஆகும்.",
       ],
-      example: `let value: string | number;
-
+      example: `
+Basic Union Type
+let value: string | number;
 value = "Simbu";
 value = 25;
+
+String Literal Union
+type Color = "red" | "green" | "blue";
+let color: Color = "red";
+
+Array Union
+let numbers: (number | string)[] = [1, 2, 3, "4", "5"];
+
+Object Union
+type User = {
+  name: string;
+  age: number;
+};
+
+let user: User | null = {
+  name: "Simbu",
+  age: 25,
+};
+
+
+type SuccessResponse = { status: "success"; data: Order[] };
+type ErrorResponse  = { status: "error"; message: string };
+
+type ApiResponse = SuccessResponse | ErrorResponse;
+
+const handle = (res: ApiResponse) => {
+  if (res.status === "success") {
+    console.log(res.data);    // ✅ data இருக்கும்
+  } else {
+    console.log(res.message); // ✅ message இருக்கும்
+  }
+};
+
+
+
+function Union
+function add(a: number | string, b: number | string) {
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  } else {
+    return a.toString() + b.toString();
+  }
+}
+
+Nullable Union 
+
+const [order, setOrder] = useState<Order | null>(null);
+
+// check பண்ணாம access பண்ண வேண்டாம்
+if (order) {
+  console.log(order.orderNumber); // ✅ safe
+}
+
+
 `,
     },
     {
@@ -1967,15 +2026,13 @@ const result2 = getData<number>(100);
         "It helps improve code readability and maintainability.",
         "தமிழில்: Enum என்பது named constant values-ஐ define செய்ய பயன்படுத்தப்படும் TypeScript feature ஆகும்.",
       ],
-      example: `enum Status {
-  Loading,
-  Success,
-  Error,
+      example: `
+      enum Role {
+  Admin = "admin",
+  User = "user",
 }
 
-let currentStatus: Status = Status.Success;
-
-console.log(currentStatus);
+const userRole: Role = Role.Admin;
 `,
     },
     {
@@ -2062,7 +2119,18 @@ throwError("Something went wrong");
       example: `let value: unknown = "Hello";
 let strLength: number = (value as string).length;
 console.log(strLength);
+
+
+const input = e.target as HTMLInputElement;
+const data = response.data as Order;
+
 `,
+    },
+    {
+      title: "Non-null Assertion",
+      example: `const user = localStorage.getItem("user")!;
+      const role = user?.role ?? "user";
+      `,
     },
   ],
   node_and_express: [
@@ -2568,48 +2636,119 @@ app.post("/user", (req, res) => {
     {
       title: "Docker Command",
       definition: [
-        "Example: docker run -d -p 8080:80 --name docker-learn-container docker-learn-app",
-        "Example : docker stop docker-learn-container && docker rm docker-learn-container",
-        "Example: docker build -t docker-learn-app .",
-        "Example : docker stop docker-learn-container; docker rm docker-learn-container",
+        "1. Image Build : docker build -t course-app .",
+        "2. Container Run: docker run -d --name course-app-container -p 4001:4001 course-app",
+        "3. Stop Container : docker stop course-app-container",
+        "4. Remove Container : docker rm course-app-container",
+        "5. Check Running Containers : docker ps",
+        "6. Check All Containers : docker ps -a",
+        "7. Logs: docker logs course-app-container",
+        "8. Start Container : docker start course-app-container",
+        "9. Remove Image : docker rmi course-app",
+        "10. Check Images : docker images",
+        "11. Remove All Images : docker rmi $(docker images -a -q)",
+        "12. Remove All Containers : docker rm $(docker ps -a -q)",
+        "13. Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
       ],
     },
     {
-      title: "Docker Container",
+      title: "Frontend Dockerfile",
       definition: [
-        "What is a Docker container?",
+        "Build Images : docker build -t course-app .",
+        "Run Containers : docker run -d --name course-app-container -p 5173:5173 course-app",
+      ],
+      example: `
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "--host"]
+      `,
+    },
+    {
+      title: "Backend Dockerfile",
+      definition: [
+        "Build Images : docker build -t course-app .",
+        "Run Containers : docker run -d --name course-app-container -p 4001:4001 course-app",
+      ],
+      example: `
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 4000
+
+CMD ["npm", "run", "dev"]`,
+    },
+    {
+      title: "Docker Compose",
+      definition: [
+        "docker-compose.yml",
+        "Build Images : docker-compose build",
+        "Run Containers : docker-compose up -d",
+        "Stop Containers : docker-compose stop",
+        "Remove Containers : docker-compose rm",
+      ],
+      example: `
+services:
+frontend:
+build: ./course-app
+ports:
+- "5173:5173"
+
+backend:
+build: ./server
+ports:
+- "4000:4000"
+environment:
+MONGODB_URI: your_mongodb_connection_string
+      `,
+    },
+    {
+      title: "What is a Docker Container ?",
+      definition: [
         "A Docker container is a lightweight, standalone package that includes everything needed to run an application.",
         "Example: docker run -d nginx",
       ],
     },
     {
-      title: "Docker Image",
+      title: "What is a Docker Image ?",
       definition: [
-        "What is a Docker image?",
         "A Docker image is a read-only template used to create containers.",
         "Example: docker pull node",
       ],
     },
     {
-      title: "Dockerfile",
+      title: "What is a Dockerfile ?",
       definition: [
-        "What is a Dockerfile?",
         "A Dockerfile is a script with instructions to build Docker images.",
         "Example: FROM node:18\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD ['node','app.js']",
       ],
     },
     {
-      title: "Docker Compose",
+      title: "What is a Docker Compose ?",
       definition: [
-        "What is Docker Compose?",
         "Docker Compose is a tool to run multi-container applications.",
         "Example: docker-compose up",
       ],
     },
     {
-      title: "docker-compose.yml",
+      title: "What is a docker-compose.yml ?",
       definition: [
-        "What is docker-compose.yml?",
         "It is a config file to define services, networks, and volumes.",
         "Example: version: '3'\nservices:\n  app:\n    image: node\n    ports:\n      - '3000:3000'",
       ],
@@ -2617,7 +2756,6 @@ app.post("/user", (req, res) => {
     {
       title: "Docker vs Virtual Machine",
       definition: [
-        "What is the difference?",
         "Docker containers share OS, VMs include full OS.",
         "Example: Docker starts in seconds, VM takes minutes",
       ],
@@ -2630,30 +2768,7 @@ app.post("/user", (req, res) => {
         "Example: docker pull nginx",
       ],
     },
-    {
-      title: "Docker Commands - Run & Stop",
-      definition: [
-        "How to run and stop containers?",
-        "docker run <image>, docker stop <container_id>",
-        "Example: docker run -d nginx && docker stop <id>",
-      ],
-    },
-    {
-      title: "Docker Commands - Build & Remove",
-      definition: [
-        "How to build and remove?",
-        "docker build -t <name> ., docker rm <id>",
-        "Example: docker build -t myapp .",
-      ],
-    },
-    {
-      title: "Docker Commands - Logs & Exec",
-      definition: [
-        "How to check logs and access container?",
-        "docker logs <id>, docker exec -it <id> bash",
-        "Example: docker exec -it mycontainer bash",
-      ],
-    },
+
     {
       title: "Docker Compose Commands",
       definition: [
@@ -2713,6 +2828,33 @@ app.post("/user", (req, res) => {
         "What is a Jenkins plugin?",
         "A Jenkins plugin is a set of instructions that Jenkins executes to build, test, and deploy software.",
         "Example: Jenkins plugin",
+      ],
+    },
+  ],
+  kubernetes: [
+    {
+      title: "Kubernetes",
+      definition: [
+        "What is Kubernetes?",
+        "Kubernetes is an open-source container orchestration platform for automating deployment, scaling, and management of containerized applications.",
+        "Example: Kubernetes cluster",
+      ],
+    },
+    {
+      title: "Kubernetes Command",
+      definition: [
+        "Example: kubectl get pods",
+        "Example: kubectl get pods",
+        "Example: kubectl get pods",
+        "Example: kubectl get pods",
+      ],
+    },
+    {
+      title: "Kubernetes Deployment",
+      definition: [
+        "What is a Kubernetes deployment?",
+        "A Kubernetes deployment is a set of instructions that Kubernetes executes to build, test, and deploy software.",
+        "Example: Kubernetes deployment",
       ],
     },
   ],
