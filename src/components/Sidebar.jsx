@@ -34,6 +34,7 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "kubernetes", path: "/kubernetes", icon: Layers },
     { name: "dataStructure", path: "/dataStructure", icon: Database },
     { name: "ECommerce", path: "/ECommerce", icon: Database },
+    { name: "VSshortcuts", path: "/VSshortcuts", icon: Database },
   ];
 
   return (
@@ -48,29 +49,30 @@ const Sidebar = ({ open, setOpen }) => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-slate-900 text-slate-300 z-30 transform transition-transform duration-300
-        ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
+        className={`fixed top-0 left-0 h-screen w-64 bg-slate-900 text-slate-300 z-30
+  transform transition-transform duration-300
+  flex flex-col
+  ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
       >
         {/* Header */}
-        <div className="p-6 flex items-center justify-between">
+        <div className="p-6 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
             <Code className="text-white w-6 h-6" />
             <h1 className="text-md font-bold text-white">DEFINIFY-TECH-APP</h1>
           </div>
 
-          {/* Close button mobile */}
           <button className="md:hidden" onClick={() => setOpen(false)}>
             <X />
           </button>
         </div>
 
-        {/* Nav */}
-        <nav className="px-4 space-y-1 text-sm">
+        {/* Scrollable Nav */}
+        <nav className="flex-1 overflow-y-auto px-4 space-y-1 text-sm pb-4">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
-              onClick={() => setOpen(false)} // mobile close
+              onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-2 rounded-lg ${
                   isActive

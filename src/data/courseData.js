@@ -3,33 +3,95 @@ import { title } from "framer-motion/client";
 export const courseData = {
   html: [
     {
-      title: "HTML",
+      title: "What is HTML?",
       definition:
-        "HyperText Markup Language is the standard markup language for documents designed to be displayed in a web browser.",
+        "HTML (HyperText Markup Language) is the standard markup language used to create the structure of web pages.",
+    },
+    {
+      title: "What is DOCTYPE?",
+      definition:
+        "DOCTYPE tells the browser that the document is written in HTML5",
+    },
+    {
+      title: "What is HyperText?",
+      definition:
+        "HyperText is text containing links that allow users to navigate from one page to another.",
+      example: `<div>
+<p>
+<h1>
+<section>
+<article>`,
+    },
+    {
+      title: "What is the Head Tag?",
+      definition:
+        "The <head> tag is used to contain metadata about an HTML document. It is placed in the <html> element and contains information such as the page title, character set, and links to external resources.",
+    },
+    {
+      title: "What is the Body Tag?",
+      definition: "The <body> contains everything visible on the webpage.",
+    },
+    {
+      title: "What is Metadata?",
+      definition:
+        "Metadata is data that provides information about other data. In HTML, metadata is used to provide information about the document, such as the title, description, and keywords.",
+      example: `<meta charset="UTF-8">
+<meta name="description" content="HTML Tutorial">`,
+    },
+    {
+      title: "What is a Viewport?",
+      definition:
+        "The viewport controls how a webpage is displayed on different devices.",
+      example: `<meta name="viewport" content="width=device-width, initial-scale=1">`,
+    },
+    {
+      title: "What is a Tag?",
+      definition:
+        "A tag is a keyword enclosed in angle brackets (<>) that tells the browser how to display content.",
     },
     {
       title: "Element",
       definition: [
+        "An HTML element consists of the opening tag, content, and closing tag.",
         "An HTML element is a building block of a web page. It tells the browser how to display content like text, images, links, buttons, and more.",
-        "An HTML element can be an HTML tag, a comment, a doctype, or a processing instruction. ",
-        "it is defined by a start tag, some content, and an end tag. ",
-        "The content can be text, other HTML elements, or a combination of both.,",
       ],
+    },
+    {
+      title: "What is Nested Element?",
+      definition: "An element placed inside another element.",
+      example: `<div>
+    <p>Hello</p>
+</div>`,
+    },
+    {
+      title: "What is an Empty Element?",
+      definition: "An element that does not have a closing tag.",
+      example: `<br>
+<hr>
+<img>
+<input>
+<meta>
+<link>`,
     },
     {
       title: "Attribute",
       definition: [
-        "It provides additional information about the element.",
-        'Attributes are always specified in the start tag (or opening tag), and usually come in name/value pairs like: name="value".',
+        "It is provide additional information about the element.",
+        'Attributes are always specified (குறிப்பிடப்பட்டது) in the start tag (or opening tag), and usually come in name/value pairs like: name="value".',
       ],
     },
 
     {
       title: "Block vs Inline Elements",
       definition: [
-        "Block-level elements. Takes  full width available. Start from a new line and  ",
+        "Block-level elements. Takes full width available. Start from a new line and  ",
         "Inline elements. Takes only required width. Stay on the same line.",
       ],
+      example: `<span>
+<a>
+<strong>
+<em>
+<img>`,
     },
     {
       title: "HTML5",
@@ -41,7 +103,7 @@ export const courseData = {
     },
 
     {
-      title: "HTML Forms",
+      title: "Forms",
       definition: [
         "HTML forms are used to collect user input. They consist (அடங்கியிருத்தல்) of form elements such as text fields, checkboxes, radio buttons, and submit buttons.",
         "Forms can be submitted to a server for processing or handled client-side using JavaScript.",
@@ -49,27 +111,22 @@ export const courseData = {
     },
 
     {
-      title: "HTML5 Semantic Elements",
+      title: "Semantic Elements",
       definition: [
-        "HTML5 semantic elements clearly describe their meaning to both the browser and the developer. Examples include <header>, <footer>, <article>, <section>, and <nav>.",
-        "Using semantic elements improves accessibility, SEO, and code readability.",
+        "HTML5 semantic elements clearly describe their meaning to both the browser and the developer.",
       ],
-    },
+      example: `<header>
+<footer>
+<article>
+<section>
+<nav>
 
-    {
-      title: "HTML5 Multimedia Elements",
-      definition: [
-        "HTML5 introduced new multimedia elements such as <audio> and <video> for embedding audio and video content directly into web pages without the need for third-party plugins.",
-        "These elements provide built-in controls for play, pause, and volume, making it easier to manage multimedia content on the web.",
-      ],
-    },
+Benefits:
+Better SEO
+Better Accessibility
+Easier Maintenance
 
-    {
-      title: "HTML5 APIs",
-      definition: [
-        "HTML5 includes several APIs (Application Programming Interfaces) that allow developers to create more interactive and dynamic web applications. Examples include the Geolocation API, Web Storage API, and Canvas API.",
-        "These APIs enable developers to access device features, store data locally, and create graphics and animations directly in the browser.",
-      ],
+`,
     },
 
     {
@@ -80,12 +137,15 @@ export const courseData = {
       ],
     },
     {
-      title: "DOCTYPE",
-      definition:
-        "DOCTYPE is a declaration that defines the document type and version of HTML being used. It is placed at the very beginning of an HTML document and helps browsers to render the page correctly.",
+      title: "What is SEO?",
+      definition: [
+        "SEO (Search Engine Optimization) is the practice of increasing the quantity and quality of traffic to your website through organic search engine results.",
+        "SEO (Search Engine Optimization) is the practice of improving a website so search engines can understand and rank it better.",
+      ],
     },
+
     {
-      title: "HTML Entities",
+      title: "Entities",
       definition: [
         "HTML entities are used to represent reserved characters in HTML. For example, the less-than sign (<) is represented as &lt; and the greater-than sign (>) is represented as &gt;.",
         "Using HTML entities ensures that special characters are displayed correctly in the browser and do not interfere with the structure of the HTML document.",
@@ -96,25 +156,36 @@ export const courseData = {
       definition:
         "The <link> tag is used to link external resources such as stylesheets, icons, and prefetching resources to an HTML document. It is placed in the <head> section of the document and can include attributes such as rel, href, and type.",
     },
-    {
-      title: "HTML Comments",
-      definition:
-        "HTML comments are used to add notes or explanations within the HTML code. They are not displayed in the browser and are enclosed within <!-- and -->. Comments can be helpful for developers to understand the code and provide context for future maintenance.",
-    },
+
     {
       title: "Classes and IDs",
       definition: [
-        "Classes and IDs are used to identify and style HTML elements. An ID is a unique identifier for an element, while a class can be shared among multiple elements. IDs are defined using the id attribute, while classes are defined using the class attribute.",
-        "IDs are typically used for JavaScript manipulation and styling specific elements, while classes are used for styling groups of elements with similar characteristics.",
+        "Classes and IDs are used to identify and style HTML elements.",
+        "An ID is a unique identifier for an element",
+        "Used once",
+        "IDs are defined using the id attribute",
+        "IDs are typically used for JavaScript manipulation and styling specific elements",
+        "Selected using #",
+
+        "while a class can be shared among multiple elements",
+        "Reusable",
+        "classes are defined using the class attribute.",
+        "Used multiple times",
+        "classes are used for styling groups of elements with similar characteristics.",
+        "Selected using the dot (.) selector in CSS",
       ],
     },
-
     {
-      title: "Difference between HTML and HTML5",
+      title: "What is the Difference Between href and src?",
       definition: [
-        "HTML is the standard markup language used to create web pages, while HTML5 is the latest version with new features and improvements.",
-        "HTML5 supports multimedia elements like <audio> and <video> without plugins, whereas older HTML required external tools like Flash.",
-        "HTML5 also introduces new semantic tags like <article>, <section>, and <nav>.",
+        "href",
+        "References a resource",
+        "Used in links to reference external resources",
+        "Used in <a>, <link>",
+
+        "src",
+        "Embeds a resource",
+        "Used in <img>, <script>, <iframe>",
       ],
     },
 
@@ -181,24 +252,6 @@ export const courseData = {
     },
 
     {
-      title: "Accessibility (a11y)",
-      definition: [
-        "Accessibility ensures websites are usable by people with disabilities.",
-        "Includes using semantic HTML, alt text, labels, and proper structure.",
-        "Improves SEO and user experience.",
-      ],
-    },
-
-    {
-      title: "Difference between GET and POST",
-      definition: [
-        "GET sends data in URL, POST sends data in request body.",
-        "GET is less secure compared to POST.",
-        "POST is used for sensitive data like passwords.",
-      ],
-    },
-
-    {
       title: "Required attribute",
       definition: [
         "Used in form inputs to make a field mandatory.",
@@ -261,23 +314,6 @@ export const courseData = {
         "Canvas is pixel-based and used for dynamic graphics.",
         "SVG is vector-based and scalable without losing quality.",
         "Canvas is better for games, SVG for UI graphics.",
-      ],
-    },
-
-    {
-      title: "Drag and Drop API",
-      definition: [
-        "Allows elements to be draggable and droppable.",
-        "Uses attributes like draggable='true'.",
-        "Handled with JavaScript events like dragstart, dragover, drop.",
-      ],
-    },
-
-    {
-      title: "Progressive Enhancement",
-      definition: [
-        "Building a basic version first, then adding advanced features.",
-        "Ensures compatibility across all browsers.",
       ],
     },
   ],
@@ -683,6 +719,13 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
     },
 
     {
+      title: "What are the disadvantages and drawbacks of using closures?",
+      definition: [
+        "Closures can increase memory usage because they keep outer variables in memory. Overusing them may lead to memory leaks and make debugging more difficult.",
+      ],
+    },
+
+    {
       title: "Recursive Function",
       definition: [
         "A recursive function is a function that calls itself until a base condition is met.",
@@ -1041,7 +1084,7 @@ application efficient ஆகும்`,
     {
       title: "Set",
       definition: [
-        "A Set is a collection of unique values, meaning duplicate values are not allowed.",
+        "A Set is a collection of unique (Set = தொகுப்பு (Collection)) values, meaning duplicate values are not allowed.",
         "Sets can store any data type such as numbers, strings, or objects.",
         "Creating a Set → const set = new Set()",
         "Adding values → set.add(value)",
@@ -1083,204 +1126,32 @@ application efficient ஆகும்`,
         "Use case → tracking object references without preventing memory cleanup",
       ],
     },
+    {
+      title: "Regular Expression",
+      definition: [
+        "A Regular Expression (RegEx) is a sequence of characters that defines a search pattern.",
+        "Regular expressions are used for matching strings, extracting information, and validating input.",
+        "Creating a Regular Expression → const regex = /pattern/flags or const regex = new RegExp('pattern', 'flags')",
+        "Testing a Regular Expression → regex.test(string)",
+        "Matching a Regular Expression → regex.exec(string) or string.match(regex)",
+        "Replacing with a Regular Expression → string.replace(regex, replacement)",
+        "Splitting with a Regular Expression → string.split(regex)",
+      ],
+    },
   ],
   reactjs: [
     {
-      title: "Memory Leaks",
+      title: "Cache என்றால் என்ன?",
       definition: [
-        "Memory leaks occur when objects are not properly cleaned up or released from memory.",
-        "Memory leaks can increase memory usage and cause the application to become slow, unstable, or crash.",
-        "A memory leak occurs when memory that is no longer needed is not released.",
-        "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
-        "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
-      ],
-      example: `
-useEffect(() => {
-  const interval = setInterval(() => {
-    console.log("Running...");
-  }, 1000);
-
-  return () => clearInterval(interval);
-}, []);
-`,
-    },
-    {
-      title: "State Lifting (Lifting State Up)",
-      definition: [
-        "Lifting State Up is a React pattern where state is moved from a child component to its closest common parent component.",
-        "This allows multiple child components to access and share the same state through props.",
-        "It helps keep related data in a single source of truth and ensures UI consistency across components.",
-      ],
-      example: "",
-    },
-    {
-      title: "React Context",
-      definition: [
-        "React Context is a way to pass data through the component tree without having to pass props down manually at every level.",
+        "Cache is a temporary storage area that holds frequently accessed data for faster retrieval.",
+        "Cache = அடிக்கடி பயன்படுத்தப்படும் data-வை temporary-ஆக சேமித்து வைத்து, அடுத்த முறை வேகமாக பயன்படுத்துவது.",
       ],
     },
     {
-      title: "React Testing Library",
+      title: "What is the difference between RealDOM and VirtualDOM?",
       definition: [
-        "React Testing Library is a set of utilities for testing React components.",
-      ],
-    },
-    {
-      title: "Refactoring a React component",
-      definition: [
-        "Refactoring a React component means improving the code structure, readability, and maintainability without changing how it works.",
-      ],
-    },
-    {
-      title: "Composition in React",
-      definition: [
-        "Building components by combining smaller components instead of inheriting from them.Composition allows components to be combined using props and children to share behavior and UI.",
-      ],
-      example: `Composition patterns
-1️⃣ Children Pattern (Most Common)
-2️⃣ Props-based Composition
-3️⃣ Slot Pattern (Named Children)
-4️⃣ Compound Components Pattern (Very Important 🔥)
-5️⃣ Render Props Pattern
-`,
-    },
-    {
-      title: "Controlled Component",
-      definition: [
-        "A controlled component is a form element controlled by React state.",
-        "React handles the input value using useState.",
-        "The value is updated using onChange event.",
-      ],
-      example: `
-const [name, setName] = useState("");
-
-<input
-  type="text"
-  value={name}
-  onChange={(e) => setName(e.target.value)}
-/>
-`,
-    },
-
-    {
-      title: "Uncontrolled Component",
-      definition: [
-        "An uncontrolled component stores form data in the DOM itself.",
-        "React does not control the input value using state.",
-        "useRef is commonly used to access the input value.",
-      ],
-      example: `
-const inputRef = useRef();
-
-<input type="text" ref={inputRef} />
-
-<button onClick={() => console.log(inputRef.current.value)}>
-  Submit
-</button>
-`,
-    },
-    {
-      title: "React Server Components",
-      definition: [
-        "React server comonenents is now the default in Next js",
-        "Server Components are components that run on the server and reduce JavaScript sent to the browser",
-      ],
-    },
-    {
-      title: "React js Version",
-      definition: ["react : ^18.2.0"],
-    },
-    {
-      title: "Latest version React 19",
-      definition: [
-        "use hook for promises",
-        "useActionState for Forms",
-        "useOptimistic for instant UI",
-        "Server Component & Action",
-        "React Compiler (auto-optimization)",
-        "Advanced Hooks : useRef,useMemo,useCallback,useReducer",
-        "Performance:Code splitting,lazy loading,Virtualization",
-        "Advanced Router : useParams,useNavigate,Protected routes",
-        "Suspense & Error Boundaries",
-      ],
-    },
-    {
-      title: "React Links",
-      definition: [
-        "https://github.com/muazimmaqbool/Reactjs-with-Me/tree/master",
-        "https://github.com/AhsanAyaz/react-in-90ish",
-      ],
-    },
-    {
-      title: "React",
-      definition:
-        "React is an open-source JavaScript library used for building scalable and high-performance frontend applications. It enables developers to create reusable UI components, making development faster and more efficient.",
-    },
-    {
-      title: "Key Features of React",
-      definition: [
-        "Component Based Architecture",
-        "One Way Data Binding",
-        "single-page apllication (SPA)",
-        "It uses a virtual DOM to efficiently update and render the user interface.",
-        "Rich Ecosystem of Libraries and Tools",
-        "It supports server-side rendering and client-side routing.",
-        "It is a popular choice for building user interfaces for web applications.",
-        "It is used by Facebook, Instagram, and many other companies.",
-        "State Management",
-        "Props",
-        "Event Handling",
-        "Lifecycle Methods",
-      ],
-    },
-
-    {
-      title: "Lifecycle Method",
-      definition: ["dddd", "dddd"],
-    },
-
-    {
-      title: "What is Rendering",
-      definition:
-        "Rendering is the process of converting data or code (such as HTML, CSS, and JavaScript) into a visual user interface that is displayed on the screen.",
-      typesTitle: "Types of Rendering",
-      types: [
-        {
-          name: "Initial Rendering",
-          description:
-            "The first time the UI is loaded and displayed on the screen.",
-        },
-        {
-          name: "Re-rendering",
-          description:
-            "When state or props change, the UI updates and renders again.",
-        },
-      ],
-    },
-
-    {
-      title: "Component",
-
-      definition:
-        "A component in React is a small, reusable piece of UI. It can be either a functional component or a class component.",
-    },
-    {
-      title: "Functional Component",
-      definition: [
-        "A functional component is just a plain JavaScript pure function that accepts props as an argument and returns a React element",
-        "There is no render method used in functional components",
-        "Also known as Stateless Components as they simply accept data and display them in some form, they are mainly responsible for rendering UI ",
-        "Hooks can be easily used in Functional component to make them stateful",
-        "Functional component is simple and faster on the other hand",
-      ],
-    },
-    {
-      title: "Class Component",
-      definition: [
-        "A class component requires you to extend from React.Component and create a render function that returns a React element",
-        "It must have the render method returning JSX",
-        "Also known as Stateful components because they implement logic and state ",
-        "It requires different syntax inside a class component to implement hooks",
+        "Real DOM means the actual webpage that the browser creates from an HTML page and displays on the screen. Any change in the Real DOM directly affects what you see on the webpage. It is slow because it can re-render the entire webpage.",
+        "Virtual DOM is a lightweight object of the Real DOM that represents the UI in memory, not on the screen. React updates it first, instead of updating  directly webpage.",
       ],
     },
     {
@@ -1330,6 +1201,218 @@ return (
 `,
     },
     {
+      title: "Suspense",
+      definition: [
+        "React Suspense is a built-in feature that lets you display a fallback UI (such as a loading spinner or skeleton screen) while waiting for asynchronous content to become ready.",
+        "It improves the user experience by preventing blank screens and allowing React to gracefully handle loading states.",
+      ],
+    },
+    {
+      title: "Memory Leaks",
+      definition: [
+        "Memory leaks occur when objects are not properly cleaned up or released from memory.",
+        "Memory leaks can increase memory usage and cause the application to become slow, unstable, or crash.",
+        "A memory leak occurs when memory that is no longer needed is not released.",
+        "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
+        "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
+      ],
+      example: `
+useEffect(() => {
+  const interval = setInterval(() => {
+    console.log("Running...");
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, []);
+`,
+    },
+    {
+      title: "State Lifting ",
+      definition: [
+        "State Lifting  is a React pattern where state is moved from a child component to its closest common parent component.",
+        "This allows multiple child components to access and share the same state through props.",
+        "State Lifting என்பது React-ல் பயன்படுத்தப்படும் ஒரு pattern. இதில் Child Component-ல் இருக்கும் state-ஐ, அதைப் பயன்படுத்தும் அனைத்து Child Components-க்கும் பொதுவான (Closest Common) Parent Component-க்கு மாற்றுவது ஆகும்.",
+      ],
+      example: "",
+    },
+    {
+      title: "React Context",
+      definition: [
+        "React Context is a way to pass data through the component tree without having to pass props down manually at every level.",
+      ],
+    },
+    {
+      title: "React Testing Library",
+      definition: [
+        "React Testing Library is a set of utilities (பல உதவிக்கருவிகளின் தொகுப்பு) for testing React components.",
+      ],
+    },
+
+    {
+      title: "Composition in React",
+      definition: [
+        "Building components by combining smaller components instead of inheriting from them.Composition allows components to be combined using props and children to share behavior and UI.",
+      ],
+      example: `Composition patterns
+1️⃣ Children Pattern (Most Common)
+2️⃣ Props-based Composition
+3️⃣ Slot Pattern (Named Children)
+4️⃣ Compound Components Pattern (Very Important 🔥)
+5️⃣ Render Props Pattern
+`,
+    },
+
+    {
+      title: "React js Version",
+      definition: ["react : ^18.2.0"],
+    },
+    {
+      title: "Latest version React 19",
+      definition: [
+        "use hook for promises",
+        "useActionState for Forms",
+        "useOptimistic for instant UI",
+        "Server Component & Action",
+        "React Compiler (auto-optimization)",
+        "Advanced Hooks : useRef,useMemo,useCallback,useReducer",
+        "Performance:Code splitting,lazy loading,Virtualization",
+        "Advanced Router : useParams,useNavigate,Protected routes",
+        "Suspense & Error Boundaries",
+      ],
+    },
+    {
+      title: "React Links",
+      definition: [
+        "https://github.com/muazimmaqbool/Reactjs-with-Me/tree/master",
+        "https://github.com/AhsanAyaz/react-in-90ish",
+      ],
+    },
+    {
+      title: "React",
+      definition:
+        "React is an open-source JavaScript library used to build fast, interactive user interfaces, especially for single-page applications .React let you build a website with reusable UI components.",
+    },
+    {
+      title: "Key Features of React",
+      definition: [
+        "Component Based Architecture",
+        "One Way Data Binding",
+        "single-page apllication (SPA)",
+        "It uses a virtual DOM to efficiently update and render the user interface.",
+        "Rich Ecosystem of Libraries and Tools",
+        "It supports server-side rendering and client-side routing.",
+        "Yes. React itself supports Server-Side Rendering (SSR), but SSR is not built into React alone. You typically use a framework like Next.js to implement SSR.",
+        "It is a popular choice for building user interfaces for web applications.",
+        "It is used by Facebook, Instagram, and many other companies.",
+        "State Management",
+        "Props",
+        "Event Handling",
+        "Lifecycle Methods",
+      ],
+    },
+
+    {
+      title: "Lifecycle Method",
+      definition: ["dddd", "dddd"],
+    },
+
+    {
+      title: "What is Rendering",
+      definition:
+        "Rendering is the process of converting data or code or components (such as HTML, CSS, and JavaScript) into a visual UI elements that is displayed on the screen.",
+      typesTitle: "Types of Rendering",
+      types: [
+        {
+          name: "Initial Rendering",
+          description:
+            "The first time the UI is loaded and displayed on the screen.",
+        },
+        {
+          name: "Re-rendering",
+          description:
+            "When state or props change, the UI updates and renders again.",
+        },
+      ],
+    },
+
+    {
+      title: "Component",
+
+      definition:
+        "A component in React is a small, reusable piece of UI. It can be either a functional component or a class component.",
+    },
+    {
+      title: "Functional Component",
+      definition: [
+        "Functional components are JavaScript functions that accept props as an argument and return JSX. It is the modern way of creating React components.",
+        "Also known as Stateless Components ",
+        "Hooks can be easily used in Functional component to make them stateful",
+      ],
+    },
+    {
+      title: "Class Component",
+      definition: [
+        "Class components are JavaScript classes that extend React.Component and implement the render() method, which returns JSX. It is the older way of creating React components.",
+        "Also known as Stateful components because they implement logic and state ",
+      ],
+    },
+    {
+      title: "Controlled Component",
+      definition: [
+        "A controlled component is a form element controlled by React state.",
+        "React handles the input value using useState.",
+        "The value is updated using onChange event.",
+      ],
+      example: `
+const [name, setName] = useState("");
+
+<input
+  type="text"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+/>
+`,
+    },
+
+    {
+      title: "Uncontrolled Component",
+      definition: [
+        "An uncontrolled component stores form data in the DOM itself.",
+        "React does not control the input value using state.",
+        "useRef is commonly used to access the input value.",
+      ],
+      example: `
+const inputRef = useRef();
+
+<input type="text" ref={inputRef} />
+
+<button onClick={() => console.log(inputRef.current.value)}>
+  Submit
+</button>
+`,
+    },
+    {
+      title: "React Server Components",
+      definition: [
+        "React server comonenents is now the default in Next js",
+        "Server Components are components that run on the server and reduce JavaScript sent to the browser",
+      ],
+    },
+
+    {
+      title: "Higher Order Component",
+      definition: [
+        " A Higher Order Component is a function that takes a component as input and returns a new component with extra powers",
+        "Formula: const EnhancedComponent = higherOrderComponent(OriginalComponent)",
+        "HOCs do not modify the original component",
+      ],
+    },
+    {
+      title: "Higher Order Function",
+      definition:
+        "A Higher Order Function (HOF) is just a function that takes another function as argument OR returns a function.",
+    },
+    {
       title: "Memoization",
       definition:
         "Memoization is a technique for speeding up application by caching the results of expensive function calls and returning them when the same inputs are used again",
@@ -1348,20 +1431,6 @@ return (
         },
       ],
     },
-
-    {
-      title: "Higher Order Component",
-      definition: [
-        " A Higher Order Component is a function that takes a component as input and returns a new component with extra powers",
-        "Formula: const EnhancedComponent = higherOrderComponent(OriginalComponent)",
-        "HOCs do not modify the original component",
-      ],
-    },
-    {
-      title: "Higher Order Function",
-      definition:
-        "A Higher Order Function (HOF) is just a function that takes another function as argument OR returns a function.",
-    },
     {
       title: "JSX Rules",
       definition: [
@@ -1374,8 +1443,10 @@ return (
 
     {
       title: "State",
-      definition:
+      definition: [
         "State is a built-in React object that is used to contain data or information about the component. State can change over time (நிலை காலப்போக்கில் மாறக்கூடும்.), and when it does (அது நிகழும்போது), the component re-renders to reflect the new state.",
+        " React state updates are asynchronous (or more precisely, scheduled), not synchronous.",
+      ],
     },
     {
       title: "Props",
@@ -2135,6 +2206,25 @@ const data = response.data as Order;
   ],
   node_and_express: [
     {
+      title: "CRUD",
+      definition: [
+        "Product.find()",
+        "Product.create()",
+        "Product.findById()",
+        "Product.findByIdAndUpdate()",
+        "Product.findByIdAndDelete()",
+      ],
+    },
+    {
+      title: "Query Parameters",
+      definition: [
+        "/products?page=1",
+        "/products?limit=5",
+        "/products?search=iphone",
+        "/products?sort=price",
+      ],
+    },
+    {
       title: "Express.js",
       definition: [
         "Express.js is a web application framework for Node.js.",
@@ -2142,23 +2232,29 @@ const data = response.data as Order;
         "தமிழில்: Express.js என்பது Node.js கொண்ட web application framework ஆகும்.",
       ],
     },
-    {
-      title: "ex:cmd yarn install --network-timeout 100000",
-    },
+
     {
       title: "Rate Limiting",
       definition: [
+        "yarn add express-rate-limit",
+        "app.use(apiLimiter)",
+        "Status Code: 429 Too many requests. Please try again later.",
+        "Rate Limiting என்பது ஒரு user அல்லது client ஒரு குறிப்பிட்ட time period-ல் எத்தனை requests அனுப்பலாம் என்பதை limit செய்வது.",
         "Rate limiting is a technique used to control the number of requests a client can make to a server within a specific period of time.",
         "It is commonly used to prevent abuse, spam, and excessive traffic on the server.",
       ],
-      example: `const rateLimit = require("express-rate-limit");
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+      example: `rateLimiter.js 
+import rateLimit from "express-rate-limit";
+export const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 Minutes
+  max: 10,
+  message: {
+    success: false,
+    message: "Too many requests. Please try again later."
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
 });
-
-app.use(limiter);
 `,
     },
     {
@@ -2892,19 +2988,96 @@ MONGODB_URI: your_mongodb_connection_string
       example: `Alibaba, IndiaMART, Udaan`,
     },
     {
-      title: "becodemy",
+      title: "E-Commerce Software as a Service (SaaS)",
       definition: [
-        "YoutubeLink : https://www.youtube.com/watch?v=XiD_TsGRQtE",
-        "https://www.becodemy.com/",
+        "அதாவது, நீங்களே backend, server, payment, hosting எல்லாம் புதிதாக உருவாக்க வேண்டியதில்லை. ஏற்கனவே தயாராக இருக்கும் ஒரு platform-ஐ மாதாந்திர (Monthly) அல்லது வருடாந்திர (Yearly) subscription செலுத்தி பயன்படுத்தலாம்.",
       ],
     },
     {
-      title: "Small Town Coder",
-      definition: [
-        "YoutubeLink : https://youtu.be/79F36yYEDyo",
-        "https://www.smalltowncoder.in/",
-        "GEO LOCATION : https://drive.google.com/file/d/1jdlmcZFb9wPTVJaM0029JrkLubyeTJz9/view",
-      ],
+      title: "",
+      definition: [],
+    },
+  ],
+  VSshortcuts: [
+    {
+      title: "Ctrl + P",
+      definition: ["Quick File Search"],
+    },
+    {
+      title: "Ctrl + Shift + P",
+      definition: ["Open Command Palette"],
+    },
+    {
+      title: "Ctrl + /",
+      definition: ["Toggle Comment"],
+    },
+    {
+      title: "Alt + ↑ / ↓",
+      definition: ["Move Line Up/Down"],
+    },
+    {
+      title: "Shift + Alt + ↓",
+      definition: ["Duplicate Line"],
+    },
+    {
+      title: "Ctrl + D",
+      definition: ["Select Next Occurrence"],
+    },
+    {
+      title: "Ctrl + Shift + L",
+      definition: ["Select All Occurrences"],
+    },
+    {
+      title: "Alt + Click",
+      definition: ["Add Multiple Cursors"],
+    },
+    {
+      title: "Ctrl + L",
+      definition: ["Select Current Line"],
+    },
+    {
+      title: "Ctrl + X",
+      definition: ["Cut Current Line"],
+    },
+    {
+      title: "Ctrl + Shift + K",
+      definition: ["Delete Current Line"],
+    },
+    {
+      title: "Ctrl + Enter",
+      definition: ["Insert Line Below"],
+    },
+    {
+      title: "Ctrl + Shift + Enter",
+      definition: ["Insert Line Above"],
+    },
+    {
+      title: "Ctrl + Space",
+      definition: ["Trigger IntelliSense"],
+    },
+    {
+      title: "F2",
+      definition: ["Rename Symbol"],
+    },
+    {
+      title: "F12",
+      definition: ["Go to Definition"],
+    },
+    {
+      title: "Alt + ←",
+      definition: ["Go Back"],
+    },
+    {
+      title: "Ctrl + Shift + `",
+      definition: ["Open New Terminal"],
+    },
+    {
+      title: "Ctrl + B",
+      definition: ["Toggle Sidebar"],
+    },
+    {
+      title: "Ctrl + J",
+      definition: ["Toggle Panel"],
     },
   ],
 };
