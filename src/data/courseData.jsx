@@ -580,7 +580,9 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
     {
       title: "Temporal Dead Zone ",
       definition: [
-        "Temporal Dead Zone is the time between entering a scope and the moment a let or const variable exists but cannot be accessed",
+        "Temporal Dead Zone is the time period between entering a scope and initializing a let or const variable. During this period, accessing the variable throws a ReferenceError",
+
+        "Temporal Dead Zone என்பது let மற்றும் const variables declare ஆன இடத்திற்கு முன் இருக்கும் time period. அந்த time-ல் variable memory-ல் இருக்கும், ஆனால் initialize ஆகாது. அதனால் access பண்ணினா ReferenceError வரும்.",
       ],
     },
     {
@@ -860,12 +862,14 @@ application efficient ஆகும்`,
     {
       title: "Event Loop",
       definition: [
-        "Event Loop continuously checks if the Call Stack is empty and then moves tasks from queues to the stack.",
+        "The Event Loop is a mechanism in JavaScript that continuously checks if the Call Stack is empty and then moves tasks from queues to the stack.",
         "The Event Loop is a handle asynchronous operations while running in a single-threaded environment.",
         "Asynchronous operations (like setTimeout, Promises, API calls) are handled by Web APIs and moved to callback queues.",
-        "Callback Queue (Task Queue) → stores callbacks from setTimeout, setInterval, DOM events.",
+
+        "The Callback Queue (also called the Macrotask Queue or Task Queue) → stores callbacks from setTimeout, setInterval, DOM events.",
+
         "Microtask Queue → stores Promise callbacks (.then, .catch, .finally) and runs before the callback queue.",
-        "Promises (microtasks) have higher priority than setTimeout (macrotasks).",
+        "Promises (microtasks) Higher priority, Executes first.",
         "Execution order → Call Stack → Microtask Queue → Callback Queue",
       ],
     },
@@ -940,20 +944,6 @@ application efficient ஆகும்`,
       ],
     },
 
-    {
-      title: "Prototype",
-      definition: [
-        "In JavaScript, every object has a hidden property called [[Prototype]] that links to another object.",
-        "This allows objects to inherit properties and methods from other objects.",
-        "This mechanism is called prototypal inheritance.",
-
-        "Example (Basic): function Person(name) { this.name = name; }",
-        "Person.prototype.greet = function() { console.log('Hi ' + this.name); };",
-        "const user = new Person('Simbu'); user.greet();",
-
-        "Example (Prototype Chain): const obj = {}; console.log(obj.toString()); // inherited from Object.prototype",
-      ],
-    },
     {
       title: "Iterator",
       definition: [
@@ -1141,12 +1131,63 @@ application efficient ஆகும்`,
   ],
   reactjs: [
     {
+      title: "React Library",
+      definition: [
+        "clsx என்பது React / Next.js-ல் CSS class-களை condition-க்கு ஏற்ப clean-ஆ manage பண்ண use பண்ணுற ஒரு சிறிய library.(Dynamic class names)",
+        "Class Variance Authority (CVA) என்பது React/Tailwind CSS-ல் reusable components-க்கு variants manage பண்ண பயன்படும் library.(Dynamic class names + Variants (size, color, type, state) manage)",
+        "Sonner என்பது React-ல் Toast Notifications (popup messages) காட்ட பயன்படுத்தப்படும் library.",
+      ],
+    },
+    {
+      title: "What is Rendering",
+      definition:
+        "Rendering is the process of converting data or code or components (such as HTML, CSS, and JavaScript) into a visual UI elements that is displayed on the screen.",
+      typesTitle: "Types of Rendering",
+      types: [
+        {
+          name: "Initial Rendering",
+          description:
+            "The first time the UI is loaded and displayed on the screen.",
+        },
+        {
+          name: "Re-rendering",
+          description:
+            "When state or props change, the UI updates and renders again.",
+        },
+      ],
+    },
+
+    {
       title: "Cache என்றால் என்ன?",
       definition: [
-        "Cache is a temporary storage area that holds frequently accessed data for faster retrieval.",
+        <>
+          Cache is a temporary storage area that {" "}
+          <strong>holds frequently accessed data</strong> for faster retrieval.
+        </>,
         "Cache = அடிக்கடி பயன்படுத்தப்படும் data-வை temporary-ஆக சேமித்து வைத்து, அடுத்த முறை வேகமாக பயன்படுத்துவது.",
       ],
     },
+
+    {
+      title: "Memoization",
+      definition:
+        "Memoization is a technique for speeding up application by caching the results of expensive function calls and returning them when the same inputs are used again",
+      types: [
+        {
+          name: "React.memo",
+          description: "Preventing Unnecessary Re-Renders",
+        },
+        {
+          name: "useMemo",
+          description: "Optimizing Expensive Calculations",
+        },
+        {
+          name: "useCallback",
+          description: "Stabilizing Function References",
+        },
+      ],
+    },
+
     {
       title: "What is the difference between RealDOM and VirtualDOM?",
       definition: [
@@ -1200,67 +1241,6 @@ return (
 </script>
 `,
     },
-    {
-      title: "Suspense",
-      definition: [
-        "React Suspense is a built-in feature that lets you display a fallback UI (such as a loading spinner or skeleton screen) while waiting for asynchronous content to become ready.",
-        "It improves the user experience by preventing blank screens and allowing React to gracefully handle loading states.",
-      ],
-    },
-    {
-      title: "Memory Leaks",
-      definition: [
-        "Memory leaks occur when objects are not properly cleaned up or released from memory.",
-        "Memory leaks can increase memory usage and cause the application to become slow, unstable, or crash.",
-        "A memory leak occurs when memory that is no longer needed is not released.",
-        "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
-        "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
-      ],
-      example: `
-useEffect(() => {
-  const interval = setInterval(() => {
-    console.log("Running...");
-  }, 1000);
-
-  return () => clearInterval(interval);
-}, []);
-`,
-    },
-    {
-      title: "State Lifting ",
-      definition: [
-        "State Lifting  is a React pattern where state is moved from a child component to its closest common parent component.",
-        "This allows multiple child components to access and share the same state through props.",
-        "State Lifting என்பது React-ல் பயன்படுத்தப்படும் ஒரு pattern. இதில் Child Component-ல் இருக்கும் state-ஐ, அதைப் பயன்படுத்தும் அனைத்து Child Components-க்கும் பொதுவான (Closest Common) Parent Component-க்கு மாற்றுவது ஆகும்.",
-      ],
-      example: "",
-    },
-    {
-      title: "React Context",
-      definition: [
-        "React Context is a way to pass data through the component tree without having to pass props down manually at every level.",
-      ],
-    },
-    {
-      title: "React Testing Library",
-      definition: [
-        "React Testing Library is a set of utilities (பல உதவிக்கருவிகளின் தொகுப்பு) for testing React components.",
-      ],
-    },
-
-    {
-      title: "Composition in React",
-      definition: [
-        "Building components by combining smaller components instead of inheriting from them.Composition allows components to be combined using props and children to share behavior and UI.",
-      ],
-      example: `Composition patterns
-1️⃣ Children Pattern (Most Common)
-2️⃣ Props-based Composition
-3️⃣ Slot Pattern (Named Children)
-4️⃣ Compound Components Pattern (Very Important 🔥)
-5️⃣ Render Props Pattern
-`,
-    },
 
     {
       title: "React js Version",
@@ -1280,13 +1260,7 @@ useEffect(() => {
         "Suspense & Error Boundaries",
       ],
     },
-    {
-      title: "React Links",
-      definition: [
-        "https://github.com/muazimmaqbool/Reactjs-with-Me/tree/master",
-        "https://github.com/AhsanAyaz/react-in-90ish",
-      ],
-    },
+
     {
       title: "React",
       definition:
@@ -1312,26 +1286,61 @@ useEffect(() => {
     },
 
     {
-      title: "Lifecycle Method",
-      definition: ["dddd", "dddd"],
+      title: "React Strict Mode",
+      definition: [
+        "Strict Mode is a tool for highlighting potential problems in an application. It activates additional checks and warnings for its descendants(சந்ததியினர்).",
+        "Strict Mode does not render any visible UI. It only activates additional checks and warnings for its descendants.",
+        "Strict Mode helps to identify unsafe lifecycle methods, legacy API usage, and other potential issues in the application.",
+      ],
+    },
+    {
+      title: "React Router",
+      definition:
+        "React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.",
     },
 
     {
-      title: "What is Rendering",
-      definition:
-        "Rendering is the process of converting data or code or components (such as HTML, CSS, and JavaScript) into a visual UI elements that is displayed on the screen.",
-      typesTitle: "Types of Rendering",
-      types: [
-        {
-          name: "Initial Rendering",
-          description:
-            "The first time the UI is loaded and displayed on the screen.",
-        },
-        {
-          name: "Re-rendering",
-          description:
-            "When state or props change, the UI updates and renders again.",
-        },
+      title: "JSX Rules",
+      definition: [
+        "It is combination html and JavaScript",
+        "Single Parent Element",
+        "className instead of class",
+        "All tags must be closed",
+      ],
+    },
+
+    {
+      title: "State",
+      definition: [
+        "State is a built-in React object that is used to contain data or information about the component. State can change over time (நிலை காலப்போக்கில் மாறக்கூடும்.), and when it does (அது நிகழும்போது), the component re-renders to reflect the new state.",
+        " React state updates are asynchronous (or more precisely, scheduled), not synchronous.",
+      ],
+    },
+    {
+      title: "Props",
+      definition: [
+        "Props (short for properties) are a way of passing data from parent to child components in React.",
+        " They are read-only and cannot be modified by the child component.",
+
+        " They can be of any data type, including strings, numbers, arrays, and objects. ",
+        " Props are accessed in the child component using the props object, which is passed as an argument to the component function.",
+      ],
+    },
+
+    {
+      title: "Props Drilling",
+      definition: [
+        "Prop drilling is a situation where you have to pass data through multiple levels of components in order to reach the component that needs the data.  This can lead to code that is difficult to maintain and understand, as it can create a lot of unnecessary props being passed down through the component tree.",
+        "props Drilling refers to the process of passing data from a high-level component down to a deep-level component thought intermediate component that do need the data themselves",
+      ],
+    },
+
+    {
+      title: "React JS List & Keys",
+      definition: [
+        "Lists are used to display a collection of data in React. They are created using the map() method to iterate over an array of data and return a new array of JSX elements.",
+        "Keys are a special attribute that is used to identify each element in a list. They help React to efficiently update and render the list when the data changes.",
+        "Keys should be unique and stable, meaning they should not change between renders. A common practice is to use a unique identifier from the data as the key, such as an ID.",
       ],
     },
 
@@ -1412,108 +1421,160 @@ const inputRef = useRef();
       definition:
         "A Higher Order Function (HOF) is just a function that takes another function as argument OR returns a function.",
     },
-    {
-      title: "Memoization",
-      definition:
-        "Memoization is a technique for speeding up application by caching the results of expensive function calls and returning them when the same inputs are used again",
-      types: [
-        {
-          name: "React.memo",
-          description: "Preventing Unnecessary Re-Renders",
-        },
-        {
-          name: "useMemo",
-          description: "Optimizing Expensive Calculations",
-        },
-        {
-          name: "useCallback",
-          description: "Stabilizing Function References",
-        },
-      ],
-    },
-    {
-      title: "JSX Rules",
-      definition: [
-        "It is combination html and JavaScript",
-        "Single Parent Element",
-        "className instead of class",
-        "All tags must be closed",
-      ],
-    },
 
-    {
-      title: "State",
-      definition: [
-        "State is a built-in React object that is used to contain data or information about the component. State can change over time (நிலை காலப்போக்கில் மாறக்கூடும்.), and when it does (அது நிகழும்போது), the component re-renders to reflect the new state.",
-        " React state updates are asynchronous (or more precisely, scheduled), not synchronous.",
-      ],
-    },
-    {
-      title: "Props",
-      definition: [
-        "Props (short for properties) are a way of passing data from parent to child components in React.",
-        " They are read-only and cannot be modified by the child component.",
-
-        " They can be of any data type, including strings, numbers, arrays, and objects. ",
-        " Props are accessed in the child component using the props object, which is passed as an argument to the component function.",
-      ],
-    },
-
-    {
-      title: "Props Drilling",
-      definition: [
-        "Prop drilling is a situation where you have to pass data through multiple levels of components in order to reach the component that needs the data.  This can lead to code that is difficult to maintain and understand, as it can create a lot of unnecessary props being passed down through the component tree.",
-        "props Drilling refers to the process of passing data from a high-level component down to a deep-level component thought intermediate component that do need the data themselves",
-      ],
-    },
-
-    {
-      title: "React JS List & Keys",
-      definition: [
-        "Lists are used to display a collection of data in React. They are created using the map() method to iterate over an array of data and return a new array of JSX elements.",
-        "Keys are a special attribute that is used to identify each element in a list. They help React to efficiently update and render the list when the data changes.",
-        "Keys should be unique and stable, meaning they should not change between renders. A common practice is to use a unique identifier from the data as the key, such as an ID.",
-      ],
-    },
-    {
-      title: "React Strict Mode",
-      definition: [
-        "Strict Mode is a tool for highlighting potential problems in an application. It activates additional checks and warnings for its descendants(சந்ததியினர்).",
-        "Strict Mode does not render any visible UI. It only activates additional checks and warnings for its descendants.",
-        "Strict Mode helps to identify unsafe lifecycle methods, legacy API usage, and other potential issues in the application.",
-      ],
-    },
-    {
-      title: "React Router",
-      definition:
-        "React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.",
-    },
     {
       title: "React Context",
       definition:
         "React Context is a way to pass data through the component tree without having to pass props down manually at every level.",
     },
+
     {
-      title: "React Testing Library",
-      definition:
-        "React Testing Library is a set of utilities for testing React components.",
+      title: "Redux",
+      definition: [
+        "Redux is a predictable (கணிக்கக்கூடிய) state container for JavaScript applications.",
+        "It helps manage the state of a React application in a centralized and predictable way.",
+        "",
+      ],
     },
+
     {
-      title: "React Hooks",
-      definition:
-        "React Hooks are functions that let you use state and other React features without writing a class.",
+      title: "Lifecycle Method",
+      definition: ["dddd", "dddd"],
     },
+
+    {
+      title: "What are React Hooks?",
+      definition:
+        "React Hooks are built-in functions that allow functional components to use React features like state, lifecycle methods, context, and performance optimizations without using class components. For example, I use useState for managing state, useEffect for API calls and other side effects, useRef for accessing DOM elements or storing mutable values, useContext to avoid prop drilling, useMemo and useCallback for performance optimization, and useReducer when the state logic becomes complex.",
+    },
+
+    {
+      title: "7. useReducer",
+      definition: [
+        "useReducer is used to manage complex state logic. It works with a reducer function and dispatch actions to update state.",
+      ],
+    },
+
+    {
+      title: "6. useCallback",
+      definition: [
+        "useCallback is used to memoize a function so that the same function instance is reused unless its dependencies change. This helps prevent unnecessary child component re-renders.",
+      ],
+    },
+
+    {
+      title: "5. useMemo",
+      definition: [
+        "useMemo is used to memoize the result of an expensive calculation. It recalculates only when its dependencies change, improving performance.",
+      ],
+    },
+
+    {
+      title: "4. useContext",
+      definition: [
+        "useContext is used to share data between components without passing props through every intermediate component. This helps avoid prop drilling.",
+      ],
+    },
+
+    {
+      title: "3. useRef",
+      definition: [
+        "useRef is used to store a mutable value or access a DOM element without causing a component re-render.",
+      ],
+    },
+
+    {
+      title: "2. useEffect",
+      definition: [
+        "useEffect is used to perform side effects in React components. Common use cases include API calls, timers, event listeners, and updating the document title.",
+      ],
+    },
+
+    {
+      title: "1. useState",
+      definition: [
+        "useState is used to manage state in functional components. It returns an array with two elements: the current state value and a function to update it.",
+      ],
+    },
+
     {
       title: "React Query",
-      definition:
-        "React Query is a library for fetching, caching, and updating data in React.",
+      definition: [
+        "React Query is a library used to fetch, cache, and manage server data in React applications.",
+        "React Query (இப்போது TanStack Query) என்பது API data-வை fetch, cache, update, sync செய்ய பயன்படும் ஒரு library.",
+      ],
+      example: `const { data, isLoading, error } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const res = await fetch("/users");
+      return res.json();
+    },
+  });`,
+    },
+
+    {
+      title: "React Query (TanStack Query)",
+      definition: [
+        "React Query (TanStack Query) is a library used to manage server state in React. It helps fetch data from APIs, caches the data, handles loading and error states, and automatically refetches updated data. This reduces the need to write useEffect and manual state management for API calls.",
+      ],
     },
     {
       title: "React Query Devtools",
       definition: "React Query Devtools is a tool for debugging React Query.",
     },
+
     {
-      title: "Refactoring a React component",
+      title: "Suspense",
+      definition: [
+        "React Suspense is a built-in feature that lets you display a fallback UI (such as a loading spinner or skeleton screen) while waiting for asynchronous content to become ready.",
+        "It improves the user experience by preventing blank screens and allowing React to gracefully handle loading states.",
+      ],
+    },
+    {
+      title: "Memory Leaks",
+      definition: [
+        "Memory leaks occur when objects are not properly cleaned up or released from memory.",
+        "Memory leaks can increase memory usage and cause the application to become slow, unstable, or crash.",
+        "A memory leak occurs when memory that is no longer needed is not released.",
+        "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
+        "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
+      ],
+      example: `
+useEffect(() => {
+  const interval = setInterval(() => {
+    console.log("Running...");
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, []);
+`,
+    },
+    {
+      title: "State Lifting ",
+      definition: [
+        "State Lifting  is a React pattern where state is moved from a child component to its closest common parent component.",
+        "This allows multiple child components to access and share the same state through props.",
+        "State Lifting என்பது React-ல் பயன்படுத்தப்படும் ஒரு pattern. இதில் Child Component-ல் இருக்கும் state-ஐ, அதைப் பயன்படுத்தும் அனைத்து Child Components-க்கும் பொதுவான (Closest Common) Parent Component-க்கு மாற்றுவது ஆகும்.",
+      ],
+      example: "",
+    },
+
+    {
+      title: "Composition in React",
+      definition: [
+        "Building components by combining smaller components instead of inheriting from them.Composition allows components to be combined using props and children to share behavior and UI.",
+      ],
+      example: `Composition patterns
+1️⃣ Children Pattern (Most Common)
+2️⃣ Props-based Composition
+3️⃣ Slot Pattern (Named Children)
+4️⃣ Compound Components Pattern (Very Important 🔥)
+5️⃣ Render Props Pattern
+`,
+    },
+
+    {
+      title: "Refactoring (மறுசீரமைப்பு) a React component",
       definition: [
         "Refactoring a React component means improving the code structure, readability, and maintainability without changing how it works.",
         "Refactoring is a process of modifying the existing code to make it more efficient, maintainable, and reusable.",
@@ -1521,6 +1582,12 @@ const inputRef = useRef();
         "repeated code remove panrathu",
         "reusable component create panrathu",
         "better naming use panrathu",
+      ],
+    },
+    {
+      title: "React Testing Library",
+      definition: [
+        "React Testing Library is a set of utilities (பல உதவிக்கருவிகளின் தொகுப்பு) for testing React components.",
       ],
     },
     {
@@ -1532,43 +1599,6 @@ const inputRef = useRef();
     },
   ],
   nextjs: [
-    {
-      title: "Next Commands",
-      definition: [
-        "Run local API: json-server --watch db.json --port 5000",
-        "Run development server: npm run dev",
-        "Run production build: npm run build",
-        "Run production server: npm run start",
-        "Run lint: npm run lint",
-        "Run format: npm run format",
-        "Run check: npm run check",
-        "Run deploy: npm run deploy",
-        "useRouter : https://nextjs.org/docs/api-reference/next/router",
-        "useSearchParams: https://nextjs.org/docs/pages/api-reference/functions/use-search-params",
-        "useParams : https://nextjs.org/docs/pages/api-reference/functions/use-params",
-        "usePathname: https://nextjs.org/docs/api-reference/next/link",
-        "API Routes : https://nextjs.org/docs/api-routes/introduction",
-        "SSR : https://nextjs.org/docs/basic-features/data-fetching/get-static-props",
-        "SSG : https://nextjs.org/docs/basic-features/data-fetching/get-static-props",
-        "CSR : https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props",
-        "Static Page Generation : https://nextjs.org/docs/basic-features/data-fetching/get-static-props",
-      ],
-    },
-    {
-      title: "Next js Github link",
-      definition: [
-        "https://github.com/machadop1407/event-planner-nextjs-course/tree/main",
-        "https://event-planner-nextjs-course.vercel.app/events",
-      ],
-    },
-    {
-      title: "Next js Youtube link",
-      definition: [
-        "AI SaaS App with Next.js 16, Prisma, Modal, Neon, Better Auth, and Stripe: https://youtu.be/XGIR6iZLEYk",
-        "Microservices vs Monolithic Architecture https://youtu.be/fbuHoZ2pb-k",
-      ],
-    },
-
     {
       title: "Next js Version",
       definition: [
@@ -1582,16 +1612,15 @@ const inputRef = useRef();
     {
       title: "Next.js",
       definition: [
-        "It supports multiple rendering methods such as CSR, SSR, SSG, and ISR.",
         "Next.js is a React framework used to build fast, scalable, and SEO-friendly web applications.",
         "It provides built-in features like routing, server-side rendering, and API handling.",
+        "It supports multiple rendering methods such as CSR, SSR, SSG, and ISR.",
         "File-based Routing → Pages are created using files inside the 'pages' or 'app' folder.",
         "Server-Side Rendering (SSR) → Pages are rendered on the server before sending to browser.",
         "Static Site Generation (SSG) → Pages are pre-built at build time for faster performance.",
         "API Routes → Backend APIs can be created inside Next.js project.",
         "Image Optimization → Built-in Image component for faster loading.",
         "Full-stack support → Frontend + Backend in same project",
-        "File-based Routing → Pages are created using files inside the 'pages' or 'app' folder.",
       ],
     },
 
@@ -1771,7 +1800,8 @@ export default function Page({ data }) {
     {
       title: "Streaming",
       definition: [
-        "Streaming is a rendering technique where parts of a webpage are sent to the browser progressively as they are ready, instead of waiting for the entire page to be generated.",
+        "Streaming is a rendering technique where parts of a webpage are sent to the browser progressively (படிப்படியாக) as they are ready, instead (அதற்குப் பதிலாக) of waiting for the entire page to be generated.",
+        "Streaming என்றால், ஒரு webpage-ல உள்ள எல்லா data-வும் load ஆகும் வரை wait பண்ணாமல், ready ஆன பகுதிகளை browser-க்கு உடனே அனுப்புவது.",
         "It improves user experience by showing content faster.",
         "UI updates progressively in the browser",
         "Streaming is enabled using React Suspense and Server Components in Next.js App Router",
@@ -1849,63 +1879,6 @@ function CSRComponent() {
     },
 
     // 🔥 OTHER CORE CONCEPTS
-
-    {
-      title: "File-based Routing",
-      definition: [
-        "Routes are automatically created based on the file structure.",
-        "Example: pages/about.js → /about",
-      ],
-    },
-
-    {
-      title: "App Router",
-      definition: [
-        "App Router is the modern routing system introduced in Next.js 13 using the 'app' directory.",
-        "It supports layouts, Server Components, nested routing, and advanced data fetching.",
-        "Uses file-based routing with folders and special files like page.js, layout.js, loading.js.",
-        "Example: app/page.js",
-      ],
-    },
-    {
-      title: "API Routes",
-      definition: [
-        "API Routes allow you to create backend API endpoints inside a Next.js application.",
-        "In the Pages Router, APIs are created inside the 'pages/api' folder.",
-        "In the App Router, APIs are created using route handlers inside 'app/api'.",
-        "Used for handling server-side logic like authentication, database operations, etc.",
-        "Example (Pages Router): pages/api/user.js",
-        "Example (App Router): app/api/user/route.js",
-      ],
-    },
-    {
-      title: "Dynamic Routes",
-      definition: [
-        "Dynamic Routes allow you to create pages with dynamic parameters.",
-        "Used when route paths depend on data (e.g., blog ID, product ID).",
-        "In the Pages Router: use [param].js",
-        "In the App Router: use folder names like [param]/page.js",
-        "Example (Pages Router): pages/blog/[id].js",
-        "Example (App Router): app/blog/[id]/page.js",
-      ],
-    },
-
-    {
-      title: "Link Component",
-      definition: [
-        "Used for client-side navigation without full page reload.",
-        "Improves performance and user experience.",
-        "Example: <Link href='/about'>Go</Link>",
-      ],
-    },
-    {
-      title: "Image Optimization",
-      definition: [
-        "Built-in feature for optimized image loading and performance.",
-        "Supports lazy loading and responsive images.",
-        "Example: <Image src='/img.png' width={200} height={200} />",
-      ],
-    },
   ],
   typescript: [
     {
@@ -2957,7 +2930,15 @@ MONGODB_URI: your_mongodb_connection_string
   dataStructure: [
     {
       title: "DSA Speedio Meter ",
-      definition: ["O(n2)", "O(n)", "O(log n)", "O(1)"],
+      definition: [
+        "Time Complexity",
+        "Big O Notation",
+        "O(n2)",
+        "O(n log n)",
+        "O(n)",
+        "O(log n)",
+        "O(1)",
+      ],
     },
   ],
   ECommerce: [
