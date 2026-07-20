@@ -1139,6 +1139,24 @@ application efficient ஆகும்`,
       ],
     },
     {
+      title: "React.js Version",
+      definition: ["React 16.x", "React 17.x", "React 18.x", "React 19.x"],
+    },
+    {
+      title: "Latest version React 19",
+      definition: [
+        "use hook for promises",
+        "useActionState for Forms",
+        "useOptimistic for instant UI",
+        "Server Component & Action",
+        "React Compiler (auto-optimization)",
+        "Advanced Hooks : useRef,useMemo,useCallback,useReducer",
+        "Performance:Code splitting,lazy loading,Virtualization",
+        "Advanced Router : useParams,useNavigate,Protected routes",
+        "Suspense & Error Boundaries",
+      ],
+    },
+    {
       title: "What is Rendering",
       definition:
         "Rendering is the process of converting data or code or components (such as HTML, CSS, and JavaScript) into a visual UI elements that is displayed on the screen.",
@@ -1161,7 +1179,7 @@ application efficient ஆகும்`,
       title: "Cache என்றால் என்ன?",
       definition: [
         <>
-          Cache is a temporary storage area that {" "}
+          Cache is a temporary storage area that{" "}
           <strong>holds frequently accessed data</strong> for faster retrieval.
         </>,
         "Cache = அடிக்கடி பயன்படுத்தப்படும் data-வை temporary-ஆக சேமித்து வைத்து, அடுத்த முறை வேகமாக பயன்படுத்துவது.",
@@ -1240,25 +1258,6 @@ return (
   }
 </script>
 `,
-    },
-
-    {
-      title: "React js Version",
-      definition: ["react : ^18.2.0"],
-    },
-    {
-      title: "Latest version React 19",
-      definition: [
-        "use hook for promises",
-        "useActionState for Forms",
-        "useOptimistic for instant UI",
-        "Server Component & Action",
-        "React Compiler (auto-optimization)",
-        "Advanced Hooks : useRef,useMemo,useCallback,useReducer",
-        "Performance:Code splitting,lazy loading,Virtualization",
-        "Advanced Router : useParams,useNavigate,Protected routes",
-        "Suspense & Error Boundaries",
-      ],
     },
 
     {
@@ -2177,6 +2176,405 @@ const data = response.data as Order;
       `,
     },
   ],
+  nodejs: [
+    {
+      title: "What is Node.js?",
+      definition: [
+        "Node.js is an open-source, cross-platform JavaScript runtime built on Chrome's V8 engine.",
+        "It allows developers to run JavaScript on the server side.",
+      ],
+    },
+    {
+      title: "What are the features of Node.js?",
+      definition: [
+        "Asynchronous and event-driven",
+        "Non-blocking I/O",
+        "Single-threaded event loop",
+        "Fast execution using V8 engine",
+        "Cross-platform",
+        "Scalable",
+      ],
+    },
+    {
+      title: "What is the Event Loop?",
+      definition: [
+        "The Event Loop is the core of Node.js.",
+        "It handles asynchronous operations without blocking the main thread.",
+        "It continuously checks the Call Stack and Callback Queue.",
+      ],
+    },
+    {
+      title:
+        "What is the difference between setTimeout(), setImmediate(), and process.nextTick()?",
+      definition: [
+        "process.nextTick() executes before the next event loop iteration.",
+        "setImmediate() executes after I/O events.",
+        "setTimeout(fn, 0) executes in the Timers phase.",
+      ],
+    },
+    {
+      title:
+        "What is the difference between synchronous and asynchronous programming?",
+      definition: [
+        "Synchronous code executes line by line.",
+        "Asynchronous code allows other operations to continue while waiting for a task to complete.",
+      ],
+    },
+    {
+      title: "What is npm?",
+      definition: [
+        "npm (Node Package Manager) is the default package manager for Node.js.",
+        "It is used to install, update, and manage packages.",
+      ],
+    },
+    {
+      title: "What is the difference between require() and import?",
+      definition: [
+        "require() is used in CommonJS modules.",
+        "import is used in ES Modules.",
+        "require() loads modules synchronously.",
+        "import supports static analysis and modern JavaScript features.",
+      ],
+    },
+    {
+      title: "What is middleware in Express.js?",
+      definition: [
+        "Middleware is a function that executes between the request and response.",
+        "It can modify the request, response, or pass control using next().",
+      ],
+    },
+    {
+      title:
+        "What is the difference between fs.readFile() and fs.readFileSync()?",
+      definition: [
+        "fs.readFile() is asynchronous and non-blocking.",
+        "fs.readFileSync() is synchronous and blocks execution until the file is read.",
+      ],
+    },
+    {
+      title: "What are Streams in Node.js?",
+      definition: [
+        "Streams process data piece by piece instead of loading the entire file into memory.",
+        "Types: Readable, Writable, Duplex, Transform.",
+      ],
+    },
+    {
+      title: "What is a Buffer?",
+      definition: [
+        "A Buffer is used to handle binary data in Node.js.",
+        "It temporarily stores raw binary data.",
+      ],
+    },
+    {
+      title: "What is the difference between spawn(), exec(), and fork()?",
+      definition: [
+        "spawn() starts a new process for long-running tasks.",
+        "exec() executes a command and buffers the output.",
+        "fork() creates a new Node.js process for IPC communication.",
+      ],
+    },
+    {
+      title: "What is package.json?",
+      definition: [
+        "package.json stores project metadata.",
+        "It contains project name, version, dependencies, scripts, and configuration.",
+      ],
+    },
+    {
+      title: "What is package-lock.json?",
+      definition: [
+        "package-lock.json locks the exact versions of installed dependencies.",
+        "It ensures consistent installations across different environments.",
+      ],
+    },
+    {
+      title: "What is clustering in Node.js?",
+      definition: [
+        "Clustering allows a Node.js application to utilize multiple CPU cores.",
+        "It creates multiple worker processes.",
+      ],
+    },
+    {
+      title: "What is the difference between Promise and async/await?",
+      definition: [
+        "Promises use .then() and .catch() for asynchronous operations.",
+        "async/await provides cleaner and more readable asynchronous code.",
+      ],
+    },
+    {
+      title: "What is callback hell?",
+      definition: [
+        "Callback hell occurs when multiple callbacks are nested inside each other.",
+        "It makes code difficult to read and maintain.",
+      ],
+    },
+    {
+      title: "How do you handle errors in Node.js?",
+      definition: [
+        "Use try...catch with async/await.",
+        "Handle Promise rejections using .catch().",
+        "Use centralized error-handling middleware in Express applications.",
+      ],
+    },
+    {
+      title:
+        "What is the difference between process.exit() and process.kill()?",
+      definition: [
+        "process.exit() terminates the current Node.js process.",
+        "process.kill() sends a signal to another process using its PID.",
+      ],
+    },
+    {
+      title: "What are child processes in Node.js?",
+      definition: [
+        "Child processes allow Node.js to execute external commands or run additional processes.",
+        "They are created using the child_process module.",
+      ],
+    },
+  ],
+
+  express: [
+    {
+      title: "What is Express.js?",
+      definition: [
+        "Express.js is a minimal and flexible web application framework for Node.js.",
+        "It simplifies building web servers and RESTful APIs.",
+      ],
+    },
+    {
+      title: "Why use Express.js?",
+      definition: [
+        "Easy routing",
+        "Middleware support",
+        "REST API development",
+        "Fast development",
+        "Template engine support",
+        "Error handling",
+        "Static file serving",
+      ],
+    },
+    {
+      title: "What is Middleware?",
+      definition: [
+        "Middleware is a function that executes between the request and response.",
+        "It can modify the request or response.",
+        "It can end the request or pass control using next().",
+      ],
+    },
+    {
+      title: "Types of Middleware",
+      definition: [
+        "Application Middleware",
+        "Router Middleware",
+        "Built-in Middleware",
+        "Error-handling Middleware",
+        "Third-party Middleware",
+      ],
+    },
+    {
+      title: "What is next()?",
+      definition: [
+        "next() passes control to the next middleware or route handler.",
+        "Without next(), the request stops unless a response is sent.",
+      ],
+    },
+    {
+      title: "What happens if next() is not called?",
+      definition: [
+        "The request will stop at the current middleware.",
+        "The client may keep waiting if no response is sent.",
+      ],
+    },
+    {
+      title: "What is Routing?",
+      definition: [
+        "Routing determines how an application responds to client requests.",
+        "Routes are based on URL paths and HTTP methods.",
+      ],
+    },
+    {
+      title: "Difference between app.use() and app.get()",
+      definition: [
+        "app.use() works for all HTTP methods.",
+        "app.use() is mainly used for middleware.",
+        "app.get() handles only GET requests.",
+        "app.get() is used for specific route handling.",
+      ],
+    },
+    {
+      title: "What are HTTP Methods?",
+      definition: [
+        "GET - Retrieve data.",
+        "POST - Create new data.",
+        "PUT - Replace existing data.",
+        "PATCH - Update specific fields.",
+        "DELETE - Remove data.",
+      ],
+    },
+    {
+      title: "Difference between PUT and PATCH",
+      definition: [
+        "PUT replaces the entire resource.",
+        "PATCH updates only specific fields.",
+      ],
+    },
+    {
+      title: "Difference between req.params, req.query, and req.body",
+      definition: [
+        "req.params contains URL parameters.",
+        "req.query contains query string parameters.",
+        "req.body contains data sent in the request body.",
+      ],
+    },
+    {
+      title: "What is express.json()?",
+      definition: [
+        "express.json() is built-in middleware.",
+        "It parses incoming JSON request bodies.",
+      ],
+    },
+    {
+      title: "What is express.urlencoded()?",
+      definition: [
+        "It parses URL-encoded form data.",
+        "It is commonly used for HTML form submissions.",
+      ],
+    },
+    {
+      title: "How do you serve static files?",
+      definition: [
+        "Use express.static() middleware.",
+        "It serves HTML, CSS, JavaScript, images, and other static files.",
+      ],
+    },
+    {
+      title: "What is Express Router?",
+      definition: [
+        "Express Router is used to organize routes into separate modules.",
+        "It improves project structure and maintainability.",
+      ],
+    },
+    {
+      title: "How do you use Router?",
+      definition: [
+        "Create routes using express.Router().",
+        "Import the router into app.js or server.js.",
+        "Register it using app.use().",
+      ],
+    },
+    {
+      title: "What is Error Handling Middleware?",
+      definition: [
+        "It catches application errors.",
+        "It sends appropriate error responses to the client.",
+        "It has four parameters: err, req, res, next.",
+      ],
+    },
+    {
+      title: "What is CORS?",
+      definition: [
+        "CORS stands for Cross-Origin Resource Sharing.",
+        "It allows a frontend and backend from different origins to communicate securely.",
+      ],
+    },
+    {
+      title: "What is Helmet?",
+      definition: [
+        "Helmet is Express middleware.",
+        "It improves security by setting HTTP response headers.",
+      ],
+    },
+    {
+      title: "What is Morgan?",
+      definition: [
+        "Morgan is HTTP request logging middleware.",
+        "It logs incoming requests for debugging and monitoring.",
+      ],
+    },
+    {
+      title: "What is Rate Limiting?",
+      definition: [
+        "Rate limiting restricts the number of requests from a client.",
+        "It helps prevent abuse and DDoS attacks.",
+      ],
+    },
+    {
+      title: "How do you handle file uploads?",
+      definition: [
+        "Use the Multer middleware.",
+        "It supports uploading single or multiple files.",
+      ],
+    },
+    {
+      title: "What is a REST API?",
+      definition: [
+        "A REST API follows REST principles.",
+        "It uses HTTP methods like GET, POST, PUT, PATCH, and DELETE for CRUD operations.",
+      ],
+    },
+    {
+      title: "Difference between res.send() and res.json()",
+      definition: [
+        "res.send() can send strings, HTML, Buffers, or objects.",
+        "res.json() specifically sends JSON responses.",
+      ],
+    },
+    {
+      title: "What is the MVC Pattern?",
+      definition: [
+        "Model handles database logic.",
+        "View handles the user interface.",
+        "Controller contains business logic and handles requests.",
+      ],
+    },
+    {
+      title: "What are Environment Variables?",
+      definition: [
+        "Environment variables store configuration values.",
+        "Examples include PORT, database URL, and secret keys.",
+      ],
+    },
+    {
+      title: "How do you access Environment Variables?",
+      definition: [
+        "Use the dotenv package.",
+        "Access values using process.env.",
+      ],
+    },
+    {
+      title: "How do you secure an Express API?",
+      definition: [
+        "Use Helmet.",
+        "Enable CORS properly.",
+        "Validate user input.",
+        "Use JWT authentication.",
+        "Hash passwords with bcrypt.",
+        "Apply rate limiting.",
+        "Use HTTPS.",
+        "Store secrets in environment variables.",
+      ],
+    },
+    {
+      title: "How do you organize a large Express project?",
+      definition: [
+        "Separate code into controllers, models, routes, middleware, services, config, and utils.",
+        "Follow the MVC architecture.",
+      ],
+    },
+    {
+      title: "Explain the Express Request Lifecycle.",
+      definition: [
+        "Client sends an HTTP request.",
+        "Middleware executes.",
+        "Route is matched.",
+        "Controller processes the request.",
+        "Database operations are performed if needed.",
+        "Response is sent to the client.",
+        "Error middleware handles any exceptions.",
+      ],
+    },
+  ],
+
   node_and_express: [
     {
       title: "CRUD",
@@ -2496,97 +2894,248 @@ app.post("/user", (req, res) => {
   ],
   mongodb: [
     {
-      title: "MongoDB Commands",
-      definition: ["net stop MongoDB Server", "net start MongoDB"],
-    },
-    {
-      title: "MongoDB",
+      title: "What is MongoDB?",
       definition: [
-        "MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program.",
+        "MongoDB is a NoSQL, document-oriented database.",
+        "It stores data in flexible JSON-like documents called BSON.",
       ],
     },
     {
-      title: "NoSQL",
+      title: "What are the features of MongoDB?",
       definition: [
-        "NoSQL databases store data in non-tabular formats like documents, key-value pairs, graphs, or wide-columns.",
+        "NoSQL database",
+        "Document-oriented storage",
+        "Schema-less design",
+        "High performance",
+        "Horizontal scaling",
+        "Replication",
+        "Indexing",
+        "Aggregation framework",
       ],
     },
     {
-      title: "Collection",
+      title: "What is NoSQL?",
       definition: [
-        "A collection is a group of MongoDB documents, similar to a table in relational databases.",
+        "NoSQL databases store data in formats other than relational tables.",
+        "Examples: MongoDB, Redis, Cassandra, Neo4j.",
       ],
     },
     {
-      title: "Document",
+      title: "Difference between SQL and MongoDB",
       definition: [
-        "A document is a record in MongoDB stored in BSON format (Binary JSON), containing key-value pairs.",
+        "SQL uses Tables, MongoDB uses Collections.",
+        "SQL uses Rows, MongoDB uses Documents.",
+        "SQL uses Columns, MongoDB uses Fields.",
+        "SQL has a fixed schema, MongoDB has a flexible schema.",
+        "SQL uses SQL queries, MongoDB uses MQL (MongoDB Query Language).",
       ],
     },
     {
-      title: "BSON",
+      title: "What is a Database?",
       definition: [
-        "BSON is a binary representation of JSON-like documents used by MongoDB for data storage.",
+        "A Database is a container that holds multiple collections.",
       ],
     },
     {
-      title: "Mongoose",
+      title: "What is a Collection?",
       definition: [
-        "Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js used to define schemas and interact with the database.",
+        "A Collection is a group of related documents.",
+        "It is similar to a table in SQL.",
       ],
     },
     {
-      title: "Schema",
+      title: "What is a Document?",
       definition: [
-        "A schema defines the structure of documents in a collection, including fields and data types.",
+        "A Document is a single record in MongoDB.",
+        "It stores data in key-value pairs using BSON format.",
       ],
     },
     {
-      title: "Model",
+      title: "What is BSON?",
       definition: [
-        "A model is a wrapper for the schema that provides an interface to interact with the database.",
+        "BSON stands for Binary JSON.",
+        "MongoDB stores documents internally in BSON format.",
       ],
     },
     {
-      title: "CRUD Operations",
+      title: "What is _id?",
       definition: [
-        "CRUD stands for Create, Read, Update, and Delete operations used to manage data in MongoDB.",
+        "Every MongoDB document contains a unique _id field.",
+        "It uniquely identifies each document.",
       ],
     },
     {
-      title: "Indexing",
+      title: "What is ObjectId?",
       definition: [
-        "Indexing improves the performance of search queries by creating efficient data retrieval paths.",
+        "ObjectId is MongoDB's default unique identifier.",
+        "It is a 12-byte hexadecimal value.",
       ],
     },
     {
-      title: "Aggregation",
+      title: "How do you insert a document?",
       definition: [
-        "Aggregation is used to process data and return computed results using pipelines.",
+        "Use insertOne() to insert a single document.",
+        "Use insertMany() to insert multiple documents.",
       ],
     },
     {
-      title: "Atlas",
+      title: "How do you find documents?",
       definition: [
-        "MongoDB Atlas is a cloud-based database service for hosting MongoDB databases.",
+        "find() returns all matching documents.",
+        "findOne() returns the first matching document.",
       ],
     },
     {
-      title: "Replica Set",
+      title: "How do you update documents?",
       definition: [
-        "A replica set is a group of MongoDB servers that maintain the same data for high availability.",
+        "Use updateOne() to update one document.",
+        "Use updateMany() to update multiple documents.",
+        "Use the $set operator to update specific fields.",
       ],
     },
     {
-      title: "Sharding",
+      title: "How do you delete documents?",
       definition: [
-        "Sharding is a method for distributing data across multiple machines to handle large datasets.",
+        "Use deleteOne() to delete one document.",
+        "Use deleteMany() to delete multiple documents.",
       ],
     },
     {
-      title: "ObjectId",
+      title: "Difference between deleteOne() and deleteMany()",
       definition: [
-        "ObjectId is a unique identifier automatically generated for each document in MongoDB.",
+        "deleteOne() removes only one matching document.",
+        "deleteMany() removes all matching documents.",
+      ],
+    },
+    {
+      title: "Difference between updateOne() and updateMany()",
+      definition: [
+        "updateOne() updates one document.",
+        "updateMany() updates all matching documents.",
+      ],
+    },
+    {
+      title: "What are MongoDB Operators?",
+      definition: [
+        "$set",
+        "$inc",
+        "$gt",
+        "$gte",
+        "$lt",
+        "$lte",
+        "$eq",
+        "$ne",
+        "$in",
+        "$nin",
+        "$and",
+        "$or",
+      ],
+    },
+    {
+      title: "What is Indexing?",
+      definition: [
+        "Indexes improve query performance.",
+        "They reduce the time required to search documents.",
+      ],
+    },
+    {
+      title: "What is Aggregation?",
+      definition: [
+        "Aggregation processes documents through multiple stages.",
+        "It is used for filtering, grouping, sorting, and calculations.",
+      ],
+    },
+    {
+      title: "Common Aggregation Stages",
+      definition: [
+        "$match",
+        "$group",
+        "$sort",
+        "$project",
+        "$limit",
+        "$skip",
+        "$lookup",
+        "$unwind",
+      ],
+    },
+    {
+      title: "What is $lookup?",
+      definition: [
+        "$lookup performs a left outer join between collections.",
+        "It combines related documents from different collections.",
+      ],
+    },
+    {
+      title: "What is Replication?",
+      definition: [
+        "Replication copies data from a primary server to one or more secondary servers.",
+        "It provides high availability and failover support.",
+      ],
+    },
+    {
+      title: "What is Sharding?",
+      definition: [
+        "Sharding distributes data across multiple servers.",
+        "It improves scalability and performance.",
+      ],
+    },
+    {
+      title: "What is Mongoose?",
+      definition: [
+        "Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js.",
+        "It provides schemas, models, validation, and middleware.",
+      ],
+    },
+    {
+      title: "What is a Schema in Mongoose?",
+      definition: [
+        "A Schema defines the structure of documents.",
+        "It specifies field types, validation, and default values.",
+      ],
+    },
+    {
+      title: "What is a Model in Mongoose?",
+      definition: [
+        "A Model is created from a Schema.",
+        "It is used to perform CRUD operations on a collection.",
+      ],
+    },
+    {
+      title: "Difference between Schema and Model",
+      definition: [
+        "Schema defines the structure of documents.",
+        "Model interacts with the MongoDB collection.",
+      ],
+    },
+    {
+      title: "What is populate()?",
+      definition: [
+        "populate() replaces referenced ObjectIds with actual documents.",
+        "It is used to fetch related data from another collection.",
+      ],
+    },
+    {
+      title: "Difference between Embedded Documents and References",
+      definition: [
+        "Embedded documents store related data inside one document.",
+        "References store related data in separate collections using ObjectIds.",
+      ],
+    },
+    {
+      title: "What are MongoDB Validation Rules?",
+      definition: [
+        "Validation ensures documents follow defined rules.",
+        "Examples include required fields, data types, min/max values, and custom validation.",
+      ],
+    },
+    {
+      title: "Explain the MongoDB Query Execution Flow.",
+      definition: [
+        "Client sends a query.",
+        "MongoDB checks for an index.",
+        "If an index exists, an index scan is performed.",
+        "Otherwise, a collection scan is performed.",
+        "Matching documents are returned to the client.",
       ],
     },
   ],

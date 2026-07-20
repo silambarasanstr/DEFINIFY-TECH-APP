@@ -24,6 +24,8 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "React JS", path: "/reactjs", icon: Atom },
     { name: "Next JS", path: "/nextjs", icon: Layers },
     { name: "TypeScript", path: "/typescript", icon: ShieldCheck },
+    { name: "Node.js", path: "/nodejs", icon: Server },
+    { name: "Express.js", path: "/express", icon: Server },
     { name: "Node/Express", path: "/node_and_express", icon: Server },
     { name: "MongoDB", path: "/mongodb", icon: Database },
     { name: "Git & GitHub", path: "/gitgithub", icon: GitBranch },
