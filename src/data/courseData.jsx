@@ -1182,6 +1182,7 @@ application efficient ஆகும்`,
           Cache is a temporary storage area that{" "}
           <strong>holds frequently accessed data</strong> for faster retrieval.
         </>,
+        "It is commonly used to improve application performance and reduce the load on the server.",
         "Cache = அடிக்கடி பயன்படுத்தப்படும் data-வை temporary-ஆக சேமித்து வைத்து, அடுத்த முறை வேகமாக பயன்படுத்துவது.",
       ],
     },
@@ -2185,6 +2186,20 @@ const data = response.data as Order;
       ],
     },
     {
+      title: "Node.js",
+      definition: [
+        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript outside the browser.",
+        "It is built on Chrome's V8 JavaScript engine and is widely used for building fast and scalable server-side applications.",
+        "தமிழில்: Node.js என்பது browser-க்கு வெளியே JavaScript-ஐ இயக்க உதவும் runtime environment.",
+      ],
+      example: `const http = require("http");
+
+http.createServer((req, res) => {
+  res.end("Hello");
+}).listen(3000);
+`,
+    },
+    {
       title: "What are the features of Node.js?",
       definition: [
         "Asynchronous and event-driven",
@@ -2332,7 +2347,6 @@ const data = response.data as Order;
       ],
     },
   ],
-
   express: [
     {
       title: "What is Express.js?",
@@ -2340,6 +2354,22 @@ const data = response.data as Order;
         "Express.js is a minimal and flexible web application framework for Node.js.",
         "It simplifies building web servers and RESTful APIs.",
       ],
+    },
+    {
+      title: "Express.js",
+      definition: [
+        "Express.js is a minimal and flexible web framework for Node.js used to build APIs and web applications.",
+        "It simplifies routing, middleware handling, and server creation.",
+        "தமிழில்: Express.js என்பது Node.js-க்கு பயன்படுத்தப்படும் ஒரு lightweight web framework ஆகும். இது APIs மற்றும் web applications உருவாக்க உதவுகிறது.",
+      ],
+      example: `const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
+`,
     },
     {
       title: "Why use Express.js?",
@@ -2371,6 +2401,22 @@ const data = response.data as Order;
         "Third-party Middleware",
       ],
     },
+
+    {
+      title: "Middleware",
+      definition: [
+        "Middleware functions run during the request-response cycle and have access to req, res, and next.",
+        "They are commonly used for logging, authentication, validation, error handling, and parsing request data.",
+        "தமிழில்: Middleware என்பது request மற்றும் response இடையே இயங்கும் function ஆகும்.",
+      ],
+      example: `app.use((req, res, next) => {
+  console.log("Middleware executed");
+
+  next();
+});
+`,
+    },
+
     {
       title: "What is next()?",
       definition: [
@@ -2390,6 +2436,14 @@ const data = response.data as Order;
       definition: [
         "Routing determines how an application responds to client requests.",
         "Routes are based on URL paths and HTTP methods.",
+      ],
+    },
+    {
+      title: "Routing",
+      definition: [
+        "Routing defines how an application responds to client requests at specific endpoints (URLs).",
+        "Different HTTP methods can be handled for different routes.",
+        "Example: app.get('/user', (req,res)=>res.send('User Page'));",
       ],
     },
     {
@@ -2470,6 +2524,23 @@ const data = response.data as Order;
         "It has four parameters: err, req, res, next.",
       ],
     },
+
+    {
+      title: "Error Handling (பிழை கையாளுதல்)",
+      definition: [
+        "Error handling is a technique used to catch and manage errors that occur in an application or server.",
+        "It helps prevent application crashes and provides meaningful error responses to users.",
+      ],
+      example: `app.use((err, req, res, next) => {
+  console.error(err.stack);
+
+  res.status(500).json({
+    success: false,
+    message: "Something went wrong",
+  });
+});
+`,
+    },
     {
       title: "What is CORS?",
       definition: [
@@ -2485,6 +2556,18 @@ const data = response.data as Order;
       ],
     },
     {
+      title: "Security (பாதுகாப்பு)",
+      definition: [
+        "Security is the practice of protecting a server and application from unauthorized access, attacks, and vulnerabilities.",
+        "It helps secure user data, improve application safety, and prevent common web attacks.",
+        "தமிழில்: Security என்பது server மற்றும் application-ஐ attacks மற்றும் unauthorized access-இலிருந்து பாதுகாப்பது.",
+      ],
+      example: `const helmet = require("helmet");
+
+app.use(helmet());
+`,
+    },
+    {
       title: "What is Morgan?",
       definition: [
         "Morgan is HTTP request logging middleware.",
@@ -2496,6 +2579,7 @@ const data = response.data as Order;
       definition: [
         "Rate limiting restricts the number of requests from a client.",
         "It helps prevent abuse and DDoS attacks.",
+        "Status Code: 429 Too many requests. Please try again later.",
       ],
     },
     {
@@ -2574,7 +2658,6 @@ const data = response.data as Order;
       ],
     },
   ],
-
   node_and_express: [
     {
       title: "CRUD",
@@ -2595,77 +2678,7 @@ const data = response.data as Order;
         "/products?sort=price",
       ],
     },
-    {
-      title: "Express.js",
-      definition: [
-        "Express.js is a web application framework for Node.js.",
-        "It provides a simple and flexible way to build web applications and APIs.",
-        "தமிழில்: Express.js என்பது Node.js கொண்ட web application framework ஆகும்.",
-      ],
-    },
 
-    {
-      title: "Rate Limiting",
-      definition: [
-        "yarn add express-rate-limit",
-        "app.use(apiLimiter)",
-        "Status Code: 429 Too many requests. Please try again later.",
-        "Rate Limiting என்பது ஒரு user அல்லது client ஒரு குறிப்பிட்ட time period-ல் எத்தனை requests அனுப்பலாம் என்பதை limit செய்வது.",
-        "Rate limiting is a technique used to control the number of requests a client can make to a server within a specific period of time.",
-        "It is commonly used to prevent abuse, spam, and excessive traffic on the server.",
-      ],
-      example: `rateLimiter.js 
-import rateLimit from "express-rate-limit";
-export const apiLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 Minutes
-  max: 10,
-  message: {
-    success: false,
-    message: "Too many requests. Please try again later."
-  },
-  standardHeaders: true,
-  legacyHeaders: false,
-});
-`,
-    },
-    {
-      title: "Caching (தற்காலிகச் சேமிப்பு)",
-      definition: [
-        "Caching is a technique used to store and retrieve data from a server.",
-        "It is commonly used to improve application performance and reduce the load on the server.",
-        "தமிழில்: Caching என்பது server-ல் dataஐ store மற்றும் retrieve செய்வது.",
-      ],
-      example: `const cache = require('express-cache-controller');  
-app.use(cache('1 day'));`,
-    },
-    {
-      title: "Error Handling (பிழை கையாளுதல்)",
-      definition: [
-        "Error handling is a technique used to catch and manage errors that occur in an application or server.",
-        "It helps prevent application crashes and provides meaningful error responses to users.",
-      ],
-      example: `app.use((err, req, res, next) => {
-  console.error(err.stack);
-
-  res.status(500).json({
-    success: false,
-    message: "Something went wrong",
-  });
-});
-`,
-    },
-    {
-      title: "Security (பாதுகாப்பு)",
-      definition: [
-        "Security is the practice of protecting a server and application from unauthorized access, attacks, and vulnerabilities.",
-        "It helps secure user data, improve application safety, and prevent common web attacks.",
-        "தமிழில்: Security என்பது server மற்றும் application-ஐ attacks மற்றும் unauthorized access-இலிருந்து பாதுகாப்பது.",
-      ],
-      example: `const helmet = require("helmet");
-
-app.use(helmet());
-`,
-    },
     {
       title: "Compression (சுருக்கம்)",
       definition: [
@@ -2746,36 +2759,7 @@ app.use(cors());
         "Handle 1 Million Requests per Second (MRPS): app.use(express.json({limit: '10mb'}));",
       ],
     },
-    {
-      title: "Node.js",
-      definition: [
-        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript outside the browser.",
-        "It is built on Chrome's V8 JavaScript engine and is widely used for building fast and scalable server-side applications.",
-        "தமிழில்: Node.js என்பது browser-க்கு வெளியே JavaScript-ஐ இயக்க உதவும் runtime environment.",
-      ],
-      example: `const http = require("http");
 
-http.createServer((req, res) => {
-  res.end("Hello");
-}).listen(3000);
-`,
-    },
-    {
-      title: "Express.js",
-      definition: [
-        "Express.js is a minimal and flexible web framework for Node.js used to build APIs and web applications.",
-        "It simplifies routing, middleware handling, and server creation.",
-        "தமிழில்: Express.js என்பது Node.js-க்கு பயன்படுத்தப்படும் ஒரு lightweight web framework ஆகும். இது APIs மற்றும் web applications உருவாக்க உதவுகிறது.",
-      ],
-      example: `const express = require("express");
-
-const app = express();
-
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
-`,
-    },
     {
       title: "NPM",
       definition: [
@@ -2799,28 +2783,7 @@ app.get("/", (req, res) => {
   }
 }`,
     },
-    {
-      title: "Middleware",
-      definition: [
-        "Middleware functions run during the request-response cycle and have access to req, res, and next.",
-        "They are commonly used for logging, authentication, validation, error handling, and parsing request data.",
-        "தமிழில்: Middleware என்பது request மற்றும் response இடையே இயங்கும் function ஆகும்.",
-      ],
-      example: `app.use((req, res, next) => {
-  console.log("Middleware executed");
 
-  next();
-});
-`,
-    },
-    {
-      title: "Routing",
-      definition: [
-        "Routing defines how an application responds to client requests at specific endpoints (URLs).",
-        "Different HTTP methods can be handled for different routes.",
-        "Example: app.get('/user', (req,res)=>res.send('User Page'));",
-      ],
-    },
     {
       title: "REST API",
       definition: [
@@ -2829,22 +2792,7 @@ app.get("/", (req, res) => {
         "Example: app.post('/users', (req,res)=>res.send('User Created'));",
       ],
     },
-    {
-      title: "Request Object (req)",
-      definition: [
-        "The request object contains information about the incoming HTTP request.",
-        "It includes query params, body, headers, and more.",
-        "Example: app.get('/', (req,res)=>{ console.log(req.query); res.send('ok'); });",
-      ],
-    },
-    {
-      title: "Response Object (res)",
-      definition: [
-        "The response object is used to send data back to the client.",
-        "It supports methods like send, json, status, etc.",
-        "Example: res.status(200).json({ message: 'Success' });",
-      ],
-    },
+
     {
       title: "Environment Variables",
       definition: [
@@ -2869,27 +2817,6 @@ app.post("/user", (req, res) => {
   res.send("Data received");
 });
 `,
-    },
-
-    {
-      title: "Error Handling",
-      definition: [
-        "Error handling in Express is done using middleware functions with four parameters: (err, req, res, next).",
-        "It helps manage and handle application errors centrally.",
-        "தமிழில்: Error Handling என்பது application-ல் வரும் errors-ஐ handle செய்து proper response அனுப்ப உதவும் முறையாகும்.",
-      ],
-      example: `app.use((err, req, res, next) => {
-  res.status(500).send(err.message);
-});
-`,
-    },
-    {
-      title: "MVC Architecture",
-      definition: [
-        "MVC (Model-View-Controller) separates application logic into three parts.",
-        "It improves code organization and scalability.",
-        "Example: Model → User.js, Controller → userController.js, Route → userRoutes.js",
-      ],
     },
   ],
   mongodb: [
@@ -3396,16 +3323,6 @@ MONGODB_URI: your_mongodb_connection_string
       ],
     },
   ],
-  npm: [
-    {
-      title: "npm packages",
-      definition: [
-        "npm run dev:all",
-        "npm -g autocannon",
-        "autocannon -m GET -c 10 -d 10 -p 10 http://localhost:3000/simple",
-      ],
-    },
-  ],
   jenkins: [
     {
       title: "Jenkins",
@@ -3492,7 +3409,36 @@ MONGODB_URI: your_mongodb_connection_string
   ],
   ECommerce: [
     {
-      title: "POS",
+      title: "ECommerce - Online Buying & Selling Platform",
+      definition: [
+        "ECommerce is the buying and selling of goods and services over the internet.",
+      ],
+    },
+    {
+      title: "Payroll Management System",
+      definition: [
+        "A payroll management system is a software solution that helps businesses manage and process employee compensation and benefits.",
+        "Payroll is a system used to calculate employee salaries, deductions, taxes, bonuses, and generate payslips.",
+        "Payroll Features",
+        "Employee Management",
+        "Salary Calculation",
+        "Attendance Integration",
+        "Leave Management",
+        "Overtime Calculation",
+        "Bonus & Incentives",
+        "PF (Provident Fund)",
+        "ESI (Employees' State Insurance)",
+        "Professional Tax (PT)",
+        "Income Tax (TDS)",
+        "Deductions",
+        "Payslip Generation",
+        "Salary Reports",
+        "Bank Transfer Details",
+      ],
+      example: `QuickBooks, Xero, Gusto`,
+    },
+    {
+      title: "POS - Point of Sale",
       definition: [
         "https://www.youtube.com/watch?v=nD0IyJLKio4",
         "Point of Sale system for managing sales transactions.",
@@ -3508,7 +3454,7 @@ MONGODB_URI: your_mongodb_connection_string
       example: `Supermarket, Restaurant, Medical shop, Clothing shop, Tea shop`,
     },
     {
-      title: "B2B Ecommerce",
+      title: "B2B - Business to Business",
       definition: [
         "Business to Business Ecommerce Website nu meaning.",
         "Oru business, இன்னொரு business-க்கு online-ல products அல்லது services sell பண்ணுற website.",
@@ -3522,10 +3468,24 @@ MONGODB_URI: your_mongodb_connection_string
       definition: [
         "அதாவது, நீங்களே backend, server, payment, hosting எல்லாம் புதிதாக உருவாக்க வேண்டியதில்லை. ஏற்கனவே தயாராக இருக்கும் ஒரு platform-ஐ மாதாந்திர (Monthly) அல்லது வருடாந்திர (Yearly) subscription செலுத்தி பயன்படுத்தலாம்.",
       ],
+      example: `Shopify, WooCommerce, Magento`,
     },
     {
-      title: "",
-      definition: [],
+      title: "CRM = Customer Relationship Management",
+      definition: [
+        "CRM is a technology for managing all your company's relationships and interactions with customers and potential customers.",
+        "It helps businesses improve their relationships with customers, streamline processes, and increase profitability.",
+        "CRM என்பது ஒரு software அல்லது system. இது ஒரு company-க்கு customers-ஐ manage செய்ய, sales track செய்ய, மற்றும் customer relationship improve செய்ய உதவும்.",
+      ],
+      example: `Popular CRM Software : Salesforce, HubSpot, Zoho CRM`,
+    },
+    {
+      title: "Order Management System",
+      definition: [
+        "An order management system is a software solution that helps businesses manage and track customer orders from placement to fulfillment.",
+        "It typically includes features for order entry, inventory management, shipping, and customer communication.",
+      ],
+      example: `WooCommerce, Shopify, Magento`,
     },
   ],
   VSshortcuts: [

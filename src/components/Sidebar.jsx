@@ -31,7 +31,6 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "Git & GitHub", path: "/gitgithub", icon: GitBranch },
     { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Docker", path: "/docker", icon: Box },
-    { name: "npm", path: "/npm", icon: Box },
     { name: "Jenkins", path: "/jenkins", icon: Settings },
     { name: "kubernetes", path: "/kubernetes", icon: Layers },
     { name: "dataStructure", path: "/dataStructure", icon: Database },
