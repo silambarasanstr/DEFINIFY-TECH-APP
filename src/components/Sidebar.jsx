@@ -36,6 +36,7 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "dataStructure", path: "/dataStructure", icon: Database },
     { name: "ECommerce", path: "/ECommerce", icon: Database },
     { name: "VSshortcuts", path: "/VSshortcuts", icon: Database },
+    { name: "English", path: "/English", icon: Database },
   ];
 
   return (

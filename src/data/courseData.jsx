@@ -916,7 +916,7 @@ application efficient ஆகும்`,
     {
       title: "Promise",
       definition: [
-        "A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.",
+        "A Promise is an object that represents the eventual(இறுதியில்) completion(நிறைவு பெறுவதை) (or failure) of an asynchronous operation and its resulting value.",
         "A Promise has three states → pending, fulfilled, and rejected.",
         "Promises are used to handle asynchronous operations like API calls, file reading, or timers.",
         "own-a Promise create pannalam",
@@ -1126,6 +1126,14 @@ application efficient ஆகும்`,
         "Matching a Regular Expression → regex.exec(string) or string.match(regex)",
         "Replacing with a Regular Expression → string.replace(regex, replacement)",
         "Splitting with a Regular Expression → string.split(regex)",
+      ],
+    },
+    {
+      title: "Garbage Collection",
+      definition: [
+        "Garbage Collection is an automatic memory management process in JavaScript. It removes objects from memory that are no longer reachable or used by the program.",
+        "It helps in freeing up memory and preventing memory leaks.",
+        "Garbage Collection-na JavaScript-ல memory cleanup process. நாம் use பண்ணாத variables அல்லது objects-ஐ automatically memory-ல இருந்து remove பண்ணும். இதனால் memory waste ஆகாமல் இருக்கும்.",
       ],
     },
   ],
@@ -2181,29 +2189,16 @@ const data = response.data as Order;
     {
       title: "What is Node.js?",
       definition: [
-        "Node.js is an open-source, cross-platform JavaScript runtime built on Chrome's V8 engine.",
-        "It allows developers to run JavaScript on the server side.",
-      ],
-    },
-    {
-      title: "Node.js",
-      definition: [
         "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript outside the browser.",
         "It is built on Chrome's V8 JavaScript engine and is widely used for building fast and scalable server-side applications.",
         "தமிழில்: Node.js என்பது browser-க்கு வெளியே JavaScript-ஐ இயக்க உதவும் runtime environment.",
       ],
-      example: `const http = require("http");
-
-http.createServer((req, res) => {
-  res.end("Hello");
-}).listen(3000);
-`,
     },
     {
       title: "What are the features of Node.js?",
       definition: [
         "Asynchronous and event-driven",
-        "Non-blocking I/O",
+        "Non-blocking I/O ",
         "Single-threaded event loop",
         "Fast execution using V8 engine",
         "Cross-platform",
@@ -2211,13 +2206,49 @@ http.createServer((req, res) => {
       ],
     },
     {
-      title: "What is the Event Loop?",
+      title: "NPM",
       definition: [
-        "The Event Loop is the core of Node.js.",
-        "It handles asynchronous operations without blocking the main thread.",
-        "It continuously checks the Call Stack and Callback Queue.",
+        "NPM (Node Package Manager) is the default package manager used to install, manage, and share JavaScript packages.",
+        "It helps developers manage project dependencies efficiently.",
+        "தமிழில்: NPM என்பது JavaScript packages-ஐ install, manage, மற்றும் share செய்ய பயன்படும் package manager ஆகும்.",
       ],
     },
+    {
+      title: "package.json",
+      definition: [
+        "package.json is the configuration file that stores project information, dependencies, scripts, version, and other metadata required to manage the application.",
+      ],
+    },
+
+    {
+      title: "What is package-lock.json?",
+      definition: [
+        "package-lock.json is an automatically generated file by npm that records the exact versions of all installed dependencies and their sub-dependencies. It ensures (உறுதிசெய்கிறது) that every developer and deployment environment installs the same package versions.",
+      ],
+    },
+    {
+      title: "What is the difference between Promise and async/await?",
+      definition: [
+        "A Promise is an object that represents the eventual(இறுதியில்) completion(நிறைவு பெறுவதை) (or failure) of an asynchronous operation and its resulting value.",
+        "Promises use .then() and .catch() for asynchronous operations.",
+        "async/await provides cleaner and more readable asynchronous code.",
+      ],
+    },
+    {
+      title: "What is callback hell?",
+      definition: [
+        "Callback hell occurs (நிகழ்கிறது) when multiple callbacks are nested inside each other.",
+        "It makes code difficult to read and maintain.",
+        "Callback Hell-ஐ தவிர்க்க: Promises, async/await",
+      ],
+    },
+    {
+      title: "Error Handling (பிழை கையாளுதல்)",
+      definition: [
+        "Error Handling is the process of detecting, catching, and managing errors in a Node.js application to prevent crashes and ensure smooth execution. It helps provide meaningful error responses to users. In Node.js, errors are commonly handled using try...catch, Promise .catch(), async/await, and centralized Express error-handling middleware. The Express error-handling middleware uses four parameters: err, req, res, and next.",
+      ],
+    },
+
     {
       title:
         "What is the difference between setTimeout(), setImmediate(), and process.nextTick()?",
@@ -2235,13 +2266,7 @@ http.createServer((req, res) => {
         "Asynchronous code allows other operations to continue while waiting for a task to complete.",
       ],
     },
-    {
-      title: "What is npm?",
-      definition: [
-        "npm (Node Package Manager) is the default package manager for Node.js.",
-        "It is used to install, update, and manage packages.",
-      ],
-    },
+
     {
       title: "What is the difference between require() and import?",
       definition: [
@@ -2251,13 +2276,7 @@ http.createServer((req, res) => {
         "import supports static analysis and modern JavaScript features.",
       ],
     },
-    {
-      title: "What is middleware in Express.js?",
-      definition: [
-        "Middleware is a function that executes between the request and response.",
-        "It can modify the request, response, or pass control using next().",
-      ],
-    },
+
     {
       title:
         "What is the difference between fs.readFile() and fs.readFileSync()?",
@@ -2281,69 +2300,58 @@ http.createServer((req, res) => {
       ],
     },
     {
-      title: "What is the difference between spawn(), exec(), and fork()?",
+      title:
+        "What is the difference between spawn(), exec(), fork(), and execFile()?",
       definition: [
-        "spawn() starts a new process for long-running tasks.",
-        "exec() executes a command and buffers the output.",
-        "fork() creates a new Node.js process for IPC communication.",
+        "spawn() Starts a new process and streams data while it runs. Best for large output.",
+        "exec()  Executes a shell command and returns the complete output.",
+        "fork() Creates a new Node.js process specifically to run another Node.js file.",
+        "execFile()  Executes a file directly and returns the complete output.",
       ],
     },
-    {
-      title: "What is package.json?",
-      definition: [
-        "package.json stores project metadata.",
-        "It contains project name, version, dependencies, scripts, and configuration.",
-      ],
-    },
-    {
-      title: "What is package-lock.json?",
-      definition: [
-        "package-lock.json locks the exact versions of installed dependencies.",
-        "It ensures consistent installations across different environments.",
-      ],
-    },
+
     {
       title: "What is clustering in Node.js?",
       definition: [
-        "Clustering allows a Node.js application to utilize multiple CPU cores.",
-        "It creates multiple worker processes.",
-      ],
-    },
-    {
-      title: "What is the difference between Promise and async/await?",
-      definition: [
-        "Promises use .then() and .catch() for asynchronous operations.",
-        "async/await provides cleaner and more readable asynchronous code.",
-      ],
-    },
-    {
-      title: "What is callback hell?",
-      definition: [
-        "Callback hell occurs when multiple callbacks are nested inside each other.",
-        "It makes code difficult to read and maintain.",
-      ],
-    },
-    {
-      title: "How do you handle errors in Node.js?",
-      definition: [
-        "Use try...catch with async/await.",
-        "Handle Promise rejections using .catch().",
-        "Use centralized error-handling middleware in Express applications.",
-      ],
-    },
-    {
-      title:
-        "What is the difference between process.exit() and process.kill()?",
-      definition: [
-        "process.exit() terminates the current Node.js process.",
-        "process.kill() sends a signal to another process using its PID.",
+        "Clustering in Node.js is a technique that allows you to create multiple Node.js processes (called worker processes) to take advantage of multi-core CPUs. All workers can share the same server port, enabling your application to handle more requests concurrently.",
+        "Normally, a Node.js application runs in a single process and uses only one CPU core. With clustering, you can utilize all available CPU cores.",
+        "Web Server-ஐ Scale செய்ய பயன்படும்",
+        "பல Worker Process உருவாகும்",
+        "அனைத்து Worker-களும் ஒரே Port-ஐ Share செய்யும்",
+        "அதிக Traffic-ஐ Handle செய்ய பயன்படும்",
       ],
     },
     {
       title: "What are child processes in Node.js?",
       definition: [
-        "Child processes allow Node.js to execute external commands or run additional processes.",
-        "They are created using the child_process module.",
+        "A Child Process in Node.js is a separate process created from the main Node.js process. It allows you to execute system commands, run other programs, or perform CPU-intensive tasks without blocking the main event loop.",
+        "வேறு Program அல்லது Task-ஐ இயக்க பயன்படும்",
+        "தனி Process உருவாகும்",
+        "Port Share செய்யாது",
+        "Heavy Task-களுக்கு பயன்படும்",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between process.exit() and process.kill()?",
+      definition: [
+        "process.exit() terminates (முடிவடைகிறது) the current Node.js process.",
+        "process.kill() sends a signal to another process using its PID.",
+      ],
+    },
+    {
+      title: "What is Non-blocking?",
+      definition: [
+        "Non-blocking means the program does not wait for one operation to finish before executing the next one. Instead, it continues running other tasks while the operation completes in the background.",
+        "Non-blocking-na oru operation complete ஆகுற வரைக்கும் wait பண்ணாது. அதுக்கு பதிலா next task-ஐ execute பண்ணிடும். Operation complete ஆன பிறகு callback, Promise, அல்லது async/await மூலம் result handle பண்ணலாம்.",
+      ],
+    },
+    {
+      title: "Blocking",
+      definition: [
+        "Blocking means the program waits for an operation to complete before executing the next statement. During this time, the execution is paused until the current task finishes.",
+        "Blocking-na oru operation complete ஆகுற வரைக்கும் program wait பண்ணும். அந்த operation முடியும் வரை next statement execute ஆகாது. Operation complete ஆன பிறகுதான் next task execute ஆகும்.",
       ],
     },
   ],
@@ -2351,25 +2359,10 @@ http.createServer((req, res) => {
     {
       title: "What is Express.js?",
       definition: [
-        "Express.js is a minimal and flexible web application framework for Node.js.",
-        "It simplifies building web servers and RESTful APIs.",
-      ],
-    },
-    {
-      title: "Express.js",
-      definition: [
         "Express.js is a minimal and flexible web framework for Node.js used to build APIs and web applications.",
         "It simplifies routing, middleware handling, and server creation.",
         "தமிழில்: Express.js என்பது Node.js-க்கு பயன்படுத்தப்படும் ஒரு lightweight web framework ஆகும். இது APIs மற்றும் web applications உருவாக்க உதவுகிறது.",
       ],
-      example: `const express = require("express");
-
-const app = express();
-
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
-`,
     },
     {
       title: "Why use Express.js?",
@@ -2386,58 +2379,23 @@ app.get("/", (req, res) => {
     {
       title: "What is Middleware?",
       definition: [
-        "Middleware is a function that executes between the request and response.",
-        "It can modify the request or response.",
-        "It can end the request or pass control using next().",
+        "Middleware is a function that runs between the client request and the server response. It can process the request before it reaches the route handler or process the response before it is sent back to the client.",
+        "They are commonly used for logging, authentication, validation, error handling, and parsing request data.",
+        "Client request server-ku varumbodhu, route-ku direct-a pogama, first middleware execute aagum. Adhu request-a check pannum, modify pannum, validate pannum. Athukkapuram next() call pannina next middleware illa route handler-ku request pogum.",
+        "next() is used to pass control to the next middleware or the route handler. If we don't call next(), the request will stop there and the client won't get a response.",
       ],
     },
     {
       title: "Types of Middleware",
       definition: [
-        "Application Middleware",
-        "Router Middleware",
+        "Application Middleware app.use(express.json());",
+        "Router Middleware router.use(authMiddleware);",
         "Built-in Middleware",
         "Error-handling Middleware",
-        "Third-party Middleware",
+        "Third-party Middleware cors(),helmet(),morgan()",
       ],
     },
 
-    {
-      title: "Middleware",
-      definition: [
-        "Middleware functions run during the request-response cycle and have access to req, res, and next.",
-        "They are commonly used for logging, authentication, validation, error handling, and parsing request data.",
-        "தமிழில்: Middleware என்பது request மற்றும் response இடையே இயங்கும் function ஆகும்.",
-      ],
-      example: `app.use((req, res, next) => {
-  console.log("Middleware executed");
-
-  next();
-});
-`,
-    },
-
-    {
-      title: "What is next()?",
-      definition: [
-        "next() passes control to the next middleware or route handler.",
-        "Without next(), the request stops unless a response is sent.",
-      ],
-    },
-    {
-      title: "What happens if next() is not called?",
-      definition: [
-        "The request will stop at the current middleware.",
-        "The client may keep waiting if no response is sent.",
-      ],
-    },
-    {
-      title: "What is Routing?",
-      definition: [
-        "Routing determines how an application responds to client requests.",
-        "Routes are based on URL paths and HTTP methods.",
-      ],
-    },
     {
       title: "Routing",
       definition: [
@@ -2446,15 +2404,24 @@ app.get("/", (req, res) => {
         "Example: app.get('/user', (req,res)=>res.send('User Page'));",
       ],
     },
+
     {
-      title: "Difference between app.use() and app.get()",
+      title: "What is Express Router?",
       definition: [
-        "app.use() works for all HTTP methods.",
-        "app.use() is mainly used for middleware.",
-        "app.get() handles only GET requests.",
-        "app.get() is used for specific route handling.",
+        "Express Router is a mini Express application that helps organize routes into separate modules. Instead of writing all routes in one file, we can group related routes together and keep the code clean and maintainable.",
+        "It improves project structure and maintainability.",
+        "Express Router use pannrathu routes-a separate files-la organize panna. Example, employee routes oru file, attendance routes oru file, leave routes oru file. Ithu project maintain panna easy",
       ],
     },
+    {
+      title: "How do you use Router?",
+      definition: [
+        "Create routes using express.Router().",
+        "Import the router into app.js or server.js.",
+        "Register it using app.use().",
+      ],
+    },
+
     {
       title: "What are HTTP Methods?",
       definition: [
@@ -2463,6 +2430,13 @@ app.get("/", (req, res) => {
         "PUT - Replace existing data.",
         "PATCH - Update specific fields.",
         "DELETE - Remove data.",
+      ],
+    },
+    {
+      title: "What is a REST API?",
+      definition: [
+        "A REST API follows REST principles.",
+        "It uses HTTP methods like GET, POST, PUT, PATCH, and DELETE for CRUD operations.",
       ],
     },
     {
@@ -2480,6 +2454,25 @@ app.get("/", (req, res) => {
         "req.body contains data sent in the request body.",
       ],
     },
+
+    {
+      title: "Difference between app.use() and app.get()",
+      definition: [
+        "app.use() works for all HTTP methods.",
+        "app.use() is mainly used for middleware.",
+        "app.get() handles only GET requests.",
+        "app.get() is used for specific route handling.",
+      ],
+    },
+
+    {
+      title: "Difference between res.send() and res.json()",
+      definition: [
+        "res.send() can send strings, HTML, Buffers, or objects.",
+        "res.json() specifically sends JSON responses.",
+      ],
+    },
+
     {
       title: "What is express.json()?",
       definition: [
@@ -2495,57 +2488,9 @@ app.get("/", (req, res) => {
       ],
     },
     {
-      title: "How do you serve static files?",
-      definition: [
-        "Use express.static() middleware.",
-        "It serves HTML, CSS, JavaScript, images, and other static files.",
-      ],
-    },
-    {
-      title: "What is Express Router?",
-      definition: [
-        "Express Router is used to organize routes into separate modules.",
-        "It improves project structure and maintainability.",
-      ],
-    },
-    {
-      title: "How do you use Router?",
-      definition: [
-        "Create routes using express.Router().",
-        "Import the router into app.js or server.js.",
-        "Register it using app.use().",
-      ],
-    },
-    {
-      title: "What is Error Handling Middleware?",
-      definition: [
-        "It catches application errors.",
-        "It sends appropriate error responses to the client.",
-        "It has four parameters: err, req, res, next.",
-      ],
-    },
-
-    {
-      title: "Error Handling (பிழை கையாளுதல்)",
-      definition: [
-        "Error handling is a technique used to catch and manage errors that occur in an application or server.",
-        "It helps prevent application crashes and provides meaningful error responses to users.",
-      ],
-      example: `app.use((err, req, res, next) => {
-  console.error(err.stack);
-
-  res.status(500).json({
-    success: false,
-    message: "Something went wrong",
-  });
-});
-`,
-    },
-    {
       title: "What is CORS?",
       definition: [
-        "CORS stands for Cross-Origin Resource Sharing.",
-        "It allows a frontend and backend from different origins to communicate securely.",
+        "CORS (Cross-Origin Resource Sharing) is a security mechanism implemented by browsers that controls whether a web application from one origin can access resources from another origin.",
       ],
     },
     {
@@ -2589,18 +2534,12 @@ app.use(helmet());
         "It supports uploading single or multiple files.",
       ],
     },
+
     {
-      title: "What is a REST API?",
+      title: "How do you serve static files?",
       definition: [
-        "A REST API follows REST principles.",
-        "It uses HTTP methods like GET, POST, PUT, PATCH, and DELETE for CRUD operations.",
-      ],
-    },
-    {
-      title: "Difference between res.send() and res.json()",
-      definition: [
-        "res.send() can send strings, HTML, Buffers, or objects.",
-        "res.json() specifically sends JSON responses.",
+        "Use express.static() middleware.",
+        "It serves HTML, CSS, JavaScript, images, and other static files.",
       ],
     },
     {
@@ -2659,26 +2598,6 @@ app.use(helmet());
     },
   ],
   node_and_express: [
-    {
-      title: "CRUD",
-      definition: [
-        "Product.find()",
-        "Product.create()",
-        "Product.findById()",
-        "Product.findByIdAndUpdate()",
-        "Product.findByIdAndDelete()",
-      ],
-    },
-    {
-      title: "Query Parameters",
-      definition: [
-        "/products?page=1",
-        "/products?limit=5",
-        "/products?search=iphone",
-        "/products?sort=price",
-      ],
-    },
-
     {
       title: "Compression (சுருக்கம்)",
       definition: [
@@ -2739,49 +2658,6 @@ app.use(verifyToken);
 
 app.use(cors());
 `,
-    },
-
-    {
-      title: "Node.js Commands",
-      definition: [
-        "Node  version: node --version",
-        "npm version: npm --version",
-        "npm init: npm init",
-        "npm install: npm install",
-        "npm start: npm start",
-        "npm run dev: npm run dev",
-        "npm run build: npm run build",
-        "npm run test: npm run test",
-        "npm run lint: npm run lint",
-        "npm run format: npm run format",
-        "npm run check: npm run check",
-        "npm run deploy: npm run deploy",
-        "Handle 1 Million Requests per Second (MRPS): app.use(express.json({limit: '10mb'}));",
-      ],
-    },
-
-    {
-      title: "NPM",
-      definition: [
-        "NPM (Node Package Manager) is a package manager used to install, manage, and share JavaScript packages.",
-        "It helps developers manage project dependencies efficiently.",
-        "தமிழில்: NPM என்பது JavaScript packages-ஐ install, manage, மற்றும் share செய்ய பயன்படும் package manager ஆகும்.",
-      ],
-    },
-    {
-      title: "package.json",
-      definition: [
-        "package.json is a configuration file used in Node.js projects to store project metadata and dependencies.",
-        "It defines scripts, package versions, and other project-related information.",
-        "தமிழில்: package.json என்பது project பற்றிய தகவல்கள், dependencies, scripts, மற்றும் versions-ஐ சேமிக்கும் configuration file ஆகும்.",
-      ],
-      example: `{
-  "name": "app",
-  "version": "1.0.0",
-  "dependencies": {
-    "express": "^4.0.0"
-  }
-}`,
     },
 
     {
@@ -3487,6 +3363,13 @@ MONGODB_URI: your_mongodb_connection_string
       ],
       example: `WooCommerce, Shopify, Magento`,
     },
+    {
+      title: "LMS (Learning Management System)",
+      definition: [
+        "A Learning Management System (LMS) is software for the administration, documentation, tracking, reporting and delivery of educational courses, training programs or learning and development programs.",
+      ],
+      example: `Moodle, Canvas, Blackboard`,
+    },
   ],
   VSshortcuts: [
     {
@@ -3568,6 +3451,43 @@ MONGODB_URI: your_mongodb_connection_string
     {
       title: "Ctrl + J",
       definition: ["Toggle Panel"],
+    },
+  ],
+  English: [
+    {
+      title: "May I speak with Jiva?",
+      definition: [
+        "Yes, Speaking. and Yes you are speaking with Jiva.",
+        "May I ask who is calling?",
+        "I am Ravi from XYZ Company.",
+        "How can I help you today?",
+      ],
+    },
+    {
+      title: "How are you?",
+      definition: ["I'm doing well, thank you for asking."],
+    },
+    {
+      title: "Are you available?",
+      definition: ["Yes, I am available."],
+    },
+    {
+      title: "Are you currently working with any company?",
+      definition: [
+        "Yes, I am currently working with XYZ Company.",
+        "No, I am not currently working with any company. and I am looking for new opportunities.",
+      ],
+    },
+    {
+      title: "responsibility",
+      definition: [
+        "My role was Frontend Developer. I was responsible for developing responsive user interfaces using React and Tailwind CSS, creating reusable components, integrating REST APIs, managing application state, fixing frontend bugs, and ensuring a smooth user experience.",
+        "I worked as a Frontend Developer. My responsibilities included developing UI components, integrating REST APIs, managing state, fixing frontend issues, and ensuring the application was responsive and user-friendly.",
+        "My responsibility was to develop the frontend of the application using React, integrate APIs, create responsive UI components, fix frontend bugs, and ensure a smooth user experience.",
+        "My responsibility was to develop the frontend for modules like Employees, Attendance, Leave, and Payroll. I integrated the backend APIs, managed the application state, and created responsive user interfaces using React and Tailwind CSS.",
+        "Project-Based Answer",
+        "In the Order Management System and Payroll Management System, my role was Frontend Developer. My responsibilities included developing the user interface, building reusable React components, integrating backend APIs, implementing forms and dashboards, managing state, fixing UI issues, and making the application responsive.",
+      ],
     },
   ],
 };
