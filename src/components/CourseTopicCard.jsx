@@ -86,8 +86,12 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
                       <p className="mt-1 text-xs leading-5 text-gray-600">
                         {type.description}
                       </p>
+
+                 
                     </div>
                   ))}
+
+             
                 </div>
               </div>
             )}
@@ -97,7 +101,7 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
               <div>
                 <h4 className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
                   Example
-                </h4>
+                </h4 >
 
                 <pre className="overflow-x-auto rounded-md bg-slate-900 p-3 text-xs leading-5 text-green-400">
                   <code>{topic.example}</code>

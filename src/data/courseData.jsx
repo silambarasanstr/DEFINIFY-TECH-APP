@@ -811,23 +811,91 @@ user1.greet();
     },
 
     {
-      title: "Memoization",
+      title: "Pure Function",
       definition: [
-        "Memoization is an optimization technique used to store the results of expensive function calls and return the cached result when the same inputs occur again.",
-
-        `ஒரு function run ஆகும்போது அதற்கு அதிக time அல்லது processing செலவாகும் என்றால், அந்த function-ன் result-ஐ store (cache) செய்து வைக்கும்.
-
-பிறகு அதே input மீண்டும் வந்தால், function-ஐ மறுபடியும் execute செய்யாமல், ஏற்கனவே store செய்த result-ஐ நேராக return செய்யும்.
-
-இதனால்:
-
-performance வேகமாகும்
-unnecessary calculations குறையும்
-application efficient ஆகும்`,
-
-        "It avoids repeated calculations and improves performance.",
+        "A pure function always returns the same output for the same input.",
+        "It does not modify or depend on external variables or state.",
+        "It has no side effects, making it predictable and easy to test.",
       ],
-      example: `code`,
+      example: `
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // 5
+console.log(add(2, 3)); // 5
+`,
+    },
+
+    {
+      title: "Impure Function",
+      definition: [
+        "An impure function may return different outputs for the same input.",
+        "It depends on or modifies external variables or state.",
+        "It performs side effects such as changing variables, making API calls, or logging to the console.",
+      ],
+      example: `
+let total = 0;
+
+function addToTotal(value) {
+  total += value;
+  return total;
+}
+
+console.log(addToTotal(5)); // 5
+console.log(addToTotal(5)); // 10
+`,
+    },
+
+    {
+      title: "Implicit",
+      definition: [
+        "Implicit means something is understood or happens automatically without being stated directly.",
+        "It is not written or specified explicitly; the system or language infers it.",
+        "JavaScript performs many implicit operations, such as type coercion.",
+      ],
+      example: `
+// Implicit Type Conversion (Coercion)
+console.log("5" + 2); // "52"
+console.log("5" - 2); // 3
+
+// JavaScript automatically converts the values.
+`,
+    },
+
+    {
+      title: "Explicit",
+      definition: [
+        "Explicit means something is clearly stated or done manually.",
+        "The programmer intentionally specifies or performs the operation.",
+        "Explicit code is easier to understand and avoids unexpected behavior.",
+      ],
+      example: `
+// Explicit Type Conversion
+console.log(Number("5") + 2); // 7
+console.log(String(5) + 2);   // "52"
+
+// The conversion is done manually.
+`,
+    },
+    {
+      title: "NaN (Not-a-Number)",
+      definition: [
+        "NaN stands for Not-a-Number.",
+        "It is a special value that represents (குறிக்கிறது) an invalid or undefined numeric result.",
+        "Although its name is Not-a-Number, its data type is 'number'. ",
+        "அதன் பெயர் Not-a-Number என்றாலும், அதன் தரவு வகை 'number' ஆகும். ",
+      ],
+      example: `
+console.log(Number("Hello")); // NaN
+console.log(0 / 0);           // NaN
+console.log(typeof NaN);      // "number"
+console.log(Number.isNaN(NaN)); // true
+console.log(NaN === NaN);       // false
+if (Number.isNaN(quantity)) {
+  alert("Please enter a valid quantity");
+}
+`,
     },
 
     {
@@ -835,13 +903,7 @@ application efficient ஆகும்`,
       definition: [
         "Debouncing is a technique that delays the execution of a function until after a specified delay has passed since the last time it was invoked.",
         "It prevents unnecessary function calls when an event is triggered repeatedly.",
-        "Commonly used in search inputs, resize events, and API calls to improve performance.",
-
-        "Example (Basic): function debounce(fn, delay) { let timer; return function(...args) { clearTimeout(timer); timer = setTimeout(() => fn(...args), delay); }; }",
-
-        "Usage: const handleSearch = debounce((text) => { console.log('API call:', text); }, 500);",
-
-        "handleSearch('h'); handleSearch('he'); handleSearch('hel'); // Only last call runs after delay",
+        "Commonly used in search inputs, Filters, Live validation, resize events, and API calls to improve performance.",
       ],
     },
     {
@@ -862,15 +924,32 @@ application efficient ஆகும்`,
     {
       title: "Event Loop",
       definition: [
-        "The Event Loop is a mechanism in JavaScript that continuously checks if the Call Stack is empty and then moves tasks from queues to the stack.",
-        "The Event Loop is a handle asynchronous operations while running in a single-threaded environment.",
-        "Asynchronous operations (like setTimeout, Promises, API calls) are handled by Web APIs and moved to callback queues.",
+        "The Event Loop is a mechanism in JavaScript that continuously checks if the Call Stack is empty, and if so, moves tasks from the queues (Microtask Queue first, then Callback Queue) onto the stack for execution.",
 
-        "The Callback Queue (also called the Macrotask Queue or Task Queue) → stores callbacks from setTimeout, setInterval, DOM events.",
+        "It allows JavaScript to handle asynchronous operations (like setTimeout, API calls, events) even though JavaScript itself is single-threaded.",
 
-        "Microtask Queue → stores Promise callbacks (.then, .catch, .finally) and runs before the callback queue.",
-        "Promises (microtasks) Higher priority, Executes first.",
-        "Execution order → Call Stack → Microtask Queue → Callback Queue",
+        "The Callback Queue (also called the Macrotask Queue or Task Queue) stores callbacks from setTimeout, setInterval, and DOM events, waiting for the Call Stack to be empty.",
+
+        "The Microtask Queue stores Promise callbacks (.then, .catch, .finally) and queueMicrotask() callbacks. It runs before the Callback Queue.",
+
+        "Microtasks have higher priority than macrotasks — all microtasks are executed first, before the next macrotask is picked up.",
+
+        "Execution order: Call Stack → Microtask Queue (fully drained) → Callback Queue (one task at a time) → repeat.",
+      ],
+    },
+
+    {
+      title: "this keyword / Function Borrowing / Explicit Binding",
+      definition: [
+        "Call: Invokes(அழைக்கப்பட்டது) the function immediately, with 'this' set to the first argument, and remaining arguments passed one by one (comma separated).",
+
+        "Apply: Invokes the function immediately, with 'this' set to the first argument, but remaining arguments passed as a single array.",
+
+        "Bind: Does NOT invoke the function immediately. It returns a new function with 'this' permanently bound, which can be called later.",
+
+        "Call and Apply are used for immediate invocation — the only difference is how arguments are passed (comma-separated vs array).",
+
+        "Bind is used for deferred invocation — commonly used in event handlers, setTimeout, and callback functions where 'this' context gets lost.",
       ],
     },
     {
@@ -910,7 +989,6 @@ application efficient ஆகும்`,
       definition: [
         "Synchronous JavaScript runs code line by line, blocking the execution of subsequent code until the current operation is completed.",
         "Asynchronous JavaScript allows code to run without blocking the execution of other code.",
-        "It is used for tasks that take time like API calls, timers, and file operations.",
       ],
     },
     {
@@ -941,6 +1019,15 @@ application efficient ஆகும்`,
         "Async/Await is a syntax that allows you to write asynchronous code in a more readable and maintainable way.",
         "Async functions return a Promise, and the await keyword can be used to wait for the resolution of a Promise before proceeding with the execution of the code.",
         "Async/Await makes it easier to handle asynchronous operations and can help avoid callback hell.",
+      ],
+    },
+
+    {
+      title: "What is callback hell?",
+      definition: [
+        "Callback hell occurs (நிகழ்கிறது) when multiple callbacks are nested inside each other.",
+        "It makes code difficult to read and maintain.",
+        "Callback Hell-ஐ தவிர்க்க: Promises, async/await",
       ],
     },
 
@@ -1012,6 +1099,13 @@ application efficient ஆகும்`,
 
         "8. Promises → Handle async operations",
         "Example: new Promise((resolve) => resolve('Done'));",
+      ],
+    },
+    {
+      title: "What is babel?",
+      definition: [
+        "Babel is a JavaScript compiler that converts modern JavaScript code into  older browsers.",
+        "It allows developers to use the latest JavaScript features while maintaining compatibility with older environments.",
       ],
     },
     {
@@ -1153,13 +1247,13 @@ application efficient ஆகும்`,
     {
       title: "Latest version React 19",
       definition: [
-        "use hook for promises",
-        "useActionState for Forms",
+        "useActionState for Forms Actions vs traditional form handling",
         "useOptimistic for instant UI",
-        "Server Component & Action",
-        "React Compiler (auto-optimization)",
-        "Advanced Hooks : useRef,useMemo,useCallback,useReducer",
+        "ref as a prop (no more forwardRef needed)",
+        "React Compiler (auto-optimization) Build-time-la automatic-a memoize pannum — useMemo, useCallback, React.memo manual-ah use panna thevai kammi aagum.",
+        "Document Metadata support",
         "Performance:Code splitting,lazy loading,Virtualization",
+        "Improved error handling & hydration errors",
         "Advanced Router : useParams,useNavigate,Protected routes",
         "Suspense & Error Boundaries",
       ],
@@ -1188,7 +1282,8 @@ application efficient ஆகும்`,
       definition: [
         <>
           Cache is a temporary storage area that{" "}
-          <strong>holds frequently accessed data</strong> for faster retrieval.
+          <strong>holds frequently accessed data</strong> for faster
+          retrieval(மீட்டெடுத்தல்).
         </>,
         "It is commonly used to improve application performance and reduce the load on the server.",
         "Cache = அடிக்கடி பயன்படுத்தப்படும் data-வை temporary-ஆக சேமித்து வைத்து, அடுத்த முறை வேகமாக பயன்படுத்துவது.",
@@ -1223,29 +1318,6 @@ application efficient ஆகும்`,
       ],
     },
     {
-      title: "Virtual DOM",
-      definition: [
-        "Virtual DOM is a lightweight copy of the Real DOM.",
-        "React creates a virtual representation of the UI in memory.",
-        "When state or props change, React updates the Virtual DOM first.",
-        "React compares the old Virtual DOM with the new Virtual DOM using a process called Diffing.",
-        "Only the changed elements are updated in the Real DOM for better performance.",
-      ],
-      example: `
-const [count, setCount] = useState(0);
-
-return (
-  <div>
-    <h1>{count}</h1>
-
-    <button onClick={() => setCount(count + 1)}>
-      Increment
-    </button>
-  </div>
-);
-`,
-    },
-    {
       title: "Real DOM",
       definition: [
         "Real DOM is the actual DOM shown in the browser.",
@@ -1254,19 +1326,16 @@ return (
         "Every change in the Real DOM can affect performance.",
         "JavaScript can directly manipulate the Real DOM using methods like getElementById.",
       ],
-      example: `
-<h1 id="title">Hello</h1>
-
-<button onclick="changeText()">
-  Change Text
-</button>
-
-<script>
-  function changeText() {
-    document.getElementById("title").innerText = "Welcome";
-  }
-</script>
-`,
+    },
+    {
+      title: "Virtual DOM",
+      definition: [
+        "Virtual DOM is a lightweight copy of the Real DOM.",
+        "React creates a virtual representation of the UI in memory.",
+        "When state or props change, React updates the Virtual DOM first.",
+        "React compares the old Virtual DOM with the new Virtual DOM using a process called Diffing.",
+        "Only the changed elements are updated in the Real DOM for better performance.",
+      ],
     },
 
     {
@@ -1304,7 +1373,7 @@ return (
     {
       title: "React Router",
       definition:
-        "React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.",
+        "React Router is a standard library for routing in React. It enables the navigation among(இடையே) views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.",
     },
 
     {
@@ -1320,7 +1389,7 @@ return (
     {
       title: "State",
       definition: [
-        "State is a built-in React object that is used to contain data or information about the component. State can change over time (நிலை காலப்போக்கில் மாறக்கூடும்.), and when it does (அது நிகழும்போது), the component re-renders to reflect the new state.",
+        "State is a built-in React (mutable - மாற்றக்கூடியது) object that is used to contain data or information about the component. State can change over time (நிலை காலப்போக்கில் மாறக்கூடும்.), and when it does (அது நிகழும்போது), the component re-renders to reflect the new state.",
         " React state updates are asynchronous (or more precisely, scheduled), not synchronous.",
       ],
     },
@@ -1329,16 +1398,15 @@ return (
       definition: [
         "Props (short for properties) are a way of passing data from parent to child components in React.",
         " They are read-only and cannot be modified by the child component.",
-
+        "Props  Immutable",
         " They can be of any data type, including strings, numbers, arrays, and objects. ",
-        " Props are accessed in the child component using the props object, which is passed as an argument to the component function.",
       ],
     },
 
     {
       title: "Props Drilling",
       definition: [
-        "Prop drilling is a situation where you have to pass data through multiple levels of components in order to reach the component that needs the data.  This can lead to code that is difficult to maintain and understand, as it can create a lot of unnecessary props being passed down through the component tree.",
+        "Prop drilling is a situation (நிலைமை) where you have to pass data through multiple levels of components in order to reach the component that needs the data.  This can lead to code that is difficult to maintain and understand, as it can create a lot of unnecessary props being passed down through the component tree.",
         "props Drilling refers to the process of passing data from a high-level component down to a deep-level component thought intermediate component that do need the data themselves",
       ],
     },
@@ -1353,13 +1421,31 @@ return (
     },
 
     {
-      title: "Component",
+      title: "What is a Component?",
 
-      definition:
-        "A component in React is a small, reusable piece of UI. It can be either a functional component or a class component.",
+      definition: [
+        "A component is a self-contained, reusable piece of UI in React. ",
+        "It can be either(ஏதாவது ஒன்று) a functional component or a class component.",
+        "Components let us break down complex UIs into smaller, manageable, and reusable pieces",
+      ],
     },
     {
-      title: "Functional Component",
+      title: "Types of Components",
+      definition: [
+        "Presentational Components",
+        "Container Components",
+        "Layout Components",
+        "Page Components",
+        "Feature Components",
+        "Shared Components",
+        "Provided Components",
+        "Wrapper Components",
+        "Component Components",
+        "Domain Components",
+      ],
+    },
+    {
+      title: "Functional Component (modern, hooks-oda use pannuvom)",
       definition: [
         "Functional components are JavaScript functions that accept props as an argument and return JSX. It is the modern way of creating React components.",
         "Also known as Stateless Components ",
@@ -1367,7 +1453,7 @@ return (
       ],
     },
     {
-      title: "Class Component",
+      title: "Class Component (old style, lifecycle methods use pannum)",
       definition: [
         "Class components are JavaScript classes that extend React.Component and implement the render() method, which returns JSX. It is the older way of creating React components.",
         "Also known as Stateful components because they implement logic and state ",
@@ -1417,7 +1503,8 @@ const inputRef = useRef();
     },
 
     {
-      title: "Higher Order Component",
+      title:
+        "Higher Order Component (component-a wrap panni extra functionality kudukurathu)",
       definition: [
         " A Higher Order Component is a function that takes a component as input and returns a new component with extra powers",
         "Formula: const EnhancedComponent = higherOrderComponent(OriginalComponent)",
@@ -1437,17 +1524,34 @@ const inputRef = useRef();
     },
 
     {
-      title: "Redux",
+      title: "Redux (State Management)",
       definition: [
-        "Redux is a predictable (கணிக்கக்கூடிய) state container for JavaScript applications.",
-        "It helps manage the state of a React application in a centralized and predictable way.",
-        "",
+        "Redux is a predictable (கணிக்கக்கூடிய) state management library used to manage the global state of an application in a single centralized store, making state changes predictable and easy to debug.",
+
+        "Redux follows 3 core principles: Single Source of Truth (one store for the whole app), State is Read-Only (can't be modified directly, only via actions), and Changes are made using Pure Functions (reducers).",
+
+        "Store: A single JavaScript object that holds the entire application state.",
+
+        "Action: A plain JavaScript object that describes 'what happened' — it must have a 'type' field, and optionally a 'payload' with data.",
+
+        "Reducer: A pure function that takes the current state and an action, and returns a new state — (state, action) => newState. It never mutates the original state.",
+
+        "Dispatch: The only way to trigger a state change is by calling store.dispatch(action) — this sends the action to the reducer.",
+
+        "React-Redux: The official library to connect Redux with React. useSelector() reads data from the store, useDispatch() sends actions to the store.",
+
+        "Redux Toolkit (RTK): The modern, official recommended way to write Redux — reduces boilerplate with createSlice, createAsyncThunk, and configureStore.",
       ],
     },
 
     {
       title: "Lifecycle Method",
-      definition: ["dddd", "dddd"],
+      definition: [
+        "Special methods that get called automatically at specific points from a component's birth (mounting) to death (unmounting)",
+        "Component-oda birth (mounting) to death (unmounting) varaikkum, specific points-la automatic-ah call aagura special methods",
+        "There are 3 main phases: Mounting, Updating, and Unmounting — each phase has its own specific methods",
+        "3 main phases: Mounting, Updating, Unmounting — each phase-ku specific methods irukkum",
+      ],
     },
 
     {
@@ -1466,7 +1570,8 @@ const inputRef = useRef();
     {
       title: "6. useCallback",
       definition: [
-        "useCallback is used to memoize a function so that the same function instance is reused unless its dependencies change. This helps prevent unnecessary child component re-renders.",
+        "useCallback is used to memoize a function so that the same function instance is reused unless its dependencies change.",
+        "Helps prevent unnecessary re-renders of child components",
       ],
     },
 
@@ -1534,7 +1639,7 @@ const inputRef = useRef();
     {
       title: "Suspense",
       definition: [
-        "React Suspense is a built-in feature that lets you display a fallback UI (such as a loading spinner or skeleton screen) while waiting for asynchronous content to become ready.",
+        "React Suspense is a built-in feature that lets you display a fallback(மாற்று விருப்பம்) UI (such as a loading spinner or skeleton screen) while waiting for asynchronous content to become ready.",
         "It improves the user experience by preventing blank screens and allowing React to gracefully handle loading states.",
       ],
     },
@@ -1565,6 +1670,14 @@ useEffect(() => {
         "State Lifting என்பது React-ல் பயன்படுத்தப்படும் ஒரு pattern. இதில் Child Component-ல் இருக்கும் state-ஐ, அதைப் பயன்படுத்தும் அனைத்து Child Components-க்கும் பொதுவான (Closest Common) Parent Component-க்கு மாற்றுவது ஆகும்.",
       ],
       example: "",
+    },
+
+    {
+      title: "Code Splitting",
+      definition: [
+        "Code Splitting is a technique used to split the code of a React application, Break your application into smaller chunks, which can be loaded on demand.",
+        "This helps reduce the initial bundle size and improves the performance of the application.",
+      ],
     },
 
     {
@@ -1885,8 +1998,20 @@ function CSRComponent() {
   return <div>CSR Data Loaded</div>;
 }`,
     },
-
-    // 🔥 OTHER CORE CONCEPTS
+    {
+      title: "Hydration Error",
+      definition: [
+        "Happens when the page looks different on server vs client, so React gets confused while attaching to the HTML.",
+        "Fix: Use useEffect for things like date/time or random values, so they load only in the browser, not on the server.",
+      ],
+    },
+    {
+      title: "HTTP Interceptor",
+      definition: [
+        "A place where you can catch every API request or response before it reaches your code, and do something automatically — like adding a token or handling errors.",
+        "In React, we don't have this built-in like Angular, so we use Axios interceptors (or a custom fetch wrapper) to do the same thing.",
+      ],
+    },
   ],
   typescript: [
     {
@@ -2205,6 +2330,17 @@ const data = response.data as Order;
         "Scalable",
       ],
     },
+
+    {
+      title: "NPX",
+      definition: [
+        "NPX is a package runner that comes with npm (v5.2+).",
+        "It allows you to run Node.js packages without installing them globally.",
+        "It first checks if the package exists locally. If not, it downloads a temporary copy, runs it, and then removes it.",
+        "NPX is commonly used to run CLI tools like create-react-app, eslint, and prettier.",
+        "Example: npx eslint . or npx create-react-app my-app.",
+      ],
+    },
     {
       title: "NPM",
       definition: [
@@ -2226,26 +2362,24 @@ const data = response.data as Order;
         "package-lock.json is an automatically generated file by npm that records the exact versions of all installed dependencies and their sub-dependencies. It ensures (உறுதிசெய்கிறது) that every developer and deployment environment installs the same package versions.",
       ],
     },
-    {
-      title: "What is the difference between Promise and async/await?",
-      definition: [
-        "A Promise is an object that represents the eventual(இறுதியில்) completion(நிறைவு பெறுவதை) (or failure) of an asynchronous operation and its resulting value.",
-        "Promises use .then() and .catch() for asynchronous operations.",
-        "async/await provides cleaner and more readable asynchronous code.",
-      ],
-    },
-    {
-      title: "What is callback hell?",
-      definition: [
-        "Callback hell occurs (நிகழ்கிறது) when multiple callbacks are nested inside each other.",
-        "It makes code difficult to read and maintain.",
-        "Callback Hell-ஐ தவிர்க்க: Promises, async/await",
-      ],
-    },
+
     {
       title: "Error Handling (பிழை கையாளுதல்)",
       definition: [
         "Error Handling is the process of detecting, catching, and managing errors in a Node.js application to prevent crashes and ensure smooth execution. It helps provide meaningful error responses to users. In Node.js, errors are commonly handled using try...catch, Promise .catch(), async/await, and centralized Express error-handling middleware. The Express error-handling middleware uses four parameters: err, req, res, and next.",
+      ],
+    },
+
+    {
+      title: "HTTP Status Codes",
+      definition: [
+        "200 → Success",
+        "201 → Created",
+        "400 → Bad Request",
+        "401 → Unauthorized",
+        "403 → Forbidden",
+        "404 → Not Found",
+        "500 → Internal Server Error",
       ],
     },
 
@@ -2256,14 +2390,6 @@ const data = response.data as Order;
         "process.nextTick() executes before the next event loop iteration.",
         "setImmediate() executes after I/O events.",
         "setTimeout(fn, 0) executes in the Timers phase.",
-      ],
-    },
-    {
-      title:
-        "What is the difference between synchronous and asynchronous programming?",
-      definition: [
-        "Synchronous code executes line by line.",
-        "Asynchronous code allows other operations to continue while waiting for a task to complete.",
       ],
     },
 
@@ -2348,7 +2474,7 @@ const data = response.data as Order;
       ],
     },
     {
-      title: "Blocking",
+      title: "What is Blocking?",
       definition: [
         "Blocking means the program waits for an operation to complete before executing the next statement. During this time, the execution is paused until the current task finishes.",
         "Blocking-na oru operation complete ஆகுற வரைக்கும் program wait பண்ணும். அந்த operation முடியும் வரை next statement execute ஆகாது. Operation complete ஆன பிறகுதான் next task execute ஆகும்.",
@@ -2594,6 +2720,27 @@ app.use(helmet());
         "Database operations are performed if needed.",
         "Response is sent to the client.",
         "Error middleware handles any exceptions.",
+      ],
+    },
+    {
+      title:
+        "JWT (JSON Web Token) Authentication JWT is stateless authentication mechanism",
+      definition: [
+        "JWT is a compact, self-contained token format used to securely transmit information between client and server as a JSON object, commonly used for authentication and authorization.",
+
+        "A JWT has 3 parts separated by dots: Header.Payload.Signature (e.g., xxxxx.yyyyy.zzzzz).",
+
+        "Header contains the token type (JWT) and the signing algorithm used (e.g., HS256, RS256).",
+
+        "Payload contains the claims — user data like userId, email, role, and expiry time (exp). This is Base64 encoded, NOT encrypted, so sensitive data should not be stored here.",
+
+        "Signature is created by encoding the header and payload, then signing it with a secret key (or private key) — this ensures the token hasn't been tampered with.",
+
+        "JWT is stateless — the server doesn't need to store session data. All required info is inside the token itself, unlike traditional session-based authentication.",
+
+        "Authentication flow: User logs in with credentials → Server verifies and creates a JWT signed with a secret key → Token sent back to client → Client stores it (localStorage/cookie) → Client sends token in Authorization header (Bearer token) on every request → Server verifies signature and grants access.",
+
+        "Access Token vs Refresh Token: Access token is short-lived (e.g., 15 mins) and used for API requests. Refresh token is long-lived (e.g., 7 days) and used to generate a new access token without re-login.",
       ],
     },
   ],
@@ -2954,12 +3101,8 @@ app.post("/user", (req, res) => {
         "GitHub is a provider of Internet hosting for software development and version control using Git.",
     },
     {
-      title: "GitHub Commends",
+      title: "GitHub Commands",
       definition: [
-        "Remove-Item -Recurse -Force node_modules",
-
-        "Remove-Item yarn.lock",
-        "Remove-Item package-lock.json",
         " git pull origin main",
         "If git pull பண்ணும்போது error வந்தா (merge conflict) :👉 use this (safe for your case): git pull origin main --rebase",
         "git config user.name",
@@ -2975,6 +3118,25 @@ app.post("/user", (req, res) => {
         "  🔀 Merge branch (important) : git merge feature-login  ",
         "  🗑️ Branch delete :   Local:git branch -d feature-login   ",
         " GitHub:  git push origin --delete feature-login",
+      ],
+    },
+    {
+      title: "Removing files from Git tracking  ",
+      definition: [
+        "Already git la commit pannirundha files (node_modules, .next) - ippo .gitignore add pannirukom, aana already tracked ah irundha files ku andha gitignore apply aagadhu. So andha files ah git tracking la irundhu remove pannanum (untrack pannanum), aana computer la irundhu delete pannakoodadhu.",
+        "git rm -r --cached node_modules",
+        "git rm -r --cached frontend/node_modules",
+        "git rm -r --cached backend/node_modules",
+        "git rm -r --cached frontend/.next",
+      ],
+    },
+    {
+      title: "Clean install / Fresh install prep",
+      definition: [
+        "Idhu Clean install / Fresh install prep nu solranga - dependencies um lock files um completely delete pannitu, fresh ah reinstall panna prepare panradhu.",
+        "Remove-Item -Recurse -Force node_modules",
+        "Remove-Item yarn.lock",
+        "Remove-Item package-lock.json",
       ],
     },
   ],
@@ -3282,6 +3444,14 @@ MONGODB_URI: your_mongodb_connection_string
         "O(1)",
       ],
     },
+    {
+      title: "Time Complexity",
+      definition: [
+        "Time complexity tells how fast or slow an algorithm runs as input size increases.",
+        "A way to measure how the running time of an algorithm increases as the size of the input (n) increases, usually expressed using Big O notation",
+        "Algorithm-oda input size (n) perusaagum bothu, execution time எப்படி increase aaguthுனு measure pannுறது — usually Big O notation vachi represent pannுவோம்",
+      ],
+    },
   ],
   ECommerce: [
     {
@@ -3453,24 +3623,81 @@ MONGODB_URI: your_mongodb_connection_string
       definition: ["Toggle Panel"],
     },
   ],
+  UIUX: [
+    {
+      title: "UI vs UX",
+      definition: [
+        "UI (User Interface) refers to the visual elements and layout of a product.",
+        "UX (User Experience) refers to the overall experience of using a product.",
+      ],
+    },
+    {
+      title: "Types of UI",
+      definition: [
+        "Liquid Glass UI",
+        "Bento Grid UI",
+        "Spatial UI Design",
+        "Claymorphism",
+        "Neumorphism",
+        "Glassmorphism",
+        "Skeuomorphism",
+        "Minimalism",
+        "Maximalism",
+      ],
+    },
+    {
+      title: "Design Patterns",
+      definition: [
+        "F Pattern",
+        "Z Pattern",
+        "Gutenberg Pattern",
+        "Layer Cake Pattern",
+        "Split Screen Pattern",
+        "Grid Pattern",
+        "Spotted Pattern",
+      ],
+    },
+  ],
   English: [
     {
       title: "May I speak with Jiva?",
-      definition: [
-        "Yes, Speaking. and Yes you are speaking with Jiva.",
-        "May I ask who is calling?",
-        "I am Ravi from XYZ Company.",
-        "How can I help you today?",
-      ],
+      definition: ["Yes, Speaking. and Yes you are speaking with Jiva."],
+    },
+    {
+      title: "Good morning/afternoon. May I ask who is calling, please?",
+      definition: ["I am Ravi from XYZ Company.", "How can I help you today?"],
+      example: `Then you can continue with:
+"How may I help you?" (Most common)
+"What is this regarding?" (To know the purpose)
+"How can I assist you today?" (Very professional)
+"May I know the purpose of your call?" (Formal)
+"Who would you like to speak with?" (If they haven't mentioned it)
+      `,
     },
     {
       title: "How are you?",
       definition: ["I'm doing well, thank you for asking."],
     },
+
     {
-      title: "Are you available?",
-      definition: ["Yes, I am available."],
+      title: "If you're available today",
+      definition: [
+        "Today : Yes, I am available today. Please let me know the time, and I'll be there.",
+        "Tomorrow: I'm sorry, I'm not available today. Would it be possible to schedule the interview for tomorrow? I'm available at your convenience.",
+        "Coming Friday: I'm sorry, I'm not available today. Would it be possible to schedule the interview for this coming Friday? I'm available throughout the day.",
+      ],
     },
+
+    {
+      title: "What time would be convenient for you?",
+      definition: [
+        "I'm available anytime after 2:00 PM.",
+        "Thank you. Could you please share the meeting link and any other details?",
+        "Recruiter: Okay, we'll send you the details by email.",
+        "Thank you. I'll check my email and be ready for the interview.",
+      ],
+    },
+
     {
       title: "Are you currently working with any company?",
       definition: [
@@ -3481,12 +3708,8 @@ MONGODB_URI: your_mongodb_connection_string
     {
       title: "responsibility",
       definition: [
-        "My role was Frontend Developer. I was responsible for developing responsive user interfaces using React and Tailwind CSS, creating reusable components, integrating REST APIs, managing application state, fixing frontend bugs, and ensuring a smooth user experience.",
-        "I worked as a Frontend Developer. My responsibilities included developing UI components, integrating REST APIs, managing state, fixing frontend issues, and ensuring the application was responsive and user-friendly.",
-        "My responsibility was to develop the frontend of the application using React, integrate APIs, create responsive UI components, fix frontend bugs, and ensure a smooth user experience.",
-        "My responsibility was to develop the frontend for modules like Employees, Attendance, Leave, and Payroll. I integrated the backend APIs, managed the application state, and created responsive user interfaces using React and Tailwind CSS.",
-        "Project-Based Answer",
-        "In the Order Management System and Payroll Management System, my role was Frontend Developer. My responsibilities included developing the user interface, building reusable React components, integrating backend APIs, implementing forms and dashboards, managing state, fixing UI issues, and making the application responsive.",
+        "My role was Frontend Developer.",
+        "My responsibility was to develop the frontend of the application using React and Tailwind CSS, creating reusable components, integrating REST APIs managing application state, fixing frontend bugs and ensuring a smooth user experience.",
       ],
     },
   ],
