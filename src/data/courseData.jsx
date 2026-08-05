@@ -113,7 +113,7 @@ export const courseData = {
     {
       title: "Semantic Elements",
       definition: [
-        "HTML5 semantic elements clearly describe their meaning to both the browser and the developer.",
+        "HTML5 semantic elements [elements with meaningful names] clearly describe their meaning to both the browser and the developer.",
       ],
       example: `<header>
 <footer>
@@ -1314,7 +1314,7 @@ if (Number.isNaN(quantity)) {
       title: "What is the difference between RealDOM and VirtualDOM?",
       definition: [
         "Real DOM means the actual webpage that the browser creates from an HTML page and displays on the screen. Any change in the Real DOM directly affects what you see on the webpage. It is slow because it can re-render the entire webpage.",
-        "Virtual DOM is a lightweight object of the Real DOM that represents the UI in memory, not on the screen. React updates it first, instead of updating  directly webpage.",
+        "Virtual DOM is a lightweight object of the Real DOM that represents (என்பது -ஐ குறிக்கிறது.) the UI in memory, not on the screen. React updates it first, instead of updating  directly webpage.",
       ],
     },
     {
@@ -2322,12 +2322,14 @@ const data = response.data as Order;
     {
       title: "What are the features of Node.js?",
       definition: [
-        "Asynchronous and event-driven",
-        "Non-blocking I/O ",
-        "Single-threaded event loop",
-        "Fast execution using V8 engine",
-        "Cross-platform",
-        "Scalable",
+        "Node.js is an open-source, cross-platform JavaScript runtime environment.",
+        "It uses the V8 JavaScript engine developed by Google Chrome.",
+        "It follows a non-blocking, event-driven architecture for handling multiple requests efficiently.",
+        "It is single-threaded but can handle many concurrent connections using the event loop.",
+        "It is fast and lightweight, making it ideal for scalable applications.",
+        "It includes the npm (Node Package Manager), which provides access to thousands of reusable packages.",
+        "It supports real-time applications such as chat apps, online gaming, and live notifications.",
+        "It can be used for building REST APIs, web servers, microservices, and command-line applications.",
       ],
     },
 
@@ -2345,7 +2347,7 @@ const data = response.data as Order;
       title: "NPM",
       definition: [
         "NPM (Node Package Manager) is the default package manager used to install, manage, and share JavaScript packages.",
-        "It helps developers manage project dependencies efficiently.",
+        "It helps developers manage project dependencies efficiently (திறமையாக).",
         "தமிழில்: NPM என்பது JavaScript packages-ஐ install, manage, மற்றும் share செய்ய பயன்படும் package manager ஆகும்.",
       ],
     },
@@ -2384,6 +2386,27 @@ const data = response.data as Order;
     },
 
     {
+      title: "Types of APIs",
+      definition: [
+        "REST APIs: Representational State Transfer APIs that use HTTP methods.",
+        "GraphQL APIs: A query language for APIs that allows clients to request specific data.",
+        "SOAP APIs: Simple Object Access Protocol APIs that use XML format.",
+        "WebSocket APIs: Real-time communication protocols for bidirectional data exchange.",
+      ],
+    },
+
+    {
+      title: "Types of Cache ",
+      definition: [
+        "Browser Cache",
+        "Server Cache",
+        "Database Cache",
+        "CDN Cache",
+        "Application Cache",
+      ],
+    },
+
+    {
       title:
         "What is the difference between setTimeout(), setImmediate(), and process.nextTick()?",
       definition: [
@@ -2414,15 +2437,28 @@ const data = response.data as Order;
     {
       title: "What are Streams in Node.js?",
       definition: [
-        "Streams process data piece by piece instead of loading the entire file into memory.",
-        "Types: Readable, Writable, Duplex, Transform.",
+        "A Stream is a Node.js object that allows you to read or write data continuously in small chunks, instead of loading the entire file into memory at once.",
+        "Streams are useful for handling large files, videos, audio, and network data efficiently.",
+        "Stream என்பது பெரிய data-வை ஒரே நேரத்தில் memory-க்கு load செய்யாமல், சிறிய சிறிய பகுதிகளாக (chunks) படிக்க அல்லது எழுத உதவும் Node.js feature.",
+        "Data-வை சிறிய chunks-ஆ process பண்ணும்.",
+        "Memory usage குறைவு.",
+        "பெரிய files-க்கு நல்லது.",
+        "Data வரும்போதே process செய்ய ஆரம்பிக்கும்.",
+        "Example: fs.createReadStream(), fs.createWriteStream()",
       ],
     },
     {
       title: "What is a Buffer?",
       definition: [
-        "A Buffer is used to handle binary data in Node.js.",
-        "It temporarily stores raw binary data.",
+        "A Buffer is a built-in Node.js object used to store and manipulate raw binary data (bytes).",
+        "Buffers are commonly used when working with files, streams, network communication, images, and videos.",
+        "It represents (என்பதைக் குறிக்கிறது) a fixed-size sequence of bytes.",
+        "Buffer என்பது Node.js-ல் binary data (bytes)-வை தற்காலிகமாக (temporarily) memory-ல் சேமிக்க பயன்படும் ஒரு object.",
+        "முழு data-வையும் ஒரே தடவையில் memory-க்கு load பண்ணும்.",
+        "Memory usage அதிகம்.",
+        "சிறிய files-க்கு நல்லது.",
+        "Data முழுவதும் வந்த பிறகுதான் process செய்யும்.",
+        "Example: Buffer.from(), Buffer.alloc()",
       ],
     },
     {
@@ -2561,8 +2597,12 @@ const data = response.data as Order;
     {
       title: "What is a REST API?",
       definition: [
-        "A REST API follows REST principles.",
-        "It uses HTTP methods like GET, POST, PUT, PATCH, and DELETE for CRUD operations.",
+        "REST (Representational State Transfer) is an architectural style for building web services.",
+        "A REST API allows different applications to communicate with each other over HTTP.",
+        "It treats data as resources, which are accessed using URLs (endpoints).",
+        "REST APIs commonly exchange data in JSON format.",
+        "It uses standard HTTP methods such as GET (Read), POST (Create), PUT/PATCH (Update), and DELETE (Remove) to perform CRUD operations.",
+        "Each request is stateless, meaning the server does not store client session information between requests.",
       ],
     },
     {
@@ -3103,6 +3143,7 @@ app.post("/user", (req, res) => {
     {
       title: "GitHub Commands",
       definition: [
+        "Git Cherry-pick , git checkout main, git cherry-pick <commit-hash-of-C>",
         " git pull origin main",
         "If git pull பண்ணும்போது error வந்தா (merge conflict) :👉 use this (safe for your case): git pull origin main --rebase",
         "git config user.name",
@@ -3540,6 +3581,13 @@ MONGODB_URI: your_mongodb_connection_string
       ],
       example: `Moodle, Canvas, Blackboard`,
     },
+    {
+      title: "Chit Fund Management System",
+      definition: [
+        "A Chit Fund Management System is a software solution designed to manage chit fund operations, including member management, fund collection, and distribution processes.",
+      ],
+      example: `Chit Fund Software, Online Chit Fund Management`,
+    },
   ],
   VSshortcuts: [
     {
@@ -3624,6 +3672,26 @@ MONGODB_URI: your_mongodb_connection_string
     },
   ],
   UIUX: [
+    {
+      title: "Types of Developers in Software Development",
+      definition: [
+        "Frontend Developer: Builds the user interface of websites and web applications.",
+        "Backend Developer: Builds APIs, manages databases, and handles server-side logic.",
+        "Full-Stack Developer: Works on both the frontend and backend of web applications.",
+        "Mobile App Developer: Builds Android and iOS applications.",
+        "DevOps Engineer: Manages and automates the software deployment and infrastructure.",
+        "QA Automation Engineer: Develops and executes automated tests to ensure software quality.",
+        "Data Engineer: Designs and maintains the data architecture and pipelines for data processing and analysis.",
+      ],
+    },
+    {
+      title: "Git vs GitHub",
+      definition: [
+        "Git is a distributed version control system that tracks changes in files and coordinates work among multiple developers.",
+        "GitHub is a web-based platform that provides hosting for Git repositories and offers additional features like issue tracking, pull requests, and collaboration tools.",
+        "While Git is the tool for version control, GitHub is a service that uses Git and adds a user-friendly interface and social features.",
+      ],
+    },
     {
       title: "UI vs UX",
       definition: [
@@ -3710,6 +3778,36 @@ MONGODB_URI: your_mongodb_connection_string
       definition: [
         "My role was Frontend Developer.",
         "My responsibility was to develop the frontend of the application using React and Tailwind CSS, creating reusable components, integrating REST APIs managing application state, fixing frontend bugs and ensuring a smooth user experience.",
+      ],
+    },
+    {
+      title: "What are your strengths?",
+      definition: [
+        "I am a quick learner and adapt well to new technologies.",
+        "I have strong problem-solving skills and attention to detail.",
+        "I am a good team player and communicate effectively with others.",
+      ],
+    },
+    {
+      title: "What are your weaknesses?",
+      definition: [
+        "I tend to be a perfectionist, which can sometimes slow down my work.",
+        "I can be overly critical of my own work, which may affect my confidence.",
+      ],
+    },
+    {
+      title: "Antha company enaku work pudikala....",
+      definition: [
+        "I am currently not working with any company.",
+        "I am looking for new opportunities.",
+        "I felt (உணர்ந்தேன் ) that the company and role were not the right fit for my long-term career goals, so I decided to look for new opportunities where I can grow and contribute more effectively.",
+        "That company wasn't a good fit for me.",
+        "I wasn't happy working at that company.",
+        "I didn't like working at that company.",
+        "The work environment wasn't aligned with my expectations.",
+        "I felt the role wasn't the right fit for my career goals.",
+        "I was looking for better growth opportunities and challenges",
+        "The company culture wasn't the right match for me.",
       ],
     },
   ],
