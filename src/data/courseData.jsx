@@ -27,22 +27,30 @@ export const courseData = {
       definition:
         "The <head> tag is used to contain metadata about an HTML document. It is placed in the <html> element and contains information such as the page title, character set, and links to external resources.",
     },
+
+    {
+      title: "What is Metadata?",
+      definition: [
+        "Metadata is data that provides information about other data.",
+        "Meta tags can help improve SEO (Search Engine Optimization) and ensure that web pages are displayed correctly on different devices.",
+      ],
+    },
+
+    {
+      title: "What is a Viewport?",
+      definition: [
+        "The viewport controls how a webpage is displayed on different devices.",
+        "Helps in responsive design.",
+      ],
+    },
+    {
+      title: "Link tag",
+      definition:
+        "The <link> tag is used to link external resources such as stylesheets, icons, and prefetching resources to an HTML document. It is placed in the <head> section of the document and can include attributes such as rel, href, and type.",
+    },
     {
       title: "What is the Body Tag?",
       definition: "The <body> contains everything visible on the webpage.",
-    },
-    {
-      title: "What is Metadata?",
-      definition:
-        "Metadata is data that provides information about other data. In HTML, metadata is used to provide information about the document, such as the title, description, and keywords.",
-      example: `<meta charset="UTF-8">
-<meta name="description" content="HTML Tutorial">`,
-    },
-    {
-      title: "What is a Viewport?",
-      definition:
-        "The viewport controls how a webpage is displayed on different devices.",
-      example: `<meta name="viewport" content="width=device-width, initial-scale=1">`,
     },
     {
       title: "What is a Tag?",
@@ -59,19 +67,12 @@ export const courseData = {
     {
       title: "What is Nested Element?",
       definition: "An element placed inside another element.",
-      example: `<div>
-    <p>Hello</p>
-</div>`,
+      example: `<div> <p> Hello </p> </div>`,
     },
     {
       title: "What is an Empty Element?",
       definition: "An element that does not have a closing tag.",
-      example: `<br>
-<hr>
-<img>
-<input>
-<meta>
-<link>`,
+      example: `<br> <hr> <img> <input> <meta> <link>`,
     },
     {
       title: "Attribute",
@@ -84,29 +85,14 @@ export const courseData = {
     {
       title: "Block vs Inline Elements",
       definition: [
-        "Block-level elements. Takes full width available. Start from a new line and  ",
-        "Inline elements. Takes only required width. Stay on the same line.",
+        "Block-level elements. Takes full width available. Start from a new line. Example: div, p, header, footer ",
+        "Inline elements. Takes only required width. Stay on the same line. Example: <span>, <a>, <strong>, <em>, <img>",
       ],
-      example: `<span>
-<a>
-<strong>
-<em>
-<img>`,
     },
     {
       title: "HTML5",
       definition: [
-        "HTML5 is a markup language used for structuring and presenting content on the World Wide Web.",
-        "It is the fifth and current version of the HTML standard.",
-        "It was published in October 2014 and includes new features such as support for multimedia, improved support for web applications, and enhanced semantic elements.",
-      ],
-    },
-
-    {
-      title: "Forms",
-      definition: [
-        "HTML forms are used to collect user input. They consist (அடங்கியிருத்தல்) of form elements such as text fields, checkboxes, radio buttons, and submit buttons.",
-        "Forms can be submitted to a server for processing or handled client-side using JavaScript.",
+        "new features such as support for multimedia, improved support for web applications, and enhanced semantic elements.",
       ],
     },
 
@@ -115,33 +101,7 @@ export const courseData = {
       definition: [
         "HTML5 semantic elements [elements with meaningful names] clearly describe their meaning to both the browser and the developer.",
       ],
-      example: `<header>
-<footer>
-<article>
-<section>
-<nav>
-
-Benefits:
-Better SEO
-Better Accessibility
-Easier Maintenance
-
-`,
-    },
-
-    {
-      title: "Meta tags",
-      definition: [
-        "Meta tags are used to provide metadata about an HTML document. They are placed in the <head> section of the document and can include information such as the page description, keywords, author, and viewport settings.",
-        "Meta tags can help improve SEO (Search Engine Optimization) and ensure that web pages are displayed correctly on different devices.",
-      ],
-    },
-    {
-      title: "What is SEO?",
-      definition: [
-        "SEO (Search Engine Optimization) is the practice of increasing the quantity and quality of traffic to your website through organic search engine results.",
-        "SEO (Search Engine Optimization) is the practice of improving a website so search engines can understand and rank it better.",
-      ],
+      example: `Benefits: Better SEO, Better Accessibility, Easier Maintenance`,
     },
 
     {
@@ -151,11 +111,6 @@ Easier Maintenance
         "Using HTML entities ensures that special characters are displayed correctly in the browser and do not interfere with the structure of the HTML document.",
       ],
     },
-    {
-      title: "Link tag",
-      definition:
-        "The <link> tag is used to link external resources such as stylesheets, icons, and prefetching resources to an HTML document. It is placed in the <head> section of the document and can include attributes such as rel, href, and type.",
-    },
 
     {
       title: "Classes and IDs",
@@ -163,38 +118,23 @@ Easier Maintenance
         "Classes and IDs are used to identify and style HTML elements.",
         "An ID is a unique identifier for an element",
         "Used once",
-        "IDs are defined using the id attribute",
-        "IDs are typically used for JavaScript manipulation and styling specific elements",
         "Selected using #",
 
         "while a class can be shared among multiple elements",
         "Reusable",
-        "classes are defined using the class attribute.",
         "Used multiple times",
-        "classes are used for styling groups of elements with similar characteristics.",
         "Selected using the dot (.) selector in CSS",
       ],
     },
     {
       title: "What is the Difference Between href and src?",
       definition: [
-        "href",
-        "References a resource",
+        "href:References a resource",
         "Used in links to reference external resources",
         "Used in <a>, <link>",
 
-        "src",
-        "Embeds a resource",
+        "src:Embeds a resource",
         "Used in <img>, <script>, <iframe>",
-      ],
-    },
-
-    {
-      title: "Local Storage vs Session Storage",
-      definition: [
-        "Both are part of Web Storage API used to store data in the browser.",
-        "Local Storage stores data with no expiration time (persists even after browser is closed).",
-        "Session Storage stores data only for the duration of the page session (cleared when tab is closed).",
       ],
     },
 
@@ -225,57 +165,6 @@ Easier Maintenance
     },
 
     {
-      title: "Difference between id and class",
-      definition: [
-        "id is unique and used for one element only.",
-        "class can be used for multiple elements.",
-        "id has higher specificity than class in CSS.",
-      ],
-    },
-
-    {
-      title: "Data Attributes",
-      definition: [
-        "Custom attributes used to store extra information in HTML elements.",
-        "They start with 'data-' (e.g., data-id, data-name).",
-        "Accessible using JavaScript via dataset property.",
-      ],
-    },
-
-    {
-      title: "Viewport Meta Tag",
-      definition: [
-        "Used to control layout on mobile browsers.",
-        "Example: <meta name='viewport' content='width=device-width, initial-scale=1.0'>",
-        "Helps in responsive design.",
-      ],
-    },
-
-    {
-      title: "Required attribute",
-      definition: [
-        "Used in form inputs to make a field mandatory.",
-        "Browser prevents form submission if the field is empty.",
-      ],
-    },
-
-    {
-      title: "Placeholder attribute",
-      definition: [
-        "Provides a hint inside input fields.",
-        "Disappears when the user starts typing.",
-      ],
-    },
-
-    {
-      title: "Autocomplete attribute",
-      definition: [
-        "Used to enable or disable autofill feature in forms.",
-        "Example: autocomplete='on' or 'off'.",
-      ],
-    },
-
-    {
       title: "Difference between <strong> and <b>",
       definition: [
         "<strong> has semantic importance (important text).",
@@ -290,6 +179,37 @@ Easier Maintenance
         "<i> is just italic styling.",
       ],
     },
+    {
+      title: "What is SEO?",
+      definition: [
+        "SEO (Search Engine Optimization) is the practice of increasing the quantity and quality of traffic to your website through organic search engine results.",
+        "SEO (Search Engine Optimization) is the practice of improving a website so search engines can understand and rank it better.",
+      ],
+    },
+    {
+      title: "Data Attributes",
+      definition: [
+        "Custom attributes used to store extra information in HTML elements.",
+        "They start with 'data-' (e.g., data-id, data-name).",
+        "Accessible using JavaScript via dataset property.",
+      ],
+    },
+    {
+      title: "Forms",
+      definition: [
+        "HTML forms are used to collect user input. They consist (அடங்கியிருத்தல்) of form elements such as text fields, checkboxes, radio buttons, and submit buttons.",
+        "Forms can be submitted to a server for processing or handled client-side using JavaScript.",
+      ],
+    },
+    {
+      title: "Canvas vs SVG",
+      definition: [
+        "Canvas is pixel-based and used for dynamic graphics.",
+        "SVG is vector-based and scalable without losing quality.",
+        "Canvas is better for games",
+        "SVG for UI graphics",
+      ],
+    },
 
     {
       title: "Lazy Loading",
@@ -299,21 +219,12 @@ Easier Maintenance
         "Example: <img src='image.jpg' loading='lazy' />",
       ],
     },
-
     {
-      title: "Favicon",
+      title: "Local Storage vs Session Storage",
       definition: [
-        "Small icon displayed in browser tab.",
-        "Added using <link rel='icon' href='favicon.ico'>",
-      ],
-    },
-
-    {
-      title: "Canvas vs SVG",
-      definition: [
-        "Canvas is pixel-based and used for dynamic graphics.",
-        "SVG is vector-based and scalable without losing quality.",
-        "Canvas is better for games, SVG for UI graphics.",
+        "Both are part of Web Storage API used to store data in the browser.",
+        "Local Storage stores data with no expiration time (persists even after browser is closed).",
+        "Session Storage stores data only for the duration of the page session (cleared when tab is closed).",
       ],
     },
   ],
@@ -362,11 +273,7 @@ Easier Maintenance
         "CSS Grid provides powerful control over the placement and alignment of elements within a grid container.",
       ],
     },
-    {
-      title: "Position",
-      definition:
-        "The position property specifies how an element is positioned (static, relative, absolute, fixed, sticky).",
-    },
+
     {
       title: "Padding vs Margin",
       definition: [
@@ -374,6 +281,11 @@ Easier Maintenance
         "Padding adds space inside an element, while margin adds space outside an element.",
         "Padding can affect the size of an element, while margin does not affect the size of an element.",
       ],
+    },
+    {
+      title: "Position",
+      definition:
+        "The position property specifies how an element is positioned (static, relative, absolute, fixed, sticky).",
     },
 
     {
@@ -398,33 +310,15 @@ Easier Maintenance
         "Relative positioning is useful for making small adjustments to the position of an element without affecting the layout of other elements on the page.",
       ],
     },
-    {
-      title: "Fixed Positioning",
-      definition: [
-        "Fixed positioning is a CSS technique that allows an element to be positioned relative to the viewport. The element is removed from the normal document flow and remains in a fixed position even when the page is scrolled.",
-        "Fixed positioning is useful for creating sticky headers, footers, and other elements that need to remain visible on the page at all times.",
-      ],
-    },
-    {
-      title: "Sticky Positioning",
-      definition: [
-        "Sticky positioning is a CSS technique that allows an element to be positioned based on the user's scroll position. The element toggles between relative and fixed positioning depending on the scroll position.",
-        "Sticky positioning is useful for creating elements that stick to the top of the page when scrolling down and return to their normal position when scrolling back up.",
-      ],
-    },
+
     {
       title: "Z-Index",
       definition: [
-        "Z-index controls the vertical stacking order of positioned elements.",
-        "Elements with a higher z-index are displayed on top of elements with a lower z-index.",
-        "Z-index can be used to create overlapping or layered content.",
+        "Z-index controls the stacking order overlapping of elements.",
+        "An Elements with a higher z-index generally appear in front of an elements with a lower z-index.",
       ],
     },
-    {
-      title: "CSS Specificity",
-      definition:
-        "CSS Specificity determines which style rule is applied when multiple rules target the same element. It follows a priority system based on selector types.",
-    },
+
     {
       title: "Specificity Order",
       definition: [
@@ -444,11 +338,7 @@ Easier Maintenance
         "Element → 0-0-0-1",
       ],
     },
-    {
-      title: "Responsive Design",
-      definition:
-        "Responsive design ensures that web pages look good on all devices using media queries and flexible layouts.",
-    },
+
     {
       title: "Media Queries",
       definition: [
@@ -487,10 +377,12 @@ Easier Maintenance
         "visibility: hidden hides the element from view but still takes up space in the document flow. The element will not be visible to users, but it will still be accessible to assistive technologies.",
       ],
     },
+  ],
+  dom: [
     {
-      title: "Box Shadow",
+      title: "What is DOM?",
       definition: [
-        "Box shadow creates a shadow around an element. It can be used to add depth and elevation to elements on a web page.",
+        "The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document and allows programs to manipulate its content and presentation.",
       ],
     },
   ],
@@ -1111,6 +1003,8 @@ if (Number.isNaN(quantity)) {
     {
       title: "JavaScript Modules",
       definition: [
+        "export → share code",
+        "import → use code",
         "JavaScript Modules are a way to split code into separate files and reuse them where needed.",
         "Each module has its own scope, so variables/functions are not global by default.",
         "Modules help in organizing, maintaining, and scaling applications.",
@@ -3241,15 +3135,6 @@ app.post("/user", (req, res) => {
   ],
   docker: [
     {
-      title: "Docker Fundamentals",
-      definition: [
-        "https://resources.criodo.com/courses/docker-fundamentals/",
-        "https://youtu.be/rhD12yd5VyI",
-        "https://github.com/theshubhamgour/docker-tutorial",
-        "Example: Learn basics and run your first container using 'docker run hello-world'",
-      ],
-    },
-    {
       title: "Docker",
       definition: [
         "What is Docker?",
@@ -3275,73 +3160,7 @@ app.post("/user", (req, res) => {
         "13. Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
       ],
     },
-    {
-      title: "Frontend Dockerfile",
-      definition: [
-        "Build Images : docker build -t course-app .",
-        "Run Containers : docker run -d --name course-app-container -p 5173:5173 course-app",
-      ],
-      example: `
-FROM node:22-alpine
 
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-EXPOSE 5173
-
-CMD ["npm", "run", "dev", "--", "--host"]
-      `,
-    },
-    {
-      title: "Backend Dockerfile",
-      definition: [
-        "Build Images : docker build -t course-app .",
-        "Run Containers : docker run -d --name course-app-container -p 4001:4001 course-app",
-      ],
-      example: `
-FROM node:22-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-EXPOSE 4000
-
-CMD ["npm", "run", "dev"]`,
-    },
-    {
-      title: "Docker Compose",
-      definition: [
-        "docker-compose.yml",
-        "Build Images : docker-compose build",
-        "Run Containers : docker-compose up -d",
-        "Stop Containers : docker-compose stop",
-        "Remove Containers : docker-compose rm",
-      ],
-      example: `
-services:
-frontend:
-build: ./course-app
-ports:
-- "5173:5173"
-
-backend:
-build: ./server
-ports:
-- "4000:4000"
-environment:
-MONGODB_URI: your_mongodb_connection_string
-      `,
-    },
     {
       title: "What is a Docker Container ?",
       definition: [
@@ -3360,7 +3179,6 @@ MONGODB_URI: your_mongodb_connection_string
       title: "What is a Dockerfile ?",
       definition: [
         "A Dockerfile is a script with instructions to build Docker images.",
-        "Example: FROM node:18\nWORKDIR /app\nCOPY . .\nRUN npm install\nCMD ['node','app.js']",
       ],
     },
     {
@@ -3374,7 +3192,6 @@ MONGODB_URI: your_mongodb_connection_string
       title: "What is a docker-compose.yml ?",
       definition: [
         "It is a config file to define services, networks, and volumes.",
-        "Example: version: '3'\nservices:\n  app:\n    image: node\n    ports:\n      - '3000:3000'",
       ],
     },
     {
@@ -3384,14 +3201,6 @@ MONGODB_URI: your_mongodb_connection_string
         "Example: Docker starts in seconds, VM takes minutes",
       ],
     },
-    {
-      title: "Docker Commands - Basics",
-      definition: [
-        "What are basic Docker commands?",
-        "docker --version, docker pull <image>, docker images, docker ps",
-        "Example: docker pull nginx",
-      ],
-    },
 
     {
       title: "Docker Compose Commands",
@@ -3399,6 +3208,114 @@ MONGODB_URI: your_mongodb_connection_string
         "Docker Compose commands?",
         "docker-compose up, down, build, ps",
         "Example: docker-compose up -d",
+      ],
+    },
+    {
+      title: "New Feature",
+      definition: [
+        "feat: Add a new feature or functionality",
+        'git commit -m "feat: add member registration page"',
+        'git commit -m "feat: implement auction bidding system"',
+      ],
+    },
+
+    {
+      title: "Bug Fix",
+      definition: [
+        "fix: Fix a bug or incorrect behavior",
+        'git commit -m "fix: resolve login authentication issue"',
+        'git commit -m "fix: correct installment payment calculation"',
+      ],
+    },
+
+    {
+      title: "UI Changes - Formatting, CSS, Spacing",
+      definition: [
+        "style: Changes that do not affect application logic",
+        'git commit -m "style: improve dashboard layout and spacing"',
+        'git commit -m "style: update table responsive design"',
+      ],
+    },
+
+    {
+      title: "Refactoring - Code Improvement",
+      definition: [
+        "refactor: Code changes that improve structure without changing behavior",
+        'git commit -m "refactor: extract reusable form components"',
+        'git commit -m "refactor: simplify API service functions"',
+      ],
+    },
+
+    {
+      title: "Documentation Changes",
+      definition: [
+        "docs: Documentation-only changes",
+        'git commit -m "docs: update project README"',
+        'git commit -m "docs: add API documentation"',
+      ],
+    },
+
+    {
+      title: "Testing - Test Cases Added/Updated",
+      definition: [
+        "test: Add or update test cases",
+        'git commit -m "test: add Playwright login test"',
+        'git commit -m "test: add member registration tests"',
+      ],
+    },
+
+    {
+      title: "Dependencies - Maintenance",
+      definition: [
+        "chore: Maintenance tasks that do not modify application functionality",
+        'git commit -m "chore: update project dependencies"',
+        'git commit -m "chore: remove unused dependencies"',
+      ],
+    },
+
+    {
+      title: "Performance",
+      definition: [
+        "perf: Improve application performance",
+        'git commit -m "perf: optimize member list rendering"',
+        'git commit -m "perf: reduce unnecessary API requests"',
+      ],
+    },
+
+    {
+      title: "Build",
+      definition: [
+        "build: Changes related to build system or build configuration",
+        'git commit -m "build: update Vite build configuration"',
+        'git commit -m "build: add production Docker configuration"',
+      ],
+    },
+
+    {
+      title: "CI/CD",
+      definition: [
+        "ci: Changes to CI/CD configuration and automation",
+        'git commit -m "ci: add GitHub Actions workflow"',
+        'git commit -m "ci: update deployment workflow"',
+      ],
+    },
+
+    {
+      title: "Revert",
+      definition: [
+        "revert: Revert a previous commit",
+        'git commit -m "revert: revert member registration changes"',
+      ],
+    },
+
+    {
+      title: "Docker",
+      definition: [
+        "Docker commands for building and running containers",
+        "docker compose up --build -d",
+        "docker compose up -d",
+        "docker compose down",
+        "docker compose logs",
       ],
     },
   ],

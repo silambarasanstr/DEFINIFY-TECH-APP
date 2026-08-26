@@ -20,6 +20,7 @@ const Sidebar = ({ open, setOpen }) => {
   const navItems = [
     { name: "HTML", path: "/html", icon: Code },
     { name: "CSS", path: "/css", icon: Palette },
+    { name: "DOM", path: "/dom", icon: FileJson },
     { name: "JavaScript", path: "/javascript", icon: FileJson },
     { name: "React JS", path: "/reactjs", icon: Atom },
     { name: "Next JS", path: "/nextjs", icon: Layers },
