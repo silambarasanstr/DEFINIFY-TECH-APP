@@ -14,13 +14,13 @@ export const courseData = {
     },
     {
       title: "What is HyperText?",
-      definition:
+      definition: [
         "HyperText is text containing links that allow users to navigate from one page to another.",
-      example: `<div>
-<p>
-<h1>
-<section>
-<article>`,
+        '<a href="https://google.com">Go to Google</a>',
+        "HyperText → Pages/documents-ஐ links மூலம் connect செய்கிறது.",
+        "Markup → Content-ஐ tags மூலம் structure செய்கிறது.",
+        "Language → Browser புரிந்துகொள்ளும் syntax/rules.",
+      ],
     },
     {
       title: "What is the Head Tag?",
@@ -126,17 +126,6 @@ export const courseData = {
         "Selected using the dot (.) selector in CSS",
       ],
     },
-    {
-      title: "What is the Difference Between href and src?",
-      definition: [
-        "href:References a resource",
-        "Used in links to reference external resources",
-        "Used in <a>, <link>",
-
-        "src:Embeds a resource",
-        "Used in <img>, <script>, <iframe>",
-      ],
-    },
 
     {
       title: "Difference between <div> and <span>",
@@ -144,14 +133,6 @@ export const courseData = {
         "<div> is a block-level element and takes full width.",
         "<span> is an inline element and takes only required width.",
         "<div> is used for layout, while <span> is used for styling small parts of text.",
-      ],
-    },
-
-    {
-      title: "Iframe",
-      definition: [
-        "The <iframe>(Inline Frame) is an HTMl Element  used to embed another Webpage or external content in side your current page.",
-        "It is commonly used to embed videos, maps, and external content.",
       ],
     },
 
@@ -180,6 +161,33 @@ export const courseData = {
       ],
     },
     {
+      title: "Canvas vs SVG",
+      definition: [
+        "Canvas is pixel-based and used for dynamic graphics.",
+        "SVG is vector-based and scalable without losing quality.",
+        "Canvas is better for games",
+        "SVG for UI graphics",
+      ],
+    },
+    {
+      title: "Iframe",
+      definition: [
+        "The <iframe>(Inline Frame) is an HTMl Element  used to embed another Webpage or external content in side your current page.",
+        "It is commonly used to embed videos, maps, and external content.",
+      ],
+    },
+    {
+      title: "What is the Difference Between href and src?",
+      definition: [
+        "href:References a resource",
+        "Used in links to reference external resources",
+        "Used in <a>, <link>",
+
+        "src:Embeds a resource",
+        "Used in <img>, <script>, <iframe>",
+      ],
+    },
+    {
       title: "What is SEO?",
       definition: [
         "SEO (Search Engine Optimization) is the practice of increasing the quantity and quality of traffic to your website through organic search engine results.",
@@ -201,15 +209,6 @@ export const courseData = {
         "Forms can be submitted to a server for processing or handled client-side using JavaScript.",
       ],
     },
-    {
-      title: "Canvas vs SVG",
-      definition: [
-        "Canvas is pixel-based and used for dynamic graphics.",
-        "SVG is vector-based and scalable without losing quality.",
-        "Canvas is better for games",
-        "SVG for UI graphics",
-      ],
-    },
 
     {
       title: "Lazy Loading",
@@ -217,14 +216,6 @@ export const courseData = {
         "Technique to load images only when they are visible on screen.",
         "Improves performance and page speed.",
         "Example: <img src='image.jpg' loading='lazy' />",
-      ],
-    },
-    {
-      title: "Local Storage vs Session Storage",
-      definition: [
-        "Both are part of Web Storage API used to store data in the browser.",
-        "Local Storage stores data with no expiration time (persists even after browser is closed).",
-        "Session Storage stores data only for the duration of the page session (cleared when tab is closed).",
       ],
     },
   ],
@@ -299,15 +290,13 @@ export const courseData = {
     {
       title: "Absolute Positioning",
       definition: [
-        "Absolute positioning is a CSS technique that allows an element to be positioned relative to its nearest positioned ancestor. The element is removed from the normal document flow and can be placed at specific coordinates.",
-        "Absolute positioning is useful for creating overlays, popups, and other elements that need to be positioned precisely on the page.",
+        "position: absolute is a CSS positioning property that removes an element from the normal document flow and positions it relative to its nearest positioned ancestor.",
       ],
     },
     {
       title: "Relative Positioning",
       definition: [
-        "Relative positioning is a CSS technique that allows an element to be positioned relative to its normal position in the document flow. The element can be moved using the top, right, bottom, and left properties.",
-        "Relative positioning is useful for making small adjustments to the position of an element without affecting the layout of other elements on the page.",
+        "relative position-ல் element normal flow-ல் இருக்கும், ஆனால் top, right, bottom, left properties மூலம் அதன் original position-லிருந்து move செய்யலாம்.",
       ],
     },
 
@@ -316,26 +305,6 @@ export const courseData = {
       definition: [
         "Z-index controls the stacking order overlapping of elements.",
         "An Elements with a higher z-index generally appear in front of an elements with a lower z-index.",
-      ],
-    },
-
-    {
-      title: "Specificity Order",
-      definition: [
-        "Inline styles (style='') → Highest priority",
-        "ID selectors (#id)",
-        "Class, attribute, pseudo-class (.class, [type='text'], :hover)",
-        "Element and pseudo-elements (div, p, ::before) → Lowest priority",
-      ],
-    },
-    {
-      title: "Specificity Value",
-
-      definition: [
-        "Inline → 1-0-0-0",
-        "ID → 0-1-0-0",
-        "Class → 0-0-1-0",
-        "Element → 0-0-0-1",
       ],
     },
 
@@ -382,7 +351,183 @@ export const courseData = {
     {
       title: "What is DOM?",
       definition: [
-        "The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document and allows programs to manipulate its content and presentation.",
+        "The Document Object Model (DOM) is a programming interface for web documents. It represents (குறிக்கிறது) the structure of a document and allows programs to manipulate its content and presentation.",
+      ],
+    },
+    {
+      title: "DOM Methods",
+      definition: [
+        "DOM methods are functions that allow you to manipulate the Document Object Model. They are used to select, create, modify, and delete HTML elements.",
+      ],
+    },
+    {
+      title: "DOM Properties",
+      definition: [
+        "DOM properties are attributes of the Document Object Model that allow you to access and modify the characteristics of HTML elements.",
+      ],
+    },
+    {
+      title: "DOM Events",
+      definition: [
+        "DOM events are actions that occur in the document (e.g., click, hover, keypress). They allow you to respond to user interactions and trigger specific functions.",
+      ],
+    },
+    {
+      title: "DOM Traversal",
+      definition: [
+        "DOM traversal refers to the process of navigating through the nodes of the Document Object Model.",
+        "Common traversal methods include parentNode, childNodes, firstChild, lastChild, nextSibling, and previousSibling.",
+      ],
+    },
+    {
+      title: "DOM Manipulation",
+      definition: [
+        "DOM manipulation refers to the process of changing the structure, content, or presentation of HTML elements using JavaScript.",
+        "Common methods for DOM manipulation include createElement, createTextNode, appendChild, removeChild, and replaceChild.",
+      ],
+    },
+    {
+      title: "What is the difference between RealDOM and VirtualDOM?",
+      definition: [
+        "Real DOM means the actual webpage that the browser creates from an HTML page and displays on the screen. Any change in the Real DOM directly affects what you see on the webpage. It is slow because it can re-render the entire webpage.",
+        "Virtual DOM is a lightweight object of the Real DOM that represents (என்பது -ஐ குறிக்கிறது.) the UI in memory, not on the screen. React updates it first, instead of updating  directly webpage.",
+      ],
+    },
+    {
+      title: "Real DOM",
+      definition: [
+        "Real DOM is the actual DOM shown in the browser.",
+        "It directly represents the webpage structure.",
+        "Updating the Real DOM is slower because the browser re-renders the UI.",
+        "Every change in the Real DOM can affect performance.",
+        "JavaScript can directly manipulate the Real DOM using methods like getElementById.",
+      ],
+    },
+    {
+      title: "Virtual DOM",
+      definition: [
+        "Virtual DOM is a lightweight copy of the Real DOM.",
+        "React creates a virtual representation of the UI in memory.",
+        "When state or props change, React updates the Virtual DOM first.",
+        "React compares the old Virtual DOM with the new Virtual DOM using a process called Diffing.",
+        "Only the changed elements are updated in the Real DOM for better performance.",
+      ],
+    },
+    {
+      title: "What is addEventListener()?",
+      definition: [
+        "addEventListener() is a JavaScript DOM method used to attach an event handler to an HTML element.",
+      ],
+    },
+    {
+      title: "Reflow",
+      definition: [
+        "Reflow is the process of recalculating the layout and position of DOM elements when their size, position, or structure changes.",
+        "Reflow can be expensive because the browser may need to recalculate the layout of multiple elements.",
+        "Element-oda size, position, or layout change aagumbothu browser layout-ai meendum calculate pannuvathuthaan Reflow.",
+        "Reflow = Layout change",
+      ],
+    },
+
+    {
+      title: "Repaint",
+      definition: [
+        "Repaint is the process of redrawing the visual appearance of an element when properties like color, background, or visibility change.",
+        "Repaint is generally less expensive than reflow because it does not require recalculating the layout.",
+        "Element-oda color, background, or appearance change aagumbothu browser athai meendum draw pannuvathuthaan Repaint.",
+        "Repaint = Look change",
+      ],
+    },
+    {
+      title: "Event (Capturing Parent) → Child மேலிருந்து கீழே",
+      definition: [
+        "Event flow-ன் first phase",
+        "Event capturing is the process where an event triggered on a parent element propagates down to its child elements.",
+        "This is the opposite of event bubbling and allows for handling events at different levels of the DOM hierarchy.",
+      ],
+    },
+    {
+      title: "Event bubbling (Child → Parent) கீழிருந்து மேலே",
+      definition: [
+        "Event flow-ன் second phase",
+        "Event bubbling is the process where an event triggered on a child element propagates up to its parent elements.",
+        "This allows for event delegation, where a single event listener can handle events for multiple child elements.",
+      ],
+    },
+
+    {
+      title:
+        "Event Delegation (Usually Bubbling) Parent listener வைத்து children handle செய்வது",
+      definition: [
+        "Event delegation is a technique that allows you to handle events on a parent element instead of individual child elements.",
+        "This is useful when you have a large number of child elements and want to handle events on a common parent element.",
+        "With event delegation, you can attach a single event listener to the parent element and let it handle events for all child elements.",
+        "This can help improve performance and reduce code complexity.",
+        "Event delegation is also known as event bubbling or event capturing.",
+      ],
+    },
+    {
+      title: "What does preventDefault() do?",
+      definition: [
+        "preventDefault() என்பது browser normally செய்யும் default action-ஐ தடுக்க பயன்படும்.",
+        "`preventDefault()` prevents the browser's default action for an event.",
+        "Example: It can prevent a form from submitting or a link from navigating.",
+        "It does NOT stop event bubbling.",
+      ],
+    },
+    {
+      title: "Event propagation",
+      definition: [
+        "Event propagation is the process by which an event travels through the DOM tree.",
+        "There are three phases of event propagation: capturing, target, and bubbling.",
+        "Tamil: Oru event DOM tree-la parent-lendhu child-kum, child-lendhu parent-kum travel aagurathuthaan Event Propagation.",
+      ],
+    },
+    {
+      title: "What does stopPropagation() do?",
+      definition: [
+        "stopPropagation() என்பது event parent elements-க்கு propagate/bubble ஆகி போவதைத் தடுக்க பயன்படும்.",
+        "`stopPropagation()` stops the event from propagating to parent elements.",
+        "It is commonly used to stop event bubbling or capturing.",
+        "It does NOT prevent the browser's default action.",
+      ],
+    },
+    {
+      title: "What is DOMContentLoaded?",
+      definition: [
+        "DOMContentLoaded is an event that fires when the HTML document has been completely parsed(பகுப்பாய்வு) and the DOM is ready.",
+        "Tamil: HTML document parse(பகுப்பாய்வு) aagi DOM ready aanavudan DOMContentLoaded event trigger aagum.",
+      ],
+    },
+
+    {
+      title: "Difference between DOMContentLoaded and load?",
+      definition: [
+        "DOMContentLoaded fires when the DOM is ready, while load fires after the entire page and its resources like images and stylesheets are loaded.",
+        "Tamil: DOMContentLoaded DOM ready aanavudan trigger aagum; load page-oda resources ellam load aana piragu trigger aagum.",
+      ],
+    },
+
+    {
+      title: "What is MutationObserver?",
+      definition: [
+        "MutationObserver is a Web API used to detect changes made to the DOM, such as adding, removing, or modifying elements.",
+        "Tamil: DOM-la element add, remove, or modify aagumbothu antha changes-ai detect panna MutationObserver use pannuvom.",
+      ],
+    },
+    {
+      title: "querySelector()",
+      definition: [
+        "querySelector() is a DOM method used to select the first element that matches a CSS selector.",
+        "Tamil: கொடுக்கப்பட்ட CSS selector-க்கு match ஆகும் முதல் element-ஐ select செய்ய querySelector() பயன்படுத்துவோம்.",
+      ],
+    },
+
+    {
+      title: "querySelectorAll()",
+      definition: [
+        "querySelectorAll() is a DOM method used to select all elements that match a CSS selector.",
+        "Tamil: கொடுக்கப்பட்ட CSS selector-க்கு match ஆகும் அனைத்து elements-ஐயும் select செய்ய querySelectorAll() பயன்படுத்துவோம்.",
       ],
     },
   ],
@@ -877,6 +1022,14 @@ if (Number.isNaN(quantity)) {
       ],
     },
     {
+      title: "Local Storage vs Session Storage",
+      definition: [
+        "Both are part of Web Storage API used to store data in the browser.",
+        "Local Storage stores data with no expiration time (persists even after browser is closed).",
+        "Session Storage stores data only for the duration of the page session (cleared when tab is closed).",
+      ],
+    },
+    {
       title: "Synchronous and  Asynchronous JavaScript",
       definition: [
         "Synchronous JavaScript runs code line by line, blocking the execution of subsequent code until the current operation is completed.",
@@ -929,17 +1082,6 @@ if (Number.isNaN(quantity)) {
         "An iterator is an object that allows you to iterate over a collection of values.",
         "Iterators are used to iterate over collections, such as arrays, objects, or strings, and they provide a way to access each element of the collection one at a time.",
         "Iterators have a next() method that returns an object with two properties: value (the current element) and done (a boolean indicating whether the iteration is complete),",
-      ],
-    },
-
-    {
-      title: "Event Delegation",
-      definition: [
-        "Event delegation is a technique that allows you to handle events on a parent element instead of individual child elements.",
-        "This is useful when you have a large number of child elements and want to handle events on a common parent element.",
-        "With event delegation, you can attach a single event listener to the parent element and let it handle events for all child elements.",
-        "This can help improve performance and reduce code complexity.",
-        "Event delegation is also known as event bubbling or event capturing.",
       ],
     },
 
@@ -1201,34 +1343,6 @@ if (Number.isNaN(quantity)) {
           name: "useCallback",
           description: "Stabilizing Function References",
         },
-      ],
-    },
-
-    {
-      title: "What is the difference between RealDOM and VirtualDOM?",
-      definition: [
-        "Real DOM means the actual webpage that the browser creates from an HTML page and displays on the screen. Any change in the Real DOM directly affects what you see on the webpage. It is slow because it can re-render the entire webpage.",
-        "Virtual DOM is a lightweight object of the Real DOM that represents (என்பது -ஐ குறிக்கிறது.) the UI in memory, not on the screen. React updates it first, instead of updating  directly webpage.",
-      ],
-    },
-    {
-      title: "Real DOM",
-      definition: [
-        "Real DOM is the actual DOM shown in the browser.",
-        "It directly represents the webpage structure.",
-        "Updating the Real DOM is slower because the browser re-renders the UI.",
-        "Every change in the Real DOM can affect performance.",
-        "JavaScript can directly manipulate the Real DOM using methods like getElementById.",
-      ],
-    },
-    {
-      title: "Virtual DOM",
-      definition: [
-        "Virtual DOM is a lightweight copy of the Real DOM.",
-        "React creates a virtual representation of the UI in memory.",
-        "When state or props change, React updates the Virtual DOM first.",
-        "React compares the old Virtual DOM with the new Virtual DOM using a process called Diffing.",
-        "Only the changed elements are updated in the Real DOM for better performance.",
       ],
     },
 
@@ -3725,6 +3839,22 @@ app.post("/user", (req, res) => {
         "I felt the role wasn't the right fit for my career goals.",
         "I was looking for better growth opportunities and challenges",
         "The company culture wasn't the right match for me.",
+      ],
+    },
+  ],
+  EnglishToTamil: [
+    {
+      title: "",
+      definition: [
+        "(mutable - மாற்றக்கூடியது)",
+        "predictable (கணிக்கக்கூடிய)",
+        "fallback(மாற்று விருப்பம்) ",
+        "ensures (உறுதிசெய்கிறது)",
+        "Parse - பகுப்பாய்வு செய்",
+        "parsed - பகுப்பாய்வு செய்யப்பட்டது",
+        "Represents - குறிக்கிறது",
+        "descendants(சந்ததியினர்).",
+        "among(இடையே)",
       ],
     },
   ],

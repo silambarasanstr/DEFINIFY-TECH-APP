@@ -39,6 +39,11 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "VSshortcuts", path: "/VSshortcuts", icon: Database },
     { name: "UIUX", path: "/UIUX", icon: Database },
     { name: "English", path: "/English", icon: Database },
+    {
+      name: "EnglishToTamil",
+      path: "/EnglishToTamil",
+      icon: Database,
+    },
   ];
 
   return (
