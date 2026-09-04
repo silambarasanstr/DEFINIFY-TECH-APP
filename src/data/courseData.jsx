@@ -278,25 +278,29 @@ export const courseData = {
       definition:
         "The position property specifies how an element is positioned (static, relative, absolute, fixed, sticky).",
     },
+    {
+      title: "Absolute Positioning",
+      definition: [
+        "English: position: absolute removes an element from the normal document flow and positions it relative to its nearest positioned ancestor.",
+        "Tamil: position: absolute பயன்படுத்தும் போது element normal document flow-ல் இருந்து வெளியே வரும். அது அதன் nearest positioned parent-ஐ அடிப்படையாகக் கொண்டு position ஆகும்.",
+      ],
+    },
+
+    {
+      title: "Relative Positioning",
+      definition: [
+        "English: position: relative keeps an element in the normal document flow, but allows it to be moved from its original position using top, right, bottom, and left properties.",
+        "Tamil: position: relative பயன்படுத்தும் போது element normal flow-ல் இருக்கும். ஆனால் top, right, bottom, left properties மூலம் அதன் original position-லிருந்து element-ஐ move செய்யலாம்.",
+      ],
+    },
 
     {
       title: "Relative vs Absolute Units",
       definition: [
-        "Relative units (such as em, rem, and %) are based on the size of the parent element or the root element, while absolute units (such as px, cm, and in) are fixed and do not change based on the context.",
-        "Relative units allow for more flexible and responsive designs, while absolute units provide precise control over the size of elements.",
-      ],
-    },
-
-    {
-      title: "Absolute Positioning",
-      definition: [
-        "position: absolute is a CSS positioning property that removes an element from the normal document flow and positions it relative to its nearest positioned ancestor.",
-      ],
-    },
-    {
-      title: "Relative Positioning",
-      definition: [
-        "relative position-ல் element normal flow-ல் இருக்கும், ஆனால் top, right, bottom, left properties மூலம் அதன் original position-லிருந்து move செய்யலாம்.",
+        "Relative units (such as em, rem, and %) are based on the size of the parent element or the root element",
+        "Relative units allow for more flexible and responsive designs, while ",
+        "absolute units (such as px, cm, and in) are fixed and do not change based on the context.",
+        "absolute units provide precise control over the size of elements.",
       ],
     },
 
@@ -1030,6 +1034,13 @@ if (Number.isNaN(quantity)) {
       ],
     },
     {
+      title: "JavaScript Destructuring",
+      definition: [
+        "English: Destructuring is a JavaScript feature that allows you to extract values from arrays or properties from objects and store them directly into separate variables.",
+        "Tamil: Destructuring என்பது JavaScript-ல் array-ல் உள்ள values அல்லது object-ல் உள்ள properties-ஐ எளிதாக தனித்தனி variables-க்கு எடுத்துக்கொள்ள பயன்படும் ஒரு feature.",
+      ],
+    },
+    {
       title: "Synchronous and  Asynchronous JavaScript",
       definition: [
         "Synchronous JavaScript runs code line by line, blocking the execution of subsequent code until the current operation is completed.",
@@ -1102,6 +1113,20 @@ if (Number.isNaN(quantity)) {
         "ஒரு property object-ல் கிடைக்கலனா, JavaScript அதன் prototype-ல் தேடும் — இதை prototype chain என்று சொல்வாங்க.",
 
         "JavaScript is prototype-based, not class-based.",
+      ],
+    },
+
+    {
+      title: "ES5 Features",
+      definition: [
+        "var",
+        "Constructor Function",
+        "this",
+        "Prototype",
+        "Prototype Chain",
+        "Prototypal Inheritance",
+        "all / apply / bind",
+        "Strict Mode (use strict)",
       ],
     },
 
@@ -1264,6 +1289,21 @@ if (Number.isNaN(quantity)) {
         "Garbage Collection is an automatic memory management process in JavaScript. It removes objects from memory that are no longer reachable or used by the program.",
         "It helps in freeing up memory and preventing memory leaks.",
         "Garbage Collection-na JavaScript-ல memory cleanup process. நாம் use பண்ணாத variables அல்லது objects-ஐ automatically memory-ல இருந்து remove பண்ணும். இதனால் memory waste ஆகாமல் இருக்கும்.",
+      ],
+    },
+    {
+      title: "Method Overloading",
+      definition: [
+        "English: Method overloading means having multiple methods with the same name but different parameters, such as different number or types of arguments.",
+        "Tamil: Method overloading என்பது same method name-ஐ பயன்படுத்தி, different number அல்லது different type of parameters உடன் multiple methods உருவாக்குவது.",
+      ],
+    },
+
+    {
+      title: "Method Overriding",
+      definition: [
+        "English: Method overriding means a child class provides its own implementation of a method that is already defined in its parent class.",
+        "Tamil: Method overriding என்பது parent class-ல் ஏற்கனவே இருக்கும் method-ஐ child class-ல் அதே name மற்றும் parameters-உடன் புதிய implementation கொடுப்பது.",
       ],
     },
   ],
@@ -3853,8 +3893,23 @@ app.post("/user", (req, res) => {
         "Parse - பகுப்பாய்வு செய்",
         "parsed - பகுப்பாய்வு செய்யப்பட்டது",
         "Represents - குறிக்கிறது",
+        "Defined - வரையறுக்கப்பட்ட",
         "descendants(சந்ததியினர்).",
         "among(இடையே)",
+        "intentionally - வேண்டுமென்றே",
+        "Eventual - இறுதியில்",
+        "Refactoring - மறுசீரமைப்பு",
+        "Intercept - இடைமறி,  தடுத்து பிடி,  நடுவில் தலையிட்டு நிறுத்து",
+        "Instead - அதற்குப் பதிலாக",
+        "Instances -  சம்பவங்கள் (or) நிகழ்வுகள்",
+        "Identify - அடையாளம் காணவும்",
+        "Intentionally - வேண்டுமென்றே",
+        "Refers - சுட்டிக்காட்டுகிறது",
+        "References - குறிப்புகள்,குறிப்பு, மேற்கோள்,சான்று,பரிந்துரை",
+        "Progressively - படிப்படியாக",
+        "Specified - குறிப்பிடப்பட்டது",
+        "Define - வரையறுக்கவும்",
+        "Efficiently - திறம்பட",
       ],
     },
   ],
