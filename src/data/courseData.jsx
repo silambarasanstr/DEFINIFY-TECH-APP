@@ -2717,6 +2717,7 @@ const data = response.data as Order;
     {
       title: "Security (பாதுகாப்பு)",
       definition: [
+        "Helmet = Express application-க்கு security headers automatically configure செய்யும் middleware.",
         "Security is the practice of protecting a server and application from unauthorized access, attacks, and vulnerabilities.",
         "It helps secure user data, improve application safety, and prevent common web attacks.",
         "தமிழில்: Security என்பது server மற்றும் application-ஐ attacks மற்றும் unauthorized access-இலிருந்து பாதுகாப்பது.",
@@ -3231,10 +3232,9 @@ app.post("/user", (req, res) => {
   ],
   cicd: [
     {
-      title: "CI/CD",
+      title: "CI/CD Pipeline",
       definition: [
-        "What is CI/CD?",
-        "CI/CD is a method to frequently deliver applications by automating stages like building, testing, and deployment.",
+        "CI/CD is a method to frequently deliver applications by automating stages like build, testing, and deployment.",
       ],
     },
     {
@@ -3244,31 +3244,18 @@ app.post("/user", (req, res) => {
         "Continuous Integration is the practice of automatically integrating code changes into a shared repository and running tests to detect issues early.",
       ],
     },
+
     {
-      title: "Continuous Delivery (CD)",
-      definition: [
-        "What is Continuous Delivery?",
-        "Continuous Delivery ensures that code changes are automatically prepared for release to production.",
-      ],
-    },
-    {
-      title: "Continuous Deployment",
+      title: "Continuous Deployment (CD)",
       definition: [
         "What is Continuous Deployment?",
         "Continuous Deployment automatically deploys every change that passes testing directly to production without manual approval.",
       ],
     },
-    {
-      title: "CI/CD Pipeline",
-      definition: [
-        "What is a CI/CD pipeline?",
-        "A CI/CD pipeline is a sequence of automated steps like build, test, and deploy that code goes through before reaching production.",
-      ],
-    },
+
     {
       title: "Benefits of CI/CD",
       definition: [
-        "What are the benefits of CI/CD?",
         "CI/CD improves code quality, reduces bugs, speeds up delivery, enables faster feedback, and ensures reliable deployments.",
       ],
     },
@@ -3276,7 +3263,8 @@ app.post("/user", (req, res) => {
       title: "CI vs CD",
       definition: [
         "What is the difference between CI and CD?",
-        "CI focuses on integrating and testing code changes, while CD focuses on delivering or deploying the code to production.",
+        "CI focuses on integrating(ஒருங்கிணைத்தல்) and testing code changes,",
+        "CD focuses on delivering or deploying the code to production.",
       ],
     },
     {
@@ -3291,7 +3279,6 @@ app.post("/user", (req, res) => {
     {
       title: "Docker",
       definition: [
-        "What is Docker?",
         "Docker is a platform that uses OS-level virtualization to deliver software in packages called containers.",
         "Example: docker run hello-world",
       ],
@@ -3886,6 +3873,9 @@ app.post("/user", (req, res) => {
     {
       title: "",
       definition: [
+        "Virtualization-மெய்நிகராக்கம் - Simple-ஆ சொன்னா: ஒரு physical resource-ஐ software மூலம் virtual-ஆ உருவாக்குவது.",
+        "integrating(ஒருங்கிணைத்தல்)",
+        "Sufficient- போதுமானது",
         "(mutable - மாற்றக்கூடியது)",
         "predictable (கணிக்கக்கூடிய)",
         "fallback(மாற்று விருப்பம்) ",
