@@ -443,9 +443,9 @@ export const courseData = {
       ],
     },
     {
-      title: "Event (Capturing Parent) → Child மேலிருந்து கீழே",
+      title: "Event (Capturing Parent → Child)   மேலிருந்து கீழே",
       definition: [
-        "Event flow-ன் first phase",
+        "Event capturing is a process where an event propagates from the parent element down to the target child element",
         "Event capturing is the process where an event triggered on a parent element propagates down to its child elements.",
         "This is the opposite of event bubbling and allows for handling events at different levels of the DOM hierarchy.",
       ],
@@ -453,7 +453,7 @@ export const courseData = {
     {
       title: "Event bubbling (Child → Parent) கீழிருந்து மேலே",
       definition: [
-        "Event flow-ன் second phase",
+        "Event bubbling is a process where an event propagates from the target child element up to its parent elements.",
         "Event bubbling is the process where an event triggered on a child element propagates up to its parent elements.",
         "This allows for event delegation, where a single event listener can handle events for multiple child elements.",
       ],
@@ -463,9 +463,9 @@ export const courseData = {
       title:
         "Event Delegation (Usually Bubbling) Parent listener வைத்து children handle செய்வது",
       definition: [
+        "Event delegation is a technique where we attach one event listener to a parent element to handle events from its child elements",
         "Event delegation is a technique that allows you to handle events on a parent element instead of individual child elements.",
         "This is useful when you have a large number of child elements and want to handle events on a common parent element.",
-        "With event delegation, you can attach a single event listener to the parent element and let it handle events for all child elements.",
         "This can help improve performance and reduce code complexity.",
         "Event delegation is also known as event bubbling or event capturing.",
       ],
@@ -629,44 +629,23 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
     {
       title: "Object",
       definition: [
-        "An object is a collection of properties, where each property consists of a key-value pair. Objects are used to store and organize data, and they can hold various data types such as strings, numbers, arrays, and even other objects.",
-        "Objects can be created using the Object constructor (e.g., const user = new Object()) or using object literals ({}).",
-        "Accessing object properties (dot notation and bracket notation).",
-        "Adding and modifying properties in an object.",
-        "Deleting properties using the delete keyword.",
-        "Object Methods → Functions defined inside objects.",
-        "Object Prototypes → Shared properties and methods between objects.",
-        "Object Inheritance → Objects can inherit properties and methods from other objects.",
-        "Object Composition → Combining multiple objects into one.",
-        "Object Equality → Objects are compared by reference, not by value.",
-        "Looping over object properties using for...in or Object methods.",
-        "Checking property existence using 'in' operator or hasOwnProperty().",
-        "Object Destructuring → Extracting values from objects into variables.",
-        "Object Spread Operator → Copying and merging objects (...).",
-        "Object Rest Operator → Collecting remaining properties into a new object.",
+        "An object is a collection of properties, where each property consists of a key-value pair.",
+        "Objects are used to store and organize data",
+        "that can hold various data types such as strings, numbers, arrays, and even other objects.",
       ],
     },
 
     {
       title: "Array",
       definition: [
-        "An array is a data structure used to store multiple values in a single variable. These values can be of any data type, such as numbers, strings, objects, or even other arrays.",
+        "An array is a special type of object used to store multiple values in a single variable. These values can be of any data type, such as numbers, strings, objects, or even other arrays.",
         "Arrays help manage and manipulate groups of data efficiently",
-        "Arrays are ordered and indexed collections, where each element is accessed using its index (starting from 0).",
-        "Arrays can be created using array literals (e.g., const arr = []) or using the Array constructor (e.g., const arr = new Array()).",
+        "Arrays are ordered and indexed collections",
         "Arrays in JavaScript are dynamic in size (they are not fixed).",
-        "Accessing array elements",
-        "Adding and removing elements",
-        "Updating array elements",
+
         "Array methods → built-in functions like push, pop, map, filter, reduce",
         "Array iteration → looping using for, forEach, map",
-        "Array destructuring",
-        "Spread operator with arrays",
-        "Rest operator with arrays",
-        "Searching in arrays → includes, indexOf, find",
-        "Sorting and reversing arrays",
-        "Array length property",
-        "Interview One-Liner",
+
         "Encapsulation → data hiding",
         "Polymorphism → same method, different behavior",
         "Abstraction → hide complexity",
@@ -676,18 +655,17 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
     {
       title: "Function",
       definition: [
-        "A function is a reusable block of code designed to perform a specific task. It helps in organizing code, improving readability, and avoiding repetition.",
+        "A function is a block of reusable code that performs a specific task. It helps in organizing code, improving readability, and avoiding repetition.",
         "Functions can take inputs (parameters) and return an output (return value).",
-        "Functions can be created using function declarations, function expressions, or arrow functions.",
-        "Function declaration → function greet() {}",
-        "Function expression → const greet = function() {}",
-        "Arrow function → const greet = () => {}",
-        "Parameters and arguments",
+        "Function declaration: A function is declared using the function keyword.",
+        "Function expression: A function is assigned to a variable.",
+
         "Return statement",
         "Default parameters",
         "Rest parameters",
+
         "Callback functions → passing a function as an argument",
-        "Higher-order functions → functions that take or return other functions",
+        "Higher-order functions → functions that take or return a function.",
         "Closures → functions remembering their outer scope",
         "Immediately Invoked Function Expression (IIFE)",
         "Pure and impure functions",
@@ -720,13 +698,6 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
         "A callback function is a function that is passed as an argument to another function and is executed later.",
         "Callbacks are used to handle asynchronous operations like API calls, timers, and events.",
         "It helps to run code only after a task is completed.",
-
-        "Example (Basic): function greet(name, callback) { console.log('Hi ' + name); callback(); }",
-        "greet('Simbu', () => console.log('Welcome!'));",
-
-        "Example (setTimeout): setTimeout(() => { console.log('Runs after 2 seconds'); }, 2000);",
-
-        "Example (Event): button.addEventListener('click', () => { console.log('Button clicked'); });",
       ],
     },
 
@@ -748,7 +719,8 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
     {
       title: "Closures Function",
       definition: [
-        " A closure gives you access to an outer function's scope from an inner function. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
+        " A closure is a function that remembers and can access variables from its outer scope even after the outer function has finished executing.",
+        " A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
         "A closure is a function that remembers variables from its outer scope even after the outer function has finished execution.",
         "Closures allow you to access and preserve data privately.",
         "It is commonly used in data encapsulation, counters, and function factories.",
@@ -1011,40 +983,29 @@ if (Number.isNaN(quantity)) {
     {
       title: "Session Storage vs Local Storage",
       definition: [
-        "Both are Web Storage APIs used to store data in the browser as key-value pairs.",
-        "Local Storage stores data with no expiration and persists even after the browser is closed.",
-        "Session Storage stores data only for the session and is cleared when the tab/browser is closed.",
-
-        "Example (Local Storage): localStorage.setItem('name', 'Simbu');",
-        "localStorage.getItem('name'); // 'Simbu'",
-        "localStorage.removeItem('name');",
-        "localStorage.clear();",
-
-        "Example (Session Storage): sessionStorage.setItem('user', 'Admin');",
-        "sessionStorage.getItem('user');",
-        "sessionStorage.removeItem('user');",
+        "localStorage stores data in the browser and keeps it even after the browser is closed. The data remains until we manually remove it or clear the browser storage.",
+        "sessionStorage stores data only for the current browser tab/session. The data is removed when that tab is closed.",
       ],
     },
+
     {
-      title: "Local Storage vs Session Storage",
+      title: "What is the difference between cookies and localStorage?",
       definition: [
-        "Both are part of Web Storage API used to store data in the browser.",
-        "Local Storage stores data with no expiration time (persists even after browser is closed).",
-        "Session Storage stores data only for the duration of the page session (cleared when tab is closed).",
+        "Cookies store small pieces of data as key-value pairs and are automatically sent to the server with matching HTTP requests. They are commonly used for sessions and authentication.",
+        "localStorage stores data in the browser and keeps it even after the browser is closed. It is mainly used for client-side data storage.",
       ],
     },
     {
       title: "JavaScript Destructuring",
       definition: [
         "English: Destructuring is a JavaScript feature that allows you to extract values from arrays or properties from objects and store them directly into separate variables.",
-        "Tamil: Destructuring என்பது JavaScript-ல் array-ல் உள்ள values அல்லது object-ல் உள்ள properties-ஐ எளிதாக தனித்தனி variables-க்கு எடுத்துக்கொள்ள பயன்படும் ஒரு feature.",
       ],
     },
     {
       title: "Synchronous and  Asynchronous JavaScript",
       definition: [
-        "Synchronous JavaScript runs code line by line, blocking the execution of subsequent code until the current operation is completed.",
-        "Asynchronous JavaScript allows code to run without blocking the execution of other code.",
+        "Synchronous JavaScript executes code line by line, and each operation must finish before the next one starts. It is blocking",
+        "Asynchronous JavaScript allows other code to continue while waiting for an operation to complete. It is non-blocking and is commonly used for operations like API calls and timers.",
       ],
     },
     {
@@ -1053,14 +1014,6 @@ if (Number.isNaN(quantity)) {
         "A Promise is an object that represents the eventual(இறுதியில்) completion(நிறைவு பெறுவதை) (or failure) of an asynchronous operation and its resulting value.",
         "A Promise has three states → pending, fulfilled, and rejected.",
         "Promises are used to handle asynchronous operations like API calls, file reading, or timers.",
-        "own-a Promise create pannalam",
-        "Creating a Promise → new Promise((resolve, reject) => {})",
-        "Resolving a Promise → resolve(value)",
-        "Rejecting a Promise → reject(error)",
-        "Handling success → .then()",
-        "Handling errors → .catch()",
-        "Finally block → .finally() runs regardless of success or failure",
-        "Promise chaining → multiple .then() calls in sequence",
 
         "Promise.all → runs multiple promises in parallel (fails if one fails)",
         "Promise.allSettled → waits for all promises (success + failure)",
@@ -1098,8 +1051,37 @@ if (Number.isNaN(quantity)) {
 
     {
       title: "This Keyword",
-      definition:
+      definition: [
+        "The this keyword refers to the object or context that is calling the function.",
         "The this keyword refers to the object that is currently executing the code.",
+      ],
+    },
+    {
+      title: "What is the difference between call(), apply(), and bind()",
+      definition: [
+        "calls a function immediately and passes arguments individually.",
+        "apply() works like call(), but passes arguments as an array.",
+        "bind() returns a new function with this permanently set to the provided value.",
+        "or",
+        "call() calls a function with a specific this value and arguments provided individually.",
+        "apply() calls a function with a specific this value and arguments provided as an array.",
+        "bind() creates a new function with a specific this value and arguments pre-specified.",
+      ],
+    },
+    {
+      title: "What is the difference between map(), filter(), and forEach()?",
+      definition: [
+        "map() transforms every element and returns a new array. It does not modify the original array by itself.",
+        "filter() is a method used to filter elements based on a condition. It returns a new array containing the elements that satisfy the condition and does not modify the original array.",
+        "forEach() executes a function for each element. It does not return a new array. It also does not automatically modify the original array",
+      ],
+    },
+    {
+      title: "What is the difference between find() and filter()?",
+      definition: [
+        "find() returns the first element that satisfies the condition. It returns undefined if no element is found.",
+        "filter() returns a new array containing all elements that satisfy the condition. It returns an empty array if no element is found.",
+      ],
     },
     {
       title: "Prototype",
@@ -1389,7 +1371,7 @@ if (Number.isNaN(quantity)) {
     {
       title: "React",
       definition:
-        "React is an open-source JavaScript library used to build fast, interactive user interfaces, especially for single-page applications .React let you build a website with reusable UI components.",
+        "React is an open-source JavaScript library used to build fast and interactive user interfaces. It helps us create scalable applications using reusable components. React provides features like the Virtual DOM and Hooks, and it is commonly used to build single-page applications (SPAs).",
     },
     {
       title: "Key Features of React",
@@ -1399,13 +1381,8 @@ if (Number.isNaN(quantity)) {
         "single-page apllication (SPA)",
         "It uses a virtual DOM to efficiently update and render the user interface.",
         "Rich Ecosystem of Libraries and Tools",
-        "It supports server-side rendering and client-side routing.",
-        "Yes. React itself supports Server-Side Rendering (SSR), but SSR is not built into React alone. You typically use a framework like Next.js to implement SSR.",
-        "It is a popular choice for building user interfaces for web applications.",
-        "It is used by Facebook, Instagram, and many other companies.",
         "State Management",
         "Props",
-        "Event Handling",
         "Lifecycle Methods",
       ],
     },
@@ -1427,10 +1404,15 @@ if (Number.isNaN(quantity)) {
     {
       title: "JSX Rules",
       definition: [
-        "It is combination html and JavaScript",
-        "Single Parent Element",
-        "className instead of class",
-        "All tags must be closed",
+        "JSX stands for JavaScript XML. It is a syntax extension for JavaScript that allows us to write HTML-like code inside JavaScript. We use JSX because it makes React code easier to read and write, and it allows us to describe the UI structure in a clear way.",
+      ],
+    },
+
+    {
+      title: "What is the difference between props and state in React?",
+      definition: [
+        "Props stands for properties. Props are used to pass data from a parent component to a child component. Props are read-only, so a child component cannot directly modify them.",
+        "State is a built-in React object that is used to contain data or information about the component. State can change over time, and when it does, React re-renders the component. We update state using the state setter function.",
       ],
     },
 
@@ -1450,12 +1432,76 @@ if (Number.isNaN(quantity)) {
         " They can be of any data type, including strings, numbers, arrays, and objects. ",
       ],
     },
+    {
+      title: "Virtual DOM",
+      definition: [
+        "The Virtual DOM is a lightweight JavaScript representation of the actual DOM. When the state or data changes, React creates a new Virtual DOM and compares it with the previous Virtual DOM. This process is called reconciliation. React then updates only the necessary parts of the actual DOM instead of re-rendering the entire page.",
+      ],
+    },
+
+    {
+      title: "What is the difference between useState and useEffect in React?",
+      definition: [
+        "useState is a React Hook used to create and manage state in a functional component. We use the state setter function to update the state value.",
+        "useEffect is a React Hook used to perform side effects in a component. For example, we can use it for API calls, subscriptions, timers, and interacting with external systems. It can also be used to handle lifecycle-related behavior in functional components.",
+        "useEffect is a Hook used to handle side effects and lifecycle-related behavior.",
+      ],
+    },
+
+    {
+      title: "What is the difference between useState() and useRef()?",
+      definition: [
+        "useState is a React Hook used to create and manage state in a functional component. When the state value changes, the component re-renders.",
+        "useState → data changes → re-render",
+        "useRef is a React Hook used to access and interact with DOM elements directly. It can also store a mutable value that persists between renders. Updating a ref does not cause the component to re-render.",
+        "useRef → value changes → no re-render",
+      ],
+    },
+
+    {
+      title: "What is the purpose of useEffect cleanup function in React?",
+      definition: [
+        "The cleanup function in useEffect is used to clean up side effects when a component unmounts or before the effect runs again. It helps prevent memory leaks and unnecessary operations.",
+        "For example, we can use it to remove event listeners, clear timers, or unsubscribe from subscriptions.",
+      ],
+    },
+
+    {
+      title:
+        "What is the dependency array in useEffect? What happens when we use []?",
+      definition: [
+        "The dependency array in useEffect controls when the effect should run.",
+        "If we pass an empty dependency array [], the effect runs once after the component mounts.",
+        "If we pass a value in the dependency array, the effect runs again whenever that value changes.",
+      ],
+    },
+
+    {
+      title: "Conditional rendering",
+      definition: [
+        "Conditional rendering in React means rendering different UI elements based on a condition. We can use the ternary operator, logical && operator, or if statements for conditional rendering.",
+      ],
+    },
 
     {
       title: "Props Drilling",
       definition: [
-        "Prop drilling is a situation (நிலைமை) where you have to pass data through multiple levels of components in order to reach the component that needs the data.  This can lead to code that is difficult to maintain and understand, as it can create a lot of unnecessary props being passed down through the component tree.",
-        "props Drilling refers to the process of passing data from a high-level component down to a deep-level component thought intermediate component that do need the data themselves",
+        "Prop drilling is the process of passing data from a higher-level component to a deeply nested child component through multiple intermediate components using props, even when those intermediate components do not need the data.",
+      ],
+    },
+
+    {
+      title: "What is React Context API, and why do we use it?",
+      definition: [
+        "Context API is a built-in feature in React used to share data between components without passing props manually through every level. It is useful for avoiding prop drilling and sharing global or commonly used data such as theme, authentication, or language settings.",
+      ],
+    },
+
+    {
+      title: "What is the difference between Context API and Redux?",
+      definition: [
+        "Context API is a built-in React feature used to share data between components without passing props through every level. It is useful for avoiding prop drilling and is suitable for simple global state such as theme, authentication, or language.",
+        "Redux is a third-party state management library used to manage application state in a centralized and predictable way. It is useful when the application has complex state management requirements and many components need to access or update shared state.",
       ],
     },
 
@@ -1463,8 +1509,39 @@ if (Number.isNaN(quantity)) {
       title: "React JS List & Keys",
       definition: [
         "Lists are used to display a collection of data in React. They are created using the map() method to iterate over an array of data and return a new array of JSX elements.",
-        "Keys are a special attribute that is used to identify each element in a list. They help React to efficiently update and render the list when the data changes.",
-        "Keys should be unique and stable, meaning they should not change between renders. A common practice is to use a unique identifier from the data as the key, such as an ID.",
+        "A key is a unique identifier used when rendering a list of elements in React. It helps React identify which items have been added, removed, or changed, so React can efficiently update the DOM.",
+      ],
+    },
+
+    {
+      title: "What is useMemo in React? Why do we use it?",
+      definition: [
+        "useMemo is a React Hook used for performance optimization. It memoizes the result of an expensive calculation and recalculates it only when its dependencies change. This helps avoid unnecessary recalculations during re-renders.",
+      ],
+    },
+
+    {
+      title: "What is useCallback in React? How is it different from useMemo?",
+      definition: [
+        "useCallback is a React Hook used for performance optimization. It memoizes a function and returns the same function reference until its dependencies change. It is useful when we pass functions to child components, especially when those components are optimized with React.memo.",
+      ],
+    },
+
+    {
+      title: "What is React.memo() and why do we use it?",
+      definition: [
+        "React.memo() is a higher-order component used for performance optimization. It prevents a functional component from re-rendering when its props have not changed. It is useful for avoiding unnecessary re-renders, especially when a component is expensive to render.",
+        "React.memo() doesn't prevent all re-renders. If the component's state or context changes, it can still re-render.",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between React.memo(), useMemo(), and useCallback()?",
+      definition: [
+        "React.memo() → Component is used to prevent unnecessary re-renders of a component when its props have not changed.",
+        "useMemo() → Value is used to memoize a calculated value.",
+        "useCallback() → Function is used to memoize a function.",
       ],
     },
 
@@ -1472,9 +1549,7 @@ if (Number.isNaN(quantity)) {
       title: "What is a Component?",
 
       definition: [
-        "A component is a self-contained, reusable piece of UI in React. ",
-        "It can be either(ஏதாவது ஒன்று) a functional component or a class component.",
-        "Components let us break down complex UIs into smaller, manageable, and reusable pieces",
+        "A component is a reusable and independent piece of code that represents a part of the user interface. Components help us split the UI into smaller, manageable parts and reuse them throughout the application.",
       ],
     },
     {
@@ -1510,19 +1585,10 @@ if (Number.isNaN(quantity)) {
     {
       title: "Controlled Component",
       definition: [
-        "A controlled component is a form element controlled by React state.",
-        "React handles the input value using useState.",
-        "The value is updated using onChange event.",
+        "A controlled component is a form element whose value is controlled by React state. The input value is stored in state, and we update the state when the user enters or changes the value.",
+        "Controlled → value + onChange",
+        "Controlled → React state manages the input value.",
       ],
-      example: `
-const [name, setName] = useState("");
-
-<input
-  type="text"
-  value={name}
-  onChange={(e) => setName(e.target.value)}
-/>
-`,
     },
 
     {
@@ -1532,15 +1598,13 @@ const [name, setName] = useState("");
         "React does not control the input value using state.",
         "useRef is commonly used to access the input value.",
       ],
-      example: `
-const inputRef = useRef();
-
-<input type="text" ref={inputRef} />
-
-<button onClick={() => console.log(inputRef.current.value)}>
-  Submit
-</button>
-`,
+    },
+    {
+      title: "useRef()",
+      definition: [
+        "useRef() is a React Hook used to access and interact with DOM elements directly. It can also be used to store a mutable value that persists across renders without causing a re-render when the value changes.",
+        "Common use cases: Accessing DOM elements directly, Store previous values, Store mutable values without triggering a re-render",
+      ],
     },
     {
       title: "React Server Components",
@@ -1659,6 +1723,18 @@ const inputRef = useRef();
     },
 
     {
+      title:
+        "What is the difference between useEffect and useLayoutEffect in React?",
+      definition: [
+        "useEffect runs after the component has been rendered and the browser has painted the UI. It is commonly used for side effects such as API calls, subscriptions, and timers.",
+        "useEffect → Render → Paint → useEffect",
+        "useLayoutEffect runs synchronously after React updates the DOM but before the browser paints the screen. It is useful when we need to measure or modify the DOM before the user sees the result.",
+        "useLayoutEffect runs after DOM updates but before the browser paints.",
+        "useLayoutEffect → Render → DOM update → useLayoutEffect → Paint",
+      ],
+    },
+
+    {
       title: "React Query",
       definition: [
         "React Query is a library used to fetch, cache, and manage server data in React applications.",
@@ -1713,11 +1789,33 @@ useEffect(() => {
     {
       title: "State Lifting ",
       definition: [
-        "State Lifting  is a React pattern where state is moved from a child component to its closest common parent component.",
-        "This allows multiple child components to access and share the same state through props.",
+        "Lifting state up means moving shared state from a child component to their closest common parent component. The parent manages the state and passes the data and event handlers to the child components through props. We use it when multiple child components need to share or synchronize the same data.",
         "State Lifting என்பது React-ல் பயன்படுத்தப்படும் ஒரு pattern. இதில் Child Component-ல் இருக்கும் state-ஐ, அதைப் பயன்படுத்தும் அனைத்து Child Components-க்கும் பொதுவான (Closest Common) Parent Component-க்கு மாற்றுவது ஆகும்.",
+        "Child state → Move to common Parent → Pass through props",
       ],
-      example: "",
+    },
+
+    {
+      title: "What is the difference between props and state?",
+      definition: [
+        "Props are used to pass or share data from a parent component to a child component. Props are read-only.",
+        "State is used to manage data within a component. When the state changes, React re-renders the component.",
+      ],
+    },
+
+    {
+      title: "React.Fragment",
+      definition: [
+        "React.Fragment is used to group multiple elements or child components without adding an extra DOM element to the page. It helps us return multiple elements from a component without using an unnecessary wrapper like a <div>.",
+        "Fragment → Group elements → No extra DOM node",
+      ],
+    },
+
+    {
+      title: "Reconciliation",
+      definition: [
+        "Reconciliation is the process React uses to compare the previous Virtual DOM with the new Virtual DOM after a state or prop change. React identifies what has changed and updates only the necessary parts of the actual DOM.",
+      ],
     },
 
     {
@@ -1797,26 +1895,22 @@ useEffect(() => {
       title: "Server Components",
       definition: [
         "Components that run on the server and reduce JavaScript sent to the browser.",
-        "Used for data fetching and better performance.",
-        "Example: async function Page() { const data = await fetch(...); }",
       ],
     },
     {
       title: "Client Components",
       definition: [
         "Components that run in the browser and support React hooks like useState.",
-        "Required for interactivity.",
-        "Example: 'use client'; useState()",
       ],
     },
 
     {
       title: "Client Side Rendering (CSR) ",
       definition: [
-        "Order பண்ணுங்க... cooking start ஆகும் 😂🔥",
-        "Page first empty… then data entry… full build-up scene 😂🔥",
         "Client Side Rendering (CSR) is a rendering technique where the browser loads a minimal HTML page and uses JavaScript to render the content.",
         "All UI rendering happens in the browser (client side), not on the server.",
+        "Order பண்ணுங்க... cooking start ஆகும் 😂🔥",
+        "Page first empty… then data entry… full build-up scene 😂🔥",
 
         "1. Initial load → Minimal or empty HTML is loaded",
         "2. JavaScript bundle is downloaded",
@@ -2384,6 +2478,7 @@ const data = response.data as Order;
     {
       title: "NPX",
       definition: [
+        "npx → executes packages/CLI commands.",
         "NPX is a package runner that comes with npm (v5.2+).",
         "It allows you to run Node.js packages without installing them globally.",
         "It first checks if the package exists locally. If not, it downloads a temporary copy, runs it, and then removes it.",
@@ -2394,8 +2489,10 @@ const data = response.data as Order;
     {
       title: "NPM",
       definition: [
+        "npm → installs/manages packages.",
         "NPM (Node Package Manager) is the default package manager used to install, manage, and share JavaScript packages.",
         "It helps developers manage project dependencies efficiently (திறமையாக).",
+        "It  provides access to thousands of reusable packages.",
         "தமிழில்: NPM என்பது JavaScript packages-ஐ install, manage, மற்றும் share செய்ய பயன்படும் package manager ஆகும்.",
       ],
     },
@@ -2412,11 +2509,46 @@ const data = response.data as Order;
         "package-lock.json is an automatically generated file by npm that records the exact versions of all installed dependencies and their sub-dependencies. It ensures (உறுதிசெய்கிறது) that every developer and deployment environment installs the same package versions.",
       ],
     },
+    {
+      title: "What is the difference between dependencies and devDependencies?",
+      definition: [
+        "dependencies are packages required for the application to run in production.",
+        "devDependencies are packages only needed for development and testing.",
+      ],
+    },
+    {
+      title: "Vite",
+      definition: [
+        "Vite is a fast and modern build tool for web development.",
+        "It is mainly used for development and building applications for production.",
+      ],
+    },
+    {
+      title: "What is Non-blocking?",
+      definition: [
+        "Non-blocking means the program does not wait for one operation to finish before executing the next one. Instead, it continues running other tasks while the operation completes in the background.",
+        "Non-blocking-na oru operation complete ஆகுற வரைக்கும் wait பண்ணாது. அதுக்கு பதிலா next task-ஐ execute பண்ணிடும். Operation complete ஆன பிறகு callback, Promise, அல்லது async/await மூலம் result handle பண்ணலாம்.",
+      ],
+    },
+    {
+      title: "What is Blocking?",
+      definition: [
+        "Blocking means the program waits for an operation to complete before executing the next statement. During this time, the execution is paused until the current task finishes.",
+        "Blocking-na oru operation complete ஆகுற வரைக்கும் program wait பண்ணும். அந்த operation முடியும் வரை next statement execute ஆகாது. Operation complete ஆன பிறகுதான் next task execute ஆகும்.",
+      ],
+    },
 
     {
       title: "Error Handling (பிழை கையாளுதல்)",
       definition: [
         "Error Handling is the process of detecting, catching, and managing errors in a Node.js application to prevent crashes and ensure smooth execution. It helps provide meaningful error responses to users. In Node.js, errors are commonly handled using try...catch, Promise .catch(), async/await, and centralized Express error-handling middleware. The Express error-handling middleware uses four parameters: err, req, res, and next.",
+      ],
+    },
+    {
+      title:
+        "What is error-handling middleware in Express, and how do you identify it?",
+      definition: [
+        "Error handling is the process of detecting, catching, and managing errors in an application. In Express, error-handling middleware is identified by four parameters: err, req, res, and next.",
       ],
     },
 
@@ -2426,9 +2558,9 @@ const data = response.data as Order;
         "200 → Success",
         "201 → Created",
         "400 → Bad Request",
-        "401 → Unauthorized",
-        "403 → Forbidden",
-        "404 → Not Found",
+        "401 → Unauthorized - Who are you?",
+        "403 → Forbidden - I know who you are, but you can't access this.",
+        "404 → Not Found- Resource not found",
         "500 → Internal Server Error",
       ],
     },
@@ -2550,20 +2682,6 @@ const data = response.data as Order;
         "process.kill() sends a signal to another process using its PID.",
       ],
     },
-    {
-      title: "What is Non-blocking?",
-      definition: [
-        "Non-blocking means the program does not wait for one operation to finish before executing the next one. Instead, it continues running other tasks while the operation completes in the background.",
-        "Non-blocking-na oru operation complete ஆகுற வரைக்கும் wait பண்ணாது. அதுக்கு பதிலா next task-ஐ execute பண்ணிடும். Operation complete ஆன பிறகு callback, Promise, அல்லது async/await மூலம் result handle பண்ணலாம்.",
-      ],
-    },
-    {
-      title: "What is Blocking?",
-      definition: [
-        "Blocking means the program waits for an operation to complete before executing the next statement. During this time, the execution is paused until the current task finishes.",
-        "Blocking-na oru operation complete ஆகுற வரைக்கும் program wait பண்ணும். அந்த operation முடியும் வரை next statement execute ஆகாது. Operation complete ஆன பிறகுதான் next task execute ஆகும்.",
-      ],
-    },
   ],
   express: [
     {
@@ -2589,9 +2707,7 @@ const data = response.data as Order;
     {
       title: "What is Middleware?",
       definition: [
-        "Middleware is a function that runs between the client request and the server response. It can process the request before it reaches the route handler or process the response before it is sent back to the client.",
-        "They are commonly used for logging, authentication, validation, error handling, and parsing request data.",
-        "Client request server-ku varumbodhu, route-ku direct-a pogama, first middleware execute aagum. Adhu request-a check pannum, modify pannum, validate pannum. Athukkapuram next() call pannina next middleware illa route handler-ku request pogum.",
+        "Middleware is a function that runs between the incoming request and the final response. It can access the request, response, and the next() function.",
         "next() is used to pass control to the next middleware or the route handler. If we don't call next(), the request will stop there and the client won't get a response.",
       ],
     },
@@ -2635,10 +2751,10 @@ const data = response.data as Order;
     {
       title: "What are HTTP Methods?",
       definition: [
-        "GET - Retrieve data.",
-        "POST - Create new data.",
-        "PUT - Replace existing data.",
-        "PATCH - Update specific fields.",
+        "GET - Used to retrieve/fetch data from the server..",
+        "POST - Used to send data to the server, commonly to create a new resource.",
+        "PUT - Used to replace the entire resource with new data.",
+        "PATCH - Used to update specific fields of an existing resource",
         "DELETE - Remove data.",
       ],
     },
@@ -2646,34 +2762,70 @@ const data = response.data as Order;
       title: "What is a REST API?",
       definition: [
         "REST (Representational State Transfer) is an architectural style for building web services.",
-        "A REST API allows different applications to communicate with each other over HTTP.",
-        "It treats data as resources, which are accessed using URLs (endpoints).",
+        "that allow clients and servers to communicate using HTTP methods.",
         "REST APIs commonly exchange data in JSON format.",
-        "It uses standard HTTP methods such as GET (Read), POST (Create), PUT/PATCH (Update), and DELETE (Remove) to perform CRUD operations.",
-        "Each request is stateless, meaning the server does not store client session information between requests.",
+      ],
+    },
+    {
+      title: "REST API and HTTP API",
+      definition: [
+        "REST API is a type of API that follows the REST architectural style.",
+        "HTTP API is an API that uses HTTP protocol for communication.",
       ],
     },
     {
       title: "Difference between PUT and PATCH",
       definition: [
-        "PUT replaces the entire resource.",
-        "PATCH updates only specific fields.",
+        "PUT Used to replace the entire resource with new data.",
+        "PATCH Used to update specific fields of an existing resource.",
+      ],
+    },
+    {
+      title: "What is the difference between POST and PUT?",
+      definition: [
+        "POST is used to create a new resource.",
+        "PUT is used to update an existing resource.",
+      ],
+    },
+    {
+      title: "Idempotency",
+      definition: [
+        "An operation is idempotent if making the same request multiple times has the same intended effect as making it once.",
       ],
     },
     {
       title: "Difference between req.params, req.query, and req.body",
       definition: [
-        "req.params contains URL parameters.",
-        "req.query contains query string parameters.",
-        "req.body contains data sent in the request body.",
+        "req.params Contains route parameters from the URL.",
+        "req.query Contains query string parameters from the URL.",
+        "req.body Contains data sent in the request body.",
+      ],
+      example: `req.params → { id: "123" }
+req.query → { search: "nodejs" }
+req.body → { name: "John", age: 30 }`,
+    },
+    {
+      title:
+        "What is the difference between authentication middleware and authorization middleware in Express?",
+      definition: [
+        "Authentication middleware → Verifies who the user is, usually by checking a session, JWT, or other credentials.",
+        "Authorization middleware → Checks what the authenticated user is allowed to do, usually based on roles or permissions.",
+      ],
+    },
+    {
+      title: "What is MVC architecture?",
+      definition: [
+        "MVC (Model-View-Controller) is a software architectural pattern that separates an application into three main components: Model, View, and Controller.",
+        "Model → Data / Database logic",
+        "View → UI / Presentation",
+        "Controller → Handles request and response",
       ],
     },
 
     {
       title: "Difference between app.use() and app.get()",
       definition: [
-        "app.use() works for all HTTP methods.",
-        "app.use() is mainly used for middleware.",
+        "app.use() is middleware that works for all HTTP methods.",
         "app.get() handles only GET requests.",
         "app.get() is used for specific route handling.",
       ],
@@ -2690,8 +2842,7 @@ const data = response.data as Order;
     {
       title: "What is express.json()?",
       definition: [
-        "express.json() is built-in middleware.",
-        "It parses incoming JSON request bodies.",
+        "express.json() is middleware used to parse incoming JSON request bodies, so we can access the data through req.body.",
       ],
     },
     {
@@ -2699,12 +2850,29 @@ const data = response.data as Order;
       definition: [
         "It parses URL-encoded form data.",
         "It is commonly used for HTML form submissions.",
+        "express.urlencoded() is middleware used to parse data sent from HTML forms using application/x-www-form-urlencoded format.",
       ],
     },
     {
       title: "What is CORS?",
       definition: [
         "CORS (Cross-Origin Resource Sharing) is a security mechanism implemented by browsers that controls whether a web application from one origin can access resources from another origin.",
+      ],
+    },
+    {
+      title: "What is express.Router()?",
+      definition: [
+        "express.Router() is used to create modular and mountable route handlers. We use it to organize related routes into separate files and keep the application clean and maintainable.",
+      ],
+    },
+    {
+      title:
+        "What is the difference between throw, try...catch, and next(error) in Express?",
+      definition: [
+        "throw → manually create/raise an error",
+        "try → contains code that may cause an error",
+        "catch → handles the error",
+        "next(error) → send error to Express error middleware",
       ],
     },
     {
@@ -2799,37 +2967,16 @@ app.use(helmet());
         "Follow the MVC architecture.",
       ],
     },
+
     {
-      title: "Explain the Express Request Lifecycle.",
+      title: "JWT (JSON Web Token) ",
       definition: [
-        "Client sends an HTTP request.",
-        "Middleware executes.",
-        "Route is matched.",
-        "Controller processes the request.",
-        "Database operations are performed if needed.",
-        "Response is sent to the client.",
-        "Error middleware handles any exceptions.",
-      ],
-    },
-    {
-      title:
-        "JWT (JSON Web Token) Authentication JWT is stateless authentication mechanism",
-      definition: [
-        "JWT is a compact, self-contained token format used to securely transmit information between client and server as a JSON object, commonly used for authentication and authorization.",
-
-        "A JWT has 3 parts separated by dots: Header.Payload.Signature (e.g., xxxxx.yyyyy.zzzzz).",
-
-        "Header contains the token type (JWT) and the signing algorithm used (e.g., HS256, RS256).",
-
-        "Payload contains the claims — user data like userId, email, role, and expiry time (exp). This is Base64 encoded, NOT encrypted, so sensitive data should not be stored here.",
-
-        "Signature is created by encoding the header and payload, then signing it with a secret key (or private key) — this ensures the token hasn't been tampered with.",
-
-        "JWT is stateless — the server doesn't need to store session data. All required info is inside the token itself, unlike traditional session-based authentication.",
-
-        "Authentication flow: User logs in with credentials → Server verifies and creates a JWT signed with a secret key → Token sent back to client → Client stores it (localStorage/cookie) → Client sends token in Authorization header (Bearer token) on every request → Server verifies signature and grants access.",
-
-        "Access Token vs Refresh Token: Access token is short-lived (e.g., 15 mins) and used for API requests. Refresh token is long-lived (e.g., 7 days) and used to generate a new access token without re-login.",
+        "JWT (JSON Web Token) is a token-based, stateless authentication mechanism used to securely transmit information between the client and server. ",
+        "The server can use the token to identify and authenticate the user without storing session state on the server.",
+        "Three parts of a JWT",
+        "1. Header Contains information about the token, such as the algorithm and token type (e.g., HS256, RS256).",
+        "2. Payload contains the claims — user data like userId, email, role, and expiry time (exp). This is Base64 encoded, NOT encrypted, so sensitive data should not be stored here.",
+        "3. Used to verify that the token has not been modified and that it was created using the expected secret/key",
       ],
     },
   ],
@@ -2860,40 +3007,19 @@ app.use(morgan("combined"));
     {
       title: "Authentication / Authorization (அங்கீகரிப்பு / அனுமதி)",
       definition: [
-        "Authentication is the process of verifying a user's identity.",
-        "Authorization is the process of determining what a user is allowed to access.",
+        "Identity 👤 Authentication is the process of verifying a user's identity — for example, using email and password.",
+        "Permission 🔐 Authorization is the process of checking what an authenticated user is allowed to access or do, often based on roles and permissions.",
         "Both are commonly used to secure applications and protect resources.",
-        "தமிழில்: Authentication என்பது user's identity-ஐ verify செய்வது.",
-        "தமிழில்: Authorization என்பது user-க்கு எந்த resources-ஐ access செய்ய அனுமதி உள்ளது என்பதை நிர்ணயிப்பது.",
       ],
-      example: `const jwt = require("jsonwebtoken");
-
-const verifyToken = (req, res, next) => {
-  const token = req.headers.authorization;
-
-  if (!token) {
-    return res.status(401).json({
-      message: "Access denied",
-    });
-  }
-
-  next();
-};
-
-app.use(verifyToken);
-`,
     },
     {
       title: "CORS (குறுக்கு-மூல கோரிக்கைகள்)",
       definition: [
+        "CORS (Cross-Origin Resource Sharing) is a browser security mechanism that controls whether a web page from one origin is allowed to access resources from another origin.",
         "CORS (Cross-Origin Resource Sharing) is a technique used to allow or restrict requests between different domains or origins.",
         "It is commonly used to enable secure communication between frontend and backend applications running on different origins.",
         "தமிழில்: CORS என்பது different domains அல்லது origins-களுக்கு இடையில் requests அனுமதிப்பதற்கான ஒரு பாதுகாப்பு முறை.",
       ],
-      example: `const cors = require("cors");
-
-app.use(cors());
-`,
     },
 
     {
@@ -3198,7 +3324,8 @@ app.post("/user", (req, res) => {
         "git config user.name",
         "git config user.email",
         `git config --global user.name "silambarasanstr"`,
-        `git config --global user.email "your-email@gmail.com"`,
+        `git config --global user.email "simbube2013@gmail.com"`,
+        "git config --global init.defaultBranch main",
         "Repo Check : git remote -v",
         " ✅ 1. New branch create : git branch feature-login     ",
         " ✅ 2. Branchக்கு switch ஆக : git checkout feature-login    ",
@@ -3240,7 +3367,6 @@ app.post("/user", (req, res) => {
     {
       title: "Continuous Integration (CI)",
       definition: [
-        "What is Continuous Integration?",
         "Continuous Integration is the practice of automatically integrating code changes into a shared repository and running tests to detect issues early.",
       ],
     },
@@ -3248,7 +3374,6 @@ app.post("/user", (req, res) => {
     {
       title: "Continuous Deployment (CD)",
       definition: [
-        "What is Continuous Deployment?",
         "Continuous Deployment automatically deploys every change that passes testing directly to production without manual approval.",
       ],
     },
@@ -3262,7 +3387,6 @@ app.post("/user", (req, res) => {
     {
       title: "CI vs CD",
       definition: [
-        "What is the difference between CI and CD?",
         "CI focuses on integrating(ஒருங்கிணைத்தல்) and testing code changes,",
         "CD focuses on delivering or deploying the code to production.",
       ],
@@ -3270,7 +3394,6 @@ app.post("/user", (req, res) => {
     {
       title: "CI/CD Tools",
       definition: [
-        "Name some popular CI/CD tools.",
         "Popular tools include Jenkins, GitHub Actions, GitLab CI/CD, CircleCI, and Azure DevOps.",
       ],
     },
@@ -3873,6 +3996,8 @@ app.post("/user", (req, res) => {
     {
       title: "",
       definition: [
+        "precise- துல்லியமான,சீரான, தெளிவான",
+        "Manipulate - கையாளுதல்,தன் விருப்பப்படி மாற்றுதல்,  மாற்றுவது, திருத்துவது",
         "Virtualization-மெய்நிகராக்கம் - Simple-ஆ சொன்னா: ஒரு physical resource-ஐ software மூலம் virtual-ஆ உருவாக்குவது.",
         "integrating(ஒருங்கிணைத்தல்)",
         "Sufficient- போதுமானது",
