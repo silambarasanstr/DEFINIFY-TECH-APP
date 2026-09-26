@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen bg-white flex w-full">
       <Sidebar open={open} setOpen={setOpen} />
 
-      <main className="flex-1 md:ml-64 p-4 md:p-8 overflow-y-auto w-full">
+      <main className="flex-1 min-w-0 md:ml-64 p-4 md:p-8 overflow-y-auto">
         {/* Mobile Header */}
         <div className="md:hidden flex items-center justify-between mb-4">
           <button onClick={() => setOpen(true)}>
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
         </div>
 
         {/* ✅ LEFT ALIGNED FIXED WIDTH */}
-        <div className="w-full max-w-275 md:w-275 mx-auto">{children}</div>
+        <div className="mx-auto w-full max-w-275">{children}</div>
       </main>
     </div>
   );

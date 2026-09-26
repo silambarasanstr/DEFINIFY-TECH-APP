@@ -539,6 +539,7 @@ export const courseData = {
     {
       title: "JavaScript",
       definition: [
+        "JavaScript is a lightweight, high-level programming language primarily used to create interactive and dynamic web pages. It can run in web browsers and also on servers using Node.js.",
         "JavaScript is a lightweight, high-level, interpreted programming language primarily used to create interactive effects within web browsers.",
         "JavaScript is a dynamic programming language.",
         "JavaScript is a single-threaded language.",
@@ -586,20 +587,25 @@ export const courseData = {
         " A Variable are named storage location that can hold data.Variable are used to store the data that can be accessed and manipulate throughout a program",
         "you can declare a variable using the var,let and const keyword",
       ],
+      types: [
+        {
+          name: "var is function-scoped. It can be re-declared and re-assigned.",
+        },
+        {
+          name: "let is block-scoped. It can be re-assigned, but it cannot be re-declared in the same scope.",
+        },
+        {
+          name: "const is block-scoped. It cannot be re-assigned or re-declared in the same scope.",
+        },
+      ],
     },
 
     {
       title: "Hoisting",
       definition: [
-        "Hoisting in JavaScript is the behaviour where variables and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.",
+        "Hoisting in JavaScript is the behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.",
         "This means you can use variables and functions before they are declared in the code (depending on type).",
       ],
-      example: `Function Hoisting: function greet() { console.log('Hello'); } greet(); // Works,
-
-Variable Hoisting (var): console.log(a); var a = 10; // undefined (not error),
-
-let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal Dead Zone),
-      `,
     },
     {
       title: "Scope in JavaScript",
@@ -693,6 +699,32 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
     },
 
     {
+      title: "What is the difference between == and === in JavaScript?",
+      definition: [
+        "== is the loose equality operator. It compares two values and performs type conversion if necessary.",
+        "=== is the strict equality operator. It compares both the value and the data type without type conversion.",
+      ],
+    },
+
+    {
+      title: "What is the difference between null and undefined in JavaScript?",
+      definition: [
+        "null means a value is intentionally absent or empty.",
+        "undefined means a variable has been declared but a value has not been assigned, or a value is not available..",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between null, undefined, and NaN in JavaScript?",
+      definition: [
+        "null represents an intentional absence of a value.",
+        "undefined means a variable has been declared but a value has not been assigned.",
+        "NaN stands for “Not-a-Number” and represents an invalid or undefined numeric result.",
+      ],
+    },
+
+    {
       title: "Callback Function",
       definition: [
         "A callback function is a function that is passed as an argument to another function and is executed later.",
@@ -719,17 +751,10 @@ let and const Hoisting: console.log(b); let b = 20; // ReferenceError (Temporal 
     {
       title: "Closures Function",
       definition: [
-        " A closure is a function that remembers and can access variables from its outer scope even after the outer function has finished executing.",
+        " A closure is a function that remembers and can access variables from its outer scope, even after the outer function has finished executing.",
         " A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
-        "A closure is a function that remembers variables from its outer scope even after the outer function has finished execution.",
         "Closures allow you to access and preserve data privately.",
         "It is commonly used in data encapsulation, counters, and function factories.",
-
-        "Example (Basic): function outer() { let count = 0; return function inner() { count++; console.log(count); }; }",
-        "const counter = outer(); counter(); // 1, counter(); // 2",
-
-        "Example (Private Variable): function secret() { let msg = 'Hidden'; return () => console.log(msg); }",
-        "const reveal = secret(); reveal(); // Hidden",
       ],
     },
 
@@ -1004,8 +1029,8 @@ if (Number.isNaN(quantity)) {
     {
       title: "Synchronous and  Asynchronous JavaScript",
       definition: [
-        "Synchronous JavaScript executes code line by line, and each operation must finish before the next one starts. It is blocking",
-        "Asynchronous JavaScript allows other code to continue while waiting for an operation to complete. It is non-blocking and is commonly used for operations like API calls and timers.",
+        "Synchronous JavaScript executes code line by line, and each operation wait for the previous one to complete. It is blocking",
+        "Asynchronous code can start an operation and continue executing other code without waiting for that operation to finish. It is generally non-blocking.",
       ],
     },
     {
@@ -1068,12 +1093,39 @@ if (Number.isNaN(quantity)) {
         "bind() creates a new function with a specific this value and arguments pre-specified.",
       ],
     },
+
+    {
+      title: "What is the difference between call(), apply(), and bind()",
+      definition: [
+        "call() is used to call a function immediately with a specified this value, and arguments are passed individually.",
+        "apply() is similar to call(), but arguments are passed as an array.",
+        "bind() does not call the function immediately. It creates and returns a new function with a specified this value and optionally preset arguments.",
+      ],
+    },
     {
       title: "What is the difference between map(), filter(), and forEach()?",
       definition: [
         "map() transforms every element and returns a new array. It does not modify the original array by itself.",
         "filter() is a method used to filter elements based on a condition. It returns a new array containing the elements that satisfy the condition and does not modify the original array.",
         "forEach() executes a function for each element. It does not return a new array. It also does not automatically modify the original array",
+      ],
+    },
+
+    {
+      title: "ForEach",
+      definition: [
+        "forEach() is used to iterate over each element of an array. It does not return a new array; it returns undefined",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between map(), filter(), and reduce() in JavaScript?",
+      definition: [
+        "map() transforms every element and returns a new array. It does not modify the original array by itself.",
+        "filter() is a method used to filter elements based on a condition. It returns a new array containing the elements that satisfy the condition and does not modify the original array.",
+        "reduce() is used to process all elements of an array and reduce them to a single value, such as a sum, total, or object.",
+        "reduce() is a method used to reduce the array to a single value. It executes a reducer function for each element in the array and returns the accumulated result.",
       ],
     },
     {
@@ -1083,6 +1135,16 @@ if (Number.isNaN(quantity)) {
         "filter() returns a new array containing all elements that satisfy the condition. It returns an empty array if no element is found.",
       ],
     },
+
+    {
+      title:
+        "What is the difference between shallow copy and deep copy in JavaScript?",
+      definition: [
+        "Shallow copy creates a copy of the object at the top level. If the object contains nested objects or arrays, those nested values are still referenced by the original object.",
+        "Deep copy creates a completely independent copy, including nested objects and arrays. Changes to the copied object do not affect the original object.",
+      ],
+    },
+
     {
       title: "Prototype",
       definition: [
@@ -1107,7 +1169,7 @@ if (Number.isNaN(quantity)) {
         "Prototype",
         "Prototype Chain",
         "Prototypal Inheritance",
-        "all / apply / bind",
+        "call / apply / bind",
         "Strict Mode (use strict)",
       ],
     },
@@ -1118,28 +1180,14 @@ if (Number.isNaN(quantity)) {
         "ES6 (ECMAScript 2015) introduced major improvements to JavaScript to make it cleaner, faster, and easier to write.",
 
         "1. let and const → Block scoped variables",
-        "Example: let a = 10; const b = 20;",
-
         "2. Arrow Functions → Short syntax for functions",
-        "Example: const add = (a, b) => a + b;",
-
         "3. Template Literals → String interpolation using backticks",
-        "Example: `Hello ${name}`",
-
         "4. Destructuring → Extract values from arrays/objects",
-        "Example: const { name } = user;",
-
         "5. Spread Operator (...) → Expand arrays/objects",
-        "Example: const newArr = [...arr];",
-
         "6. Rest Parameter → Collect multiple arguments",
         "Example: function sum(...nums) {}",
-
         "7. Modules → import/export system",
-        "Example: import { add } from './math.js';",
-
         "8. Promises → Handle async operations",
-        "Example: new Promise((resolve) => resolve('Done'));",
       ],
     },
     {
@@ -1296,11 +1344,28 @@ if (Number.isNaN(quantity)) {
         "clsx என்பது React / Next.js-ல் CSS class-களை condition-க்கு ஏற்ப clean-ஆ manage பண்ண use பண்ணுற ஒரு சிறிய library.(Dynamic class names)",
         "Class Variance Authority (CVA) என்பது React/Tailwind CSS-ல் reusable components-க்கு variants manage பண்ண பயன்படும் library.(Dynamic class names + Variants (size, color, type, state) manage)",
         "Sonner என்பது React-ல் Toast Notifications (popup messages) காட்ட பயன்படுத்தப்படும் library.",
+        "Lucide React - Modern icons",
+        "date-fns - Date manipulation",
+        "Day.js - Date/time handling",
+        "React Select - Advanced dropdown/select",
+        "React Hot Toast - Toast notifications",
+        "Framer Motion - Animations and transitions",
       ],
     },
     {
       title: "React.js Version",
-      definition: ["React 16.x", "React 17.x", "React 18.x", "React 19.x"],
+      definition: [
+        "React 0.3",
+        "React 0.14",
+        "React 15",
+        "React 16",
+        "React 16.3",
+        "React 16.8 → Hooks introduced",
+        "React 17 → Gradual upgrade / new JSX transform",
+        "React 18 → Concurrent rendering + automatic batching",
+        "React 19 → Actions + use() + improved forms/server features",
+        "React 19.2",
+      ],
     },
     {
       title: "Latest version React 19",
@@ -1316,27 +1381,9 @@ if (Number.isNaN(quantity)) {
         "Suspense & Error Boundaries",
       ],
     },
-    {
-      title: "What is Rendering",
-      definition:
-        "Rendering is the process of converting data or code or components (such as HTML, CSS, and JavaScript) into a visual UI elements that is displayed on the screen.",
-      typesTitle: "Types of Rendering",
-      types: [
-        {
-          name: "Initial Rendering",
-          description:
-            "The first time the UI is loaded and displayed on the screen.",
-        },
-        {
-          name: "Re-rendering",
-          description:
-            "When state or props change, the UI updates and renders again.",
-        },
-      ],
-    },
 
     {
-      title: "Cache என்றால் என்ன?",
+      title: "Cache என்றால் என்ன? (தற்காலிக சேமிப்பு / இடைக்கால சேமிப்பு)",
       definition: [
         <>
           Cache is a temporary storage area that{" "}
@@ -1349,36 +1396,43 @@ if (Number.isNaN(quantity)) {
     },
 
     {
-      title: "Memoization",
+      title:
+        "Memoization (கணக்கிட்ட முடிவை நினைவில் சேமித்து வைத்து மீண்டும் பயன்படுத்துதல்.)",
       definition:
         "Memoization is a technique for speeding up application by caching the results of expensive function calls and returning them when the same inputs are used again",
-      types: [
-        {
-          name: "React.memo",
-          description: "Preventing Unnecessary Re-Renders",
-        },
-        {
-          name: "useMemo",
-          description: "Optimizing Expensive Calculations",
-        },
-        {
-          name: "useCallback",
-          description: "Stabilizing Function References",
-        },
+    },
+
+    {
+      title: "What is SyntheticEvent in React?",
+      definition: [
+        "SyntheticEvent is a React wrapper around the browser's native event. It provides a consistent (சீரான / தொடர்ந்து ஒரே மாதிரியாக இருப்பது) event interface across different browsers.",
       ],
     },
 
     {
-      title: "React",
-      definition:
+      title:
+        "What is the difference between onClick={handleClick} and onClick={handleClick()} in React?",
+      definition: [
+        "onClick={handleClick} passes the function reference to React. React calls the function when the button is clicked.",
+        "handleClick → pass function",
+        "onClick={handleClick()} calls the function immediately during rendering instead of waiting for the click. We generally should not use this unless the function call is intentionally wrapped or handled differently.",
+        "handleClick() → call function",
+      ],
+    },
+
+    {
+      title: "What is React?",
+      definition: [
         "React is an open-source JavaScript library used to build fast and interactive user interfaces. It helps us create scalable applications using reusable components. React provides features like the Virtual DOM and Hooks, and it is commonly used to build single-page applications (SPAs).",
+        "React.js is an open-source JavaScript library used to create fast and interactive user interfaces. It allows developers to build reusable components and efficiently update the UI when the data changes.",
+      ],
     },
     {
       title: "Key Features of React",
       definition: [
         "Component Based Architecture",
         "One Way Data Binding",
-        "single-page apllication (SPA)",
+        "single-page application (SPA)",
         "It uses a virtual DOM to efficiently update and render the user interface.",
         "Rich Ecosystem of Libraries and Tools",
         "State Management",
@@ -1388,168 +1442,10 @@ if (Number.isNaN(quantity)) {
     },
 
     {
-      title: "React Strict Mode",
-      definition: [
-        "Strict Mode is a tool for highlighting potential problems in an application. It activates additional checks and warnings for its descendants(சந்ததியினர்).",
-        "Strict Mode does not render any visible UI. It only activates additional checks and warnings for its descendants.",
-        "Strict Mode helps to identify unsafe lifecycle methods, legacy API usage, and other potential issues in the application.",
-      ],
-    },
-    {
-      title: "React Router",
-      definition:
-        "React Router is a standard library for routing in React. It enables the navigation among(இடையே) views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.",
-    },
-
-    {
-      title: "JSX Rules",
-      definition: [
-        "JSX stands for JavaScript XML. It is a syntax extension for JavaScript that allows us to write HTML-like code inside JavaScript. We use JSX because it makes React code easier to read and write, and it allows us to describe the UI structure in a clear way.",
-      ],
-    },
-
-    {
-      title: "What is the difference between props and state in React?",
-      definition: [
-        "Props stands for properties. Props are used to pass data from a parent component to a child component. Props are read-only, so a child component cannot directly modify them.",
-        "State is a built-in React object that is used to contain data or information about the component. State can change over time, and when it does, React re-renders the component. We update state using the state setter function.",
-      ],
-    },
-
-    {
-      title: "State",
-      definition: [
-        "State is a built-in React (mutable - மாற்றக்கூடியது) object that is used to contain data or information about the component. State can change over time (நிலை காலப்போக்கில் மாறக்கூடும்.), and when it does (அது நிகழும்போது), the component re-renders to reflect the new state.",
-        " React state updates are asynchronous (or more precisely, scheduled), not synchronous.",
-      ],
-    },
-    {
-      title: "Props",
-      definition: [
-        "Props (short for properties) are a way of passing data from parent to child components in React.",
-        " They are read-only and cannot be modified by the child component.",
-        "Props  Immutable",
-        " They can be of any data type, including strings, numbers, arrays, and objects. ",
-      ],
-    },
-    {
-      title: "Virtual DOM",
-      definition: [
-        "The Virtual DOM is a lightweight JavaScript representation of the actual DOM. When the state or data changes, React creates a new Virtual DOM and compares it with the previous Virtual DOM. This process is called reconciliation. React then updates only the necessary parts of the actual DOM instead of re-rendering the entire page.",
-      ],
-    },
-
-    {
-      title: "What is the difference between useState and useEffect in React?",
-      definition: [
-        "useState is a React Hook used to create and manage state in a functional component. We use the state setter function to update the state value.",
-        "useEffect is a React Hook used to perform side effects in a component. For example, we can use it for API calls, subscriptions, timers, and interacting with external systems. It can also be used to handle lifecycle-related behavior in functional components.",
-        "useEffect is a Hook used to handle side effects and lifecycle-related behavior.",
-      ],
-    },
-
-    {
-      title: "What is the difference between useState() and useRef()?",
-      definition: [
-        "useState is a React Hook used to create and manage state in a functional component. When the state value changes, the component re-renders.",
-        "useState → data changes → re-render",
-        "useRef is a React Hook used to access and interact with DOM elements directly. It can also store a mutable value that persists between renders. Updating a ref does not cause the component to re-render.",
-        "useRef → value changes → no re-render",
-      ],
-    },
-
-    {
-      title: "What is the purpose of useEffect cleanup function in React?",
-      definition: [
-        "The cleanup function in useEffect is used to clean up side effects when a component unmounts or before the effect runs again. It helps prevent memory leaks and unnecessary operations.",
-        "For example, we can use it to remove event listeners, clear timers, or unsubscribe from subscriptions.",
-      ],
-    },
-
-    {
-      title:
-        "What is the dependency array in useEffect? What happens when we use []?",
-      definition: [
-        "The dependency array in useEffect controls when the effect should run.",
-        "If we pass an empty dependency array [], the effect runs once after the component mounts.",
-        "If we pass a value in the dependency array, the effect runs again whenever that value changes.",
-      ],
-    },
-
-    {
-      title: "Conditional rendering",
-      definition: [
-        "Conditional rendering in React means rendering different UI elements based on a condition. We can use the ternary operator, logical && operator, or if statements for conditional rendering.",
-      ],
-    },
-
-    {
-      title: "Props Drilling",
-      definition: [
-        "Prop drilling is the process of passing data from a higher-level component to a deeply nested child component through multiple intermediate components using props, even when those intermediate components do not need the data.",
-      ],
-    },
-
-    {
-      title: "What is React Context API, and why do we use it?",
-      definition: [
-        "Context API is a built-in feature in React used to share data between components without passing props manually through every level. It is useful for avoiding prop drilling and sharing global or commonly used data such as theme, authentication, or language settings.",
-      ],
-    },
-
-    {
-      title: "What is the difference between Context API and Redux?",
-      definition: [
-        "Context API is a built-in React feature used to share data between components without passing props through every level. It is useful for avoiding prop drilling and is suitable for simple global state such as theme, authentication, or language.",
-        "Redux is a third-party state management library used to manage application state in a centralized and predictable way. It is useful when the application has complex state management requirements and many components need to access or update shared state.",
-      ],
-    },
-
-    {
-      title: "React JS List & Keys",
-      definition: [
-        "Lists are used to display a collection of data in React. They are created using the map() method to iterate over an array of data and return a new array of JSX elements.",
-        "A key is a unique identifier used when rendering a list of elements in React. It helps React identify which items have been added, removed, or changed, so React can efficiently update the DOM.",
-      ],
-    },
-
-    {
-      title: "What is useMemo in React? Why do we use it?",
-      definition: [
-        "useMemo is a React Hook used for performance optimization. It memoizes the result of an expensive calculation and recalculates it only when its dependencies change. This helps avoid unnecessary recalculations during re-renders.",
-      ],
-    },
-
-    {
-      title: "What is useCallback in React? How is it different from useMemo?",
-      definition: [
-        "useCallback is a React Hook used for performance optimization. It memoizes a function and returns the same function reference until its dependencies change. It is useful when we pass functions to child components, especially when those components are optimized with React.memo.",
-      ],
-    },
-
-    {
-      title: "What is React.memo() and why do we use it?",
-      definition: [
-        "React.memo() is a higher-order component used for performance optimization. It prevents a functional component from re-rendering when its props have not changed. It is useful for avoiding unnecessary re-renders, especially when a component is expensive to render.",
-        "React.memo() doesn't prevent all re-renders. If the component's state or context changes, it can still re-render.",
-      ],
-    },
-
-    {
-      title:
-        "What is the difference between React.memo(), useMemo(), and useCallback()?",
-      definition: [
-        "React.memo() → Component is used to prevent unnecessary re-renders of a component when its props have not changed.",
-        "useMemo() → Value is used to memoize a calculated value.",
-        "useCallback() → Function is used to memoize a function.",
-      ],
-    },
-
-    {
       title: "What is a Component?",
 
       definition: [
-        "A component is a reusable and independent piece of code that represents a part of the user interface. Components help us split the UI into smaller, manageable parts and reuse them throughout the application.",
+        " A component is a reusable and independent piece of code that represents a part of the user interface. Components help us split the UI into smaller and manageable pieces, making the application easier to develop and maintain.",
       ],
     },
     {
@@ -1582,6 +1478,247 @@ if (Number.isNaN(quantity)) {
         "Also known as Stateful components because they implement logic and state ",
       ],
     },
+
+    {
+      title:
+        "What is the difference between a Functional Component and a Class Component in React?",
+      definition: [
+        "A Functional Component is a JavaScript function that returns JSX to describe the UI. It can use React Hooks to manage state and side effects, and it is the modern and commonly used way to create React components.",
+        "A Class Component is a JavaScript class that extends React.Component. It uses a render() method to return the UI and can manage state using this.state. Class components are the older approach in React.",
+      ],
+    },
+
+    {
+      title: "JSX Rules",
+      definition: [
+        "JSX stands for JavaScript XML. It is a syntax extension for JavaScript that allows us to write HTML-like code inside JavaScript. It makes React code easier to read and write and allows us to describe the UI structure clearly.",
+      ],
+    },
+    {
+      title: "Props",
+      definition: [
+        "Props stands for properties. They are used to pass data from a parent component to a child component. Props are read-only and immutable, so a child component cannot directly modify them.",
+      ],
+    },
+    {
+      title: "State",
+      definition: [
+        "State is a built-in React object used to store data or information about a component. State can change over time, and when the state changes, React re-renders the component. We update state using a setter function.",
+      ],
+    },
+
+    {
+      title: "What is children prop in React?",
+      definition: [
+        "The children prop is a special prop in React that allows a component to receive and render content placed between its opening and closing tags.",
+        "It is commonly used to create reusable wrapper components.",
+      ],
+    },
+
+    {
+      title: "What is Rendering",
+      definition:
+        "Rendering is the process of converting data or code or components (such as HTML, CSS, and JavaScript) into a visual UI elements that is displayed on the screen.",
+      typesTitle: "Types of Rendering",
+      types: [
+        {
+          name: "Initial Rendering",
+          description:
+            "The first time the UI is loaded and displayed on the screen.",
+        },
+        {
+          name: "Re-rendering",
+          description:
+            "When state or props change, the UI updates and renders again.",
+        },
+      ],
+    },
+
+    {
+      title: "Conditional rendering",
+      definition: [
+        "Conditional rendering is the process of rendering a component or UI element based on a condition. If the condition is true, one UI is rendered; otherwise, another UI can be rendered.",
+        "Conditional rendering in React means rendering different UI elements based on a condition. We can use the ternary operator, logical && operator, or if statements for conditional rendering.",
+      ],
+    },
+
+    {
+      title: "React JS List & Keys",
+      definition: [
+        "Lists are used to display a collection of data in React. They are created using the map() method to iterate over an array of data and return a new array of JSX elements.",
+        "A key is a unique identifier used when rendering a list of elements in React. It helps React identify which items have been added, removed, or changed, so React can efficiently update the DOM.",
+      ],
+    },
+
+    {
+      title: "What is the difference between key and id in React?",
+      definition: [
+        "A key is a unique identifier used by React to identify elements in a list and efficiently update, add, or remove them during reconciliation",
+        "id is an HTML attribute used to uniquely identify an element in the DOM and can also be used for CSS, labels, or JavaScript.",
+        "key → React list rendering & reconciliation",
+        "id → HTML DOM element identification",
+      ],
+    },
+
+    {
+      title: "Why should we not use the array index as a key in React lists?",
+      definition: [
+        "We should avoid using array index as a key when the list can change because the index can change when items are added, removed, or reordered. A stable and unique ID is preferred.",
+      ],
+    },
+
+    {
+      title: "createElement()",
+      definition: [
+        "React.createElement() is used to create a React element. It is an alternative way to create elements without using JSX.",
+      ],
+    },
+    {
+      title:
+        "What is the difference between a React Element and a React Component?",
+      definition: [
+        "A React Element is a plain JavaScript object that describes what should be rendered, and it can be created using JSX or React.createElement(). A React Component is a reusable piece of code that returns React elements and can be created as a function or class.",
+      ],
+    },
+    {
+      title: "React Router (Allows changing the browser URL)",
+      definition: [
+        "React Router is a library used for handling navigation and routing in React applications. It allows users to navigate between different views or pages without a full browser page reload.",
+        "React Router is a standard library for routing in React. It enables the navigation among(இடையே) views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between BrowserRouter, Routes, and Route in React Router?",
+      definition: [
+        "BrowserRouter provides routing context to the application and manages browser-based routing.",
+        "Routes is a container that matches the current URL with the appropriate route.",
+        "Route defines a specific URL path and the component or element to render for that path.",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between Link and useNavigate() in React Router?",
+      definition: [
+        "Link is a React Router component used to navigate between routes through a user interface, such as clicking a link or button.",
+        "Link → declarative navigation",
+        "useNavigate() is a React Router Hook used to navigate programmatically based on some logic or an event.",
+        "useNavigate() → programmatic navigation",
+      ],
+    },
+
+    {
+      title: "Virtual DOM",
+      definition: [
+        "The Virtual DOM is a lightweight JavaScript representation of the actual DOM. When the state or data changes, React creates a new Virtual DOM and compares it with the previous Virtual DOM. This process is called reconciliation. React then updates only the necessary parts of the actual DOM instead of re-rendering the entire page.",
+      ],
+    },
+
+    {
+      title: "What are React Hooks?",
+      definition:
+        "React Hooks are built-in functions that allow functional components to use React features like state, lifecycle methods, context, and performance optimizations without using class components. For example, I use useState for managing state, useEffect for API calls and other side effects, useRef for accessing DOM elements or storing mutable values, useContext to avoid prop drilling, useMemo and useCallback for performance optimization, and useReducer when the state logic becomes complex.",
+    },
+
+    {
+      title: "useState()",
+      definition: [
+        "useState() is a React Hook used to create and manage state in a functional component. When the state changes, React re-renders the component. We update the state using the setter function returned by useState().",
+        "useState → data changes → re-render",
+        "It returns an array with two elements: the current state value and a function to update it.",
+      ],
+    },
+
+    {
+      title: "useEffect()",
+      definition: [
+        "useEffect is a React Hook used to perform side effects in a component. For example, we can use it for API calls, subscriptions, timers, and interacting with external systems. It can also be used to handle lifecycle-related behavior in functional components.",
+        "useEffect is a Hook used to handle side effects and lifecycle-related behavior.",
+        "The cleanup function in useEffect is used to clean up side effects when a component unmounts or before the effect runs again. It helps prevent memory leaks and unnecessary operations.",
+        "For example, we can use it to remove event listeners, clear timers, or unsubscribe from subscriptions.",
+        "The dependency array in useEffect controls when the effect should run.",
+        "If we pass an empty dependency array [], the effect runs once after the component mounts.",
+        "If we pass a value in the dependency array, the effect runs again whenever that value changes.",
+      ],
+    },
+
+    {
+      title: "What is useMemo()",
+      definition: [
+        "useMemo() is a React Hook used to memoize a calculated value. It helps avoid unnecessary recalculations when the dependencies have not changed.",
+        "useMemo is a React Hook used for performance optimization. It memoizes the result of an expensive calculation and recalculates it only when its dependencies change. This helps avoid unnecessary recalculations during re-renders.",
+        "useMemo is a React Hook used to memoize a calculated value. It helps avoid unnecessary recalculations and can improve performance.",
+      ],
+    },
+
+    {
+      title: " useCallback()",
+      definition: [
+        "useCallback() is a React Hook used to memoize a function reference. It helps prevent the function from being recreated on every render when the dependencies have not changed.",
+        "useCallback is a React Hook used for performance optimization. It memoizes a function and returns the same function reference until its dependencies change. It is useful when we pass functions to child components, especially when those components are optimized with React.memo.",
+        "useCallback is a React Hook used to memoize a function reference. It helps prevent creating a new function reference on every render, especially when passing functions to child components.",
+        "useCallback is used to memoize a function so that the same function instance is reused unless its dependencies change.",
+        "Helps prevent unnecessary re-renders of child components",
+      ],
+    },
+
+    {
+      title: "What is useRef()",
+      definition: [
+        "useRef() is a React Hook used to access and interact with DOM elements directly. It can also be used to store a mutable value that persists across renders without causing a re-render when the value changes.",
+        "useRef() value change ஆகும்போது component re-render ஆகாது.",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between useEffect() and useLayoutEffect() in React?",
+      definition: [
+        "useEffect() is used to perform side effects after the component is painted to the screen.",
+        "useLayoutEffect() is used to perform side effects synchronously before the browser paints the updated UI.",
+      ],
+    },
+
+    {
+      title: "7. useReducer",
+      definition: [
+        "useReducer is used to manage complex state logic. It works with a reducer function and dispatch actions to update state.",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between useEffect and useLayoutEffect in React?",
+      definition: [
+        "useEffect runs after the component has been rendered and the browser has painted the UI. It is commonly used for side effects such as API calls, subscriptions, and timers.",
+        "useEffect → Render → Paint → useEffect",
+        "useLayoutEffect runs synchronously after React updates the DOM but before the browser paints the screen. It is useful when we need to measure or modify the DOM before the user sees the result.",
+        "useLayoutEffect runs after DOM updates but before the browser paints.",
+        "useLayoutEffect → Render → DOM update → useLayoutEffect → Paint",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between React.memo(), useMemo(), and useCallback()?",
+      definition: [
+        "React.memo() → Component is used to prevent unnecessary re-renders of a component when its props have not changed.",
+        "React.memo() is a higher-order component used for performance optimization.",
+        "React.memo() It is useful for avoiding unnecessary re-renders, especially when a component is expensive to render.",
+        "useMemo() → Value is used to memoize a calculated value.",
+        "useCallback() → Function is used to memoize a function.",
+      ],
+    },
+
+    {
+      title: "Props Drilling",
+      definition: [
+        "Prop drilling is the process of passing data from a higher-level component to a deeply nested child component through multiple intermediate components using props, even when those intermediate components do not need the data.",
+      ],
+    },
+
     {
       title: "Controlled Component",
       definition: [
@@ -1599,13 +1736,7 @@ if (Number.isNaN(quantity)) {
         "useRef is commonly used to access the input value.",
       ],
     },
-    {
-      title: "useRef()",
-      definition: [
-        "useRef() is a React Hook used to access and interact with DOM elements directly. It can also be used to store a mutable value that persists across renders without causing a re-render when the value changes.",
-        "Common use cases: Accessing DOM elements directly, Store previous values, Store mutable values without triggering a re-render",
-      ],
-    },
+
     {
       title: "React Server Components",
       definition: [
@@ -1615,12 +1746,9 @@ if (Number.isNaN(quantity)) {
     },
 
     {
-      title:
-        "Higher Order Component (component-a wrap panni extra functionality kudukurathu)",
+      title: "What is a Higher-Order Component (HOC) in React?",
       definition: [
-        " A Higher Order Component is a function that takes a component as input and returns a new component with extra powers",
-        "Formula: const EnhancedComponent = higherOrderComponent(OriginalComponent)",
-        "HOCs do not modify the original component",
+        "A Higher-Order Component (HOC) is a function that takes a React component as an argument and returns a new enhanced component. It is used to reuse component logic across multiple components.",
       ],
     },
     {
@@ -1630,9 +1758,18 @@ if (Number.isNaN(quantity)) {
     },
 
     {
-      title: "React Context",
-      definition:
-        "React Context is a way to pass data through the component tree without having to pass props down manually at every level.",
+      title: "What is the purpose of using HOC in React?",
+      definition: [
+        "The main purpose of an HOC is to reuse common logic and functionality across multiple components by wrapping a component and returning an enhanced component.",
+      ],
+    },
+
+    {
+      title: "What is the difference between Context API and Redux?",
+      definition: [
+        "Context API is a built-in React feature used to share data between components without passing props through every level. It is useful for avoiding prop drilling and is suitable for simple global state such as theme, authentication, or language.",
+        "Redux is a third-party state management library used to manage application state in a centralized and predictable way. It is useful when the application has complex state management requirements and many components need to access or update shared state.",
+      ],
     },
 
     {
@@ -1640,97 +1777,52 @@ if (Number.isNaN(quantity)) {
       definition: [
         "Redux is a predictable (கணிக்கக்கூடிய) state management library used to manage the global state of an application in a single centralized store, making state changes predictable and easy to debug.",
 
-        "Redux follows 3 core principles: Single Source of Truth (one store for the whole app), State is Read-Only (can't be modified directly, only via actions), and Changes are made using Pure Functions (reducers).",
+        "Redux follows 3 core principles",
 
         "Store: A single JavaScript object that holds the entire application state.",
+        "Store: The store holds the application's Redux state and provides methods such as (such as = போன்ற / உதாரணமாக) dispatch() and getState() to interact with that state.",
 
-        "Action: A plain JavaScript object that describes 'what happened' — it must have a 'type' field, and optionally a 'payload' with data.",
+        "State: State is a built-in React object that stores data that can change over time and causes the component to re-render when it is updated.",
+        "Action: An action is a plain JavaScript object that describes what happened or what should happen in the application. It must contain a type property and can optionally contain a payload.",
 
-        "Reducer: A pure function that takes the current state and an action, and returns a new state — (state, action) => newState. It never mutates the original state.",
-
-        "Dispatch: The only way to trigger a state change is by calling store.dispatch(action) — this sends the action to the reducer.",
-
-        "React-Redux: The official library to connect Redux with React. useSelector() reads data from the store, useDispatch() sends actions to the store.",
-
-        "Redux Toolkit (RTK): The modern, official recommended way to write Redux — reduces boilerplate with createSlice, createAsyncThunk, and configureStore.",
+        "Reducer: A reducer is a function that receives the current state and an action ",
+        "Reducer determines how the state should change based on the action.",
+        "Dispatch: Dispatch is used to send an action to the Redux store. The store passes the action to the reducer to update the state.",
+        "A slice is a feature-based section of the Redux store that contains the initial state, reducers, and automatically generated action creators for that feature.",
+        "React-Redux: React-Redux is the official library that connects Redux with React applications.",
+        "useSelector() is a React-Redux hook used to read or select data from the Redux store inside a React component. When the selected state changes, the component re-renders.",
+        "useSelector() → React component-ல் தேவையான state-ஐ select செய்யும்",
+        "useDispatch() is a React-Redux hook used to get the dispatch function, which is used to send actions to the Redux store to update the state.",
+        "Redux Toolkit (RTK): Redux Toolkit is the official recommended way to write Redux logic. It simplifies Redux development with APIs such as createSlice(), configureStore(), and createAsyncThunk().",
+        "Payload: Payload is the data or value passed along with an action, which the reducer can use to update the state.",
+        "getState() → current state-ஐ read பண்ணும்.",
+        "getState() is a Redux store method used to retrieve the current state from the Redux store.",
+        "dispatch() is a Redux store method used to send an action to the Redux store, which triggers the reducer to update the state.",
+        "dispatch() → action-ஐ store-க்கு அனுப்பும்.",
       ],
     },
 
     {
       title: "Lifecycle Method",
       definition: [
-        "Special methods that get called automatically at specific points from a component's birth (mounting) to death (unmounting)",
-        "Component-oda birth (mounting) to death (unmounting) varaikkum, specific points-la automatic-ah call aagura special methods",
-        "There are 3 main phases: Mounting, Updating, and Unmounting — each phase has its own specific methods",
-        "3 main phases: Mounting, Updating, Unmounting — each phase-ku specific methods irukkum",
+        "React lifecycle methods are built-in methods that allow us to run code at different stages of a components lifecycle, such as when the component is created, updated, and removed from the DOM.",
+        "React component-க்கு mainly 3 lifecycle phases irukku:",
+        "Mounting - Component DOM-la create/add aagum.",
+        "Updating - Component state or props change aagumbodhu update aagum.",
+        "Unmounting - Component DOM-lendhu remove aagum.",
+        "Class Component-la important lifecycle methods:",
+        "componentDidMount() → component first time render aana piragu",
+        "componentDidUpdate() → state/props update aana piragu",
+        "componentWillUnmount() → component remove aagurathukku munnaadi",
+        "React lifecycle methods are methods used to execute code at different stages of a component’s lifecycle — mounting, updating, and unmounting. In class components, common methods are componentDidMount, componentDidUpdate, and componentWillUnmount. In functional components, we commonly use useEffect for lifecycle-related side effects.",
       ],
     },
 
+    // Good 👍 Props drilling avoid பண்ணுவது correct. ஆனால் useContext()-ஐ global state management / centralized store என்று சொல்வது technically correct இல்லை.
     {
-      title: "What are React Hooks?",
-      definition:
-        "React Hooks are built-in functions that allow functional components to use React features like state, lifecycle methods, context, and performance optimizations without using class components. For example, I use useState for managing state, useEffect for API calls and other side effects, useRef for accessing DOM elements or storing mutable values, useContext to avoid prop drilling, useMemo and useCallback for performance optimization, and useReducer when the state logic becomes complex.",
-    },
-
-    {
-      title: "7. useReducer",
+      title: "Context",
       definition: [
-        "useReducer is used to manage complex state logic. It works with a reducer function and dispatch actions to update state.",
-      ],
-    },
-
-    {
-      title: "6. useCallback",
-      definition: [
-        "useCallback is used to memoize a function so that the same function instance is reused unless its dependencies change.",
-        "Helps prevent unnecessary re-renders of child components",
-      ],
-    },
-
-    {
-      title: "5. useMemo",
-      definition: [
-        "useMemo is used to memoize the result of an expensive calculation. It recalculates only when its dependencies change, improving performance.",
-      ],
-    },
-
-    {
-      title: "4. useContext",
-      definition: [
-        "useContext is used to share data between components without passing props through every intermediate component. This helps avoid prop drilling.",
-      ],
-    },
-
-    {
-      title: "3. useRef",
-      definition: [
-        "useRef is used to store a mutable value or access a DOM element without causing a component re-render.",
-      ],
-    },
-
-    {
-      title: "2. useEffect",
-      definition: [
-        "useEffect is used to perform side effects in React components. Common use cases include API calls, timers, event listeners, and updating the document title.",
-      ],
-    },
-
-    {
-      title: "1. useState",
-      definition: [
-        "useState is used to manage state in functional components. It returns an array with two elements: the current state value and a function to update it.",
-      ],
-    },
-
-    {
-      title:
-        "What is the difference between useEffect and useLayoutEffect in React?",
-      definition: [
-        "useEffect runs after the component has been rendered and the browser has painted the UI. It is commonly used for side effects such as API calls, subscriptions, and timers.",
-        "useEffect → Render → Paint → useEffect",
-        "useLayoutEffect runs synchronously after React updates the DOM but before the browser paints the screen. It is useful when we need to measure or modify the DOM before the user sees the result.",
-        "useLayoutEffect runs after DOM updates but before the browser paints.",
-        "useLayoutEffect → Render → DOM update → useLayoutEffect → Paint",
+        "useContext() is a React Hook used to access data from a Context without passing props through every level of the component tree. It helps avoid prop drilling and allows components to share data such as theme, language, or user information.",
       ],
     },
 
@@ -1740,13 +1832,6 @@ if (Number.isNaN(quantity)) {
         "React Query is a library used to fetch, cache, and manage server data in React applications.",
         "React Query (இப்போது TanStack Query) என்பது API data-வை fetch, cache, update, sync செய்ய பயன்படும் ஒரு library.",
       ],
-      example: `const { data, isLoading, error } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await fetch("/users");
-      return res.json();
-    },
-  });`,
     },
 
     {
@@ -1758,6 +1843,23 @@ if (Number.isNaN(quantity)) {
     {
       title: "React Query Devtools",
       definition: "React Query Devtools is a tool for debugging React Query.",
+    },
+
+    {
+      title: "What is React.StrictMode?",
+      definition: [
+        "React.StrictMode is a development-only feature in React that helps us find common bugs and potential problems in our components. It provides additional checks and warnings during development and does not affect the production build.",
+        "Strict Mode is a tool for highlighting potential problems in an application. It activates additional checks and warnings for its descendants(சந்ததியினர்).",
+        "Strict Mode does not render any visible UI. It only activates additional checks and warnings for its descendants.",
+      ],
+    },
+
+    {
+      title: "What is lazy loading in React? Why do we use React.lazy()?",
+      definition: [
+        "Lazy loading is a technique where components or code are loaded only when they are needed instead of loading everything at the initial page load. In React, we can use React.lazy() to lazy-load components. This can improve the initial loading performance of the application.",
+        "Lazy loading is the technique of loading a component or piece of code only when it is needed, instead of loading everything at the initial page load. In React, React.lazy() is commonly used for lazy loading components.",
+      ],
     },
 
     {
@@ -1776,15 +1878,6 @@ if (Number.isNaN(quantity)) {
         "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
         "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
       ],
-      example: `
-useEffect(() => {
-  const interval = setInterval(() => {
-    console.log("Running...");
-  }, 1000);
-
-  return () => clearInterval(interval);
-}, []);
-`,
     },
     {
       title: "State Lifting ",
@@ -1792,14 +1885,6 @@ useEffect(() => {
         "Lifting state up means moving shared state from a child component to their closest common parent component. The parent manages the state and passes the data and event handlers to the child components through props. We use it when multiple child components need to share or synchronize the same data.",
         "State Lifting என்பது React-ல் பயன்படுத்தப்படும் ஒரு pattern. இதில் Child Component-ல் இருக்கும் state-ஐ, அதைப் பயன்படுத்தும் அனைத்து Child Components-க்கும் பொதுவான (Closest Common) Parent Component-க்கு மாற்றுவது ஆகும்.",
         "Child state → Move to common Parent → Pass through props",
-      ],
-    },
-
-    {
-      title: "What is the difference between props and state?",
-      definition: [
-        "Props are used to pass or share data from a parent component to a child component. Props are read-only.",
-        "State is used to manage data within a component. When the state changes, React re-renders the component.",
       ],
     },
 
@@ -1821,8 +1906,8 @@ useEffect(() => {
     {
       title: "Code Splitting",
       definition: [
-        "Code Splitting is a technique used to split the code of a React application, Break your application into smaller chunks, which can be loaded on demand.",
-        "This helps reduce the initial bundle size and improves the performance of the application.",
+        "Code splitting is the process of splitting a large JavaScript bundle into smaller chunks that can be loaded when needed. It helps reduce the initial bundle size and improves the application's loading performance.",
+        "Code splitting is a technique of splitting the application's JavaScript bundle into smaller chunks. These chunks can be loaded when they are needed instead of loading the entire application at once. It helps improve the initial loading performance of the application.",
       ],
     },
 
@@ -1830,14 +1915,13 @@ useEffect(() => {
       title: "Composition in React",
       definition: [
         "Building components by combining smaller components instead of inheriting from them.Composition allows components to be combined using props and children to share behavior and UI.",
+        "Composition patterns",
+        "Children Pattern (Most Common)",
+        "Props-based Composition",
+        "Slot Pattern (Named Children)",
+        "Compound Components Pattern (Very Important 🔥)",
+        "Render Props Pattern",
       ],
-      example: `Composition patterns
-1️⃣ Children Pattern (Most Common)
-2️⃣ Props-based Composition
-3️⃣ Slot Pattern (Named Children)
-4️⃣ Compound Components Pattern (Very Important 🔥)
-5️⃣ Render Props Pattern
-`,
     },
 
     {
@@ -1849,6 +1933,12 @@ useEffect(() => {
         "repeated code remove panrathu",
         "reusable component create panrathu",
         "better naming use panrathu",
+      ],
+    },
+    {
+      title: "Error Boundary",
+      definition: [
+        "Error Boundary is a React component that catches JavaScript errors in its child component tree during rendering and displays a fallback UI instead of crashing the entire application.",
       ],
     },
     {
@@ -2456,66 +2546,96 @@ const data = response.data as Order;
     {
       title: "What is Node.js?",
       definition: [
-        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript outside the browser.",
+        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside the browser.",
         "It is built on Chrome's V8 JavaScript engine and is widely used for building fast and scalable server-side applications.",
         "தமிழில்: Node.js என்பது browser-க்கு வெளியே JavaScript-ஐ இயக்க உதவும் runtime environment.",
       ],
     },
+
     {
-      title: "What are the features of Node.js?",
+      title: "What is the difference between Node.js and JavaScript?",
       definition: [
-        "Node.js is an open-source, cross-platform JavaScript runtime environment.",
-        "It uses the V8 JavaScript engine developed by Google Chrome.",
-        "It follows a non-blocking, event-driven architecture for handling multiple requests efficiently.",
-        "It is single-threaded but can handle many concurrent connections using the event loop.",
-        "It is fast and lightweight, making it ideal for scalable applications.",
-        "It includes the npm (Node Package Manager), which provides access to thousands of reusable packages.",
-        "It supports real-time applications such as chat apps, online gaming, and live notifications.",
-        "It can be used for building REST APIs, web servers, microservices, and command-line applications.",
+        "Node.js is a JavaScript runtime environment.",
+        "Node.js is a runtime environment that allows JavaScript to run outside the browser, such as on a server.",
+        "JavaScript is a programming language that can run in browsers.",
+        "JavaScript is a programming language, and browsers provide a JavaScript engine to run it. ",
+      ],
+    },
+
+    {
+      title: "What is the V8 engine in Node.js?",
+      definition: [
+        "V8 is a JavaScript engine developed by Google. It executes JavaScript code by compiling it into machine code. Node.js uses the V8 engine to execute JavaScript outside the browser.",
+        "V8 → JavaScript engine",
+        "Node.js → Runtime environment",
+        "V8's job → Execute JavaScript",
+        "Node.js's job → Provides runtime features like file system, HTTP, networking, etc.",
+      ],
+    },
+
+    {
+      title: "What is the difference between Node.js and a Node.js module?",
+      definition: [
+        "Node.js is a JavaScript runtime environment that allows developers to run JavaScript code outside the browser, mainly for server-side applications.",
+        "A module is a reusable piece of JavaScript code that contains related functionality.",
+        "Node.js = Runtime environment",
+        "Module = Reusable piece of code",
       ],
     },
 
     {
       title: "NPX",
       definition: [
-        "npx → executes packages/CLI commands.",
-        "NPX is a package runner that comes with npm (v5.2+).",
-        "It allows you to run Node.js packages without installing them globally.",
-        "It first checks if the package exists locally. If not, it downloads a temporary copy, runs it, and then removes it.",
-        "NPX is commonly used to run CLI tools like create-react-app, eslint, and prettier.",
-        "Example: npx eslint . or npx create-react-app my-app.",
+        "npx is used to execute packages/CLI commands, often without installing the package globally.",
       ],
     },
     {
       title: "NPM",
       definition: [
-        "npm → installs/manages packages.",
-        "NPM (Node Package Manager) is the default package manager used to install, manage, and share JavaScript packages.",
-        "It helps developers manage project dependencies efficiently (திறமையாக).",
-        "It  provides access to thousands of reusable packages.",
-        "தமிழில்: NPM என்பது JavaScript packages-ஐ install, manage, மற்றும் share செய்ய பயன்படும் package manager ஆகும்.",
-      ],
-    },
-    {
-      title: "package.json",
-      definition: [
-        "package.json is the configuration file that stores project information, dependencies, scripts, version, and other metadata required to manage the application.",
+        "NPM stands for Node Package Manager. It is used to install, manage, and share packages (dependencies) in a Node.js project.",
       ],
     },
 
     {
-      title: "What is package-lock.json?",
+      title: "What is package.json in a Node.js project?",
       definition: [
-        "package-lock.json is an automatically generated file by npm that records the exact versions of all installed dependencies and their sub-dependencies. It ensures (உறுதிசெய்கிறது) that every developer and deployment environment installs the same package versions.",
+        "package.json is a configuration file in a Node.js project. It contains information about the project, including its dependencies, package versions, scripts, and project metadata.",
       ],
     },
     {
       title: "What is the difference between dependencies and devDependencies?",
       definition: [
         "dependencies are packages required for the application to run in production.",
-        "devDependencies are packages only needed for development and testing.",
+        "devDependencies are packages required mainly during development, testing, linting, and building.",
       ],
     },
+    {
+      title: "Event Loop",
+      definition: [
+        "Event Loop is a mechanism in Node.js that allows it to handle asynchronous operations and execute their callbacks when the Call Stack is empty.",
+        "The Event Loop is a mechanism in Node.js that continuously checks the Call Stack and callback queues, and moves callbacks to the Call Stack when it is empty.",
+        "The Event Loop is a mechanism in Node.js that allows it to perform non-blocking I/O operations, despite the fact that JavaScript is single-threaded.",
+      ],
+    },
+
+    {
+      title: "What is require() in Node.js? How is it different from import?",
+      definition: [
+        "require() is used to import modules or packages in CommonJS",
+        "import is used to import modules or packages using ES Modules (ESM).",
+      ],
+    },
+
+    {
+      title: "What is the difference between require() and import?",
+      definition: [
+        "require() is used in CommonJS modules.",
+        "require() loads modules synchronously.",
+        "import is used in ES Modules.",
+        "import supports static analysis and modern JavaScript features.",
+      ],
+    },
+
     {
       title: "Vite",
       definition: [
@@ -2544,24 +2664,28 @@ const data = response.data as Order;
         "Error Handling is the process of detecting, catching, and managing errors in a Node.js application to prevent crashes and ensure smooth execution. It helps provide meaningful error responses to users. In Node.js, errors are commonly handled using try...catch, Promise .catch(), async/await, and centralized Express error-handling middleware. The Express error-handling middleware uses four parameters: err, req, res, and next.",
       ],
     },
+
     {
       title:
-        "What is error-handling middleware in Express, and how do you identify it?",
+        "What is the difference between throw, try...catch, and next(error) in Express?",
       definition: [
-        "Error handling is the process of detecting, catching, and managing errors in an application. In Express, error-handling middleware is identified by four parameters: err, req, res, and next.",
+        "throw → Manually creates and throws an error.",
+        "try → Contains code that may throw an error.",
+        "catch → Catches and handles the error thrown from the try block",
+        "next(error) → Passes the error to Express's error-handling middleware.",
       ],
     },
 
     {
       title: "HTTP Status Codes",
       definition: [
-        "200 → Success",
-        "201 → Created",
-        "400 → Bad Request",
-        "401 → Unauthorized - Who are you?",
-        "403 → Forbidden - I know who you are, but you can't access this.",
-        "404 → Not Found- Resource not found",
-        "500 → Internal Server Error",
+        "200 → Success Request successful. Example: getting products successfully.",
+        "201 → Created → New resource created successfully. Example: creating a product.",
+        "400 → Bad Request → Client sent invalid data/request.",
+        "401 → Unauthorized → Authentication is required or token is invalid/missing",
+        "403 → Forbidden → User is authenticated but doesn't have permission",
+        "404 → Not Found → Requested resource/route was not found.",
+        "500 → Internal Server Error → Unexpected error occurred on the server",
       ],
     },
 
@@ -2593,16 +2717,6 @@ const data = response.data as Order;
         "process.nextTick() executes before the next event loop iteration.",
         "setImmediate() executes after I/O events.",
         "setTimeout(fn, 0) executes in the Timers phase.",
-      ],
-    },
-
-    {
-      title: "What is the difference between require() and import?",
-      definition: [
-        "require() is used in CommonJS modules.",
-        "import is used in ES Modules.",
-        "require() loads modules synchronously.",
-        "import supports static analysis and modern JavaScript features.",
       ],
     },
 
@@ -2666,7 +2780,7 @@ const data = response.data as Order;
     {
       title: "What are child processes in Node.js?",
       definition: [
-        "A Child Process in Node.js is a separate process created from the main Node.js process. It allows you to execute system commands, run other programs, or perform CPU-intensive tasks without blocking the main event loop.",
+        "Child processes are separate processes created by Node.js to execute tasks or system commands independently from the main process.",
         "வேறு Program அல்லது Task-ஐ இயக்க பயன்படும்",
         "தனி Process உருவாகும்",
         "Port Share செய்யாது",
@@ -2680,6 +2794,15 @@ const data = response.data as Order;
       definition: [
         "process.exit() terminates (முடிவடைகிறது) the current Node.js process.",
         "process.kill() sends a signal to another process using its PID.",
+      ],
+    },
+
+    {
+      title:
+        "What is a session in Node.js? How is it different from JWT authentication?",
+      definition: [
+        "Session is a server-side mechanism used to maintain a user's login state. The server stores session data, and the client usually stores a session ID in a cookie.",
+        "JWT authentication uses a signed token that contains claims and is sent between the client and server to authenticate requests. The server can validate the token without necessarily storing session state for each user.",
       ],
     },
   ],
@@ -2707,38 +2830,30 @@ const data = response.data as Order;
     {
       title: "What is Middleware?",
       definition: [
-        "Middleware is a function that runs between the incoming request and the final response. It can access the request, response, and the next() function.",
-        "next() is used to pass control to the next middleware or the route handler. If we don't call next(), the request will stop there and the client won't get a response.",
+        "Middleware is a function that runs between the incoming request and the final response. ",
+        "A function with access to req, res, and next. It can execute code, modify request/response objects, end the cycle, or call next() to pass control to the next middleware.",
       ],
     },
     {
       title: "Types of Middleware",
       definition: [
-        "Application Middleware app.use(express.json());",
-        "Router Middleware router.use(authMiddleware);",
-        "Built-in Middleware",
-        "Error-handling Middleware",
-        "Third-party Middleware cors(),helmet(),morgan()",
+        "Application-level (app.use)",
+        "Router-level (router.use)",
+        "Error-handling ((err, req, res, next) => {})",
+        "Built-in (express.json(), express.static())",
+        "Third-party (cors, morgan)",
       ],
     },
 
     {
-      title: "Routing",
+      title: "What is express.Router() and why do we use it?",
       definition: [
-        "Routing defines how an application responds to client requests at specific endpoints (URLs).",
-        "Different HTTP methods can be handled for different routes.",
-        "Example: app.get('/user', (req,res)=>res.send('User Page'));",
+        [
+          "express.Router() is used to create modular and separate route handlers in an Express.js application. It helps us organize routes into different files.",
+        ],
       ],
     },
 
-    {
-      title: "What is Express Router?",
-      definition: [
-        "Express Router is a mini Express application that helps organize routes into separate modules. Instead of writing all routes in one file, we can group related routes together and keep the code clean and maintainable.",
-        "It improves project structure and maintainability.",
-        "Express Router use pannrathu routes-a separate files-la organize panna. Example, employee routes oru file, attendance routes oru file, leave routes oru file. Ithu project maintain panna easy",
-      ],
-    },
     {
       title: "How do you use Router?",
       definition: [
@@ -2766,11 +2881,38 @@ const data = response.data as Order;
         "REST APIs commonly exchange data in JSON format.",
       ],
     },
+
+    {
+      title: "Environment Variables",
+      definition: [
+        "Environment variables are used to store sensitive data like API keys and ports outside the code.",
+        "Environment variables store configuration values.",
+        "Examples include PORT, database URL, and secret keys.",
+        "They improve security and flexibility.",
+        "Example: process.env.PORT",
+      ],
+    },
+
+    {
+      title: "How do you access Environment Variables?",
+      definition: [
+        "Use the dotenv package.",
+        "Access values using process.env.",
+      ],
+    },
+
     {
       title: "REST API and HTTP API",
       definition: [
         "REST API is a type of API that follows the REST architectural style.",
         "HTTP API is an API that uses HTTP protocol for communication.",
+      ],
+    },
+    {
+      title:
+        "What is error-handling middleware in Express, and how do you identify it?",
+      definition: [
+        "Error handling is the process of detecting, catching, and managing errors in an application. In Express.js, we use error-handling middleware to handle errors and send an appropriate response to the client.",
       ],
     },
     {
@@ -2796,22 +2938,15 @@ const data = response.data as Order;
     {
       title: "Difference between req.params, req.query, and req.body",
       definition: [
-        "req.params Contains route parameters from the URL.",
-        "req.query Contains query string parameters from the URL.",
-        "req.body Contains data sent in the request body.",
-      ],
-      example: `req.params → { id: "123" }
-req.query → { search: "nodejs" }
-req.body → { name: "John", age: 30 }`,
-    },
-    {
-      title:
-        "What is the difference between authentication middleware and authorization middleware in Express?",
-      definition: [
-        "Authentication middleware → Verifies who the user is, usually by checking a session, JWT, or other credentials.",
-        "Authorization middleware → Checks what the authenticated user is allowed to do, usually based on roles or permissions.",
+        "req.params Gets route parameters from the URL.",
+        "req.query Gets query string parameters from the URL.",
+        "req.body Gets data sent in the request body, usually with POST/PUT/PATCH",
+        "req.params → { id: `123` }",
+        "req.query → { search: `nodejs` }",
+        "req.body → { name: `John`, age: 30 }",
       ],
     },
+
     {
       title: "What is MVC architecture?",
       definition: [
@@ -2825,17 +2960,16 @@ req.body → { name: "John", age: 30 }`,
     {
       title: "Difference between app.use() and app.get()",
       definition: [
-        "app.use() is middleware that works for all HTTP methods.",
-        "app.get() handles only GET requests.",
-        "app.get() is used for specific route handling.",
+        "app.use() → used to register middleware. It can run for multiple HTTP methods.",
+        "app.get() → used to handle GET requests for a specific route",
       ],
     },
 
     {
       title: "Difference between res.send() and res.json()",
       definition: [
-        "res.send() can send strings, HTML, Buffers, or objects.",
-        "res.json() specifically sends JSON responses.",
+        "res.send() Sends a response to the client. It can send strings, HTML, objects, buffers, etc",
+        "res.json() Sends a JSON response to the client.",
       ],
     },
 
@@ -2853,28 +2987,30 @@ req.body → { name: "John", age: 30 }`,
         "express.urlencoded() is middleware used to parse data sent from HTML forms using application/x-www-form-urlencoded format.",
       ],
     },
+
     {
-      title: "What is CORS?",
+      title: "CORS (குறுக்கு-மூல கோரிக்கைகள்)",
       definition: [
-        "CORS (Cross-Origin Resource Sharing) is a security mechanism implemented by browsers that controls whether a web application from one origin can access resources from another origin.",
+        "CORS (Cross-Origin Resource Sharing) is a browser security mechanism that controls whether a web application from one origin can to access resources from another origin.",
+        "CORS (Cross-Origin Resource Sharing) is a technique used to allow or restrict requests between different domains or origins.",
+        "It is commonly used to enable secure communication between frontend and backend applications running on different origins.",
+        "தமிழில்: CORS என்பது different domains அல்லது origins-களுக்கு இடையில் requests அனுமதிப்பதற்கான ஒரு பாதுகாப்பு முறை.",
       ],
     },
     {
       title: "What is express.Router()?",
       definition: [
-        "express.Router() is used to create modular and mountable route handlers. We use it to organize related routes into separate files and keep the application clean and maintainable.",
+        "express.Router() is used to create modular and mountable route handlers. It helps us organize related routes into separate files and keep the application clean and maintainable.",
+        "Router instance/create a router",
+        "It is used to create a new router instance.",
+        "it is not a middleware",
+        "Modular → தனித்தனி பகுதிகளாகப் பிரிக்கப்பட்ட",
+        "Mountable → குறிப்பிட்ட path-க்கு இணைக்கக்கூடிய",
+        "Related routes → தொடர்புடைய routes",
+        "Maintainable → எளிதாக பராமரிக்கக்கூடிய",
       ],
     },
-    {
-      title:
-        "What is the difference between throw, try...catch, and next(error) in Express?",
-      definition: [
-        "throw → manually create/raise an error",
-        "try → contains code that may cause an error",
-        "catch → handles the error",
-        "next(error) → send error to Express error middleware",
-      ],
-    },
+
     {
       title: "What is Helmet?",
       definition: [
@@ -2890,18 +3026,8 @@ req.body → { name: "John", age: 30 }`,
         "It helps secure user data, improve application safety, and prevent common web attacks.",
         "தமிழில்: Security என்பது server மற்றும் application-ஐ attacks மற்றும் unauthorized access-இலிருந்து பாதுகாப்பது.",
       ],
-      example: `const helmet = require("helmet");
+    },
 
-app.use(helmet());
-`,
-    },
-    {
-      title: "What is Morgan?",
-      definition: [
-        "Morgan is HTTP request logging middleware.",
-        "It logs incoming requests for debugging and monitoring.",
-      ],
-    },
     {
       title: "What is Rate Limiting?",
       definition: [
@@ -2925,28 +3051,7 @@ app.use(helmet());
         "It serves HTML, CSS, JavaScript, images, and other static files.",
       ],
     },
-    {
-      title: "What is the MVC Pattern?",
-      definition: [
-        "Model handles database logic.",
-        "View handles the user interface.",
-        "Controller contains business logic and handles requests.",
-      ],
-    },
-    {
-      title: "What are Environment Variables?",
-      definition: [
-        "Environment variables store configuration values.",
-        "Examples include PORT, database URL, and secret keys.",
-      ],
-    },
-    {
-      title: "How do you access Environment Variables?",
-      definition: [
-        "Use the dotenv package.",
-        "Access values using process.env.",
-      ],
-    },
+
     {
       title: "How do you secure an Express API?",
       definition: [
@@ -2974,89 +3079,73 @@ app.use(helmet());
         "JWT (JSON Web Token) is a token-based, stateless authentication mechanism used to securely transmit information between the client and server. ",
         "The server can use the token to identify and authenticate the user without storing session state on the server.",
         "Three parts of a JWT",
+
         "1. Header Contains information about the token, such as the algorithm and token type (e.g., HS256, RS256).",
         "2. Payload contains the claims — user data like userId, email, role, and expiry time (exp). This is Base64 encoded, NOT encrypted, so sensitive data should not be stored here.",
-        "3. Used to verify that the token has not been modified and that it was created using the expected secret/key",
-      ],
-    },
-  ],
-  node_and_express: [
-    {
-      title: "Compression (சுருக்கம்)",
-      definition: [
-        "Compression is a technique used to reduce the size of response data sent from the server.",
-        "It helps improve application performance and reduces bandwidth usage.",
-      ],
-      example: `const compression = require("compression");
+        "3. Signature Used to verify that the token has not been modified and that it was created using the expected secret/key",
 
-app.use(compression());
-`,
-    },
-    {
-      title: "Logging (பதிவு செய்தல்)",
-      definition: [
-        "Logging is a technique used to record information about requests, responses, and application events.",
-        "It helps developers monitor, debug, and track server activity more effectively.",
-        "தமிழில்: Logging என்பது application அல்லது server-ல் நடக்கும் செயல்களை பதிவு செய்வது.",
+        "Header → Contains token type and signing algorithm.",
+        "Payload → Contains claims/data such as user ID or role.",
+        "Signature → Verifies that the token hasn't been changed.",
       ],
-      example: `const morgan = require("morgan");
-
-app.use(morgan("combined"));
-`,
     },
+
     {
       title: "Authentication / Authorization (அங்கீகரிப்பு / அனுமதி)",
       definition: [
-        "Identity 👤 Authentication is the process of verifying a user's identity — for example, using email and password.",
-        "Permission 🔐 Authorization is the process of checking what an authenticated user is allowed to access or do, often based on roles and permissions.",
+        "Identity 👤 Authentication is the process of verifying(who you are) a user's identity — for example, using email and password.",
+        "Permission 🔐 Authorization is the process of checking what an authenticated user is allowed (What can you access?) to access or do, often based on roles and permissions.",
         "Both are commonly used to secure applications and protect resources.",
       ],
     },
+
     {
-      title: "CORS (குறுக்கு-மூல கோரிக்கைகள்)",
+      title:
+        "What is the difference between authentication middleware and authorization middleware in Express?",
       definition: [
-        "CORS (Cross-Origin Resource Sharing) is a browser security mechanism that controls whether a web page from one origin is allowed to access resources from another origin.",
-        "CORS (Cross-Origin Resource Sharing) is a technique used to allow or restrict requests between different domains or origins.",
-        "It is commonly used to enable secure communication between frontend and backend applications running on different origins.",
-        "தமிழில்: CORS என்பது different domains அல்லது origins-களுக்கு இடையில் requests அனுமதிப்பதற்கான ஒரு பாதுகாப்பு முறை.",
+        "Authentication middleware → Verifies who the user is, usually by checking a session, JWT, or other credentials.",
+        "Authorization middleware → Checks what the authenticated user is allowed to do, usually based on roles or permissions.",
       ],
     },
 
     {
-      title: "REST API",
+      title:
+        "Where should a JWT be stored on the client, and what are the common options?",
       definition: [
-        "REST API is an architectural style that uses HTTP methods like GET, POST, PUT, DELETE.",
-        "It is used for communication between client and server.",
-        "Example: app.post('/users', (req,res)=>res.send('User Created'));",
+        "JWTs can be stored in the browser's localStorage or sessionStorage.",
+        "Alternatively, they can be stored in HTTP-only cookies for better security.",
       ],
     },
-
-    {
-      title: "Environment Variables",
-      definition: [
-        "Environment variables are used to store sensitive data like API keys and ports outside the code.",
-        "They improve security and flexibility.",
-        "Example: process.env.PORT",
-      ],
-    },
-
     {
       title: "Body Parser",
       definition: [
+        "app.use(express.json())",
         "Body parser middleware parses incoming request bodies into JSON or URL-encoded format.",
         "It allows developers to access request data using req.body in APIs.",
         "தமிழில்: Body Parser என்பது request body data-ஐ parse செய்து req.body மூலம் access செய்ய உதவும் middleware ஆகும்.",
       ],
-      example: `app.use(express.json());
+    },
+    {
+      title: "Compression (சுருக்கம்)",
+      definition: [
+        "app.use(compression())",
+        "Compression is a technique used to reduce the size of response data sent from the server.",
+        "It helps improve application performance and reduces bandwidth usage.",
+      ],
+    },
 
-app.post("/user", (req, res) => {
-  console.log(req.body);
-
-  res.send("Data received");
-});
-`,
+    {
+      title: "Logging (பதிவு செய்தல்)",
+      definition: [
+        "app.use(morgan())",
+        "logs incoming requests for debugging and monitoring.",
+        "Logging is a technique used to record information about requests, responses, and application events.",
+        "It helps developers monitor, debug, and track server activity more effectively.",
+        "தமிழில்: Logging என்பது application அல்லது server-ல் நடக்கும் செயல்களை பதிவு செய்வது.",
+      ],
     },
   ],
+
   mongodb: [
     {
       title: "What is MongoDB?",
@@ -3914,14 +4003,16 @@ app.post("/user", (req, res) => {
     },
     {
       title: "Good morning/afternoon. May I ask who is calling, please?",
-      definition: ["I am Ravi from XYZ Company.", "How can I help you today?"],
-      example: `Then you can continue with:
-"How may I help you?" (Most common)
-"What is this regarding?" (To know the purpose)
-"How can I assist you today?" (Very professional)
-"May I know the purpose of your call?" (Formal)
-"Who would you like to speak with?" (If they haven't mentioned it)
-      `,
+      definition: [
+        "I am Ravi from XYZ Company.",
+        "How can I help you today?",
+        "Then you can continue with",
+        "How may I help you?",
+        "What is this regarding?",
+        "How can I assist you today?",
+        "May I know the purpose of your call?",
+        "Who would you like to speak with?",
+      ],
     },
     {
       title: "How are you?",
@@ -3954,13 +4045,55 @@ app.post("/user", (req, res) => {
         "No, I am not currently working with any company. and I am looking for new opportunities.",
       ],
     },
+
     {
-      title: "responsibility",
+      title: "please introduce yourself",
+      definition:
+        "I am Silambarasan from Vellore I am a frontend developer with 7 years of experience. I specialize in HTML, CSS, JavaScript, and React.js.",
+    },
+
+    {
+      title: "Tell me about your experience ",
+      definition: [
+        "I have 7 years of experience as a frontend developer. My primary skills are HTML, CSS, JavaScript, and Bootstrap. I also have 2 years of experience working with React.js.",
+      ],
+    },
+
+    {
+      title: "What are your main technical skills?",
+      definition: [
+        "My primary skills are HTML, CSS, JavaScript, and Bootstrap. I also have 2 years of experience with React.js and Tailwind CSS.",
+      ],
+    },
+
+    {
+      title: "Can you tell me about your current or most recent project?",
+      definition: [
+        "In my recent projects, I have worked on e-commerce websites and admin dashboards. I have created reusable components and integrated APIs. I have also worked on projects such as a Payroll Management System, Chit Fund Management System, and DineFlow Restaurant POS system.",
+      ],
+    },
+    {
+      title: "What was your role and responsibility in these projects?",
+      definition: [
+        "My role was as a Frontend and React Developer. My responsibilities included developing frontend applications using React.js and Tailwind CSS, creating reusable components, and integrating APIs. I also focused on building responsive and user-friendly interfaces.",
+      ],
+    },
+    {
+      title:
+        "responsibility or What are your responsibilities as a frontend developer?",
       definition: [
         "My role was Frontend Developer.",
         "My responsibility was to develop the frontend of the application using React and Tailwind CSS, creating reusable components, integrating REST APIs managing application state, fixing frontend bugs and ensuring a smooth user experience.",
+        "My responsibilities include developing frontend applications using React.js and Tailwind CSS, creating reusable components, and integrating APIs. I also focus on building responsive and user-friendly interfaces.",
       ],
     },
+    {
+      title: "Why did you choose React.js for your projects?",
+      definition: [
+        "I chose React.js because it is fast and helps us build interactive user interfaces. It provides reusable components, which makes application development easier and more maintainable. React.js is also widely used in the industry, so it is a good choice for building modern web applications.",
+      ],
+    },
+
     {
       title: "What are your strengths?",
       definition: [
@@ -3996,6 +4129,15 @@ app.post("/user", (req, res) => {
     {
       title: "",
       definition: [
+        "As a = ஆக / என்ற நிலையில்",
+        "Modular = தொகுதிகளாக அமைந்த / பகுதிகளாகப் பிரிக்கப்பட்ட",
+        "Mountable = ஏற்றக்கூடிய / பொருத்தக்கூடிய / நிறுவக்கூடிய",
+        "Opinion = கருத்து",
+        "Unopinionated = தனிப்பட்ட கருத்தைச் சாராத",
+        "Making = உருவாக்குதல் / செய்வது",
+        "such as = போன்ற / உதாரணமாக",
+        "Enumerable = கணக்கிடக்கூடிய / ஒன்றன்பின் ஒன்றாக பார்க்கக்கூடிய",
+        "Persists : நிலைத்திருக்கிறது / தொடர்ந்து இருக்கிறது / நீடிக்கிறது",
         "precise- துல்லியமான,சீரான, தெளிவான",
         "Manipulate - கையாளுதல்,தன் விருப்பப்படி மாற்றுதல்,  மாற்றுவது, திருத்துவது",
         "Virtualization-மெய்நிகராக்கம் - Simple-ஆ சொன்னா: ஒரு physical resource-ஐ software மூலம் virtual-ஆ உருவாக்குவது.",
@@ -4005,7 +4147,7 @@ app.post("/user", (req, res) => {
         "predictable (கணிக்கக்கூடிய)",
         "fallback(மாற்று விருப்பம்) ",
         "ensures (உறுதிசெய்கிறது)",
-        "Parse - பகுப்பாய்வு செய்",
+        "Parse - பகுப்பாய்வ செய்",
         "parsed - பகுப்பாய்வு செய்யப்பட்டது",
         "Represents - குறிக்கிறது",
         "Defined - வரையறுக்கப்பட்ட",

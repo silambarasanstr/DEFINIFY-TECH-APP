@@ -27,20 +27,19 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "TypeScript", path: "/typescript", icon: ShieldCheck },
     { name: "Node.js", path: "/nodejs", icon: Server },
     { name: "Express.js", path: "/express", icon: Server },
-    { name: "Node/Express", path: "/node_and_express", icon: Server },
     { name: "MongoDB", path: "/mongodb", icon: Database },
     { name: "Git & GitHub", path: "/gitgithub", icon: GitBranch },
     { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Docker", path: "/docker", icon: Box },
     { name: "Jenkins", path: "/jenkins", icon: Settings },
-    { name: "kubernetes", path: "/kubernetes", icon: Layers },
-    { name: "dataStructure", path: "/dataStructure", icon: Database },
+    { name: "Kubernetes", path: "/kubernetes", icon: Layers },
+    { name: "Data Structure", path: "/dataStructure", icon: Database },
     { name: "ECommerce", path: "/ECommerce", icon: Database },
-    { name: "VSshortcuts", path: "/VSshortcuts", icon: Database },
-    { name: "UIUX", path: "/UIUX", icon: Database },
+    { name: "VS Shortcuts", path: "/VSshortcuts", icon: Database },
+    { name: "UI/UX", path: "/UIUX", icon: Database },
     { name: "English", path: "/English", icon: Database },
     {
-      name: "EnglishToTamil",
+      name: "English To Tamil",
       path: "/EnglishToTamil",
       icon: Database,
     },
@@ -48,54 +47,69 @@ const Sidebar = ({ open, setOpen }) => {
 
   return (
     <>
-      {/* Overlay (mobile) */}
+      {/* Mobile Overlay */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/40 z-20 md:hidden"
+          className="fixed inset-0 z-20 bg-black/40 md:hidden"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-screen w-64 bg-slate-900 text-slate-300 z-30
-  transform transition-transform duration-300
-  flex flex-col
-  ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
+      <aside
+        className={`fixed top-0 left-0 z-30 flex h-screen w-64
+          flex-col bg-slate-900 text-slate-300
+          transform transition-transform duration-300
+          ${open ? "translate-x-0" : "-translate-x-full"}
+          md:translate-x-0`}
       >
         {/* Header */}
-        <div className="p-6 flex items-center justify-between shrink-0">
+        <div className="flex shrink-0 items-center justify-between px-6 py-5">
           <div className="flex items-center gap-3">
-            <Code className="text-white w-6 h-6" />
+            <Code className="h-6 w-6 text-white" />
+
             <h1 className="text-md font-bold text-white">DEFINIFY-TECH-APP</h1>
           </div>
 
-          <button className="md:hidden" onClick={() => setOpen(false)}>
-            <X />
+          <button
+            type="button"
+            className="text-slate-300 hover:text-white md:hidden"
+            onClick={() => setOpen(false)}
+          >
+            <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Scrollable Nav */}
-        <nav className="flex-1 overflow-y-auto px-4 space-y-1 text-sm pb-4">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-2 rounded-lg ${
-                  isActive
-                    ? "bg-primary-500/10 text-primary-400"
-                    : "hover:bg-slate-800 hover:text-white"
-                }`
-              }
-            >
-              <item.icon className="w-5 h-5" />
-              {item.name}
-            </NavLink>
-          ))}
+        {/* Navigation */}
+        <nav className="flex-1 overflow-y-auto overflow-x-hidden px-4 pb-4">
+          <div className="space-y-1 text-sm">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 rounded-lg px-4 py-2
+                    transition-colors
+                    ${
+                      isActive
+                        ? "bg-primary-500/10 text-primary-400"
+                        : "hover:bg-slate-800 hover:text-white"
+                    }`
+                  }
+                >
+                  <Icon className="h-5 w-5 shrink-0" />
+
+                  <span className="truncate">{item.name}</span>
+                </NavLink>
+              );
+            })}
+          </div>
         </nav>
-      </div>
+      </aside>
     </>
   );
 };

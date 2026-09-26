@@ -71,9 +71,9 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
               <div>
                 <h4 className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
                   {topic.typesTitle || "Types"}
-                </h4>
+                </h4 >
 
-                <div className="grid gap-2 md:grid-cols-2">
+                <div className="grid gap-2 md:grid-cols-1">
                   {topic.types.map((type, i) => (
                     <div
                       key={i}
