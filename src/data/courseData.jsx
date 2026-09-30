@@ -2546,9 +2546,22 @@ const data = response.data as Order;
     {
       title: "What is Node.js?",
       definition: [
-        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside the browser.",
+        "Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside the browser,mainly for building backend applications and APIs.",
         "It is built on Chrome's V8 JavaScript engine and is widely used for building fast and scalable server-side applications.",
-        "தமிழில்: Node.js என்பது browser-க்கு வெளியே JavaScript-ஐ இயக்க உதவும் runtime environment.",
+        "Fast & event-driven",
+        "Great for APIs & real-time apps",
+        "Uses npm for packages",
+      ],
+      example: [
+        `import http from "http";
+  const server = http.createServer((req, res) => {
+  res.write("Hello World");
+  res.end();
+});
+server.listen(3000, () => {
+  console.log("Server running on port 3000");
+});  
+        `,
       ],
     },
 
@@ -2603,6 +2616,12 @@ const data = response.data as Order;
       ],
     },
     {
+      title: "package-lock.json",
+      definition: [
+        "package-lock.json locks the exact versions of dependencies and ensures consistent package installation across different environments.",
+      ],
+    },
+    {
       title: "What is the difference between dependencies and devDependencies?",
       definition: [
         "dependencies are packages required for the application to run in production.",
@@ -2622,19 +2641,15 @@ const data = response.data as Order;
       title: "What is require() in Node.js? How is it different from import?",
       definition: [
         "require() is used to import modules or packages in CommonJS",
-        "import is used to import modules or packages using ES Modules (ESM).",
-      ],
-    },
-
-    {
-      title: "What is the difference between require() and import?",
-      definition: [
         "require() is used in CommonJS modules.",
         "require() loads modules synchronously.",
+        "import is used to import modules or packages using ES Modules (ESM).",
         "import is used in ES Modules.",
         "import supports static analysis and modern JavaScript features.",
       ],
     },
+
+  
 
     {
       title: "Vite",
@@ -2647,14 +2662,12 @@ const data = response.data as Order;
       title: "What is Non-blocking?",
       definition: [
         "Non-blocking means the program does not wait for one operation to finish before executing the next one. Instead, it continues running other tasks while the operation completes in the background.",
-        "Non-blocking-na oru operation complete ஆகுற வரைக்கும் wait பண்ணாது. அதுக்கு பதிலா next task-ஐ execute பண்ணிடும். Operation complete ஆன பிறகு callback, Promise, அல்லது async/await மூலம் result handle பண்ணலாம்.",
       ],
     },
     {
       title: "What is Blocking?",
       definition: [
         "Blocking means the program waits for an operation to complete before executing the next statement. During this time, the execution is paused until the current task finishes.",
-        "Blocking-na oru operation complete ஆகுற வரைக்கும் program wait பண்ணும். அந்த operation முடியும் வரை next statement execute ஆகாது. Operation complete ஆன பிறகுதான் next task execute ஆகும்.",
       ],
     },
 
@@ -2844,6 +2857,13 @@ const data = response.data as Order;
         "Third-party (cors, morgan)",
       ],
     },
+    {
+      title: "Schema",
+      definition: [
+        "A schema is a blueprint that defines the structure and constraints of data in a database.",
+        "Schema is a blueprint or structure that defines data is organized with database.is show relationship between tables, fields of table but does not contain actual data",
+      ],
+    },
 
     {
       title: "What is express.Router() and why do we use it?",
@@ -2851,6 +2871,20 @@ const data = response.data as Order;
         [
           "express.Router() is used to create modular and separate route handlers in an Express.js application. It helps us organize routes into different files.",
         ],
+      ],
+    },
+
+    {
+      title: "What is express.Router()?",
+      definition: [
+        "express.Router() is used to create modular and mountable route handlers. It helps us organize related routes into separate files and keep the application clean and maintainable.",
+        "Router instance/create a router",
+        "It is used to create a new router instance.",
+        "it is not a middleware",
+        "Modular → தனித்தனி பகுதிகளாகப் பிரிக்கப்பட்ட",
+        "Mountable → குறிப்பிட்ட path-க்கு இணைக்கக்கூடிய",
+        "Related routes → தொடர்புடைய routes",
+        "Maintainable → எளிதாக பராமரிக்கக்கூடிய",
       ],
     },
 
@@ -2997,19 +3031,7 @@ const data = response.data as Order;
         "தமிழில்: CORS என்பது different domains அல்லது origins-களுக்கு இடையில் requests அனுமதிப்பதற்கான ஒரு பாதுகாப்பு முறை.",
       ],
     },
-    {
-      title: "What is express.Router()?",
-      definition: [
-        "express.Router() is used to create modular and mountable route handlers. It helps us organize related routes into separate files and keep the application clean and maintainable.",
-        "Router instance/create a router",
-        "It is used to create a new router instance.",
-        "it is not a middleware",
-        "Modular → தனித்தனி பகுதிகளாகப் பிரிக்கப்பட்ட",
-        "Mountable → குறிப்பிட்ட path-க்கு இணைக்கக்கூடிய",
-        "Related routes → தொடர்புடைய routes",
-        "Maintainable → எளிதாக பராமரிக்கக்கூடிய",
-      ],
-    },
+    
 
     {
       title: "What is Helmet?",
@@ -4129,6 +4151,7 @@ const data = response.data as Order;
     {
       title: "",
       definition: [
+        "Constraints = கட்டுப்பாடுகள் / வரம்புகள்",
         "As a = ஆக / என்ற நிலையில்",
         "Modular = தொகுதிகளாக அமைந்த / பகுதிகளாகப் பிரிக்கப்பட்ட",
         "Mountable = ஏற்றக்கூடிய / பொருத்தக்கூடிய / நிறுவக்கூடிய",
