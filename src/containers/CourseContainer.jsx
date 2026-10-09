@@ -2,7 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { courseData as initialData } from "../data/courseData";
 import CourseTopicCard from "../components/CourseTopicCard";
-import { BookOpen, ChevronRight, Calendar, Clock, List } from "lucide-react";
+import { BookOpen, ChevronRight, Calendar, Clock, List, Loader2 } from "lucide-react";
+
+const formatCourseName = (id) => {
+  if (!id) return "";
+
+  return id
+    .replace("js", " JS")
+   
+    .replace("_", "/")
+    .replace(/and/g, " ")
+    .replace(" _", "")
+    .replace(/^\w/, (c) => c.toUpperCase())
+    
+};
 
 const CourseContainer = () => {
   const { courseId } = useParams();
@@ -12,17 +25,16 @@ const CourseContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [time, setTime] = useState(new Date());
 
-  if (!courseId) return null;
-
+  // Clock
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
+    const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
+  // Load topics
   useEffect(() => {
+    if (!courseId) return;
+
     setIsLoading(true);
 
     const timer = setTimeout(() => {
@@ -46,32 +58,19 @@ const CourseContainer = () => {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
 
-  const formatCourseName = (id) => {
-    if (!id) return "";
-
-    return id
-      .replace("js", " JS")
-      .replace("node", "Node")
-      .replace("express", "Express")
-      .replace("_", "/")
-      .replace("and", " ")
-      .replace("and", " ")
-      .replace(" _", "")
-      .replace(/^\w/, (c) => c.toUpperCase())
-      .replace("Node express", "Node Express");
-  };
+  // ✅ Early returns AFTER all hooks
+  if (!courseId) return null;
 
   const courseName = formatCourseName(courseId);
 
   if (isLoading) {
-    return (
-      <div className="space-y-4">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="h-20 rounded-xl bg-gray-200 animate-pulse" />
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
+      <Loader2 size={30} className="animate-spin text-indigo-600" />
+      <p className="text-gray-500 font-medium">Loading topics...</p>
+    </div>
+  );
+}
 
   return (
     <div className="space-y-6">
@@ -87,10 +86,6 @@ const CourseContainer = () => {
             </div>
 
             <h1 className="text-3xl font-bold">{courseName} Course</h1>
-
-            <p className="text-blue-100 mt-2">
-              Learn concepts step by step with clear explanations and examples.
-            </p>
           </div>
 
           <div className="flex flex-wrap gap-3">
@@ -99,7 +94,6 @@ const CourseContainer = () => {
                 <Calendar size={16} />
                 Today
               </div>
-
               <div className="font-semibold mt-1">{time.toDateString()}</div>
             </div>
 
@@ -108,7 +102,6 @@ const CourseContainer = () => {
                 <Clock size={16} />
                 Current Time
               </div>
-
               <div className="font-semibold mt-1">
                 {time.toLocaleTimeString()}
               </div>
@@ -118,11 +111,8 @@ const CourseContainer = () => {
       </div>
 
       {/* Heading */}
-
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-800">Course Topics</h2>
-        </div>
+        <h2 className="text-2xl font-bold text-gray-800">Course Topics</h2>
 
         <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full font-semibold">
           <List size={18} />
@@ -131,12 +121,11 @@ const CourseContainer = () => {
       </div>
 
       {/* Topics */}
-
       {topics.length ? (
         <div className="space-y-4">
           {topics.map((topic, index) => (
             <CourseTopicCard
-              key={index}
+              key={topic.id ?? index}
               index={index + 1}
               topic={topic}
               isOpen={activeIndex === index}
@@ -149,7 +138,6 @@ const CourseContainer = () => {
           <div className="w-16 h-16 rounded-full bg-gray-100 mx-auto flex items-center justify-center mb-4">
             <List size={30} className="text-gray-500" />
           </div>
-
           <h3 className="text-xl font-semibold text-gray-700">
             No Topics Available
           </h3>

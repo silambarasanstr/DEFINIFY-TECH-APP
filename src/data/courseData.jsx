@@ -1,5 +1,3 @@
-import { title } from "framer-motion/client";
-
 export const courseData = {
   html: [
     {
@@ -7,19 +5,29 @@ export const courseData = {
       definition:
         "HTML (HyperText Markup Language) is the standard markup language used to create the structure of web pages.",
     },
+
+    {
+      title: "What is HTML, and what is the purpose of HTML?",
+      definition: [
+        "HTML (HyperText Markup Language) is the standard markup language used to create the structure of web pages. Its purpose is to define the content and layout of web documents.",
+        "HTML stands for HyperText Markup Language. It is used to structure the content of web pages, such as headings, paragraphs, images, links, forms, and tables.",
+        "Purpose - நோக்கம் / குறிக்கோள் / பயன்",
+      ],
+    },
     {
       title: "What is DOCTYPE?",
       definition:
         "DOCTYPE tells the browser that the document is written in HTML5",
     },
     {
-      title: "What is HyperText?",
+      title: "What is HyperText, Markup, and Language?",
       definition: [
         "HyperText is text containing links that allow users to navigate from one page to another.",
-        '<a href="https://google.com">Go to Google</a>',
-        "HyperText → Pages/documents-ஐ links மூலம் connect செய்கிறது.",
-        "Markup → Content-ஐ tags மூலம் structure செய்கிறது.",
-        "Language → Browser புரிந்துகொள்ளும் syntax/rules.",
+        "Markup → Markup means using tags to define the structure and meaning of content on a web page.",
+        "Language is a set of rules and syntax used to communicate information or instructions. In HTML, we use predefined tags and syntax to structure web page content.",
+        "HyperText → Links",
+        "Markup → Tags / Structure",
+        "Language → Rules + Syntax",
       ],
     },
     {
@@ -61,7 +69,7 @@ export const courseData = {
       title: "Element",
       definition: [
         "An HTML element consists of the opening tag, content, and closing tag.",
-        "An HTML element is a building block of a web page. It tells the browser how to display content like text, images, links, buttons, and more.",
+        "Building block of a web page. It tells the browser how to display content like text, images, links, buttons, and more.",
       ],
     },
     {
@@ -108,7 +116,7 @@ export const courseData = {
       title: "Entities",
       definition: [
         "HTML entities are used to represent reserved characters in HTML. For example, the less-than sign (<) is represented as &lt; and the greater-than sign (>) is represented as &gt;.",
-        "Using HTML entities ensures that special characters are displayed correctly in the browser and do not interfere with the structure of the HTML document.",
+        "Using HTML entities ensures (உறுதி செய்கிறது / உறுதிப்படுத்துகிறது) that special characters are displayed correctly in the browser and do not interfere with the structure of the HTML document.",
       ],
     },
 
@@ -128,11 +136,29 @@ export const courseData = {
     },
 
     {
+      title: "What is the difference between HTML and HTML5?",
+      definition: [
+        "HTML is the traditional version used to structure the content of a webpage. ",
+        "HTML5 is the modern version of HTML. It introduced semantic elements such as <header>, <nav>, <section>, <article>, and <footer>. ",
+        "HTML5 also provides better support for multimedia, forms, and modern web applications",
+      ],
+    },
+
+    {
+      title: "What is the difference between <div> and <section> in HTML?",
+      definition: [
+        "The <div> element is a non-semantic container used to group and structure content.",
+        "The <section> element is a semantic element used to represent a meaningful section of content, usually with a related topic or purpose.",
+      ],
+    },
+
+    {
       title: "Difference between <div> and <span>",
       definition: [
-        "<div> is a block-level element and takes full width.",
-        "<span> is an inline element and takes only required width.",
-        "<div> is used for layout, while <span> is used for styling small parts of text.",
+        "The <div> element is a block-level element, so it takes the full available width by default and starts on a new line.",
+        "The <span> element is an inline element, so it takes only the space required by its content and does not start on a new line.",
+        "<div> is used for layout",
+        "<span> is used for styling small parts of text.",
       ],
     },
 
@@ -148,16 +174,16 @@ export const courseData = {
     {
       title: "Difference between <strong> and <b>",
       definition: [
-        "<strong> has semantic importance (important text).",
-        "<b> is only for bold styling without meaning.",
+        "<strong> indicates that the text has strong importance and usually displays the text in bold.",
+        "<b> is used to make text bold without adding any special semantic meaning.",
       ],
     },
 
     {
       title: "Difference between <em> and <i>",
       definition: [
-        "<em> adds emphasis (semantic meaning).",
-        "<i> is just italic styling.",
+        "<em> is a semantic element used to emphasize text.",
+        "<i> is used to display text in italic style without adding semantic emphasis.",
       ],
     },
     {
@@ -278,6 +304,15 @@ export const courseData = {
       definition:
         "The position property specifies how an element is positioned (static, relative, absolute, fixed, sticky).",
     },
+
+    {
+      title:
+        "What is the difference between position: relative and position: absolute?",
+      definition: [
+        "position: relative positions an element relative to its normal position. It still occupies its original space in the document flow.",
+        "position: absolute positions an element relative to its nearest positioned ancestor. It is removed from the normal document flow.",
+      ],
+    },
     {
       title: "Absolute Positioning",
       definition: [
@@ -313,7 +348,8 @@ export const courseData = {
     },
 
     {
-      title: "Media Queries",
+      title:
+        "Media Queries (apply different styles based on device characteristics)",
       definition: [
         "Media queries are a CSS technique used to apply different styles based on device characteristics such as screen size, width, height, or orientation.",
         "They are essential for building responsive designs that adapt to different devices.",
@@ -323,12 +359,12 @@ export const courseData = {
     {
       title: "Pseudo Classes",
       definition:
-        "Pseudo-classes define a special state of an element (e.g., :hover, :active, :focus).",
+        "Pseudo-classes define a special state/condition of an element (e.g., :hover, :active, :focus, :first-child, :last-child, :nth-child, :checked, :disabled).",
     },
     {
       title: "Pseudo Elements",
       definition:
-        "Pseudo-elements style specific parts of an element (e.g., ::before, ::after).",
+        "Pseudo-elements style specific parts of an element (e.g., ::before, ::after, ::first-letter, ::first-line, ::selection).",
     },
     {
       title: "Overflow",
@@ -537,6 +573,13 @@ export const courseData = {
   ],
   javascript: [
     {
+      title: 'What is the default behavior of "sort()" in JavaScript?',
+      definition: [
+        "The default behavior of 'sort()' in JavaScript is to sort elements as strings in ascending order.",
+        "By default, 'sort()' converts elements to strings and sorts them in lexicographical (Unicode) order.",
+      ],
+    },
+    {
       title: "JavaScript",
       definition: [
         "JavaScript is a lightweight, high-level programming language primarily used to create interactive and dynamic web pages. It can run in web browsers and also on servers using Node.js.",
@@ -605,6 +648,7 @@ export const courseData = {
       definition: [
         "Hoisting in JavaScript is the behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.",
         "This means you can use variables and functions before they are declared in the code (depending on type).",
+        "Hoisting is a JavaScript behavior where variable and function declarations are processed before the code is executed.",
       ],
     },
     {
@@ -630,6 +674,15 @@ export const courseData = {
         "Temporal Dead Zone is the time period between entering a scope and initializing a let or const variable. During this period, accessing the variable throws a ReferenceError",
 
         "Temporal Dead Zone என்பது let மற்றும் const variables declare ஆன இடத்திற்கு முன் இருக்கும் time period. அந்த time-ல் variable memory-ல் இருக்கும், ஆனால் initialize ஆகாது. அதனால் access பண்ணினா ReferenceError வரும்.",
+      ],
+    },
+    {
+      title:
+        "What is the difference between function scope and block scope in JavaScript?",
+      definition: [
+        "Function scope means a variable is accessible within the function where it is declared.",
+        "Block scope means a variable is accessible only within the block where it is declared.",
+        "Block scope means a variable is accessible only within a block { }, such as an if statement or a for loop.",
       ],
     },
     {
@@ -715,6 +768,14 @@ export const courseData = {
     },
 
     {
+      title: "JavaScript – Call by Value vs Call by Reference",
+      definition: [
+        "Call by Value means a copy of the value is passed to the function. Changes made inside the function do not affect the original variable.",
+        "Call by Reference means a reference to the same object is passed, so changes made to the object inside the function can affect the original object.",
+      ],
+    },
+
+    {
       title:
         "What is the difference between null, undefined, and NaN in JavaScript?",
       definition: [
@@ -725,11 +786,40 @@ export const courseData = {
     },
 
     {
+      title: "NaN (Not-a-Number)",
+      definition: [
+        "NaN stands for Not-a-Number.",
+        "It is a special value that represents (குறிக்கிறது) an invalid or undefined numeric result.",
+        "Although its name is Not-a-Number, its data type is 'number'. ",
+        "அதன் பெயர் Not-a-Number என்றாலும், அதன் தரவு வகை 'number' ஆகும். ",
+      ],
+      example: `
+console.log(Number("Hello")); // NaN
+console.log(0 / 0);           // NaN
+console.log(typeof NaN);      // "number"
+console.log(Number.isNaN(NaN)); // true
+console.log(NaN === NaN);       // false
+if (Number.isNaN(quantity)) {
+  alert("Please enter a valid quantity");
+}
+`,
+    },
+
+    {
       title: "Callback Function",
       definition: [
         "A callback function is a function that is passed as an argument to another function and is executed later.",
         "Callbacks are used to handle asynchronous operations like API calls, timers, and events.",
         "It helps to run code only after a task is completed.",
+      ],
+    },
+
+    {
+      title: "What is callback hell?",
+      definition: [
+        "Callback hell occurs (நிகழ்கிறது) when multiple callbacks are nested inside each other.",
+        "It makes code difficult to read and maintain.",
+        "Callback Hell-ஐ தவிர்க்க: Promises, async/await",
       ],
     },
 
@@ -755,6 +845,8 @@ export const courseData = {
         " A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
         "Closures allow you to access and preserve data privately.",
         "It is commonly used in data encapsulation, counters, and function factories.",
+        "Yes 👍 Closure is mainly outer → inner access.",
+        "An inner function can access variables from its outer function's scope.",
       ],
     },
 
@@ -916,25 +1008,6 @@ console.log(String(5) + 2);   // "52"
 // The conversion is done manually.
 `,
     },
-    {
-      title: "NaN (Not-a-Number)",
-      definition: [
-        "NaN stands for Not-a-Number.",
-        "It is a special value that represents (குறிக்கிறது) an invalid or undefined numeric result.",
-        "Although its name is Not-a-Number, its data type is 'number'. ",
-        "அதன் பெயர் Not-a-Number என்றாலும், அதன் தரவு வகை 'number' ஆகும். ",
-      ],
-      example: `
-console.log(Number("Hello")); // NaN
-console.log(0 / 0);           // NaN
-console.log(typeof NaN);      // "number"
-console.log(Number.isNaN(NaN)); // true
-console.log(NaN === NaN);       // false
-if (Number.isNaN(quantity)) {
-  alert("Please enter a valid quantity");
-}
-`,
-    },
 
     {
       title: "Debouncing",
@@ -977,6 +1050,15 @@ if (Number.isNaN(quantity)) {
     },
 
     {
+      title: "Event Loop",
+      definition: [
+        "Event Loop is a mechanism in Node.js that allows it to handle asynchronous operations and execute their callbacks when the Call Stack is empty.",
+        "The Event Loop is a mechanism in Node.js that continuously checks the Call Stack and callback queues, and moves callbacks to the Call Stack when it is empty.",
+        "The Event Loop is a mechanism in Node.js that allows it to perform non-blocking I/O operations, despite the fact that JavaScript is single-threaded.",
+      ],
+    },
+
+    {
       title: "this keyword / Function Borrowing / Explicit Binding",
       definition: [
         "Call: Invokes(அழைக்கப்பட்டது) the function immediately, with 'this' set to the first argument, and remaining arguments passed one by one (comma separated).",
@@ -1003,6 +1085,14 @@ if (Number.isNaN(quantity)) {
         "obj3.address.city = 'Trichy'; console.log(obj1.address.city); // Chennai ✅",
 
         "Example (Deep Copy - structuredClone): const obj4 = structuredClone(obj1);",
+      ],
+    },
+    {
+      title:
+        "What is the difference between shallow copy and deep copy in JavaScript?",
+      definition: [
+        "Shallow copy creates a copy of the object at the top level. If the object contains nested objects or arrays, those nested values are still referenced by the original object.",
+        "Deep copy creates a completely independent copy, including nested objects and arrays. Changes to the copied object do not affect the original object.",
       ],
     },
     {
@@ -1057,20 +1147,13 @@ if (Number.isNaN(quantity)) {
     },
 
     {
-      title: "What is callback hell?",
-      definition: [
-        "Callback hell occurs (நிகழ்கிறது) when multiple callbacks are nested inside each other.",
-        "It makes code difficult to read and maintain.",
-        "Callback Hell-ஐ தவிர்க்க: Promises, async/await",
-      ],
-    },
-
-    {
       title: "Iterator",
       definition: [
         "An iterator is an object that allows you to iterate over a collection of values.",
         "Iterators are used to iterate over collections, such as arrays, objects, or strings, and they provide a way to access each element of the collection one at a time.",
         "Iterators have a next() method that returns an object with two properties: value (the current element) and done (a boolean indicating whether the iteration is complete),",
+        "Iterator → ஒவ்வொன்றாக process செய்ய உதவும் mechanism",
+        "Iterate → ஒவ்வொன்றாக process செய்வது",
       ],
     },
 
@@ -1133,15 +1216,6 @@ if (Number.isNaN(quantity)) {
       definition: [
         "find() returns the first element that satisfies the condition. It returns undefined if no element is found.",
         "filter() returns a new array containing all elements that satisfy the condition. It returns an empty array if no element is found.",
-      ],
-    },
-
-    {
-      title:
-        "What is the difference between shallow copy and deep copy in JavaScript?",
-      definition: [
-        "Shallow copy creates a copy of the object at the top level. If the object contains nested objects or arrays, those nested values are still referenced by the original object.",
-        "Deep copy creates a completely independent copy, including nested objects and arrays. Changes to the copied object do not affect the original object.",
       ],
     },
 
@@ -1304,21 +1378,18 @@ if (Number.isNaN(quantity)) {
     {
       title: "Regular Expression",
       definition: [
-        "A Regular Expression (RegEx) is a sequence of characters that defines a search pattern.",
-        "Regular expressions are used for matching strings, extracting information, and validating input.",
-        "Creating a Regular Expression → const regex = /pattern/flags or const regex = new RegExp('pattern', 'flags')",
-        "Testing a Regular Expression → regex.test(string)",
-        "Matching a Regular Expression → regex.exec(string) or string.match(regex)",
-        "Replacing with a Regular Expression → string.replace(regex, replacement)",
-        "Splitting with a Regular Expression → string.split(regex)",
+        "Regular Expression, or RegExp, is a sequence of characters that defines a search pattern. It is commonly used for string validation, searching, matching, and replacing text.",
       ],
     },
     {
       title: "Garbage Collection",
       definition: [
-        "Garbage Collection is an automatic memory management process in JavaScript. It removes objects from memory that are no longer reachable or used by the program.",
+        "Garbage Collection is an automatic memory management process in JavaScript. It removes objects from memory that are no longer reachable",
         "It helps in freeing up memory and preventing memory leaks.",
         "Garbage Collection-na JavaScript-ல memory cleanup process. நாம் use பண்ணாத variables அல்லது objects-ஐ automatically memory-ல இருந்து remove பண்ணும். இதனால் memory waste ஆகாமல் இருக்கும்.",
+        "Reachable → அணுகக்கூடிய / அணுக முடியும்",
+        "Longer → மேலும் / நீண்ட நேரம்",
+        "No longer reachable → இனிமேல் அணுக முடியாத",
       ],
     },
     {
@@ -1336,11 +1407,22 @@ if (Number.isNaN(quantity)) {
         "Tamil: Method overriding என்பது parent class-ல் ஏற்கனவே இருக்கும் method-ஐ child class-ல் அதே name மற்றும் parameters-உடன் புதிய implementation கொடுப்பது.",
       ],
     },
+
+    {
+      title: "What are truthy and falsy values?",
+      definition: [
+        "In JavaScript, every value is treated as either true or false when used in a boolean context, such as an if condition.",
+        "Truthy: a value that behaves like true when converted to a boolean. Common truthy values are: 123, -1, 'hello', [], {}, true, function() {}.",
+        "Falsy: a value that behaves like false when converted to a boolean. There are exactly 8 falsy values: false, 0, -0, 0n, '' (empty string), null, undefined, NaN.",
+        "Everything that is not in the falsy list is truthy.",
+      ],
+    },
   ],
   reactjs: [
     {
       title: "React Library",
       definition: [
+        "react-window - npm  react-window is a component library that helps render large lists of data quickly",
         "clsx என்பது React / Next.js-ல் CSS class-களை condition-க்கு ஏற்ப clean-ஆ manage பண்ண use பண்ணுற ஒரு சிறிய library.(Dynamic class names)",
         "Class Variance Authority (CVA) என்பது React/Tailwind CSS-ல் reusable components-க்கு variants manage பண்ண பயன்படும் library.(Dynamic class names + Variants (size, color, type, state) manage)",
         "Sonner என்பது React-ல் Toast Notifications (popup messages) காட்ட பயன்படுத்தப்படும் library.",
@@ -1446,6 +1528,9 @@ if (Number.isNaN(quantity)) {
 
       definition: [
         " A component is a reusable and independent piece of code that represents a part of the user interface. Components help us split the UI into smaller and manageable pieces, making the application easier to develop and maintain.",
+        "Name capital letter-la start aaganum (Greeting, greeting illa).",
+        "JSX (HTML maari code) return pannanum.",
+        "Function-ah or arrow function-ah ezhudhalaam.",
       ],
     },
     {
@@ -1503,7 +1588,25 @@ if (Number.isNaN(quantity)) {
     {
       title: "State",
       definition: [
+        "State is a built-in React feature used to store data that belongs to a component. State can change over time, and when it changes, React re-renders the component. We update state using a setter function, never by changing it directly.",
         "State is a built-in React object used to store data or information about a component. State can change over time, and when the state changes, React re-renders the component. We update state using a setter function.",
+        "It can be any type, like a number, string, boolean, array, or object.",
+      ],
+    },
+
+    {
+      title: "what does useState return in react js?",
+      definition: [
+        "useState returns an array with two elements: the current state value and a function to update it.",
+      ],
+    },
+
+    {
+      title: "How do you update an array stored in state in React.js?",
+      definition: [
+        "Use the spread operator (`...`) to create a new array instead of directly modifying the existing state.",
+        `"const [items, setItems] = useState(["React", "JavaScript"]);"`,
+        `"setItems([...items, "Node.js"]);"`,
       ],
     },
 
@@ -1779,9 +1882,8 @@ if (Number.isNaN(quantity)) {
 
         "Redux follows 3 core principles",
 
-        "Store: A single JavaScript object that holds the entire application state.",
-        "Store: The store holds the application's Redux state and provides methods such as (such as = போன்ற / உதாரணமாக) dispatch() and getState() to interact with that state.",
-
+        "A Redux Store holds the application's state and manages that state. It provides methods like dispatch() to send actions and getState() to access the current state",
+        "State: State is data that represents the current condition of a component or application. When the state changes, React re-renders the component",
         "State: State is a built-in React object that stores data that can change over time and causes the component to re-render when it is updated.",
         "Action: An action is a plain JavaScript object that describes what happened or what should happen in the application. It must contain a type property and can optionally contain a payload.",
 
@@ -1952,6 +2054,17 @@ if (Number.isNaN(quantity)) {
       definition: [
         "The React Render Cycle is the process by which React updates the DOM when the state or props of a component change.",
         "It involves several steps including the component's render method being called, the virtual DOM being updated, and the actual DOM being synchronized.",
+      ],
+    },
+
+    {
+      title: "How to optimize a React application",
+      definition: [
+        "1. Code Splitting & Lazy Loading",
+        "2. Asset & Image Optimization",
+        "3. Taming Re-renders (useCallback, useMemo, React.memo)",
+        "4. List Virtualization (The DOM Saver)",
+        "5. Debouncing API Calls",
       ],
     },
   ],
@@ -2628,28 +2741,6 @@ server.listen(3000, () => {
         "devDependencies are packages required mainly during development, testing, linting, and building.",
       ],
     },
-    {
-      title: "Event Loop",
-      definition: [
-        "Event Loop is a mechanism in Node.js that allows it to handle asynchronous operations and execute their callbacks when the Call Stack is empty.",
-        "The Event Loop is a mechanism in Node.js that continuously checks the Call Stack and callback queues, and moves callbacks to the Call Stack when it is empty.",
-        "The Event Loop is a mechanism in Node.js that allows it to perform non-blocking I/O operations, despite the fact that JavaScript is single-threaded.",
-      ],
-    },
-
-    {
-      title: "What is require() in Node.js? How is it different from import?",
-      definition: [
-        "require() is used to import modules or packages in CommonJS",
-        "require() is used in CommonJS modules.",
-        "require() loads modules synchronously.",
-        "import is used to import modules or packages using ES Modules (ESM).",
-        "import is used in ES Modules.",
-        "import supports static analysis and modern JavaScript features.",
-      ],
-    },
-
-  
 
     {
       title: "Vite",
@@ -2658,6 +2749,90 @@ server.listen(3000, () => {
         "It is mainly used for development and building applications for production.",
       ],
     },
+
+    {
+      title: "HTTP Status Codes",
+      definition: [
+        "200 → Success Request successful. Example: getting products successfully.",
+        "201 → Created → New resource created successfully. Example: creating a product.",
+        "400 → Bad Request → Client sent invalid data/request.",
+        "401 → Unauthorized → Authentication is required or token is invalid/missing",
+        "403 → Forbidden → User is authenticated but doesn't have permission",
+        "404 → Not Found → Requested resource/route was not found.",
+        "429 → Too Many Requests → Client has sent too many requests in a given amount of time.",
+        "500 → Internal Server Error → Unexpected error occurred on the server",
+      ],
+    },
+
+    {
+      title: "What are HTTP Methods?",
+      definition: [
+        "GET - Used to retrieve data from the server.",
+        "POST - Used to send data to the server, commonly to create a new resource.",
+        "PUT - Used to replace an entire existing resource with new data.",
+        "PATCH - Used to update specific fields of an existing resource.",
+        "DELETE - Used to delete an existing resource.",
+      ],
+    },
+
+    {
+      title: "What is HTTP?",
+      definition: [
+        "HTTP stands for HyperText Transfer Protocol.",
+        "It is a communication protocol used to transfer data between a client and a server over a network.",
+        "HTTP is commonly used by web applications and APIs for client-server communication.",
+      ],
+    },
+
+    {
+      title: "What is an API?",
+      definition: [
+        "API stands for Application Programming Interface.",
+        "An API is an interface that allows different software applications to communicate with each other.",
+        "For example, a frontend application can communicate with a backend server through an API.",
+      ],
+    },
+
+    {
+      title: "What is a REST API?",
+      definition: [
+        "REST stands for Representational State Transfer.",
+        "REST is an architectural style for designing web APIs.",
+        "REST APIs commonly use HTTP methods such as GET, POST, PUT, PATCH, and DELETE.",
+        "REST APIs commonly exchange data in JSON format.",
+      ],
+    },
+
+    {
+      title: "What is an HTTP API?",
+      definition: [
+        "An HTTP API is an API that uses the HTTP protocol for communication between a client and a server.",
+        "It can use HTTP methods such as GET, POST, PUT, PATCH, and DELETE.",
+        "REST APIs commonly use HTTP, but not every HTTP API is necessarily a REST API.",
+      ],
+    },
+
+    {
+      title: "What are the Types of APIs?",
+      definition: [
+        "REST API - An API that follows the REST architectural style and commonly uses HTTP.",
+        "SOAP API - A protocol-based API that commonly uses XML for data exchange.",
+        "GraphQL API - An API query language that allows clients to request specific data.",
+        "WebSocket API - An API that provides real-time, bidirectional communication between the client and server.",
+      ],
+    },
+
+    {
+      title: "Types of Cache ",
+      definition: [
+        "Browser Cache",
+        "Server Cache",
+        "Database Cache",
+        "CDN Cache",
+        "Application Cache",
+      ],
+    },
+
     {
       title: "What is Non-blocking?",
       definition: [
@@ -2690,36 +2865,14 @@ server.listen(3000, () => {
     },
 
     {
-      title: "HTTP Status Codes",
+      title: "What is require() in Node.js? How is it different from import?",
       definition: [
-        "200 → Success Request successful. Example: getting products successfully.",
-        "201 → Created → New resource created successfully. Example: creating a product.",
-        "400 → Bad Request → Client sent invalid data/request.",
-        "401 → Unauthorized → Authentication is required or token is invalid/missing",
-        "403 → Forbidden → User is authenticated but doesn't have permission",
-        "404 → Not Found → Requested resource/route was not found.",
-        "500 → Internal Server Error → Unexpected error occurred on the server",
-      ],
-    },
-
-    {
-      title: "Types of APIs",
-      definition: [
-        "REST APIs: Representational State Transfer APIs that use HTTP methods.",
-        "GraphQL APIs: A query language for APIs that allows clients to request specific data.",
-        "SOAP APIs: Simple Object Access Protocol APIs that use XML format.",
-        "WebSocket APIs: Real-time communication protocols for bidirectional data exchange.",
-      ],
-    },
-
-    {
-      title: "Types of Cache ",
-      definition: [
-        "Browser Cache",
-        "Server Cache",
-        "Database Cache",
-        "CDN Cache",
-        "Application Cache",
+        "require() is used to import modules or packages in CommonJS",
+        "require() is used in CommonJS modules.",
+        "require() loads modules synchronously.",
+        "import is used to import modules or packages using ES Modules (ESM).",
+        "import is used in ES Modules.",
+        "import supports static analysis and modern JavaScript features.",
       ],
     },
 
@@ -2857,62 +3010,67 @@ server.listen(3000, () => {
         "Third-party (cors, morgan)",
       ],
     },
+
     {
-      title: "Schema",
+      title: "JWT (JSON Web Token) ",
       definition: [
-        "A schema is a blueprint that defines the structure and constraints of data in a database.",
-        "Schema is a blueprint or structure that defines data is organized with database.is show relationship between tables, fields of table but does not contain actual data",
+        "JWT (JSON Web Token) is a token-based, stateless authentication mechanism used to securely transmit information between the client and server. ",
+        "The server can use the token to identify and authenticate the user without storing session state on the server.",
+        "Three parts of a JWT",
+
+        "1. Header Contains information about the token, such as the algorithm and token type (e.g., HS256, RS256).",
+        "2. Payload contains the claims — user data like userId, email, role, and expiry time (exp). This is Base64 encoded, NOT encrypted, so sensitive data should not be stored here.",
+        "3. Signature Used to verify that the token has not been modified and that it was created using the expected secret/key",
+
+        "Header → Contains token type and signing algorithm.",
+        "Payload → Contains claims/data such as user ID or role.",
+        "Signature → Verifies that the token hasn't been changed.",
       ],
     },
 
     {
-      title: "What is express.Router() and why do we use it?",
+      title:
+        "Where should a JWT be stored on the client, and what are the common options?",
       definition: [
-        [
-          "express.Router() is used to create modular and separate route handlers in an Express.js application. It helps us organize routes into different files.",
-        ],
+        "JWTs can be stored in the browser's localStorage or sessionStorage.",
+        "Alternatively, they can be stored in HTTP-only cookies for better security.",
       ],
     },
 
     {
-      title: "What is express.Router()?",
+      title: "Authentication / Authorization (அங்கீகரிப்பு / அனுமதி)",
       definition: [
-        "express.Router() is used to create modular and mountable route handlers. It helps us organize related routes into separate files and keep the application clean and maintainable.",
-        "Router instance/create a router",
-        "It is used to create a new router instance.",
-        "it is not a middleware",
-        "Modular → தனித்தனி பகுதிகளாகப் பிரிக்கப்பட்ட",
-        "Mountable → குறிப்பிட்ட path-க்கு இணைக்கக்கூடிய",
-        "Related routes → தொடர்புடைய routes",
-        "Maintainable → எளிதாக பராமரிக்கக்கூடிய",
+        "Identity 👤 Authentication is the process of verifying(who you are) a user's identity — for example, using email and password.",
+        "Permission 🔐 Authorization is the process of checking what an authenticated user is allowed (What can you access?) to access or do, often based on roles and permissions.",
+        "Both are commonly used to secure applications and protect resources.",
+        "Authentication is the process of verifying the identity of the API client/user before allowing access to protected resources.",
       ],
     },
 
     {
-      title: "How do you use Router?",
+      title: "Common API authentication methods",
       definition: [
-        "Create routes using express.Router().",
-        "Import the router into app.js or server.js.",
-        "Register it using app.use().",
+        "API Keys",
+        "OAuth 2.0",
+        "JWT (JSON Web Tokens)",
+        "Session-based Authentication",
       ],
     },
 
     {
-      title: "What are HTTP Methods?",
+      title:
+        "What is the difference between authentication middleware and authorization middleware in Express?",
       definition: [
-        "GET - Used to retrieve/fetch data from the server..",
-        "POST - Used to send data to the server, commonly to create a new resource.",
-        "PUT - Used to replace the entire resource with new data.",
-        "PATCH - Used to update specific fields of an existing resource",
-        "DELETE - Remove data.",
+        "Authentication middleware → Verifies who the user is, usually by checking a session, JWT, or other credentials.",
+        "Authorization middleware → Checks what the authenticated user is allowed to do, usually based on roles or permissions.",
       ],
     },
+
     {
-      title: "What is a REST API?",
+      title: "What is error-handling middleware in Express?",
       definition: [
-        "REST (Representational State Transfer) is an architectural style for building web services.",
-        "that allow clients and servers to communicate using HTTP methods.",
-        "REST APIs commonly exchange data in JSON format.",
+        "Error handling is the process of detecting, catching, and managing errors in an application. In Express.js, we use error-handling middleware to handle errors and send an appropriate response to the client.",
+        "Appropriate - பொருத்தமான ",
       ],
     },
 
@@ -2936,33 +3094,14 @@ server.listen(3000, () => {
     },
 
     {
-      title: "REST API and HTTP API",
-      definition: [
-        "REST API is a type of API that follows the REST architectural style.",
-        "HTTP API is an API that uses HTTP protocol for communication.",
-      ],
-    },
-    {
-      title:
-        "What is error-handling middleware in Express, and how do you identify it?",
-      definition: [
-        "Error handling is the process of detecting, catching, and managing errors in an application. In Express.js, we use error-handling middleware to handle errors and send an appropriate response to the client.",
-      ],
-    },
-    {
-      title: "Difference between PUT and PATCH",
-      definition: [
-        "PUT Used to replace the entire resource with new data.",
-        "PATCH Used to update specific fields of an existing resource.",
-      ],
-    },
-    {
-      title: "What is the difference between POST and PUT?",
+      title: "Difference between POST, PUT and PATCH",
       definition: [
         "POST is used to create a new resource.",
-        "PUT is used to update an existing resource.",
+        "PUT is used to replace the entire resource with new data.",
+        "PATCH is used to update specific fields of an existing resource.",
       ],
     },
+
     {
       title: "Idempotency",
       definition: [
@@ -2992,6 +3131,37 @@ server.listen(3000, () => {
     },
 
     {
+      title: "Schema",
+      definition: [
+        "A schema is a blueprint that defines the structure and constraints of data in a database.",
+        "Schema is a blueprint or structure that defines data is organized with database.is show relationship between tables, fields of table but does not contain actual data",
+      ],
+    },
+
+    {
+      title: "What is express.Router()?",
+      definition: [
+        "express.Router() is used to create modular and mountable(separate) route handlers. It helps us organize related routes into separate files and keep the application clean and maintainable.",
+        "Router instance/create a router",
+        "It is used to create a new router instance.",
+        "it is not a middleware",
+        "Modular → தனித்தனி பகுதிகளாகப் பிரிக்கப்பட்ட",
+        "Mountable → குறிப்பிட்ட path-க்கு இணைக்கக்கூடிய",
+        "Related routes → தொடர்புடைய routes",
+        "Maintainable → எளிதாக பராமரிக்கக்கூடிய",
+      ],
+    },
+
+    {
+      title: "How do you use Router?",
+      definition: [
+        "Create routes using express.Router().",
+        "Import the router into app.js or server.js.",
+        "Register it using app.use().",
+      ],
+    },
+
+    {
       title: "Difference between app.use() and app.get()",
       definition: [
         "app.use() → used to register middleware. It can run for multiple HTTP methods.",
@@ -3010,15 +3180,20 @@ server.listen(3000, () => {
     {
       title: "What is express.json()?",
       definition: [
-        "express.json() is middleware used to parse incoming JSON request bodies, so we can access the data through req.body.",
+        "express.json() is built-in Express middleware used to parse incoming JSON request bodies. It allows us to access the data using req.body.",
       ],
     },
     {
       title: "What is express.urlencoded()?",
       definition: [
-        "It parses URL-encoded form data.",
-        "It is commonly used for HTML form submissions.",
-        "express.urlencoded() is middleware used to parse data sent from HTML forms using application/x-www-form-urlencoded format.",
+        "express.urlencoded() is built-in Express middleware used to parse URL-encoded form data, commonly submitted through HTML forms. The parsed data can be accessed using req.body.",
+      ],
+    },
+
+    {
+      title: "Body Parser",
+      definition: [
+        "Body Parser is middleware used to parse incoming request body data. In Express, express.json() handles JSON data and express.urlencoded() handles URL-encoded form data.",
       ],
     },
 
@@ -3031,7 +3206,6 @@ server.listen(3000, () => {
         "தமிழில்: CORS என்பது different domains அல்லது origins-களுக்கு இடையில் requests அனுமதிப்பதற்கான ஒரு பாதுகாப்பு முறை.",
       ],
     },
-    
 
     {
       title: "What is Helmet?",
@@ -3087,66 +3261,7 @@ server.listen(3000, () => {
         "Store secrets in environment variables.",
       ],
     },
-    {
-      title: "How do you organize a large Express project?",
-      definition: [
-        "Separate code into controllers, models, routes, middleware, services, config, and utils.",
-        "Follow the MVC architecture.",
-      ],
-    },
 
-    {
-      title: "JWT (JSON Web Token) ",
-      definition: [
-        "JWT (JSON Web Token) is a token-based, stateless authentication mechanism used to securely transmit information between the client and server. ",
-        "The server can use the token to identify and authenticate the user without storing session state on the server.",
-        "Three parts of a JWT",
-
-        "1. Header Contains information about the token, such as the algorithm and token type (e.g., HS256, RS256).",
-        "2. Payload contains the claims — user data like userId, email, role, and expiry time (exp). This is Base64 encoded, NOT encrypted, so sensitive data should not be stored here.",
-        "3. Signature Used to verify that the token has not been modified and that it was created using the expected secret/key",
-
-        "Header → Contains token type and signing algorithm.",
-        "Payload → Contains claims/data such as user ID or role.",
-        "Signature → Verifies that the token hasn't been changed.",
-      ],
-    },
-
-    {
-      title: "Authentication / Authorization (அங்கீகரிப்பு / அனுமதி)",
-      definition: [
-        "Identity 👤 Authentication is the process of verifying(who you are) a user's identity — for example, using email and password.",
-        "Permission 🔐 Authorization is the process of checking what an authenticated user is allowed (What can you access?) to access or do, often based on roles and permissions.",
-        "Both are commonly used to secure applications and protect resources.",
-      ],
-    },
-
-    {
-      title:
-        "What is the difference between authentication middleware and authorization middleware in Express?",
-      definition: [
-        "Authentication middleware → Verifies who the user is, usually by checking a session, JWT, or other credentials.",
-        "Authorization middleware → Checks what the authenticated user is allowed to do, usually based on roles or permissions.",
-      ],
-    },
-
-    {
-      title:
-        "Where should a JWT be stored on the client, and what are the common options?",
-      definition: [
-        "JWTs can be stored in the browser's localStorage or sessionStorage.",
-        "Alternatively, they can be stored in HTTP-only cookies for better security.",
-      ],
-    },
-    {
-      title: "Body Parser",
-      definition: [
-        "app.use(express.json())",
-        "Body parser middleware parses incoming request bodies into JSON or URL-encoded format.",
-        "It allows developers to access request data using req.body in APIs.",
-        "தமிழில்: Body Parser என்பது request body data-ஐ parse செய்து req.body மூலம் access செய்ய உதவும் middleware ஆகும்.",
-      ],
-    },
     {
       title: "Compression (சுருக்கம்)",
       definition: [
@@ -3167,7 +3282,6 @@ server.listen(3000, () => {
       ],
     },
   ],
-
   mongodb: [
     {
       title: "What is MongoDB?",
@@ -3881,6 +3995,35 @@ server.listen(3000, () => {
       example: `Chit Fund Software, Online Chit Fund Management`,
     },
   ],
+  AI: [
+    {
+      title: "LLM = Large Language Model",
+      definition: [
+        "LLM stands for Large Language Model. It is an AI model trained on a large amount of text data to understand and generate human-like language.",
+        "LLM என்பது மிகப்பெரிய அளவிலான text/data-வை வைத்து train செய்யப்பட்ட AI model. இது மனிதர்களின் language-ஐ புரிந்துகொண்டு, text-ஐ generate செய்யவும், summarize, translate, question answering போன்ற language tasks செய்யவும் பயன்படுகிறது.",
+      ],
+      types: [
+        {
+          name: "GPT → OpenAI, Claude → Anthropic, Llama → Meta, Mistral → Mistral AI",
+        },
+      ],
+    },
+    {
+      title: "Agentic AI",
+      definition: [
+        "Agentic AI refers to artificial intelligence systems that can perform tasks autonomously, making decisions and taking actions without direct human intervention.",
+        "Agentic AI is an AI system that can autonomously plan, reason, use tools, take actions, observe the results, and adapt its actions to achieve a specific goal.",
+        "Agentic AI என்பது ஒரு குறிப்பிட்ட இலக்கை அடைவதற்காக, மனிதர் ஒவ்வொரு step-ஐயும் சொல்லாமல், தானாகவே plan செய்து, reasoning செய்து, tools-ஐ பயன்படுத்தி, actions எடுத்து, அதன் results-ஐ பார்த்து, தேவையான மாற்றங்களைச் செய்யும் AI system.",
+      ],
+    },
+
+    {
+      title: "RAG",
+      definition: [
+        "RAG stands for Retrieval-Augmented Generation. It retrieves relevant information from external data sources and provides that context to an LLM to generate a more accurate and context-aware response.",
+      ],
+    },
+  ],
   VSshortcuts: [
     {
       title: "Ctrl + P",
@@ -4109,6 +4252,13 @@ server.listen(3000, () => {
         "My responsibilities include developing frontend applications using React.js and Tailwind CSS, creating reusable components, and integrating APIs. I also focus on building responsive and user-friendly interfaces.",
       ],
     },
+
+    {
+      title: "One small point",
+      definition: [
+        "Since you told me you have 7 years of overall web-development experience, but around 2+ years of React experience, don't make the sentence sound like you have 7 years of React experience.",
+      ],
+    },
     {
       title: "Why did you choose React.js for your projects?",
       definition: [
@@ -4149,8 +4299,29 @@ server.listen(3000, () => {
   ],
   EnglishToTamil: [
     {
-      title: "",
+      title: "EnglishToTamil",
       definition: [
+        "Lexicographical = அகராதி வகை",
+        "Lexicographical = Tamil la “agaraadhi muraip padi” (அகராதி முறைப்படி) / “agara varisai” (அகர வரிசை) nu solluvaanga.",
+        "JavaScript la lexicographical order na, strings-a dictionary order-la compare panradhu (character by character, Unicode value padi).",
+        "apple < banana   // true",
+        "cat < car        // false  ('t' > 'r')",
+        "a < B            // false  (capital letters munnaadi varum)",
+        "[10, 9, 1, 100].sort()",
+        "// [1, 10, 100, 9]  ← lexicographical (string maadhiri)",
+        "[10, 9, 1, 100].sort((a, b) => a - b)",
+        "// [1, 9, 10, 100]",
+        "Tamil/other languages-ku: localeCompare use pannunga.",
+        "Summary",
+        "Default sort() = lexicographical (string order)",
+        "Numbers-ku (a, b) => a - b use pannunga",
+        "Language-aware sort-ku localeCompare",
+
+        "Mento- வழிகாட்டி",
+        "வழிகாட்டி (vazhikaatti) = vazhi kaatturavar, guide",
+        "ஆலோசகர் (aalosagar) = advisor, counselor",
+
+        "Ancestor = மூதாதையர் / முன்னோர்",
         "Constraints = கட்டுப்பாடுகள் / வரம்புகள்",
         "As a = ஆக / என்ற நிலையில்",
         "Modular = தொகுதிகளாக அமைந்த / பகுதிகளாகப் பிரிக்கப்பட்ட",
@@ -4176,7 +4347,6 @@ server.listen(3000, () => {
         "Defined - வரையறுக்கப்பட்ட",
         "descendants(சந்ததியினர்).",
         "among(இடையே)",
-        "intentionally - வேண்டுமென்றே",
         "Eventual - இறுதியில்",
         "Refactoring - மறுசீரமைப்பு",
         "Intercept - இடைமறி,  தடுத்து பிடி,  நடுவில் தலையிட்டு நிறுத்து",
@@ -4190,6 +4360,44 @@ server.listen(3000, () => {
         "Specified - குறிப்பிடப்பட்டது",
         "Define - வரையறுக்கவும்",
         "Efficiently - திறம்பட",
+      ],
+    },
+  ],
+  Notes: [
+    {
+      title: "",
+      definition: [
+        "When an array is combined with a string, JavaScript converts the array to a string using its toString() behavior.",
+        "let arr = [1, 2, 3]",
+        "console.log(arr + 'hello'); // Output: '1,2,3hello'",
+        "console.log(arr + ''); // Output: '1,2,3'",
+      ],
+    },
+    {
+      title: "Common UI States in Web Applications",
+      definition: [
+        "Empty State	தரவு இல்லாத நிலை	Database-ல் records இல்லாதபோது",
+        "Error State	பிழை நிலை	API request fail ஆகும்போது",
+        "Loading State	ஏற்றும் நிலை	API data வருவதற்காகக் காத்திருக்கும்போது",
+        "Low Internet State	இணைய வேகம் குறைவு	API response மெதுவாக வரும்போது",
+        "Success State	வெற்றிகரமான நிலை	Data save/update/delete ஆன பிறகு",
+        "No Search Results	தேடல் முடிவு இல்லை	Search செய்த data கிடைக்காதபோது",
+        "Permission Denied	அனுமதி மறுக்கப்பட்டது	User-க்கு access permission இல்லாதபோது",
+        "Session Expired - Login token expire ஆகும்போது",
+        "Form Validation	படிவ சரிபார்ப்பு	Required field அல்லது input தவறாக இருக்கும்போது",
+        "Offline State - Internet disconnect ஆனபோது",
+        "Partial Data State - சில data மட்டும் load ஆகும்போது",
+        "Unauthorized State - அனுமதிக்கப்படாத அணுகல் - அங்கீகாரம் இல்லை - User login செய்யாமல் protected page access செய்யும்போது",
+        "Not Found State (404)	பக்கம் கிடைக்கவில்லை	தவறான URL அல்லது resource இல்லாதபோது",
+        "Rate Limit State	Request வரம்பு மீறல்	அதிக requests அனுப்பும்போது",
+        "Maintenance State	பராமரிப்பு நிலை	Server maintenance-ல் இருக்கும்போது",
+        "Empty Form State	காலியான Form	User இன்னும் எந்த data-வும் enter செய்யாதபோது",
+        "Saving/Submitting State	சேமிக்கும் நிலை	Form submit செய்யும்போது",
+        "Disabled State	செயலற்ற நிலை	Button அல்லது input பயன்படுத்த முடியாதபோது",
+        "Confirmation State	உறுதிப்படுத்தும் நிலை	Delete செய்வதற்கு முன்பு confirmation கேட்கும்போது",
+        "Retry State	மீண்டும் முயற்சிக்கும் நிலை	Failed request-ஐ மறுபடியும் முயற்சிக்கும்போது",
+        "Cached Data State	- Internet இல்லாவிட்டாலும் முன்பு சேமித்த data-ஐ காட்டுவது.",
+        "Sync Pending State - Offline-ல் user செய்த changes server-க்கு இன்னும் sync ஆகவில்லை",
       ],
     },
   ],

@@ -35,6 +35,11 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "Kubernetes", path: "/kubernetes", icon: Layers },
     { name: "Data Structure", path: "/dataStructure", icon: Database },
     { name: "ECommerce", path: "/ECommerce", icon: Database },
+    {
+      name: "AI",
+      path: "/AI",
+      icon: Database,
+    },
     { name: "VS Shortcuts", path: "/VSshortcuts", icon: Database },
     { name: "UI/UX", path: "/UIUX", icon: Database },
     { name: "English", path: "/English", icon: Database },
