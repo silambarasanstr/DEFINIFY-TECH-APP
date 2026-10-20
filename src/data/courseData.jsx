@@ -754,8 +754,8 @@ export const courseData = {
     {
       title: "What is the difference between == and === in JavaScript?",
       definition: [
-        "== is the loose equality operator. It compares two values and performs type conversion if necessary.",
-        "=== is the strict equality operator. It compares both the value and the data type without type conversion.",
+        "== is the loose equality operator. It compares two values and may perform type conversion before comparing them.",
+        "=== is the strict equality operator. It compares both value and type without implicit type conversion.",
       ],
     },
 
@@ -763,7 +763,7 @@ export const courseData = {
       title: "What is the difference between null and undefined in JavaScript?",
       definition: [
         "null means a value is intentionally absent or empty.",
-        "undefined means a variable has been declared but a value has not been assigned, or a value is not available..",
+        "undefined means a variable can be declared but a value has not been assigned, or a value is not available..",
       ],
     },
 
@@ -841,12 +841,14 @@ if (Number.isNaN(quantity)) {
     {
       title: "Closures Function",
       definition: [
+        "A closure is a feature in JavaScript where an inner function remembers and can access variables from its outer scope, even after the outer function has finished executing.",
         " A closure is a function that remembers and can access variables from its outer scope, even after the outer function has finished executing.",
         " A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).",
         "Closures allow you to access and preserve data privately.",
         "It is commonly used in data encapsulation, counters, and function factories.",
-        "Yes 👍 Closure is mainly outer → inner access.",
+
         "An inner function can access variables from its outer function's scope.",
+        "Even after the outer function finishes executing",
       ],
     },
 
@@ -1012,9 +1014,10 @@ console.log(String(5) + 2);   // "52"
     {
       title: "Debouncing",
       definition: [
-        "Debouncing is a technique that delays the execution of a function until after a specified delay has passed since the last time it was invoked.",
+        "Debouncing is a technique that delays the execution of a function until after a Certain amount of time (specified delay) has passed since the last time it was invoked.",
         "It prevents unnecessary function calls when an event is triggered repeatedly.",
         "Commonly used in search inputs, Filters, Live validation, resize events, and API calls to improve performance.",
+        "",
       ],
     },
     {
@@ -1422,6 +1425,7 @@ console.log(String(5) + 2);   // "52"
     {
       title: "React Library",
       definition: [
+        "React Virtualization",
         "react-window - npm  react-window is a component library that helps render large lists of data quickly",
         "clsx என்பது React / Next.js-ல் CSS class-களை condition-க்கு ஏற்ப clean-ஆ manage பண்ண use பண்ணுற ஒரு சிறிய library.(Dynamic class names)",
         "Class Variance Authority (CVA) என்பது React/Tailwind CSS-ல் reusable components-க்கு variants manage பண்ண பயன்படும் library.(Dynamic class names + Variants (size, color, type, state) manage)",
@@ -1488,6 +1492,13 @@ console.log(String(5) + 2);   // "52"
       title: "What is SyntheticEvent in React?",
       definition: [
         "SyntheticEvent is a React wrapper around the browser's native event. It provides a consistent (சீரான / தொடர்ந்து ஒரே மாதிரியாக இருப்பது) event interface across different browsers.",
+        "SyntheticEvent-la important properties",
+        "event.type	Event type — click, change",
+        "event.target	Event trigger aana element",
+        "event.currentTarget	Handler attach pannirukkura element",
+        "event.preventDefault()	Browser-oda default action-ah stop pannum",
+        "event.stopPropagation()	Parent elements-ku event bubble aaguradhai stop pannum",
+        "event.nativeEvent	Original browser event",
       ],
     },
 
@@ -1588,7 +1599,7 @@ console.log(String(5) + 2);   // "52"
     {
       title: "State",
       definition: [
-        "State is a built-in React feature used to store data that belongs to a component. State can change over time, and when it changes, React re-renders the component. We update state using a setter function, never by changing it directly.",
+        "State is a built-in React feature used to store data that belongs to a component. State can change over time, and when the state changes, React re-renders the component. We update state using a setter function, never by changing it directly.",
         "State is a built-in React object used to store data or information about a component. State can change over time, and when the state changes, React re-renders the component. We update state using a setter function.",
         "It can be any type, like a number, string, boolean, array, or object.",
       ],
@@ -2009,6 +2020,7 @@ console.log(String(5) + 2);   // "52"
       title: "Code Splitting",
       definition: [
         "Code splitting is the process of splitting a large JavaScript bundle into smaller chunks that can be loaded when needed. It helps reduce the initial bundle size and improves the application's loading performance.",
+
         "Code splitting is a technique of splitting the application's JavaScript bundle into smaller chunks. These chunks can be loaded when they are needed instead of loading the entire application at once. It helps improve the initial loading performance of the application.",
       ],
     },
@@ -2016,7 +2028,10 @@ console.log(String(5) + 2);   // "52"
     {
       title: "Composition in React",
       definition: [
-        "Building components by combining smaller components instead of inheriting from them.Composition allows components to be combined using props and children to share behavior and UI.",
+        "Composition in React is a technique of combining multiple reusable components to build complex user interfaces. It helps improve code reusability and maintainability.",
+
+        "Composition na, chinna chinna components-ah combine panni oru periya component create panradhu.",
+
         "Composition patterns",
         "Children Pattern (Most Common)",
         "Props-based Composition",
@@ -2040,7 +2055,8 @@ console.log(String(5) + 2);   // "52"
     {
       title: "Error Boundary",
       definition: [
-        "Error Boundary is a React component that catches JavaScript errors in its child component tree during rendering and displays a fallback UI instead of crashing the entire application.",
+        "An Error Boundary is a React component that catches JavaScript errors in its child components during rendering.",
+        "It displays a fallback UI when an error occurs.",
       ],
     },
     {
@@ -2063,8 +2079,25 @@ console.log(String(5) + 2);   // "52"
         "1. Code Splitting & Lazy Loading",
         "2. Asset & Image Optimization",
         "3. Taming Re-renders (useCallback, useMemo, React.memo)",
-        "4. List Virtualization (The DOM Saver)",
+
         "5. Debouncing API Calls",
+      ],
+    },
+    {
+      title: "React performance optimization techniques",
+
+      definition: [
+        "Recreated - மீண்டும் உருவாக்கப்பட்டது",
+        "Recomputed - மீண்டும் கணக்கிடப்பட்டது",
+        "Recreated the component - Component-ai மீண்டும் உருவாக்கியது.",
+        "Recomputed the value - Value-ai மீண்டும் கணக்கிட்டது.",
+
+        "Use React.memo to prevent unnecessary re-renders of functional components.",
+        "Use useCallback to memoize functions and prevent them from being recreated on every render.",
+        "Use useMemo to memoize expensive calculations and prevent them from being recomputed on every render.",
+        "Implement code splitting to load components only when needed.",
+        "Use lazy loading for images and other heavy assets.",
+        "React Virtualization - Render only the visible items in a list to improve performance.",
       ],
     },
   ],
@@ -2399,7 +2432,7 @@ let age = 25;
       title: "Interface",
       definition: [
         "An interface in TypeScript is used to define the structure and shape of an object.",
-        "It helps enforce type safety and improves code readability and maintainability.",
+        "It helps enforce(அமல்படுத்து / கட்டாயப்படுத்து) type safety and improves code readability and maintainability.",
         "தமிழில்: Interface என்பது object-ன் structure மற்றும் properties-ஐ define செய்ய பயன்படுத்தப்படுகிறது.",
       ],
       example: `
@@ -2435,7 +2468,18 @@ const user: User = {
 `,
     },
     {
-      title: "Union Type",
+      title:
+        "What is the difference between interface and type alias in TypeScript?",
+      definition: [
+        "Interfaces and type aliases are both used to define the structure of an object in TypeScript, but they have some key differences.",
+        "Interfaces can be extended and implemented, while type aliases cannot.",
+        "Interfaces are used for defining the shape of an object, while type aliases can be used for any type.",
+        "Interface: An interface defines the structure of an object by specifying its properties and methods.",
+        "Type Alias: A type alias gives a name to any type, including objects, primitive types, union types, and tuples.",
+      ],
+    },
+    {
+      title: "Union Type (allows a variable to hold multiple types of values)",
       definition: [
         "A union type allows a variable to hold multiple types of values.",
         "It is created using the | (pipe) operator in TypeScript.",
@@ -2503,7 +2547,7 @@ if (order) {
 `,
     },
     {
-      title: "Intersection Type",
+      title: "Intersection Type (combines multiple types into a single type.)",
       definition: [
         "An intersection type combines multiple types into a single type.",
         "It is created using the & (ampersand) operator in TypeScript.",
@@ -2542,7 +2586,7 @@ const result2 = getData<number>(100);
 `,
     },
     {
-      title: "Enum",
+      title: "Enum (constant values)",
       definition: [
         "An enum in TypeScript is used to define a set of named constant values.",
         "It helps improve code readability and maintainability.",
@@ -2558,7 +2602,7 @@ const userRole: Role = Role.Admin;
 `,
     },
     {
-      title: "Tuple",
+      title: "Tuple (fixed-length and fixed types array special type of array)",
       definition: [
         "A tuple is a special type of array in TypeScript where the number of elements and their types are fixed.",
         "It allows storing multiple values with different types in a specific order.",
@@ -2587,23 +2631,7 @@ data = true;
 console.log(data);
 `,
     },
-    {
-      title: "Unknown",
-      definition: [
-        "The unknown type in TypeScript represents a value whose type is not known.",
-        "It is safer than the any type because type checking is required before using the value.",
-        "தமிழில்: Unknown என்பது type தெரியாத value-ஐ represent செய்யும் TypeScript type ஆகும்.",
-      ],
-      example: `let value: unknown;
 
-value = "Simbu";
-value = 25;
-
-if (typeof value === "string") {
-  console.log(value.toUpperCase());
-}
-`,
-    },
     {
       title: "Void",
       definition: [
@@ -2646,6 +2674,23 @@ console.log(strLength);
 const input = e.target as HTMLInputElement;
 const data = response.data as Order;
 
+`,
+    },
+    {
+      title: "Unknown",
+      definition: [
+        "The unknown type in TypeScript represents a value whose type is not known.",
+        "It is safer than the any type because type checking is required before using the value.",
+        "தமிழில்: Unknown என்பது type தெரியாத value-ஐ represent செய்யும் TypeScript type ஆகும்.",
+      ],
+      example: `let value: unknown;
+
+value = "Simbu";
+value = 25;
+
+if (typeof value === "string") {
+  console.log(value.toUpperCase());
+}
 `,
     },
     {
@@ -2978,19 +3023,17 @@ server.listen(3000, () => {
       definition: [
         "Express.js is a minimal and flexible web framework for Node.js used to build APIs and web applications.",
         "It simplifies routing, middleware handling, and server creation.",
-        "தமிழில்: Express.js என்பது Node.js-க்கு பயன்படுத்தப்படும் ஒரு lightweight web framework ஆகும். இது APIs மற்றும் web applications உருவாக்க உதவுகிறது.",
       ],
     },
     {
       title: "Why use Express.js?",
       definition: [
+        "Fast development",
         "Easy routing",
+        "Error handling",
         "Middleware support",
         "REST API development",
-        "Fast development",
         "Template engine support",
-        "Error handling",
-        "Static file serving",
       ],
     },
     {
@@ -3008,6 +3051,7 @@ server.listen(3000, () => {
         "Error-handling ((err, req, res, next) => {})",
         "Built-in (express.json(), express.static())",
         "Third-party (cors, morgan)",
+        "app.use()	Middleware-ஐ register செய்யும்",
       ],
     },
 
@@ -3025,6 +3069,20 @@ server.listen(3000, () => {
         "Header → Contains token type and signing algorithm.",
         "Payload → Contains claims/data such as user ID or role.",
         "Signature → Verifies that the token hasn't been changed.",
+
+        "Header - எந்த algorithm பயன்படுத்தப்படுகிறது என்று குறிப்பிடும்.",
+        "Payload - User ID போன்ற தகவல்களைக் கொண்டிருக்கும்.",
+        "Signature - Token மாற்றப்பட்டுள்ளதா என்பதை verify செய்ய உதவும்.",
+      ],
+    },
+
+    {
+      title: "Stateless and Stateful",
+      definition: [
+        "Stateless என்றால் ஒரு request-ஐ process செய்யும்போது, முந்தைய request-ன் information-ஐ server நினைவில் வைத்திருக்க வேண்டிய அவசியம் இல்லை.",
+        "Stateless means each request is processed independently without relying on the server to remember previous requests.",
+        "Stateful என்றால் ஒரு request-ஐ process செய்யும்போது, முந்தைய request அல்லது செயல்பாட்டின் state-ஐ maintain செய்து, அடுத்த செயல்பாட்டிற்குப் பயன்படுத்துவது.",
+        "Stateful means maintaining state or information from previous interactions to handle subsequent operations.",
       ],
     },
 
@@ -3054,15 +3112,6 @@ server.listen(3000, () => {
         "OAuth 2.0",
         "JWT (JSON Web Tokens)",
         "Session-based Authentication",
-      ],
-    },
-
-    {
-      title:
-        "What is the difference between authentication middleware and authorization middleware in Express?",
-      definition: [
-        "Authentication middleware → Verifies who the user is, usually by checking a session, JWT, or other credentials.",
-        "Authorization middleware → Checks what the authenticated user is allowed to do, usually based on roles or permissions.",
       ],
     },
 
@@ -3105,7 +3154,10 @@ server.listen(3000, () => {
     {
       title: "Idempotency",
       definition: [
+        "Idempotency is a property where performing the same operation multiple times produces the same result as performing it once.",
         "An operation is idempotent if making the same request multiple times has the same intended effect as making it once.",
+        "Intended - நோக்கமாகக் கொண்ட / உத்தேசித்த",
+        "As intended - எதிர்பார்த்தபடி",
       ],
     },
     {
@@ -3135,6 +3187,7 @@ server.listen(3000, () => {
       definition: [
         "A schema is a blueprint that defines the structure and constraints of data in a database.",
         "Schema is a blueprint or structure that defines data is organized with database.is show relationship between tables, fields of table but does not contain actual data",
+        "Constraints = கட்டுப்பாடுகள் / வரம்புகள்",
       ],
     },
 
@@ -3142,38 +3195,12 @@ server.listen(3000, () => {
       title: "What is express.Router()?",
       definition: [
         "express.Router() is used to create modular and mountable(separate) route handlers. It helps us organize related routes into separate files and keep the application clean and maintainable.",
-        "Router instance/create a router",
         "It is used to create a new router instance.",
         "it is not a middleware",
         "Modular → தனித்தனி பகுதிகளாகப் பிரிக்கப்பட்ட",
         "Mountable → குறிப்பிட்ட path-க்கு இணைக்கக்கூடிய",
         "Related routes → தொடர்புடைய routes",
         "Maintainable → எளிதாக பராமரிக்கக்கூடிய",
-      ],
-    },
-
-    {
-      title: "How do you use Router?",
-      definition: [
-        "Create routes using express.Router().",
-        "Import the router into app.js or server.js.",
-        "Register it using app.use().",
-      ],
-    },
-
-    {
-      title: "Difference between app.use() and app.get()",
-      definition: [
-        "app.use() → used to register middleware. It can run for multiple HTTP methods.",
-        "app.get() → used to handle GET requests for a specific route",
-      ],
-    },
-
-    {
-      title: "Difference between res.send() and res.json()",
-      definition: [
-        "res.send() Sends a response to the client. It can send strings, HTML, objects, buffers, etc",
-        "res.json() Sends a JSON response to the client.",
       ],
     },
 
@@ -3198,12 +3225,37 @@ server.listen(3000, () => {
     },
 
     {
+      title: "How do you use Router?",
+      definition: [
+        "Create routes using express.Router().",
+        "Import the router into app.js or server.js.",
+        "Register it using app.use().",
+      ],
+    },
+
+    {
+      title: "Difference between app.use() and app.get()",
+      definition: [
+        "app.use() → used to register middleware. It can run for multiple HTTP methods.",
+        "app.get() → used to handle GET requests for a specific route",
+      ],
+    },
+
+    {
+      title: "Difference between res.send() and res.json()",
+      definition: [
+        "res.send() Sends a response to the client. It can send strings, HTML, objects, buffers, etc",
+        "res.send()	Response அனுப்பும்",
+        "res.json() Sends a JSON response to the client.",
+        "res.json()	JSON response அனுப்பு",
+      ],
+    },
+
+    {
       title: "CORS (குறுக்கு-மூல கோரிக்கைகள்)",
       definition: [
         "CORS (Cross-Origin Resource Sharing) is a browser security mechanism that controls whether a web application from one origin can to access resources from another origin.",
-        "CORS (Cross-Origin Resource Sharing) is a technique used to allow or restrict requests between different domains or origins.",
         "It is commonly used to enable secure communication between frontend and backend applications running on different origins.",
-        "தமிழில்: CORS என்பது different domains அல்லது origins-களுக்கு இடையில் requests அனுமதிப்பதற்கான ஒரு பாதுகாப்பு முறை.",
       ],
     },
 
@@ -3288,6 +3340,7 @@ server.listen(3000, () => {
       definition: [
         "MongoDB is a NoSQL, document-oriented database.",
         "It stores data in flexible JSON-like documents called BSON.",
+        "MongoDB stores documents internally in BSON format.",
       ],
     },
     {
@@ -3532,13 +3585,29 @@ server.listen(3000, () => {
   gitgithub: [
     {
       title: "Git",
-      definition:
+      definition: [
         "Git is a software for tracking changes in any set of files, usually used for coordinating work among programmers.",
+        "Git is a distributed version control system used to track changes in source code and collaborate with other developers",
+      ],
     },
     {
       title: "GitHub",
-      definition:
+      definition: [
         "GitHub is a provider of Internet hosting for software development and version control using Git.",
+        "GitHub is a cloud-based platform used to store Git repositories, collaborate with developers, and manage code online",
+      ],
+    },
+
+    {
+      title: "Git and GitHub",
+      definition: [
+        "Version Control System",
+        "Cloud-based platform",
+        "Code changes-ஐ track செய்யும்",
+        "Code-ஐ online-ல் store செய்யலாம்",
+        "Local-லேயே பயன்படுத்தலாம்",
+        "Internet மூலம் access செய்யலாம்",
+      ],
     },
     {
       title: "GitHub Commands",
@@ -3592,13 +3661,14 @@ server.listen(3000, () => {
     {
       title: "Continuous Integration (CI)",
       definition: [
-        "Continuous Integration is the practice of automatically integrating code changes into a shared repository and running tests to detect issues early.",
+        "Continuous Integration is the practice of automatically integrating code changes from multiple developers into a shared repository and running automated tests to detect errors early.",
       ],
     },
 
     {
       title: "Continuous Deployment (CD)",
       definition: [
+        "Continuous Delivery is the practice of automatically building, testing, and preparing code changes for release to production, with manual approval typically required for deployment.",
         "Continuous Deployment automatically deploys every change that passes testing directly to production without manual approval.",
       ],
     },
@@ -4212,6 +4282,17 @@ server.listen(3000, () => {
     },
 
     {
+      title:
+        "Can you introduce yourself, explain your 7 years of web development experience, describe your 2 years of React experience, and tell me about the projects you have worked on?",
+      definition: [
+        "Hi, I'm Silambarasan from Vellore. I have 7 years of experience in frontend development, including 2 years of experience working with React.js.",
+        "My primary technical skills include HTML, CSS, JavaScript, Bootstrap, React.js, and Tailwind CSS.",
+        "In my recent projects, I have worked on e-commerce websites and admin dashboards. My responsibilities included building reusable React components, integrating REST APIs, and developing responsive, user-friendly interfaces.",
+        "I'm looking for an opportunity to apply my frontend skills, contribute to the team, and continue growing as a React Developer.",
+      ],
+    },
+
+    {
       title: "please introduce yourself",
       definition:
         "I am Silambarasan from Vellore I am a frontend developer with 7 years of experience. I specialize in HTML, CSS, JavaScript, and React.js.",
@@ -4301,26 +4382,19 @@ server.listen(3000, () => {
     {
       title: "EnglishToTamil",
       definition: [
-        "Lexicographical = அகராதி வகை",
-        "Lexicographical = Tamil la “agaraadhi muraip padi” (அகராதி முறைப்படி) / “agara varisai” (அகர வரிசை) nu solluvaanga.",
-        "JavaScript la lexicographical order na, strings-a dictionary order-la compare panradhu (character by character, Unicode value padi).",
-        "apple < banana   // true",
-        "cat < car        // false  ('t' > 'r')",
-        "a < B            // false  (capital letters munnaadi varum)",
-        "[10, 9, 1, 100].sort()",
-        "// [1, 10, 100, 9]  ← lexicographical (string maadhiri)",
-        "[10, 9, 1, 100].sort((a, b) => a - b)",
-        "// [1, 9, 10, 100]",
-        "Tamil/other languages-ku: localeCompare use pannunga.",
-        "Summary",
-        "Default sort() = lexicographical (string order)",
-        "Numbers-ku (a, b) => a - b use pannunga",
-        "Language-aware sort-ku localeCompare",
-
+        "Recreated - மீண்டும் உருவாக்கப்பட்டது",
+        "Recomputed - மீண்டும் கணக்கிடப்பட்டது",
+        "Recreated the component - Component-ai மீண்டும் உருவாக்கியது.",
+        "Recomputed the value - Value-ai மீண்டும் கணக்கிட்டது.",
+        "Early - ஆரம்பத்திலேயே / முன்கூட்டியே / சீக்கிரமாக.",
+        "Computation = கணக்கீடு",
+        "Re-computation = மீண்டும் கணக்கீடு செய்தல்",
+        "Expensive computation = அதிக நேரம் அல்லது resources தேவைப்படும் கணக்கீடு",
+        "Context = சூழல் / பின்னணி",
+        "Enforce = அமல்படுத்து / கட்டாயப்படுத்து",
         "Mento- வழிகாட்டி",
         "வழிகாட்டி (vazhikaatti) = vazhi kaatturavar, guide",
         "ஆலோசகர் (aalosagar) = advisor, counselor",
-
         "Ancestor = மூதாதையர் / முன்னோர்",
         "Constraints = கட்டுப்பாடுகள் / வரம்புகள்",
         "As a = ஆக / என்ற நிலையில்",
@@ -4398,6 +4472,46 @@ server.listen(3000, () => {
         "Retry State	மீண்டும் முயற்சிக்கும் நிலை	Failed request-ஐ மறுபடியும் முயற்சிக்கும்போது",
         "Cached Data State	- Internet இல்லாவிட்டாலும் முன்பு சேமித்த data-ஐ காட்டுவது.",
         "Sync Pending State - Offline-ல் user செய்த changes server-க்கு இன்னும் sync ஆகவில்லை",
+      ],
+    },
+
+    {
+      title: "Lexicographical",
+      definition: [
+        "Lexicographical order is the way words are arranged in a dictionary, based on the alphabetical order of their component letters.",
+        "Lexicographical = அகராதி வகை",
+        "Lexicographical = Tamil la “agaraadhi muraip padi” (அகராதி முறைப்படி) / “agara varisai” (அகர வரிசை) nu solluvaanga.",
+        "JavaScript la lexicographical order na, strings-a dictionary order-la compare panradhu (character by character, Unicode value padi).",
+        "apple < banana   // true",
+        "cat < car        // false  ('t' > 'r')",
+        "a < B            // false  (capital letters munnaadi varum)",
+        "[10, 9, 1, 100].sort()",
+        "// [1, 10, 100, 9]  ← lexicographical (string maadhiri)",
+        "[10, 9, 1, 100].sort((a, b) => a - b)",
+        "// [1, 9, 10, 100]",
+        "Tamil/other languages-ku: localeCompare use pannunga.",
+        "Summary",
+        "Default sort() = lexicographical (string order)",
+        "Numbers-ku (a, b) => a - b use pannunga",
+        "Language-aware sort-ku localeCompare",
+      ],
+    },
+
+    {
+      title: "Chat GPT",
+      definition: [
+        "Chat GPT is a large language model developed by OpenAI that can generate human-like text based on the input it receives.",
+      ],
+    },
+
+    {
+      title: "Ask typeing",
+      definition: [
+        "Hi,Chat GPT I am going to apply for a job the React Developer role in a Startup Company . ",
+        "I am 7 years experienced in Web development and 2 years in React development. Now you are going to act as an interviewer.",
+        "Ask me Series of Questions one by one and i will answer",
+
+        "Hi, Chat GPT I am going to apply for a job the React Developer role in a Startup Company . I am 7 years experienced in Web development and 2 years in React development. Now you are going to act as an interviewer.Ask me Series of Questions one by one and i will answer.",
       ],
     },
   ],
