@@ -1659,8 +1659,10 @@ console.log(String(5) + 2);   // "52"
     {
       title: "React JS List & Keys",
       definition: [
-        "Lists are used to display a collection of data in React. They are created using the map() method to iterate over an array of data and return a new array of JSX elements.",
-        "A key is a unique identifier used when rendering a list of elements in React. It helps React identify which items have been added, removed, or changed, so React can efficiently update the DOM.",
+        "Lists are used to display a collection of data in React.",
+        "They are created using the map() method to iterate over an array of data and return a new array of JSX elements.",
+        "A key is a unique identifier used when rendering a list of elements in React. ",
+        "It helps React identify which items have been added, removed, or changed, so React can efficiently update the DOM.",
       ],
     },
 
@@ -1740,7 +1742,7 @@ console.log(String(5) + 2);   // "52"
       title: "useState()",
       definition: [
         "useState() is a React Hook used to create and manage state in a functional component. When the state changes, React re-renders the component. We update the state using the setter function returned by useState().",
-        "useState → data changes → re-render",
+
         "It returns an array with two elements: the current state value and a function to update it.",
       ],
     },
@@ -1761,9 +1763,31 @@ console.log(String(5) + 2);   // "52"
     {
       title: "What is useMemo()",
       definition: [
-        "useMemo() is a React Hook used to memoize a calculated value. It helps avoid unnecessary recalculations when the dependencies have not changed.",
-        "useMemo is a React Hook used for performance optimization. It memoizes the result of an expensive calculation and recalculates it only when its dependencies change. This helps avoid unnecessary recalculations during re-renders.",
-        "useMemo is a React Hook used to memoize a calculated value. It helps avoid unnecessary recalculations and can improve performance.",
+        "useMemo() is a React Hook used to memoize a calculated value.",
+        "It recalculates the value only when its dependencies change.",
+        "useMemo() is used for performance optimization.",
+        "It helps avoid unnecessary recalculations during re-renders.",
+
+        "Memoize - கணக்கிட்ட மதிப்பைச் சேமித்து வைத்தல்",
+        "Recompute = மீண்டும் கணக்கிடுதல்.",
+        "Recalculates - மீண்டும் கணக்கிடுகிறது",
+      ],
+    },
+
+    {
+      title: "React.memo()",
+      definition: [
+        "React.memo() is a React Hook used to memoize a component. It prevents the component from re-rendering if its props have not changed.",
+        "React.memo() is a higher-order component used to prevent unnecessary re-renders when a component's props have not changed. It helps improve performance.",
+      ],
+    },
+
+    {
+      title: "Easy way to remember",
+      definition: [
+        "useMemo() → memoizes a value.",
+        "useCallback() → memoizes a function.",
+        "React.memo() → memoizes a component.",
       ],
     },
 
@@ -1771,18 +1795,29 @@ console.log(String(5) + 2);   // "52"
       title: " useCallback()",
       definition: [
         "useCallback() is a React Hook used to memoize a function reference. It helps prevent the function from being recreated on every render when the dependencies have not changed.",
-        "useCallback is a React Hook used for performance optimization. It memoizes a function and returns the same function reference until its dependencies change. It is useful when we pass functions to child components, especially when those components are optimized with React.memo.",
+
+        "useCallback() is a React Hook used to memoize a function definition. It returns the same function reference between renders until its dependencies change.",
+
+        "It memoizes a function and returns the same function reference until its dependencies change. It is useful when we pass functions to child components, especially when those components are optimized with React.memo.",
+
         "useCallback is a React Hook used to memoize a function reference. It helps prevent creating a new function reference on every render, especially when passing functions to child components.",
-        "useCallback is used to memoize a function so that the same function instance is reused unless its dependencies change.",
-        "Helps prevent unnecessary re-renders of child components",
       ],
     },
 
     {
       title: "What is useRef()",
       definition: [
-        "useRef() is a React Hook used to access and interact with DOM elements directly. It can also be used to store a mutable value that persists across renders without causing a re-render when the value changes.",
+        "useRef() is a React Hook used to access and interact with DOM elements directly",
+        "It can also be used to store a mutable value",
+        "that persists across renders without causing a re-render when the value changes.",
         "useRef() value change ஆகும்போது component re-render ஆகாது.",
+
+        "Persist - நிலைத்திருத்தல் (Nilaithiruthal) / தொடர்ந்து வைத்திருத்தல்.",
+        "persists across renders - பல renders நடந்தாலும் value தொடர்ந்து இருக்கும்.",
+        "Persist between renders = ஒவ்வொரு render-க்கும் இடையில் value தொடர்ந்து இருக்கும்.",
+
+        "Causing - ஏற்படுத்துதல்",
+        "Without causing a re-render - மீண்டும் render ஆவதை ஏற்படுத்தாமல்",
       ],
     },
 
@@ -1866,16 +1901,15 @@ console.log(String(5) + 2);   // "52"
       ],
     },
     {
-      title: "Higher Order Function",
-      definition:
-        "A Higher Order Function (HOF) is just a function that takes another function as argument OR returns a function.",
-    },
-
-    {
       title: "What is the purpose of using HOC in React?",
       definition: [
         "The main purpose of an HOC is to reuse common logic and functionality across multiple components by wrapping a component and returning an enhanced component.",
       ],
+    },
+    {
+      title: "Higher Order Function",
+      definition:
+        "A Higher Order Function (HOF) is just a function that takes another function as argument OR returns a function.",
     },
 
     {
@@ -1894,24 +1928,33 @@ console.log(String(5) + 2);   // "52"
         "Redux follows 3 core principles",
 
         "A Redux Store holds the application's state and manages that state. It provides methods like dispatch() to send actions and getState() to access the current state",
-        "State: State is data that represents the current condition of a component or application. When the state changes, React re-renders the component",
+
         "State: State is a built-in React object that stores data that can change over time and causes the component to re-render when it is updated.",
+
         "Action: An action is a plain JavaScript object that describes what happened or what should happen in the application. It must contain a type property and can optionally contain a payload.",
 
         "Reducer: A reducer is a function that receives the current state and an action ",
+
         "Reducer determines how the state should change based on the action.",
+
         "Dispatch: Dispatch is used to send an action to the Redux store. The store passes the action to the reducer to update the state.",
+
         "A slice is a feature-based section of the Redux store that contains the initial state, reducers, and automatically generated action creators for that feature.",
+
         "React-Redux: React-Redux is the official library that connects Redux with React applications.",
+
         "useSelector() is a React-Redux hook used to read or select data from the Redux store inside a React component. When the selected state changes, the component re-renders.",
+
         "useSelector() → React component-ல் தேவையான state-ஐ select செய்யும்",
+
         "useDispatch() is a React-Redux hook used to get the dispatch function, which is used to send actions to the Redux store to update the state.",
+
         "Redux Toolkit (RTK): Redux Toolkit is the official recommended way to write Redux logic. It simplifies Redux development with APIs such as createSlice(), configureStore(), and createAsyncThunk().",
-        "Payload: Payload is the data or value passed along with an action, which the reducer can use to update the state.",
-        "getState() → current state-ஐ read பண்ணும்.",
+
+        "Payload: Payload is the data or value passed along with an action (சேர்ந்து / உடன்), which the reducer can use to update the state.",
+
         "getState() is a Redux store method used to retrieve the current state from the Redux store.",
-        "dispatch() is a Redux store method used to send an action to the Redux store, which triggers the reducer to update the state.",
-        "dispatch() → action-ஐ store-க்கு அனுப்பும்.",
+        "dispatch() is a Redux store method used to send an action to the Redux store, which triggers the reducer to update the state",
       ],
     },
 
@@ -1927,7 +1970,8 @@ console.log(String(5) + 2);   // "52"
         "componentDidMount() → component first time render aana piragu",
         "componentDidUpdate() → state/props update aana piragu",
         "componentWillUnmount() → component remove aagurathukku munnaadi",
-        "React lifecycle methods are methods used to execute code at different stages of a component’s lifecycle — mounting, updating, and unmounting. In class components, common methods are componentDidMount, componentDidUpdate, and componentWillUnmount. In functional components, we commonly use useEffect for lifecycle-related side effects.",
+
+        "React lifecycle methods are methods used to execute code at different stages of a component's lifecycle — mounting, updating, and unmounting. In class components, common methods are componentDidMount, componentDidUpdate, and componentWillUnmount. In functional components, we commonly use useEffect for lifecycle-related side effects.",
       ],
     },
 
@@ -1936,23 +1980,22 @@ console.log(String(5) + 2);   // "52"
       title: "Context",
       definition: [
         "useContext() is a React Hook used to access data from a Context without passing props through every level of the component tree. It helps avoid prop drilling and allows components to share data such as theme, language, or user information.",
+        "createContext()	Used to create a Context for sharing data between components.",
+        "useContext()	Used to access the value of a Context in a component.",
+        "createContext() → Context-ஐ உருவாக்குகிறது.",
+        "useContext() → Context-ல் இருக்கும் value-ஐ பெறுகிறது.",
       ],
     },
 
     {
       title: "React Query",
       definition: [
-        "React Query is a library used to fetch, cache, and manage server data in React applications.",
+        "React Query is a library used to fetch data from APIs, cache, and manage server data in React applications.",
         "React Query (இப்போது TanStack Query) என்பது API data-வை fetch, cache, update, sync செய்ய பயன்படும் ஒரு library.",
+        "Caches - தற்காலிகமாகச் சேமித்து வைக்கிறது / நினைவகத்தில் சேமிக்கிறது",
       ],
     },
 
-    {
-      title: "React Query (TanStack Query)",
-      definition: [
-        "React Query (TanStack Query) is a library used to manage server state in React. It helps fetch data from APIs, caches the data, handles loading and error states, and automatically refetches updated data. This reduces the need to write useEffect and manual state management for API calls.",
-      ],
-    },
     {
       title: "React Query Devtools",
       definition: "React Query Devtools is a tool for debugging React Query.",
@@ -1961,9 +2004,10 @@ console.log(String(5) + 2);   // "52"
     {
       title: "What is React.StrictMode?",
       definition: [
-        "React.StrictMode is a development-only feature in React that helps us find common bugs and potential problems in our components. It provides additional checks and warnings during development and does not affect the production build.",
-        "Strict Mode is a tool for highlighting potential problems in an application. It activates additional checks and warnings for its descendants(சந்ததியினர்).",
+        "Strict Mode is a tool for highlighting potential problems and finding common bugs in a React application.",
+        "It activates additional checks and warnings for its child components during development.",
         "Strict Mode does not render any visible UI. It only activates additional checks and warnings for its descendants.",
+        "descendants(சந்ததியினர்)",
       ],
     },
 
@@ -1971,7 +2015,6 @@ console.log(String(5) + 2);   // "52"
       title: "What is lazy loading in React? Why do we use React.lazy()?",
       definition: [
         "Lazy loading is a technique where components or code are loaded only when they are needed instead of loading everything at the initial page load. In React, we can use React.lazy() to lazy-load components. This can improve the initial loading performance of the application.",
-        "Lazy loading is the technique of loading a component or piece of code only when it is needed, instead of loading everything at the initial page load. In React, React.lazy() is commonly used for lazy loading components.",
       ],
     },
 
@@ -1982,30 +2025,19 @@ console.log(String(5) + 2);   // "52"
         "It improves the user experience by preventing blank screens and allowing React to gracefully handle loading states.",
       ],
     },
-    {
-      title: "Memory Leaks",
-      definition: [
-        "Memory leaks occur when objects are not properly cleaned up or released from memory.",
-        "Memory leaks can increase memory usage and cause the application to become slow, unstable, or crash.",
-        "A memory leak occurs when memory that is no longer needed is not released.",
-        "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
-        "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
-      ],
-    },
+
     {
       title: "State Lifting ",
       definition: [
-        "Lifting state up means moving shared state from a child component to their closest common parent component. The parent manages the state and passes the data and event handlers to the child components through props. We use it when multiple child components need to share or synchronize the same data.",
-        "State Lifting என்பது React-ல் பயன்படுத்தப்படும் ஒரு pattern. இதில் Child Component-ல் இருக்கும் state-ஐ, அதைப் பயன்படுத்தும் அனைத்து Child Components-க்கும் பொதுவான (Closest Common) Parent Component-க்கு மாற்றுவது ஆகும்.",
-        "Child state → Move to common Parent → Pass through props",
+        "Lifting state up is the process of moving state from a child component to their closest common parent component. ",
+        "It helps share data between sibling components",
       ],
     },
 
     {
       title: "React.Fragment",
       definition: [
-        "React.Fragment is used to group multiple elements or child components without adding an extra DOM element to the page. It helps us return multiple elements from a component without using an unnecessary wrapper like a <div>.",
-        "Fragment → Group elements → No extra DOM node",
+        "React.Fragment is used to group multiple elements or child components without adding an extra DOM element to the page.",
       ],
     },
 
@@ -2020,8 +2052,6 @@ console.log(String(5) + 2);   // "52"
       title: "Code Splitting",
       definition: [
         "Code splitting is the process of splitting a large JavaScript bundle into smaller chunks that can be loaded when needed. It helps reduce the initial bundle size and improves the application's loading performance.",
-
-        "Code splitting is a technique of splitting the application's JavaScript bundle into smaller chunks. These chunks can be loaded when they are needed instead of loading the entire application at once. It helps improve the initial loading performance of the application.",
       ],
     },
 
@@ -2029,9 +2059,7 @@ console.log(String(5) + 2);   // "52"
       title: "Composition in React",
       definition: [
         "Composition in React is a technique of combining multiple reusable components to build complex user interfaces. It helps improve code reusability and maintainability.",
-
         "Composition na, chinna chinna components-ah combine panni oru periya component create panradhu.",
-
         "Composition patterns",
         "Children Pattern (Most Common)",
         "Props-based Composition",
@@ -2044,7 +2072,7 @@ console.log(String(5) + 2);   // "52"
     {
       title: "Refactoring (மறுசீரமைப்பு) a React component",
       definition: [
-        "Refactoring a React component means improving the code structure, readability, and maintainability without changing how it works.",
+        "Refactoring a React component means improving the code structure, readability, and maintainability without changing its functionality",
         "Refactoring is a process of modifying the existing code to make it more efficient, maintainable, and reusable.",
         "large component split panrathu",
         "repeated code remove panrathu",
@@ -2055,14 +2083,51 @@ console.log(String(5) + 2);   // "52"
     {
       title: "Error Boundary",
       definition: [
-        "An Error Boundary is a React component that catches JavaScript errors in its child components during rendering.",
-        "It displays a fallback UI when an error occurs.",
+        "Error Boundary is a React component that catches JavaScript errors in its child components during rendering and displays a fallback UI instead of crashing the entire application.",
+        "Child components-ல் error ஏற்பட்டால், முழு application-ம் crash ஆகாமல் fallback UI-ஐக் காட்டும் React component தான் Error Boundary",
+        "Crash - செயலிழத்தல்",
+        "Crashing - செயலிழந்து கொண்டிருத்தல்",
       ],
     },
     {
       title: "React Testing Library",
       definition: [
-        "React Testing Library is a set of utilities (பல உதவிக்கருவிகளின் தொகுப்பு) for testing React components.",
+        "React Testing Library is a testing library used to test React components by simulating how users interact with the application.",
+        "ஒரு user application-ஐ எப்படிப் பயன்படுத்துகிறாரோ, அதேபோல் React components-ஐ test செய்யப் பயன்படும் library தான் React Testing Library.",
+        "Simulating - போலச் செய்தல் / உருவகப்படுத்துதல்.",
+        "Simulating how users interact with the application.",
+        "பயனர்கள் application-ஐ எப்படிப் பயன்படுத்துகிறார்களோ, அதுபோல் செய்து பார்ப்பது",
+      ],
+
+      typesTitle: "Interview key points",
+      types: [
+        {
+          name: "render()",
+          description: "Component-ஐ test environment-ல் render செய்யும்",
+        },
+        {
+          name: "screen",
+          description: "UI elements-ஐ கண்டுபிடிக்க உதவும்",
+        },
+        {
+          name: "fireEvent",
+          description: "User interaction-ஐ simulate செய்யும்",
+        },
+        {
+          name: "expect()",
+          description:
+            "Expected result சரியாக இருக்கிறதா என்று verify செய்யும்",
+        },
+      ],
+    },
+    {
+      title: "Memory Leaks",
+      definition: [
+        "Memory leaks occur when objects are not properly cleaned up or released from memory.",
+        "Memory leaks can increase memory usage and cause the application to become slow, unstable, or crash.",
+        "A memory leak occurs when memory that is no longer needed is not released.",
+        "In React, memory leaks often happen when timers, event listeners, subscriptions, or API requests are not cleaned up when a component unmounts.",
+        "Memory leaks can lead to increased memory consumption, poor performance, and application crashes.",
       ],
     },
     {
@@ -4384,6 +4449,7 @@ server.listen(3000, () => {
       definition: [
         "Recreated - மீண்டும் உருவாக்கப்பட்டது",
         "Recomputed - மீண்டும் கணக்கிடப்பட்டது",
+        "Recalculates - மீண்டும் கணக்கிடுகிறது.",
         "Recreated the component - Component-ai மீண்டும் உருவாக்கியது.",
         "Recomputed the value - Value-ai மீண்டும் கணக்கிட்டது.",
         "Early - ஆரம்பத்திலேயே / முன்கூட்டியே / சீக்கிரமாக.",
