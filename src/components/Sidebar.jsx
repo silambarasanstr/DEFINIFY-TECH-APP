@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   Code,
@@ -13,7 +12,6 @@ import {
   Cpu,
   Box,
   X,
-  Settings,
 } from "lucide-react";
 
 const Sidebar = ({ open, setOpen }) => {
@@ -31,23 +29,12 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "Git & GitHub", path: "/gitgithub", icon: GitBranch },
     { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Docker", path: "/docker", icon: Box },
-    { name: "Jenkins", path: "/jenkins", icon: Settings },
-    { name: "Kubernetes", path: "/kubernetes", icon: Layers },
     { name: "Data Structure", path: "/dataStructure", icon: Database },
     { name: "ECommerce", path: "/ECommerce", icon: Database },
-    {
-      name: "AI",
-      path: "/AI",
-      icon: Database,
-    },
     { name: "VS Shortcuts", path: "/VSshortcuts", icon: Database },
     { name: "UI/UX", path: "/UIUX", icon: Database },
     { name: "English", path: "/English", icon: Database },
-    {
-      name: "English To Tamil",
-      path: "/EnglishToTamil",
-      icon: Database,
-    },
+    {name: "English To Tamil",path: "/EnglishToTamil",icon: Database,},
   ];
 
   return (

@@ -2543,6 +2543,7 @@ const user: User = {
         "Type Alias: A type alias gives a name to any type, including objects, primitive types, union types, and tuples.",
       ],
     },
+
     {
       title: "Union Type (allows a variable to hold multiple types of values)",
       definition: [
@@ -2774,17 +2775,6 @@ if (typeof value === "string") {
         "Fast & event-driven",
         "Great for APIs & real-time apps",
         "Uses npm for packages",
-      ],
-      example: [
-        `import http from "http";
-  const server = http.createServer((req, res) => {
-  res.write("Hello World");
-  res.end();
-});
-server.listen(3000, () => {
-  console.log("Server running on port 3000");
-});  
-        `,
       ],
     },
 
@@ -3720,21 +3710,20 @@ server.listen(3000, () => {
     {
       title: "CI/CD Pipeline",
       definition: [
-        "CI/CD is a method to frequently deliver applications by automating stages like build, testing, and deployment.",
+        "CI/CD Pipeline is an automated process used to build, test, and deploy code changes to an application quickly and reliably",
       ],
     },
     {
       title: "Continuous Integration (CI)",
       definition: [
-        "Continuous Integration is the practice of automatically integrating code changes from multiple developers into a shared repository and running automated tests to detect errors early.",
+        "CI (Continuous Integration): Developers frequently merge their code changes into a shared repository, where automated builds and tests are performed.",
       ],
     },
 
     {
       title: "Continuous Deployment (CD)",
       definition: [
-        "Continuous Delivery is the practice of automatically building, testing, and preparing code changes for release to production, with manual approval typically required for deployment.",
-        "Continuous Deployment automatically deploys every change that passes testing directly to production without manual approval.",
+        "CD (Continuous Delivery / Continuous Deployment): Automatically prepares or deploys the tested code to the production environment.",
       ],
     },
 
@@ -3760,28 +3749,19 @@ server.listen(3000, () => {
   ],
   docker: [
     {
-      title: "Docker",
+      title: "Important Terms",
       definition: [
-        "Docker is a platform that uses OS-level virtualization to deliver software in packages called containers.",
-        "Example: docker run hello-world",
+        "Image: Container உருவாக்கப் பயன்படும் template.",
+        "Container: Application இயங்கும் isolated environment.",
+        "Dockerfile: Docker image உருவாக்குவதற்கான instructions இருக்கும் file.",
+        "Docker Hub: Docker images-ஐ share செய்து பெற உதவும் registry",
       ],
     },
     {
-      title: "Docker Command",
+      title: "Docker",
       definition: [
-        "1. Image Build : docker build -t course-app .",
-        "2. Container Run: docker run -d --name course-app-container -p 4001:4001 course-app",
-        "3. Stop Container : docker stop course-app-container",
-        "4. Remove Container : docker rm course-app-container",
-        "5. Check Running Containers : docker ps",
-        "6. Check All Containers : docker ps -a",
-        "7. Logs: docker logs course-app-container",
-        "8. Start Container : docker start course-app-container",
-        "9. Remove Image : docker rmi course-app",
-        "10. Check Images : docker images",
-        "11. Remove All Images : docker rmi $(docker images -a -q)",
-        "12. Remove All Containers : docker rm $(docker ps -a -q)",
-        "13. Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
+        "Docker is a platform used to containerize applications along with their dependencies, ensuring consistent execution across different environments.",
+        "Example: docker run hello-world",
       ],
     },
 
@@ -3790,19 +3770,30 @@ server.listen(3000, () => {
       definition: [
         "A Docker container is a lightweight, standalone package that includes everything needed to run an application.",
         "Example: docker run -d nginx",
+        "A Docker Container is a running instance of a Docker Image that provides an isolated environment to execute an application and its dependencies",
+        "Docker Container என்பது Docker Image-ஐப் பயன்படுத்தி உருவாக்கப்படும் ஒரு isolated environment (தனிமைப்படுத்தப்பட்ட சூழல்) ஆகும். இதில் application இயங்கும்.",
       ],
     },
     {
       title: "What is a Docker Image ?",
       definition: [
-        "A Docker image is a read-only template used to create containers.",
-        "Example: docker pull node",
+        "A Docker Image is a read-only template used to create Docker containers. It contains the application code, dependencies, libraries, and configuration required to run an application.",
+        "Docker Image என்பது Docker Container உருவாக்கப் பயன்படும் ஒரு template (மாதிரி) ஆகும்.இதில் application code, dependencies, libraries போன்றவை இருக்கும்.Example docker pull node",
+      ],
+    },
+
+    {
+      title: "Docker Hub",
+      definition: [
+        "Docker Hub is a cloud-based registry used to store, share, and download Docker Images.",
+        "Docker Hub என்பது Docker Images-ஐ online-ல் store (சேமிக்கவும்), share (பகிரவும்), download (பதிவிறக்கம் செய்யவும்) உதவும் ஒரு platform.",
       ],
     },
     {
       title: "What is a Dockerfile ?",
       definition: [
-        "A Dockerfile is a script with instructions to build Docker images.",
+        "A Dockerfile is a text file containing instructions to build a Docker Image, including the base image, dependencies, application files, and startup command.",
+        "Dockerfile என்பது Docker Image-ஐ உருவாக்கத் தேவையான instructions இருக்கும் ஒரு text file ஆகும். இதில் application-ஐ எப்படி configure செய்ய வேண்டும், dependencies-ஐ எப்படி install செய்ய வேண்டும், application-ஐ எப்படி run செய்ய வேண்டும் போன்ற instructions இருக்கும்.",
       ],
     },
     {
@@ -3834,182 +3825,34 @@ server.listen(3000, () => {
         "Example: docker-compose up -d",
       ],
     },
+
     {
-      title: "New Feature",
+      title: "Docker Command",
       definition: [
-        "feat: Add a new feature or functionality",
-        'git commit -m "feat: add member registration page"',
-        'git commit -m "feat: implement auction bidding system"',
+        "1. Image Build : docker build -t course-app .",
+        "2. Container Run: docker run -d --name course-app-container -p 4001:4001 course-app",
+        "3. Stop Container : docker stop course-app-container",
+        "4. Remove Container : docker rm course-app-container",
+        "5. Check Running Containers : docker ps",
+        "6. Check All Containers : docker ps -a",
+        "7. Logs: docker logs course-app-container",
+        "8. Start Container : docker start course-app-container",
+        "9. Remove Image : docker rmi course-app",
+        "10. Check Images : docker images",
+        "11. Remove All Images : docker rmi $(docker images -a -q)",
+        "12. Remove All Containers : docker rm $(docker ps -a -q)",
+        "13. Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
       ],
     },
 
     {
-      title: "Bug Fix",
-      definition: [
-        "fix: Fix a bug or incorrect behavior",
-        'git commit -m "fix: resolve login authentication issue"',
-        'git commit -m "fix: correct installment payment calculation"',
-      ],
-    },
-
-    {
-      title: "UI Changes - Formatting, CSS, Spacing",
-      definition: [
-        "style: Changes that do not affect application logic",
-        'git commit -m "style: improve dashboard layout and spacing"',
-        'git commit -m "style: update table responsive design"',
-      ],
-    },
-
-    {
-      title: "Refactoring - Code Improvement",
-      definition: [
-        "refactor: Code changes that improve structure without changing behavior",
-        'git commit -m "refactor: extract reusable form components"',
-        'git commit -m "refactor: simplify API service functions"',
-      ],
-    },
-
-    {
-      title: "Documentation Changes",
-      definition: [
-        "docs: Documentation-only changes",
-        'git commit -m "docs: update project README"',
-        'git commit -m "docs: add API documentation"',
-      ],
-    },
-
-    {
-      title: "Testing - Test Cases Added/Updated",
-      definition: [
-        "test: Add or update test cases",
-        'git commit -m "test: add Playwright login test"',
-        'git commit -m "test: add member registration tests"',
-      ],
-    },
-
-    {
-      title: "Dependencies - Maintenance",
-      definition: [
-        "chore: Maintenance tasks that do not modify application functionality",
-        'git commit -m "chore: update project dependencies"',
-        'git commit -m "chore: remove unused dependencies"',
-      ],
-    },
-
-    {
-      title: "Performance",
-      definition: [
-        "perf: Improve application performance",
-        'git commit -m "perf: optimize member list rendering"',
-        'git commit -m "perf: reduce unnecessary API requests"',
-      ],
-    },
-
-    {
-      title: "Build",
-      definition: [
-        "build: Changes related to build system or build configuration",
-        'git commit -m "build: update Vite build configuration"',
-        'git commit -m "build: add production Docker configuration"',
-      ],
-    },
-
-    {
-      title: "CI/CD",
-      definition: [
-        "ci: Changes to CI/CD configuration and automation",
-        'git commit -m "ci: add GitHub Actions workflow"',
-        'git commit -m "ci: update deployment workflow"',
-      ],
-    },
-
-    {
-      title: "Revert",
-      definition: [
-        "revert: Revert a previous commit",
-        'git commit -m "revert: revert member registration changes"',
-      ],
-    },
-
-    {
-      title: "Docker",
+      title: "Docker compose cmd",
       definition: [
         "Docker commands for building and running containers",
         "docker compose up --build -d",
         "docker compose up -d",
         "docker compose down",
         "docker compose logs",
-      ],
-    },
-  ],
-  jenkins: [
-    {
-      title: "Jenkins",
-      definition: [
-        "What is Jenkins?",
-        "Jenkins is an open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration, and continuous delivery.",
-        "Example: Jenkins is a continuous integration server.",
-      ],
-    },
-    {
-      title: "Jenkins Command",
-      definition: [
-        "Example: jenkins --version",
-        "Example: jenkins --version",
-        "Example: jenkins --version",
-        "Example: jenkins --version",
-      ],
-    },
-    {
-      title: "Jenkins Job",
-      definition: [
-        "What is a Jenkins job?",
-        "A Jenkins job is a set of instructions that Jenkins executes to build, test, and deploy software.",
-        "Example: Jenkins job",
-      ],
-    },
-    {
-      title: "Jenkins Pipeline",
-      definition: [
-        "What is a Jenkins pipeline?",
-        "A Jenkins pipeline is a series of steps that Jenkins executes to build, test, and deploy software.",
-        "Example: Jenkins pipeline",
-      ],
-    },
-    {
-      title: "Jenkins Plugin",
-      definition: [
-        "What is a Jenkins plugin?",
-        "A Jenkins plugin is a set of instructions that Jenkins executes to build, test, and deploy software.",
-        "Example: Jenkins plugin",
-      ],
-    },
-  ],
-  kubernetes: [
-    {
-      title: "Kubernetes",
-      definition: [
-        "What is Kubernetes?",
-        "Kubernetes is an open-source container orchestration platform for automating deployment, scaling, and management of containerized applications.",
-        "Example: Kubernetes cluster",
-      ],
-    },
-    {
-      title: "Kubernetes Command",
-      definition: [
-        "Example: kubectl get pods",
-        "Example: kubectl get pods",
-        "Example: kubectl get pods",
-        "Example: kubectl get pods",
-      ],
-    },
-    {
-      title: "Kubernetes Deployment",
-      definition: [
-        "What is a Kubernetes deployment?",
-        "A Kubernetes deployment is a set of instructions that Kubernetes executes to build, test, and deploy software.",
-        "Example: Kubernetes deployment",
       ],
     },
   ],
@@ -4128,35 +3971,6 @@ server.listen(3000, () => {
         "A Chit Fund Management System is a software solution designed to manage chit fund operations, including member management, fund collection, and distribution processes.",
       ],
       example: `Chit Fund Software, Online Chit Fund Management`,
-    },
-  ],
-  AI: [
-    {
-      title: "LLM = Large Language Model",
-      definition: [
-        "LLM stands for Large Language Model. It is an AI model trained on a large amount of text data to understand and generate human-like language.",
-        "LLM என்பது மிகப்பெரிய அளவிலான text/data-வை வைத்து train செய்யப்பட்ட AI model. இது மனிதர்களின் language-ஐ புரிந்துகொண்டு, text-ஐ generate செய்யவும், summarize, translate, question answering போன்ற language tasks செய்யவும் பயன்படுகிறது.",
-      ],
-      types: [
-        {
-          name: "GPT → OpenAI, Claude → Anthropic, Llama → Meta, Mistral → Mistral AI",
-        },
-      ],
-    },
-    {
-      title: "Agentic AI",
-      definition: [
-        "Agentic AI refers to artificial intelligence systems that can perform tasks autonomously, making decisions and taking actions without direct human intervention.",
-        "Agentic AI is an AI system that can autonomously plan, reason, use tools, take actions, observe the results, and adapt its actions to achieve a specific goal.",
-        "Agentic AI என்பது ஒரு குறிப்பிட்ட இலக்கை அடைவதற்காக, மனிதர் ஒவ்வொரு step-ஐயும் சொல்லாமல், தானாகவே plan செய்து, reasoning செய்து, tools-ஐ பயன்படுத்தி, actions எடுத்து, அதன் results-ஐ பார்த்து, தேவையான மாற்றங்களைச் செய்யும் AI system.",
-      ],
-    },
-
-    {
-      title: "RAG",
-      definition: [
-        "RAG stands for Retrieval-Augmented Generation. It retrieves relevant information from external data sources and provides that context to an LLM to generate a more accurate and context-aware response.",
-      ],
     },
   ],
   VSshortcuts: [
