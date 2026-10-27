@@ -3641,7 +3641,6 @@ if (typeof value === "string") {
     {
       title: "Git",
       definition: [
-        
         "Git is a distributed version control system used to track changes in source code and collaborate with other developers",
       ],
     },
@@ -3688,7 +3687,7 @@ if (typeof value === "string") {
     {
       title: "Removing files from Git tracking  ",
       definition: [
-       "git rm -r --cached node_modules",
+        "git rm -r --cached node_modules",
         "git rm -r --cached frontend/node_modules",
         "git rm -r --cached backend/node_modules",
         "git rm -r --cached frontend/.next",
@@ -3708,13 +3707,13 @@ if (typeof value === "string") {
     {
       title: "CI/CD Pipeline",
       definition: [
-        "CI/CD Pipeline is an automated process used to build, test, and deploy code changes to an application quickly and reliably",
+        "A CI/CD pipeline is an automated process that helps developers build, test, and deploy applications efficiently and reliably.",
       ],
     },
     {
       title: "Continuous Integration (CI)",
       definition: [
-        "CI (Continuous Integration): Developers frequently merge their code changes into a shared repository, where automated builds and tests are performed.",
+        "Developers frequently integrate (or) merge their code changes into a shared repository, and automated builds and tests are performed to detect errors early.",
       ],
     },
 
@@ -3731,40 +3730,17 @@ if (typeof value === "string") {
         "CI/CD improves code quality, reduces bugs, speeds up delivery, enables faster feedback, and ensures reliable deployments.",
       ],
     },
-    {
-      title: "CI vs CD",
-      definition: [
-        "CI focuses on integrating(ஒருங்கிணைத்தல்) and testing code changes,",
-        "CD focuses on delivering or deploying the code to production.",
-      ],
-    },
-    {
-      title: "CI/CD Tools",
-      definition: [
-        "Popular tools include Jenkins, GitHub Actions, GitLab CI/CD, CircleCI, and Azure DevOps.",
-      ],
-    },
   ],
   docker: [
-    {
-      title: "Important Terms",
-      definition: [
-        "Image: Container உருவாக்கப் பயன்படும் template.",
-        "Container: Application இயங்கும் isolated environment.",
-        "Dockerfile: Docker image உருவாக்குவதற்கான instructions இருக்கும் file.",
-        "Docker Hub: Docker images-ஐ share செய்து பெற உதவும் registry",
-      ],
-    },
     {
       title: "Docker",
       definition: [
         "Docker is a platform used to containerize applications along (கூடவே / சேர்ந்து / நெடுக) with their dependencies, ensuring consistent execution across different environments.",
         "Example: docker run hello-world",
-        
       ],
     },
 
-     {
+    {
       title: "What is a Docker Image ?",
       definition: [
         "A Docker Image is a read-only template used to create Docker containers. It contains the application code, dependencies, libraries, and configuration required to run an application.",
@@ -3776,11 +3752,9 @@ if (typeof value === "string") {
       title: "What is a Docker Container ?",
       definition: [
         "A Docker container is a lightweight, isolated environment that runs an application along with its dependencies.",
-       "Example: docker run -d nginx",
-        ],
+        "Example: docker run -d nginx",
+      ],
     },
-   
-
     {
       title: "Docker Hub",
       definition: [
@@ -3816,7 +3790,7 @@ if (typeof value === "string") {
       ],
     },
 
-   {
+    {
       title: "Docker Command",
       definition: [
         "1. Image Build : docker build -t course-app .",
@@ -3834,15 +3808,6 @@ if (typeof value === "string") {
         "13. Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
         "docker-compose up, down, build, ps",
         "Example: docker-compose up -d",
-      ],
-    },
-
-    {
-      title: "Docker compose cmd",
-      definition: [
-        "Docker commands for building and running containers",
-        "docker compose up --build -d",
-        "docker compose up -d",
         "docker compose down",
         "docker compose logs",
       ],
@@ -3970,6 +3935,7 @@ if (typeof value === "string") {
       title: "Ctrl + P",
       definition: ["Quick File Search"],
     },
+
     {
       title: "Ctrl + Shift + P",
       definition: ["Open Command Palette"],
