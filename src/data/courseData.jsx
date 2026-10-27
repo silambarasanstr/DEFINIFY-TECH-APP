@@ -3641,14 +3641,13 @@ if (typeof value === "string") {
     {
       title: "Git",
       definition: [
-        "Git is a software for tracking changes in any set of files, usually used for coordinating work among programmers.",
+        
         "Git is a distributed version control system used to track changes in source code and collaborate with other developers",
       ],
     },
     {
       title: "GitHub",
       definition: [
-        "GitHub is a provider of Internet hosting for software development and version control using Git.",
         "GitHub is a cloud-based platform used to store Git repositories, collaborate with developers, and manage code online",
       ],
     },
@@ -3676,21 +3675,20 @@ if (typeof value === "string") {
         `git config --global user.email "simbube2013@gmail.com"`,
         "git config --global init.defaultBranch main",
         "Repo Check : git remote -v",
-        " ✅ 1. New branch create : git branch feature-login     ",
-        " ✅ 2. Branchக்கு switch ஆக : git checkout feature-login    ",
-        " ⚡ Shortcut (create + switch ஒரே command) git checkout -b feature-login      ",
-        " 🔍 Current branch check : git branch             ",
-        "  🚀 Branch push பண்ணுவது: git push -u origin feature-login     ",
-        "  🔀 Merge branch (important) : git merge feature-login  ",
-        "  🗑️ Branch delete :   Local:git branch -d feature-login   ",
-        " GitHub:  git push origin --delete feature-login",
+        "New branch create : git branch feature-login     ",
+        "Branchக்கு switch ஆக : git checkout feature-login    ",
+        "Shortcut (create + switch ஒரே command) git checkout -b feature-login      ",
+        "Current branch check : git branch             ",
+        "Branch push பண்ணுவது: git push -u origin feature-login     ",
+        "Merge branch (important) : git merge feature-login  ",
+        "Branch delete :   Local:git branch -d feature-login   ",
+        "GitHub:  git push origin --delete feature-login",
       ],
     },
     {
       title: "Removing files from Git tracking  ",
       definition: [
-        "Already git la commit pannirundha files (node_modules, .next) - ippo .gitignore add pannirukom, aana already tracked ah irundha files ku andha gitignore apply aagadhu. So andha files ah git tracking la irundhu remove pannanum (untrack pannanum), aana computer la irundhu delete pannakoodadhu.",
-        "git rm -r --cached node_modules",
+       "git rm -r --cached node_modules",
         "git rm -r --cached frontend/node_modules",
         "git rm -r --cached backend/node_modules",
         "git rm -r --cached frontend/.next",
@@ -3760,27 +3758,28 @@ if (typeof value === "string") {
     {
       title: "Docker",
       definition: [
-        "Docker is a platform used to containerize applications along with their dependencies, ensuring consistent execution across different environments.",
+        "Docker is a platform used to containerize applications along (கூடவே / சேர்ந்து / நெடுக) with their dependencies, ensuring consistent execution across different environments.",
         "Example: docker run hello-world",
+        
       ],
     },
 
-    {
-      title: "What is a Docker Container ?",
-      definition: [
-        "A Docker container is a lightweight, standalone package that includes everything needed to run an application.",
-        "Example: docker run -d nginx",
-        "A Docker Container is a running instance of a Docker Image that provides an isolated environment to execute an application and its dependencies",
-        "Docker Container என்பது Docker Image-ஐப் பயன்படுத்தி உருவாக்கப்படும் ஒரு isolated environment (தனிமைப்படுத்தப்பட்ட சூழல்) ஆகும். இதில் application இயங்கும்.",
-      ],
-    },
-    {
+     {
       title: "What is a Docker Image ?",
       definition: [
         "A Docker Image is a read-only template used to create Docker containers. It contains the application code, dependencies, libraries, and configuration required to run an application.",
         "Docker Image என்பது Docker Container உருவாக்கப் பயன்படும் ஒரு template (மாதிரி) ஆகும்.இதில் application code, dependencies, libraries போன்றவை இருக்கும்.Example docker pull node",
       ],
     },
+
+    {
+      title: "What is a Docker Container ?",
+      definition: [
+        "A Docker container is a lightweight, isolated environment that runs an application along with its dependencies.",
+       "Example: docker run -d nginx",
+        ],
+    },
+   
 
     {
       title: "Docker Hub",
@@ -3817,16 +3816,7 @@ if (typeof value === "string") {
       ],
     },
 
-    {
-      title: "Docker Compose Commands",
-      definition: [
-        "Docker Compose commands?",
-        "docker-compose up, down, build, ps",
-        "Example: docker-compose up -d",
-      ],
-    },
-
-    {
+   {
       title: "Docker Command",
       definition: [
         "1. Image Build : docker build -t course-app .",
@@ -3842,6 +3832,8 @@ if (typeof value === "string") {
         "11. Remove All Images : docker rmi $(docker images -a -q)",
         "12. Remove All Containers : docker rm $(docker ps -a -q)",
         "13. Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
+        "docker-compose up, down, build, ps",
+        "Example: docker-compose up -d",
       ],
     },
 
@@ -4261,6 +4253,11 @@ if (typeof value === "string") {
     {
       title: "EnglishToTamil",
       definition: [
+        "Along - தமிழ் அர்த்தம்: கூடவே / சேர்ந்து / நெடுக",
+        "Instance - தமிழ் அர்த்தம்: எடுத்துக்காட்டு / நிகழ்வு / ஒரு குறிப்பிட்ட நிலை",
+        "For instance = உதாரணமாக",
+        "Example: An instance of a class.",
+        "ஒரு Class-இலிருந்து உருவாக்கப்பட்ட Object.",
         "Recreated - மீண்டும் உருவாக்கப்பட்டது",
         "Recomputed - மீண்டும் கணக்கிடப்பட்டது",
         "Recalculates - மீண்டும் கணக்கிடுகிறது.",
