@@ -29,12 +29,8 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "Git & GitHub", path: "/gitgithub", icon: GitBranch },
     { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Docker", path: "/docker", icon: Box },
-    { name: "Data Structure", path: "/dataStructure", icon: Database },
-    { name: "ECommerce", path: "/ECommerce", icon: Database },
-    { name: "VS Shortcuts", path: "/VSshortcuts", icon: Database },
-    { name: "UI/UX", path: "/UIUX", icon: Database },
-    { name: "English", path: "/English", icon: Database },
-    {name: "English To Tamil",path: "/EnglishToTamil",icon: Database,},
+    { name: "Interview Questions", path: "/Interview", icon: Database },
+    { name: "English To Tamil", path: "/EnglishToTamil", icon: Database },
   ];
 
   return (

@@ -1,3 +1,22 @@
+import {
+  TypeScript,
+  StaticTyping,
+  TypeInference,
+  InterfaceExample,
+  TypeAlias,
+  UnionType,
+  IntersectionType,
+  Generics,
+  Enum,
+  Tuple,
+  Any,
+  Void,
+  Never,
+  TypeAssertion,
+  Unknown,
+  NonNullAssertion,
+} from "./codeExamples";
+
 export const courseData = {
   html: [
     {
@@ -2464,9 +2483,7 @@ function CSRComponent() {
         "It adds static typing, interfaces, and modern features to improve code quality and maintainability.",
         "தமிழில்: TypeScript என்பது JavaScript-க்கு மேலாக type safety வழங்கும் programming language ஆகும்.",
       ],
-      example: `let name: string = "John";
-console.log(name);
-`,
+      example: TypeScript,
     },
     {
       title: "Static Typing",
@@ -2475,9 +2492,7 @@ console.log(name);
         "It helps detect type-related errors before the code runs and improves code reliability.",
         "தமிழில்: Static Typing என்பது variable-களின் type-ஐ முன்கூட்டியே define செய்வது.",
       ],
-      example: `let age: number = 25;
-let username: string = "Simbu";
-`,
+      example: StaticTyping,
     },
     {
       title: "Type Inference",
@@ -2486,12 +2501,7 @@ let username: string = "Simbu";
         "It reduces the need to explicitly define types in TypeScript.",
         "தமிழில்: Type Inference என்பது value அடிப்படையில் type-ஐ TypeScript தானாக கண்டறிவது.",
       ],
-      example: `let username = "Simbu";
-// TypeScript automatically infers this as string
-
-let age = 25;
-// TypeScript automatically infers this as number
-`,
+      example: TypeInference,
     },
     {
       title: "Interface",
@@ -2500,17 +2510,7 @@ let age = 25;
         "It helps enforce(அமல்படுத்து / கட்டாயப்படுத்து) type safety and improves code readability and maintainability.",
         "தமிழில்: Interface என்பது object-ன் structure மற்றும் properties-ஐ define செய்ய பயன்படுத்தப்படுகிறது.",
       ],
-      example: `
-interface User {
-    name: string;
-    age: number;
-}
-
-const user: User = {
-    name: "Simbu",
-    age: 25,
-};
-`,
+      example: InterfaceExample,
     },
     {
       title: "Type Alias",
@@ -2519,18 +2519,7 @@ const user: User = {
         "It can be used for primitive types, objects, unions, tuples, and more.",
         "தமிழில்: Type Alias என்பது ஒரு type-க்கு custom பெயர் உருவாக்க பயன்படுத்தப்படுகிறது.",
       ],
-      example: `
-type User = {
-    name: string;
-    age: number;
-};
-
-const user: User = {
-    name: "Simbu",
-    age: 25,
-};
-
-`,
+      example: TypeAlias,
     },
     {
       title:
@@ -2551,66 +2540,7 @@ const user: User = {
         "It is created using the | (pipe) operator in TypeScript.",
         "தமிழில்: Union Type என்பது ஒரு variable பல type values-ஐ வைத்திருக்க அனுமதிக்கும் type ஆகும்.",
       ],
-      example: `
-Basic Union Type
-let value: string | number;
-value = "Simbu";
-value = 25;
-
-String Literal Union
-type Color = "red" | "green" | "blue";
-let color: Color = "red";
-
-Array Union
-let numbers: (number | string)[] = [1, 2, 3, "4", "5"];
-
-Object Union
-type User = {
-  name: string;
-  age: number;
-};
-
-let user: User | null = {
-  name: "Simbu",
-  age: 25,
-};
-
-
-type SuccessResponse = { status: "success"; data: Order[] };
-type ErrorResponse  = { status: "error"; message: string };
-
-type ApiResponse = SuccessResponse | ErrorResponse;
-
-const handle = (res: ApiResponse) => {
-  if (res.status === "success") {
-    console.log(res.data);    // ✅ data இருக்கும்
-  } else {
-    console.log(res.message); // ✅ message இருக்கும்
-  }
-};
-
-
-
-function Union
-function add(a: number | string, b: number | string) {
-  if (typeof a === "number" && typeof b === "number") {
-    return a + b;
-  } else {
-    return a.toString() + b.toString();
-  }
-}
-
-Nullable Union 
-
-const [order, setOrder] = useState<Order | null>(null);
-
-// check பண்ணாம access பண்ண வேண்டாம்
-if (order) {
-  console.log(order.orderNumber); // ✅ safe
-}
-
-
-`,
+      example: UnionType,
     },
     {
       title: "Intersection Type (combines multiple types into a single type.)",
@@ -2620,21 +2550,7 @@ if (order) {
         "All properties from the combined types must be included.",
         "தமிழில்: Intersection Type என்பது பல types-ஐ ஒன்றாக இணைத்து ஒரு single type உருவாக்க பயன்படுகிறது.",
       ],
-      example: `type User = {
-  name: string;
-};
-
-type Admin = {
-  role: string;
-};
-
-type AdminUser = User & Admin;
-
-const user: AdminUser = {
-  name: "Simbu",
-  role: "Admin",
-};
-`,
+      example: IntersectionType,
     },
     {
       title: "Generics",
@@ -2643,13 +2559,7 @@ const user: AdminUser = {
         "They help provide type safety while keeping code flexible and reusable.",
         "தமிழில்: Generics என்பது பல data types-உடன் வேலை செய்யும் reusable code உருவாக்க பயன்படுகிறது.",
       ],
-      example: `function getData<T>(value: T): T {
-  return value;
-}
-
-const result1 = getData<string>("Hello");
-const result2 = getData<number>(100);
-`,
+      example: Generics,
     },
     {
       title: "Enum (constant values)",
@@ -2658,14 +2568,7 @@ const result2 = getData<number>(100);
         "It helps improve code readability and maintainability.",
         "தமிழில்: Enum என்பது named constant values-ஐ define செய்ய பயன்படுத்தப்படும் TypeScript feature ஆகும்.",
       ],
-      example: `
-      enum Role {
-  Admin = "admin",
-  User = "user",
-}
-
-const userRole: Role = Role.Admin;
-`,
+      example: Enum,
     },
     {
       title: "Tuple (fixed-length and fixed types array special type of array)",
@@ -2674,12 +2577,7 @@ const userRole: Role = Role.Admin;
         "It allows storing multiple values with different types in a specific order.",
         "தமிழில்: Tuple என்பது fixed length மற்றும் fixed types கொண்ட special array ஆகும்.",
       ],
-      example: `let user: [string, number];
-
-user = ["Simbu", 25];
-
-console.log(user);
-`,
+      example: Tuple,
     },
     {
       title: "Any",
@@ -2688,14 +2586,7 @@ console.log(user);
         "It disables type checking for that variable.",
         "தமிழில்: Any என்பது எந்த type value-யையும் store செய்ய அனுமதிக்கும் TypeScript type ஆகும்.",
       ],
-      example: `let data: any;
-
-data = "Simbu";
-data = 25;
-data = true;
-
-console.log(data);
-`,
+      example: Any,
     },
 
     {
@@ -2705,11 +2596,7 @@ console.log(data);
         "It is commonly used for functions that do not return anything.",
         "தமிழில்: Void என்பது எந்த value-யும் return செய்யாத function-களுக்கு பயன்படுத்தப்படும் TypeScript type ஆகும்.",
       ],
-      example: `function greet(): void {
-  console.log("Hello");
-}
-greet();
-`,
+      example: Void,
     },
     {
       title: "Never",
@@ -2718,11 +2605,7 @@ greet();
         "It is commonly used for functions that throw errors or never finish execution.",
         "தமிழில்: Never என்பது ஒருபோதும் value return செய்யாத நிலையை குறிக்கும் TypeScript type ஆகும்.",
       ],
-      example: `function throwError(message: string): never {
-  throw new Error(message);
-}
-throwError("Something went wrong");
-`,
+      example: Never,
     },
     {
       title: "Type Assertion",
@@ -2732,15 +2615,7 @@ throwError("Something went wrong");
         "Type assertion can be done using the as keyword or angle bracket syntax.",
         "தமிழில்: Type Assertion என்பது value-ன் type-ஐ developer manually குறிப்பிட பயன்படுத்தப்படுகிறது.",
       ],
-      example: `let value: unknown = "Hello";
-let strLength: number = (value as string).length;
-console.log(strLength);
-
-
-const input = e.target as HTMLInputElement;
-const data = response.data as Order;
-
-`,
+      example: TypeAssertion,
     },
     {
       title: "Unknown",
@@ -2749,21 +2624,11 @@ const data = response.data as Order;
         "It is safer than the any type because type checking is required before using the value.",
         "தமிழில்: Unknown என்பது type தெரியாத value-ஐ represent செய்யும் TypeScript type ஆகும்.",
       ],
-      example: `let value: unknown;
-
-value = "Simbu";
-value = 25;
-
-if (typeof value === "string") {
-  console.log(value.toUpperCase());
-}
-`,
+      example: Unknown,
     },
     {
       title: "Non-null Assertion",
-      example: `const user = localStorage.getItem("user")!;
-      const role = user?.role ?? "user";
-      `,
+      example: NonNullAssertion,
     },
   ],
   nodejs: [
@@ -2825,7 +2690,7 @@ if (typeof value === "string") {
     {
       title: "What is package.json in a Node.js project?",
       definition: [
-        "package.json is a configuration file in a Node.js project. It contains information about the project, including its dependencies, package versions, scripts, and project metadata.",
+        "package.json is a configuration file in a Node.js project. It contains project information, dependencies, package versions, scripts",
       ],
     },
     {
@@ -3813,262 +3678,11 @@ if (typeof value === "string") {
       ],
     },
   ],
-  dataStructure: [
-    {
-      title: "DSA Speedio Meter ",
-      definition: [
-        "Time Complexity",
-        "Big O Notation",
-        "O(n2)",
-        "O(n log n)",
-        "O(n)",
-        "O(log n)",
-        "O(1)",
-      ],
-    },
-    {
-      title: "Time Complexity",
-      definition: [
-        "Time complexity tells how fast or slow an algorithm runs as input size increases.",
-        "A way to measure how the running time of an algorithm increases as the size of the input (n) increases, usually expressed using Big O notation",
-        "Algorithm-oda input size (n) perusaagum bothu, execution time எப்படி increase aaguthுனு measure pannுறது — usually Big O notation vachi represent pannுவோம்",
-      ],
-    },
-  ],
-  ECommerce: [
-    {
-      title: "ECommerce - Online Buying & Selling Platform",
-      definition: [
-        "ECommerce is the buying and selling of goods and services over the internet.",
-      ],
-    },
-    {
-      title: "Payroll Management System",
-      definition: [
-        "A payroll management system is a software solution that helps businesses manage and process employee compensation and benefits.",
-        "Payroll is a system used to calculate employee salaries, deductions, taxes, bonuses, and generate payslips.",
-        "Payroll Features",
-        "Employee Management",
-        "Salary Calculation",
-        "Attendance Integration",
-        "Leave Management",
-        "Overtime Calculation",
-        "Bonus & Incentives",
-        "PF (Provident Fund)",
-        "ESI (Employees' State Insurance)",
-        "Professional Tax (PT)",
-        "Income Tax (TDS)",
-        "Deductions",
-        "Payslip Generation",
-        "Salary Reports",
-        "Bank Transfer Details",
-      ],
-      example: `QuickBooks, Xero, Gusto`,
-    },
-    {
-      title: "POS - Point of Sale",
-      definition: [
-        "https://www.youtube.com/watch?v=nD0IyJLKio4",
-        "Point of Sale system for managing sales transactions.",
-        "Used in retail stores to process customer purchases.",
-        "Bill podura system + payment collect pannura software/hardware",
-        "Billing software",
-        "Barcode scanner",
-        "Receipt printer",
-        "Payment machine",
-        "Inventory management",
-        "Example: Square, Shopify POS",
-      ],
-      example: `Supermarket, Restaurant, Medical shop, Clothing shop, Tea shop`,
-    },
-    {
-      title: "B2B - Business to Business",
-      definition: [
-        "Business to Business Ecommerce Website nu meaning.",
-        "Oru business, இன்னொரு business-க்கு online-ல products அல்லது services sell பண்ணுற website.",
-        "Company ➝ Company ku sell pannum",
-        "Wholesale website",
-      ],
-      example: `Alibaba, IndiaMART, Udaan`,
-    },
-    {
-      title: "E-Commerce Software as a Service (SaaS)",
-      definition: [
-        "அதாவது, நீங்களே backend, server, payment, hosting எல்லாம் புதிதாக உருவாக்க வேண்டியதில்லை. ஏற்கனவே தயாராக இருக்கும் ஒரு platform-ஐ மாதாந்திர (Monthly) அல்லது வருடாந்திர (Yearly) subscription செலுத்தி பயன்படுத்தலாம்.",
-      ],
-      example: `Shopify, WooCommerce, Magento`,
-    },
-    {
-      title: "CRM = Customer Relationship Management",
-      definition: [
-        "CRM is a technology for managing all your company's relationships and interactions with customers and potential customers.",
-        "It helps businesses improve their relationships with customers, streamline processes, and increase profitability.",
-        "CRM என்பது ஒரு software அல்லது system. இது ஒரு company-க்கு customers-ஐ manage செய்ய, sales track செய்ய, மற்றும் customer relationship improve செய்ய உதவும்.",
-      ],
-      example: `Popular CRM Software : Salesforce, HubSpot, Zoho CRM`,
-    },
-    {
-      title: "Order Management System",
-      definition: [
-        "An order management system is a software solution that helps businesses manage and track customer orders from placement to fulfillment.",
-        "It typically includes features for order entry, inventory management, shipping, and customer communication.",
-      ],
-      example: `WooCommerce, Shopify, Magento`,
-    },
-    {
-      title: "LMS (Learning Management System)",
-      definition: [
-        "A Learning Management System (LMS) is software for the administration, documentation, tracking, reporting and delivery of educational courses, training programs or learning and development programs.",
-      ],
-      example: `Moodle, Canvas, Blackboard`,
-    },
-    {
-      title: "Chit Fund Management System",
-      definition: [
-        "A Chit Fund Management System is a software solution designed to manage chit fund operations, including member management, fund collection, and distribution processes.",
-      ],
-      example: `Chit Fund Software, Online Chit Fund Management`,
-    },
-  ],
-  VSshortcuts: [
-    {
-      title: "Ctrl + P",
-      definition: ["Quick File Search"],
-    },
 
-    {
-      title: "Ctrl + Shift + P",
-      definition: ["Open Command Palette"],
-    },
-    {
-      title: "Ctrl + /",
-      definition: ["Toggle Comment"],
-    },
-    {
-      title: "Alt + ↑ / ↓",
-      definition: ["Move Line Up/Down"],
-    },
-    {
-      title: "Shift + Alt + ↓",
-      definition: ["Duplicate Line"],
-    },
-    {
-      title: "Ctrl + D",
-      definition: ["Select Next Occurrence"],
-    },
-    {
-      title: "Ctrl + Shift + L",
-      definition: ["Select All Occurrences"],
-    },
-    {
-      title: "Alt + Click",
-      definition: ["Add Multiple Cursors"],
-    },
-    {
-      title: "Ctrl + L",
-      definition: ["Select Current Line"],
-    },
-    {
-      title: "Ctrl + X",
-      definition: ["Cut Current Line"],
-    },
-    {
-      title: "Ctrl + Shift + K",
-      definition: ["Delete Current Line"],
-    },
-    {
-      title: "Ctrl + Enter",
-      definition: ["Insert Line Below"],
-    },
-    {
-      title: "Ctrl + Shift + Enter",
-      definition: ["Insert Line Above"],
-    },
-    {
-      title: "Ctrl + Space",
-      definition: ["Trigger IntelliSense"],
-    },
-    {
-      title: "F2",
-      definition: ["Rename Symbol"],
-    },
-    {
-      title: "F12",
-      definition: ["Go to Definition"],
-    },
-    {
-      title: "Alt + ←",
-      definition: ["Go Back"],
-    },
-    {
-      title: "Ctrl + Shift + `",
-      definition: ["Open New Terminal"],
-    },
-    {
-      title: "Ctrl + B",
-      definition: ["Toggle Sidebar"],
-    },
-    {
-      title: "Ctrl + J",
-      definition: ["Toggle Panel"],
-    },
-  ],
-  UIUX: [
-    {
-      title: "Types of Developers in Software Development",
-      definition: [
-        "Frontend Developer: Builds the user interface of websites and web applications.",
-        "Backend Developer: Builds APIs, manages databases, and handles server-side logic.",
-        "Full-Stack Developer: Works on both the frontend and backend of web applications.",
-        "Mobile App Developer: Builds Android and iOS applications.",
-        "DevOps Engineer: Manages and automates the software deployment and infrastructure.",
-        "QA Automation Engineer: Develops and executes automated tests to ensure software quality.",
-        "Data Engineer: Designs and maintains the data architecture and pipelines for data processing and analysis.",
-      ],
-    },
-    {
-      title: "Git vs GitHub",
-      definition: [
-        "Git is a distributed version control system that tracks changes in files and coordinates work among multiple developers.",
-        "GitHub is a web-based platform that provides hosting for Git repositories and offers additional features like issue tracking, pull requests, and collaboration tools.",
-        "While Git is the tool for version control, GitHub is a service that uses Git and adds a user-friendly interface and social features.",
-      ],
-    },
-    {
-      title: "UI vs UX",
-      definition: [
-        "UI (User Interface) refers to the visual elements and layout of a product.",
-        "UX (User Experience) refers to the overall experience of using a product.",
-      ],
-    },
-    {
-      title: "Types of UI",
-      definition: [
-        "Liquid Glass UI",
-        "Bento Grid UI",
-        "Spatial UI Design",
-        "Claymorphism",
-        "Neumorphism",
-        "Glassmorphism",
-        "Skeuomorphism",
-        "Minimalism",
-        "Maximalism",
-      ],
-    },
-    {
-      title: "Design Patterns",
-      definition: [
-        "F Pattern",
-        "Z Pattern",
-        "Gutenberg Pattern",
-        "Layer Cake Pattern",
-        "Split Screen Pattern",
-        "Grid Pattern",
-        "Spotted Pattern",
-      ],
-    },
-  ],
-  English: [
+ 
+  
+ 
+  Interview: [
     {
       title: "May I speak with Jiva?",
       definition: ["Yes, Speaking. and Yes you are speaking with Jiva."],
@@ -4281,15 +3895,6 @@ if (typeof value === "string") {
     },
   ],
   Notes: [
-    {
-      title: "",
-      definition: [
-        "When an array is combined with a string, JavaScript converts the array to a string using its toString() behavior.",
-        "let arr = [1, 2, 3]",
-        "console.log(arr + 'hello'); // Output: '1,2,3hello'",
-        "console.log(arr + ''); // Output: '1,2,3'",
-      ],
-    },
     {
       title: "Common UI States in Web Applications",
       definition: [
