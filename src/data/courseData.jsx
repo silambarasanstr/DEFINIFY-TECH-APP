@@ -434,8 +434,10 @@ export const courseData = {
     {
       title: "DOM Traversal",
       definition: [
+        "DOM Traversal means navigating through DOM nodes to access parent, child, and sibling elements.",
         "DOM traversal refers to the process of navigating through the nodes of the Document Object Model.",
         "Common traversal methods include parentNode, childNodes, firstChild, lastChild, nextSibling, and previousSibling.",
+        "DOM Traversal என்பது Document Object Model-ல் உள்ள Nodes-ஐ ஒவ்வொன்றாக வழியாகச் சென்று அணுகும் செயல்முறையைக் குறிக்கிறது.",
       ],
     },
     {
@@ -591,6 +593,24 @@ export const courseData = {
     },
   ],
   javascript: [
+    {
+      title: "Ternary Operator (?:)",
+      definition: [
+        "The ternary operator (?:) is a shorthand way of writing an if-else statement. It checks a condition and returns one of two values based on whether the condition is true or false.",
+      ],
+    },
+    {
+      title: "Optional Chaining Operator (?.)",
+      definition: [
+        "The optional chaining operator (?.) is a safe way to access nested properties of an object, preventing errors when a property is null or undefined.",
+      ],
+    },
+    {
+      title: "Nullish Coalescing Operator (??)",
+      definition: [
+        "The nullish coalescing operator (??) is a logical operator that returns the right-hand operand when the left-hand operand is null or undefined, and otherwise returns the left-hand operand.",
+      ],
+    },
     {
       title: 'What is the default behavior of "sort()" in JavaScript?',
       definition: [
@@ -1946,13 +1966,13 @@ console.log(String(5) + 2);   // "52"
 
         "Redux follows 3 core principles",
 
-        "A Redux Store holds the application's state and manages that state. It provides methods like dispatch() to send actions and getState() to access the current state",
+        "Store : A Redux Store holds the application's state and manages that state. It provides methods like dispatch() to send actions and getState() to access the current state",
+
+        "Action: An action is a plain JavaScript object that describes what happened or what should happen in the application. It must contain a type property  and  payload may optionally contain a payload.",
+
+        "Reducer: A reducer is a pure function that takes the current state and an action, and returns the new state.",
 
         "State: State is a built-in React object that stores data that can change over time and causes the component to re-render when it is updated.",
-
-        "Action: An action is a plain JavaScript object that describes what happened or what should happen in the application. It must contain a type property and can optionally contain a payload.",
-
-        "Reducer: A reducer is a function that receives the current state and an action ",
 
         "Reducer determines how the state should change based on the action.",
 
@@ -1974,6 +1994,9 @@ console.log(String(5) + 2);   // "52"
 
         "getState() is a Redux store method used to retrieve the current state from the Redux store.",
         "dispatch() is a Redux store method used to send an action to the Redux store, which triggers the reducer to update the state",
+        "payload — Additional data-va carry pannum. Idhu optional.",
+        "Payload illama kooda action valid",
+        "payload — thevaiyana data-va pass pannum (optional).",
       ],
     },
 
@@ -3610,6 +3633,9 @@ function CSRComponent() {
       definition: [
         "A Docker Image is a read-only template used to create Docker containers. It contains the application code, dependencies, libraries, and configuration required to run an application.",
         "Docker Image என்பது Docker Container உருவாக்கப் பயன்படும் ஒரு template (மாதிரி) ஆகும்.இதில் application code, dependencies, libraries போன்றவை இருக்கும்.Example docker pull node",
+        "Docker Image is a template or blueprint that contains all the necessary files, libraries, and dependencies required to run an application inside a Docker container.",
+        "docker pull node",
+        "docker pull hello-world",
       ],
     },
 
@@ -3658,19 +3684,22 @@ function CSRComponent() {
     {
       title: "Docker Command",
       definition: [
-        "1. Image Build : docker build -t course-app .",
-        "2. Container Run: docker run -d --name course-app-container -p 4001:4001 course-app",
-        "3. Stop Container : docker stop course-app-container",
-        "4. Remove Container : docker rm course-app-container",
-        "5. Check Running Containers : docker ps",
-        "6. Check All Containers : docker ps -a",
-        "7. Logs: docker logs course-app-container",
-        "8. Start Container : docker start course-app-container",
-        "9. Remove Image : docker rmi course-app",
-        "10. Check Images : docker images",
-        "11. Remove All Images : docker rmi $(docker images -a -q)",
-        "12. Remove All Containers : docker rm $(docker ps -a -q)",
-        "13. Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
+        "docker pull hello-world",
+        "docker images",
+        "Running Docker Image: docker run hello-world",
+        "Image Build : docker build -t course-app .",
+        "Container Run: docker run -d --name course-app-container -p 4001:4001 course-app",
+        "Stop Container : docker stop course-app-container",
+        "Remove Container : docker rm course-app-container",
+        "Check Running Containers : docker ps",
+        "Check All Containers : docker ps -a",
+        "Logs: docker logs course-app-container",
+        "Start Container : docker start course-app-container",
+        "Remove Image : docker rmi course-app",
+        "Check Images : docker images",
+        "Remove All Images : docker rmi $(docker images -a -q)",
+        "Remove All Containers : docker rm $(docker ps -a -q)",
+        "Remove All Containers and Images : docker rm $(docker ps -a -q) && docker rmi $(docker images -a -q)",
         "docker-compose up, down, build, ps",
         "Example: docker-compose up -d",
         "docker compose down",
@@ -3679,27 +3708,141 @@ function CSRComponent() {
     },
   ],
 
- 
-  
- 
   Interview: [
     {
       title: "May I speak with Jiva?",
       definition: ["Yes, Speaking. and Yes you are speaking with Jiva."],
     },
     {
-      title: "Good morning/afternoon. May I ask who is calling, please?",
+      title:
+        "HR: Hello, may I speak to Silambarasan? (or) may I speak to Silambarasan?",
       definition: [
-        "I am Ravi from XYZ Company.",
-        "How can I help you today?",
-        "Then you can continue with",
-        "How may I help you?",
-        "What is this regarding?",
-        "How can I assist you today?",
-        "May I know the purpose of your call?",
-        "Who would you like to speak with?",
+        "Me: Yes, speaking. May I know who is calling, please?",
+        "Me: Hello! How can I help you today?",
+        "Or: How may I help you?",
+        "Or: How can I assist you today?",
+        "Or: May I know the purpose of your call?",
       ],
     },
+
+    {
+      title: "HR: Could you please introduce yourself?",
+      definition: [
+        "Me: Sure! My name is Silambarasan. I have 7 years of experience in web development, including 2 years of experience in React.js.",
+      ],
+    },
+
+    {
+      title: "HR: What are your technical skills?",
+      definition: [
+        "Me: My technical skills include HTML, CSS, JavaScript, React.js, Bootstrap, and Tailwind CSS.",
+      ],
+    },
+
+    {
+      title: "HR: Can you tell me about your previous work experience?",
+      definition: [
+        "Me: I have worked on web development projects, including building responsive user interfaces and integrating APIs using React.js.",
+      ],
+    },
+
+    {
+      title: "HR: Can you explain your career break?",
+      definition: [
+        "Me: I took a break from my previous role to explore new technologies and enhance my skills in React.js and other frontend frameworks.",
+        "Me: I took a career break due to family responsibilities. During this time, I improved my technical skills in React.js, Next.js, JavaScript, and Tailwind CSS.",
+      ],
+    },
+
+    {
+      title: " HR: Why are you looking for a new opportunity?",
+      definition: [
+        "Me: I am looking for a new opportunity to work on challenging projects, contribute to a dynamic team, and further enhance my skills in frontend development.",
+        "Me: I am seeking a new opportunity to grow professionally, work on innovative projects, and apply my expertise in React.js and frontend development.",
+      ],
+    },
+    {
+      title: "HR: Why should we hire you?",
+      definition: [
+        "Me: You should hire me because I have experience in web development and knowledge of React.js. I can build responsive user interfaces and integrate APIs. I am also willing to learn new technologies and improve my skills.",
+      ],
+    },
+
+    {
+      title: " HR: What are your salary expectations?",
+      definition: [
+        "Me: Based on my skills and experience, I am expecting a reasonable salary as per the company standards. However, I am open to discussion",
+        "Me: I am open to discussing a competitive salary based on the responsibilities of the role and the overall compensation package.",
+        "Me: I am looking for a salary that reflects my experience and skills in frontend development, but I am flexible and open to negotiation.",
+      ],
+    },
+
+    {
+      title: "HR: Do you have any questions for us?",
+      definition: [
+        "Me: Yes, I would like to know more about the team and the projects I would be working on.",
+      ],
+    },
+
+    {
+      title: "HR: Are you comfortable working from the office?",
+      definition: [
+        "Me: Yes, I am comfortable working from the office.",
+        "Or: I am comfortable with both office and remote work.",
+      ],
+    },
+
+    {
+      title: "HR: Do you have any experience working with a team?",
+      definition: [
+        "Me: Yes, I have experience working with a team. I can communicate effectively, share ideas, and collaborate with team members to complete projects.",
+      ],
+    },
+
+    {
+      title: "HR: How do you handle challenges at work?",
+      definition: [
+        "Me: I stay calm and try to understand the problem. Then, I find a suitable solution. If needed, I discuss the issue with my team members.",
+      ],
+    },
+
+    {
+      title: "HR: Why do you want to join our company?",
+      definition: [
+        "Me: I want to join your company because I believe it will give me opportunities to use my React.js skills, work on challenging projects, and grow professionally.",
+      ],
+    },
+
+    {
+      title: "HR: Where do you see yourself in five years?",
+      definition: [
+        "இன்னும் ஐந்து ஆண்டுகளில் உங்களை எந்த நிலையில் பார்க்கிறீர்கள்?",
+        "Me: In five years, I see myself as an experienced React Developer with strong technical skills. I want to take on more responsibilities and contribute to the success of the company.",
+      ],
+    },
+
+    {
+      title: "HR: Do you have any experience with API integration in React.js?",
+      definition: [
+        "Me: Yes, I have experience integrating REST APIs in React.js. I use Axios or the Fetch API to get data from the server and display it in the user interface. I also handle loading, error, and empty states.",
+      ],
+    },
+
+    {
+      title:
+        "HR: How do you manage your tasks when you have multiple deadlines?",
+      definition: [
+        "Me: I prioritize my tasks based on their importance and deadlines. I break large tasks into smaller steps and track my progress to complete the work on time.",
+      ],
+    },
+
+    {
+      title: "HR: Can you explain one of your React.js projects?",
+      definition: [
+        "Me: Yes, I have worked on an e-commerce project using React.js. I developed reusable components, created responsive user interfaces, integrated REST APIs, and implemented features like product listing, search, filtering, and pagination.",
+      ],
+    },
+
     {
       title: "How are you?",
       definition: ["I'm doing well, thank you for asking."],
@@ -3833,11 +3976,12 @@ function CSRComponent() {
     {
       title: "EnglishToTamil",
       definition: [
-        "Along - தமிழ் அர்த்தம்: கூடவே / சேர்ந்து / நெடுக",
-        "Instance - தமிழ் அர்த்தம்: எடுத்துக்காட்டு / நிகழ்வு / ஒரு குறிப்பிட்ட நிலை",
+        "Process - செயல்முறை / செயலாக்கம் / நடைமுறை.",
+        "Through - மூலம் / வழியாக / ஊடாக.",
+        "Refers - குறிப்பிடுகிறது / குறிக்கிறது / தொடர்புபடுத்துகிறது.",
+        "onboarding - அறிமுகப்படுத்துதல்",
+        "Along -  கூடவே / சேர்ந்து / நெடுக",
         "For instance = உதாரணமாக",
-        "Example: An instance of a class.",
-        "ஒரு Class-இலிருந்து உருவாக்கப்பட்ட Object.",
         "Recreated - மீண்டும் உருவாக்கப்பட்டது",
         "Recomputed - மீண்டும் கணக்கிடப்பட்டது",
         "Recalculates - மீண்டும் கணக்கிடுகிறது.",
@@ -3850,8 +3994,6 @@ function CSRComponent() {
         "Context = சூழல் / பின்னணி",
         "Enforce = அமல்படுத்து / கட்டாயப்படுத்து",
         "Mento- வழிகாட்டி",
-        "வழிகாட்டி (vazhikaatti) = vazhi kaatturavar, guide",
-        "ஆலோசகர் (aalosagar) = advisor, counselor",
         "Ancestor = மூதாதையர் / முன்னோர்",
         "Constraints = கட்டுப்பாடுகள் / வரம்புகள்",
         "As a = ஆக / என்ற நிலையில்",

@@ -45,10 +45,7 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
                 {Array.isArray(topic.definition) ? (
                   <div className="space-y-1.5">
                     {topic.definition.map((desc, i) => (
-                      <div
-                        key={i}
-                        className="flex gap-2 rounded-md bg-gray-50"
-                      >
+                      <div key={i} className="flex gap-2 rounded-md bg-gray-50">
                         <span className="text-xs">✅</span>
                         <p className="text-xs leading-5 text-gray-700">
                           {desc}
@@ -71,7 +68,7 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
               <div>
                 <h4 className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
                   {topic.typesTitle || "Types"}
-                </h4 >
+                </h4>
 
                 <div className="grid gap-2 md:grid-cols-1">
                   {topic.types.map((type, i) => (
@@ -86,12 +83,8 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
                       <p className="mt-1 text-xs leading-5 text-gray-600">
                         {type.description}
                       </p>
-
-                 
                     </div>
                   ))}
-
-             
                 </div>
               </div>
             )}
@@ -101,7 +94,7 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
               <div>
                 <h4 className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-gray-500">
                   Example
-                </h4 >
+                </h4>
 
                 <pre className="overflow-x-auto rounded-md bg-slate-900 p-3 text-xs leading-5 text-green-400">
                   <code>{topic.example}</code>

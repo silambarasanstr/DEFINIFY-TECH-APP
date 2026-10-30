@@ -1,76 +1,78 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { courseData as initialData } from "../data/courseData";
 import CourseTopicCard from "../components/CourseTopicCard";
-import { BookOpen, ChevronRight, Calendar, Clock, List, Loader2 } from "lucide-react";
+import { BookOpen, ChevronRight, Calendar, Clock, List } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 const formatCourseName = (id) => {
   if (!id) return "";
 
   return id
     .replace("js", " JS")
-   
     .replace("_", "/")
     .replace(/and/g, " ")
     .replace(" _", "")
-    .replace(/^\w/, (c) => c.toUpperCase())
-    
+    .replace(/^\w/, (c) => c.toUpperCase());
 };
 
 const CourseContainer = () => {
   const { courseId } = useParams();
 
-  const [topics, setTopics] = useState([]);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeTopic, setActiveTopic] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(() => new Date());
+
+  // Get topics for the selected course
+  const topics = useMemo(() => {
+    const data = courseId ? initialData?.[courseId] : null;
+
+    return Array.isArray(data) ? data : [];
+  }, [courseId]);
+
+  // Active topic for the current course
+  const activeIndex =
+    activeTopic?.courseId === courseId ? activeTopic.index : null;
 
   // Clock
   useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
-  // Load topics
   useEffect(() => {
-    if (!courseId) return;
-
-    setIsLoading(true);
-
     const timer = setTimeout(() => {
-      const data = initialData?.[courseId];
-
-      if (Array.isArray(data)) {
-        setTopics(data);
-        setActiveIndex(data.length ? 0 : null);
-      } else {
-        setTopics([]);
-        setActiveIndex(null);
-      }
-
       setIsLoading(false);
     }, 700);
 
     return () => clearTimeout(timer);
   }, [courseId]);
 
+  // Toggle active topic
   const handleClick = (index) => {
-    setActiveIndex((prev) => (prev === index ? null : index));
+    setActiveTopic((prev) =>
+      prev?.courseId === courseId && prev.index === index
+        ? null
+        : { courseId, index }
+    );
   };
 
-  // ✅ Early returns AFTER all hooks
+  // Early return after all hooks
   if (!courseId) return null;
 
   const courseName = formatCourseName(courseId);
 
   if (isLoading) {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
-      <Loader2 size={30} className="animate-spin text-indigo-600" />
-      <p className="text-gray-500 font-medium">Loading topics...</p>
-    </div>
-  );
-}
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-3">
+        <Loader2 size={30} className="animate-spin text-indigo-600" />
+        <p className="font-medium text-gray-500">Loading topics...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -88,20 +90,22 @@ const CourseContainer = () => {
             <h1 className="text-3xl font-bold">{courseName} Course</h1>
           </div>
 
-          <div className="flex flex-wrap gap-3">
-            <div className="bg-white/15 backdrop-blur-md rounded-xl px-4 py-3 min-w-42.5">
+          <div className="flex flex-wrap gap-3 ">
+            <div className="bg-white/15 backdrop-blur-md rounded-xl px-4 py-3 min-w-42.5 w-full md:w-0">
               <div className="flex items-center gap-2 text-sm text-blue-100">
                 <Calendar size={16} />
                 Today
               </div>
+
               <div className="font-semibold mt-1">{time.toDateString()}</div>
             </div>
 
-            <div className="bg-white/15 backdrop-blur-md rounded-xl px-4 py-3 min-w-42.5">
+            <div className="bg-white/15 backdrop-blur-md rounded-xl px-4 py-3 min-w-42.5 w-full md:w-0">
               <div className="flex items-center gap-2 text-sm text-blue-100">
                 <Clock size={16} />
                 Current Time
               </div>
+
               <div className="font-semibold mt-1">
                 {time.toLocaleTimeString()}
               </div>
@@ -110,18 +114,8 @@ const CourseContainer = () => {
         </div>
       </div>
 
-      {/* Heading */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <h2 className="text-2xl font-bold text-gray-800">Course Topics</h2>
-
-        <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full font-semibold">
-          <List size={18} />
-          {topics.length} Topics
-        </div>
-      </div>
-
       {/* Topics */}
-      {topics.length ? (
+      {topics.length > 0 ? (
         <div className="space-y-4">
           {topics.map((topic, index) => (
             <CourseTopicCard
@@ -138,6 +132,7 @@ const CourseContainer = () => {
           <div className="w-16 h-16 rounded-full bg-gray-100 mx-auto flex items-center justify-center mb-4">
             <List size={30} className="text-gray-500" />
           </div>
+
           <h3 className="text-xl font-semibold text-gray-700">
             No Topics Available
           </h3>
