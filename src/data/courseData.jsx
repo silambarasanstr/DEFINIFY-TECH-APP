@@ -1322,6 +1322,7 @@ console.log(String(5) + 2);   // "52"
     {
       title: "Promise",
       definition: [
+        "A Promise is a JavaScript object used to handle asynchronous operations. It represents the eventual completion or failure of an operation.",
         "A Promise is an object that represents the eventual(இறுதியில்) completion(நிறைவு பெறுவதை) (or failure) of an asynchronous operation and its resulting value.",
         "A Promise has three states → pending, fulfilled, and rejected.",
         "Promises are used to handle asynchronous operations like API calls, file reading, or timers.",
@@ -1330,6 +1331,22 @@ console.log(String(5) + 2);   // "52"
         "Promise.allSettled → waits for all promises (success + failure)",
         "Promise.race → returns the first completed promise",
         "Promise.any → returns the first fulfilled promise",
+      ],
+    },
+
+    {
+      title: "Promise Chaining",
+      definition: [
+        "Promise chaining is a technique where multiple promises are executed in sequence, with each promise starting after the previous one has resolved.",
+      ],
+    },
+
+    {
+      title:
+        "What is the difference between then() and catch() in JavaScript Promises?",
+      definition: [
+        "then() is used to handle the successful resolution of a Promise. It takes a callback function that is executed when the Promise is fulfilled.",
+        "catch() is used to handle errors or rejections in a Promise. It takes a callback function that is executed when the Promise is rejected.",
       ],
     },
 
@@ -4152,6 +4169,7 @@ function CSRComponent() {
     {
       title: "EnglishToTamil",
       definition: [
+        "Essential - அத்தியாவசியமான / மிக முக்கியமான / கட்டாயமான",
         "Process - செயல்முறை / செயலாக்கம் / நடைமுறை.",
         "Through - மூலம் / வழியாக / ஊடாக.",
         "Refers - குறிப்பிடுகிறது / குறிக்கிறது / தொடர்புபடுத்துகிறது.",
@@ -4282,3 +4300,18 @@ function CSRComponent() {
     },
   ],
 };
+
+export const communicationData = {
+  EnglishToTamil: [
+    {
+      tamil: "அத்தியாவசியமான / மிக முக்கியமான / கட்டாயமான",
+      english: "Essential",
+    },
+    {
+      tamil: "ஒருங்கிணைத்தல்",
+      english: "integrating",
+    },
+  ],
+};
+
+// export const communicationData = null;

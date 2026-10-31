@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Layout from "./containers/Layout";
 import CourseContainer from "./containers/CourseContainer";
+import EnglishToTamil from "./containers/EnglishToTamil";
 import "./index.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/html" replace />} />
           <Route path="/:courseId" element={<CourseContainer />} />
+          <Route path="/english-to-tamil" element={<EnglishToTamil />} />
           <Route
             path="*"
             element={

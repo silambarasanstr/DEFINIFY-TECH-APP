@@ -30,7 +30,7 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Docker", path: "/docker", icon: Box },
     { name: "Interview Questions", path: "/Interview", icon: Database },
-    { name: "English To Tamil", path: "/EnglishToTamil", icon: Database },
+    { name: "English To Tamil", path: "/english-to-tamil", icon: Database },
   ];
 
   return (

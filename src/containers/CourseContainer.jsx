@@ -29,6 +29,11 @@ const CourseContainer = () => {
     return data;
   }, [courseId]);
 
+  // const otherTopics = () => {
+  //   const Otherdata = communicationData;
+  //   return Otherdata;
+  // };
+
   const activeIndex =
     activeTopic?.courseId === courseId ? activeTopic.index : null;
 

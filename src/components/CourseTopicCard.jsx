@@ -104,6 +104,9 @@ const CourseTopicCard = ({ index, topic, onClick, isOpen }) => {
           </div>
         </div>
       </div>
+
+
+      
     </div>
   );
 };
