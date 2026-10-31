@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { courseData as initialData } from "../data/courseData";
+import { courseData } from "../data/courseData";
 import CourseTopicCard from "../components/CourseTopicCard";
 import { BookOpen, ChevronRight, Calendar, Clock, List } from "lucide-react";
 import { Loader2 } from "lucide-react";
@@ -21,27 +21,16 @@ const CourseContainer = () => {
 
   const [activeTopic, setActiveTopic] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [time, setTime] = useState(() => new Date());
 
-  // Get topics for the selected course
   const topics = useMemo(() => {
-    const data = courseId ? initialData?.[courseId] : null;
-
-    return Array.isArray(data) ? data : [];
+    // const data = courseId ? courseData?.[courseId] : null;
+    const data = courseData[courseId];
+    // return Array.isArray(data) ? data : [];
+    return data;
   }, [courseId]);
 
-  // Active topic for the current course
   const activeIndex =
     activeTopic?.courseId === courseId ? activeTopic.index : null;
-
-  // Clock
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -51,7 +40,6 @@ const CourseContainer = () => {
     return () => clearTimeout(timer);
   }, [courseId]);
 
-  // Toggle active topic
   const handleClick = (index) => {
     setActiveTopic((prev) =>
       prev?.courseId === courseId && prev.index === index
@@ -60,7 +48,6 @@ const CourseContainer = () => {
     );
   };
 
-  // Early return after all hooks
   if (!courseId) return null;
 
   const courseName = formatCourseName(courseId);
@@ -87,29 +74,7 @@ const CourseContainer = () => {
               <span className="font-medium text-white">{courseName}</span>
             </div>
 
-            <h1 className="text-3xl font-bold">{courseName} Course</h1>
-          </div>
-
-          <div className="flex flex-wrap gap-3 ">
-            <div className="bg-white/15 backdrop-blur-md rounded-xl px-4 py-3 min-w-42.5 w-full md:w-0">
-              <div className="flex items-center gap-2 text-sm text-blue-100">
-                <Calendar size={16} />
-                Today
-              </div>
-
-              <div className="font-semibold mt-1">{time.toDateString()}</div>
-            </div>
-
-            <div className="bg-white/15 backdrop-blur-md rounded-xl px-4 py-3 min-w-42.5 w-full md:w-0">
-              <div className="flex items-center gap-2 text-sm text-blue-100">
-                <Clock size={16} />
-                Current Time
-              </div>
-
-              <div className="font-semibold mt-1">
-                {time.toLocaleTimeString()}
-              </div>
-            </div>
+            <h1 className="text-3xl font-bold">{courseName} Course </h1>
           </div>
         </div>
       </div>

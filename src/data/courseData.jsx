@@ -408,9 +408,118 @@ export const courseData = {
   ],
   dom: [
     {
-      title: "What is DOM?",
+      title: "What is DOM (Document Object Model)?",
       definition: [
+        "DOM (Document Object Model) is a programming interface that represents an HTML document as a tree structure of objects, allowing JavaScript to access, modify, add, or remove HTML elements and their content.",
         "The Document Object Model (DOM) is a programming interface for web documents. It represents (குறிக்கிறது) the structure of a document and allows programs to manipulate its content and presentation.",
+      ],
+    },
+    {
+      title: "What is DOM Tree?",
+      definition: [
+        "A DOM Tree is a tree-like structure that represents an HTML document, where each HTML element, attribute, and text is represented as a node connected in a hierarchical parent-child relationship",
+
+        "DOM Tree என்பது HTML document-ஐ மரம் போன்ற அமைப்பில் (Tree Structure) காட்டுகிறது. இதில் ஒவ்வொரு HTML element, attribute மற்றும் text-ம் ஒரு Node ஆக represent செய்யப்படுகிறது.",
+      ],
+    },
+    {
+      title: "Types of DOM Nodes",
+      definition: [
+        "Document Node - Represents the entire HTML document",
+        "Element Node - Represents HTML elements like div, h1, p",
+        "Attribute Node - Represents HTML attributes like id, class",
+        "Text Node - Represents text inside HTML elements",
+        "Comment Node - Represents HTML comments",
+      ],
+    },
+    {
+      title: "Important DOM Tree Relationships",
+      definition: [
+        "Parent Node: An element that contains another element.",
+        "Child Node: An element inside another element.",
+        "Sibling Node: Elements that share the same parent.",
+        "Root Node: The top-level node of the DOM Tree (document).",
+      ],
+    },
+    {
+      title: "Easy way to remember",
+      definition: [
+        "DOM → Programming interface for HTML documents.",
+        "DOM Tree → Hierarchical structure of DOM nodes.",
+        "DOM Manipulation → Adding, removing, or modifying DOM elements.",
+      ],
+    },
+    {
+      title: "What is DOM Manipulation?",
+      definition: [
+        "DOM Manipulation is the process of accessing, modifying, adding, or removing HTML elements and their content using JavaScript.",
+      ],
+    },
+
+    {
+      title: "Types of DOM Manipulation",
+      definition: [
+        "1. Selecting Elements",
+        "2. Modifying Elements",
+        "3. Changing Styles",
+        "4. Creating Elements",
+        "5. Adding Elements",
+        "6. Removing Elements",
+      ],
+    },
+    {
+      title: "DOM Selectors",
+      definition: [
+        "DOM selectors are used to select HTML elements based on their id, class, tag name, or other attributes.",
+        "getElementById() - ID மூலம் element-ஐ select செய்யும்.",
+        "getElementsByClassName() - Class name மூலம் elements-ஐ select செய்யும்.",
+        "getElementsByTagName() - Tag name மூலம் elements-ஐ select செய்யும்.",
+        "querySelector() - CSS selector-க்கு match ஆகும் முதல் element-ஐ select செய்யும்.",
+        "querySelectorAll() - CSS selector-க்கு match ஆகும் அனைத்து elements-ஐ select செய்யும்.",
+      ],
+    },
+    {
+      title: "Common DOM Manipulation Methods",
+      definition: [
+        "Property / Method",
+        "textContent - Get or set text content",
+        "innerHTML - Get or set HTML content",
+        "innerText - Get or set visible text content",
+
+        "Attribute Manipulation",
+        "getAttribute()	Attribute value-ஐ get செய்யும்.",
+        "setAttribute()	Attribute value-ஐ set செய்யும்.",
+        "removeAttribute()	Attribute-ஐ remove செய்யும்.",
+        "hasAttribute()	Attribute இருக்கிறதா என்று check செய்யும்.",
+
+        "Class Manipulation",
+        "classList.add()	CSS class add செய்யும்.",
+        "classList.remove()	CSS class remove செய்யும்.",
+        "classList.toggle()	Class இருந்தால் remove செய்யும், இல்லையென்றால் add செய்யும்.",
+        "classList.contains()	CSS class இருக்கிறதா என்று check செய்யும்.",
+        "classList.replace()	ஒரு class-ஐ மற்றொரு class-ஆக replace செய்யும்.",
+
+        "Create and Insert Elements",
+        "createElement()	New HTML element create செய்யும்.",
+        "createTextNode()	Create a new text node",
+        "appendChild()	Parent-ன் last child-ஆக add செய்யும்.",
+        "append()	Elements அல்லது text-ஐ add செய்யும்.",
+        "prepend()	Parent-ன் first child-ஆக add செய்யும்.",
+        "before()	Selected element-க்கு முன்பு insert செய்யும்.",
+        "after()	Selected element-க்கு பிறகு insert செய்யும்.",
+        "insertAdjacentHTML()	HTML content-ஐ குறிப்பிட்ட position-ல் insert செய்யும்.",
+
+        "Remove and Replace Elements",
+        "remove()	Selected element-ஐ remove செய்யும்.",
+        "removeChild()	Parent element-ன் child-ஐ remove செய்யும்.",
+        "replaceWith()	Selected element-ஐ another element-ஆக replace செய்யும்.",
+        "replaceChild()	Parent-ன் existing child-ஐ new child-ஆக replace செய்யும்.",
+
+        "Style Manipulation",
+        "style.color	Text color change செய்யும்.",
+        "style.backgroundColor	Background color change செய்யும்.",
+        "style.fontSize	Font size change செய்யும்.",
+        "style.display	Display property change செய்யும்.",
       ],
     },
     {
@@ -422,13 +531,61 @@ export const courseData = {
     {
       title: "DOM Properties",
       definition: [
-        "DOM properties are attributes of the Document Object Model that allow you to access and modify the characteristics of HTML elements.",
+        "DOM Properties are properties used to access or modify the content, attributes, styles, and other information of HTML elements using JavaScript.",
       ],
     },
     {
       title: "DOM Events",
       definition: [
-        "DOM events are actions that occur in the document (e.g., click, hover, keypress). They allow you to respond to user interactions and trigger specific functions.",
+        "DOM Events are actions or occurrences that happen in the HTML document, such as clicking a button, typing on a keyboard, or submitting a form. JavaScript uses event listeners to handle these events and execute specific functions",
+      ],
+    },
+    {
+      title: "Common Types of DOM Events",
+      definition: [
+        "Mouse Events",
+        "Keyboard Events",
+        "Form Events",
+        "Document / Window Events",
+        "Touch Events",
+      ],
+    },
+    {
+      title: "Mouse Events",
+      definition: [
+        "click	Element-ஐ click செய்யும்போது",
+        "dblclick	Double click செய்யும்போது",
+        "mouseover	Mouse element மீது செல்லும்போது",
+        "mouseout	Mouse element-ஐ விட்டு வெளியேறும்போது",
+        "mousedown	Mouse button press செய்யும்போது",
+        "mouseup	Mouse button release செய்யும்போது",
+      ],
+    },
+    {
+      title: "Keyboard Events",
+      definition: [
+        "keydown	Keyboard key press செய்யும்போது",
+        "keyup	Keyboard key release செய்யும்போது",
+        "keypress	Keyboard key press செய்யும்போது",
+      ],
+    },
+    {
+      title: "Form Events",
+      definition: [
+        "submit	Form submit செய்யும்போது",
+        "change	Input value change ஆகும்போது",
+        "input	Input value மாற்றப்படும்போது",
+        "focus	Input-க்கு focus கிடைக்கும்போது",
+        "blur	Input-ல் இருந்து focus வெளியேறும்போது",
+      ],
+    },
+    {
+      title: "Document / Window Events",
+      definition: [
+        "DOMContentLoaded	HTML parsing முடிந்ததும்",
+        "load	Page மற்றும் dependent resources load ஆனதும்",
+        "resize	Browser window size change ஆகும்போது",
+        "scroll	Page scroll செய்யும்போது",
       ],
     },
     {
@@ -440,13 +597,7 @@ export const courseData = {
         "DOM Traversal என்பது Document Object Model-ல் உள்ள Nodes-ஐ ஒவ்வொன்றாக வழியாகச் சென்று அணுகும் செயல்முறையைக் குறிக்கிறது.",
       ],
     },
-    {
-      title: "DOM Manipulation",
-      definition: [
-        "DOM manipulation refers to the process of changing the structure, content, or presentation of HTML elements using JavaScript.",
-        "Common methods for DOM manipulation include createElement, createTextNode, appendChild, removeChild, and replaceChild.",
-      ],
-    },
+
     {
       title: "What is the difference between RealDOM and VirtualDOM?",
       definition: [
@@ -465,7 +616,7 @@ export const courseData = {
       ],
     },
     {
-      title: "Virtual DOM",
+      title: "Virtual DOM (Diffing)",
       definition: [
         "Virtual DOM is a lightweight copy of the Real DOM.",
         "React creates a virtual representation of the UI in memory.",
@@ -477,7 +628,8 @@ export const courseData = {
     {
       title: "What is addEventListener()?",
       definition: [
-        "addEventListener() is a JavaScript DOM method used to attach an event handler to an HTML element.",
+        "addEventListener() is a JavaScript method used to attach an event handler to an HTML element. It executes a function when a specific event occurs.",
+        "addEventListener() என்பது ஒரு HTML element-ல் குறிப்பிட்ட event நடக்கும்போது ஒரு function-ஐ execute செய்ய பயன்படும் method.",
       ],
     },
     {
@@ -530,10 +682,9 @@ export const courseData = {
     {
       title: "What does preventDefault() do?",
       definition: [
-        "preventDefault() என்பது browser normally செய்யும் default action-ஐ தடுக்க பயன்படும்.",
-        "`preventDefault()` prevents the browser's default action for an event.",
-        "Example: It can prevent a form from submitting or a link from navigating.",
-        "It does NOT stop event bubbling.",
+        "preventDefault() is a JavaScript event method used to prevent the browser's default action for an event.",
+        "preventDefault() என்பது ஒரு event நடக்கும்போது browser தானாகவே செய்யக்கூடிய default action-ஐ தடுக்க பயன்படும் method.",
+        "Normally, when we submit a form, the browser reloads the page. Using preventDefault(), we can prevent the page reload.",
       ],
     },
     {
@@ -547,33 +698,36 @@ export const courseData = {
     {
       title: "What does stopPropagation() do?",
       definition: [
-        "stopPropagation() என்பது event parent elements-க்கு propagate/bubble ஆகி போவதைத் தடுக்க பயன்படும்.",
-        "`stopPropagation()` stops the event from propagating to parent elements.",
+        "stopPropagation() is a JavaScript event method used to prevent an event from propagating to parent elements.",
         "It is commonly used to stop event bubbling or capturing.",
         "It does NOT prevent the browser's default action.",
+        "stopPropagation() என்பது ஒரு element-ல் நடக்கும் event, அதன் parent elements-க்கு பரவுவதைத் தடுக்க பயன்படும் method.",
       ],
     },
     {
       title: "What is DOMContentLoaded?",
       definition: [
-        "DOMContentLoaded is an event that fires when the HTML document has been completely parsed(பகுப்பாய்வு) and the DOM is ready.",
-        "Tamil: HTML document parse(பகுப்பாய்வு) aagi DOM ready aanavudan DOMContentLoaded event trigger aagum.",
+        "DOMContentLoaded is a JavaScript event that fires when the HTML document has been completely loaded and parsed by the browser, without waiting for stylesheets, images, and other external resources to finish loading.",
+        "HTML document முழுமையாக load செய்யப்பட்டு parse ஆனவுடன் இந்த event execute ஆகும். ஆனால் images, stylesheets போன்ற external resources load ஆகும் வரை காத்திருக்காது.",
+        "parse(பகுப்பாய்வு)",
       ],
     },
 
     {
       title: "Difference between DOMContentLoaded and load?",
       definition: [
-        "DOMContentLoaded fires when the DOM is ready, while load fires after the entire page and its resources like images and stylesheets are loaded.",
-        "Tamil: DOMContentLoaded DOM ready aanavudan trigger aagum; load page-oda resources ellam load aana piragu trigger aagum.",
+        "DOMContentLoaded is a JavaScript event that fires when the HTML document has been completely loaded and parsed by the browser, without waiting for stylesheets, images, and other external resources to finish loading.",
+        "load is an event that fires when the entire page and its dependent resources, such as images, stylesheets, and scripts, have finished loading.",
+        "document.addEventListener('DOMContentLoaded', function() { })",
+        "window.addEventListener('load', function() { })",
       ],
     },
 
     {
       title: "What is MutationObserver?",
       definition: [
-        "MutationObserver is a Web API used to detect changes made to the DOM, such as adding, removing, or modifying elements.",
-        "Tamil: DOM-la element add, remove, or modify aagumbothu antha changes-ai detect panna MutationObserver use pannuvom.",
+        "MutationObserver is a Web API used to detect and observe changes in the DOM, such as adding, removing, or modifying elements and their attributes",
+        "DOM-ல் elements add, remove அல்லது modify செய்யும்போது அந்த changes-ஐ detect செய்ய MutationObserver பயன்படுகிறது",
       ],
     },
     {
@@ -1962,19 +2116,9 @@ console.log(String(5) + 2);   // "52"
     {
       title: "Redux (State Management)",
       definition: [
-        "Redux is a predictable (கணிக்கக்கூடிய) state management library used to manage the global state of an application in a single centralized store, making state changes predictable and easy to debug.",
-
-        "Redux follows 3 core principles",
-
-        "Store : A Redux Store holds the application's state and manages that state. It provides methods like dispatch() to send actions and getState() to access the current state",
-
-        "Action: An action is a plain JavaScript object that describes what happened or what should happen in the application. It must contain a type property  and  payload may optionally contain a payload.",
-
-        "Reducer: A reducer is a pure function that takes the current state and an action, and returns the new state.",
+        "Redux is a predictable state management library used to manage and update application state in a centralized store. It follows a unidirectional data flow and uses actions and reducers to update the state.",
 
         "State: State is a built-in React object that stores data that can change over time and causes the component to re-render when it is updated.",
-
-        "Reducer determines how the state should change based on the action.",
 
         "Dispatch: Dispatch is used to send an action to the Redux store. The store passes the action to the reducer to update the state.",
 
@@ -1997,6 +2141,38 @@ console.log(String(5) + 2);   // "52"
         "payload — Additional data-va carry pannum. Idhu optional.",
         "Payload illama kooda action valid",
         "payload — thevaiyana data-va pass pannum (optional).",
+      ],
+    },
+
+    {
+      title: "What are the three core principles of Redux?",
+      definition: [
+        "1.Store - Holds the application state.",
+        "2.Actions - A plain JavaScript object that describes what happened.",
+        "3.Reducers - A function that takes the current state and an action, and returns a new state.",
+      ],
+    },
+
+    {
+      title: "What is a Redux Store?",
+      definition: [
+        "Redux Store is used to hold multiple application states in a single centralized place.",
+        "A Redux Store is a JavaScript object that holds the entire state of the application. It is created by calling the configureStore() function from Redux Toolkit.",
+        "It provides methods like dispatch() to send actions and getState() to access the current state",
+      ],
+    },
+
+    {
+      title: "What is a Redux Action?",
+      definition: [
+        "An Action is a plain JavaScript object that describes what happened or what should happen in the application. It must contain a type property and may optionally contain a payload property.",
+      ],
+    },
+
+    {
+      title: "What is a Reducer in Redux?",
+      definition: [
+        "A Reducer is a pure function that takes the current state and an action, and returns a new state.",
       ],
     },
 
