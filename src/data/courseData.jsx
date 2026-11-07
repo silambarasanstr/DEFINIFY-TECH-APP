@@ -3200,7 +3200,7 @@ function CSRComponent() {
 
         "1. Header Contains information about the token, such as the algorithm and token type (e.g., HS256, RS256).",
         "2. Payload contains the claims — user data like userId, email, role, and expiry time (exp). This is Base64 encoded, NOT encrypted, so sensitive data should not be stored here.",
-        "3. Signature Used to verify that the token has not been modified and that it was created using the expected secret/key",
+        "3. Signature Used to verify that the token hasn't been been modified and that it was created using the expected secret/key",
 
         "Header → Contains token type and signing algorithm.",
         "Payload → Contains claims/data such as user ID or role.",
@@ -3235,9 +3235,9 @@ function CSRComponent() {
       title: "Authentication / Authorization (அங்கீகரிப்பு / அனுமதி)",
       definition: [
         "Identity 👤 Authentication is the process of verifying(who you are) a user's identity — for example, using email and password.",
+        "Authentication is the process of verifying the identity of the API client/user before allowing access to protected resources.",
         "Permission 🔐 Authorization is the process of checking what an authenticated user is allowed (What can you access?) to access or do, often based on roles and permissions.",
         "Both are commonly used to secure applications and protect resources.",
-        "Authentication is the process of verifying the identity of the API client/user before allowing access to protected resources.",
       ],
     },
 
@@ -3784,34 +3784,6 @@ function CSRComponent() {
       ],
     },
   ],
-  cicd: [
-    {
-      title: "CI/CD Pipeline",
-      definition: [
-        "A CI/CD pipeline is an automated process that helps developers build, test, and deploy applications efficiently and reliably.",
-      ],
-    },
-    {
-      title: "Continuous Integration (CI)",
-      definition: [
-        "Developers frequently integrate (or) merge their code changes into a shared repository, and automated builds and tests are performed to detect errors early.",
-      ],
-    },
-
-    {
-      title: "Continuous Deployment (CD)",
-      definition: [
-        "CD (Continuous Delivery / Continuous Deployment): Automatically prepares or deploys the tested code to the production environment.",
-      ],
-    },
-
-    {
-      title: "Benefits of CI/CD",
-      definition: [
-        "CI/CD improves code quality, reduces bugs, speeds up delivery, enables faster feedback, and ensures reliable deployments.",
-      ],
-    },
-  ],
   docker: [
     {
       title: "Docker",
@@ -3897,6 +3869,34 @@ function CSRComponent() {
         "Example: docker-compose up -d",
         "docker compose down",
         "docker compose logs",
+      ],
+    },
+  ],
+  cicd: [
+    {
+      title: "CI/CD Pipeline",
+      definition: [
+        "A CI/CD pipeline is an automated process used to build, test, and deploy applications efficiently and reliably. It helps developers deliver code changes faster with fewer errors.",
+      ],
+    },
+    {
+      title: "Continuous Integration (CI)",
+      definition: [
+        "Continuous Integration is a process where developers frequently merge their code changes into a shared repository, and automated builds and tests are performed to detect errors early.",
+      ],
+    },
+
+    {
+      title: "Continuous Deployment (CD)",
+      definition: [
+        "Continuous Deployment is a process where tested code is automatically prepared and deployed to the production environment.",
+      ],
+    },
+
+    {
+      title: "Benefits of CI/CD",
+      definition: [
+        "CI/CD improves code quality, reduces bugs, speeds up delivery, enables faster feedback, and ensures reliable deployments.",
       ],
     },
   ],
@@ -4164,23 +4164,16 @@ function CSRComponent() {
         "The company culture wasn't the right match for me.",
       ],
     },
+
+    {
+      title: "I know the answer to your questions but little bit nervous",
+      definition: [""],
+    },
   ],
   EnglishToTamil: [
     {
       title: "EnglishToTamil",
       definition: [
-        "Essential - அத்தியாவசியமான / மிக முக்கியமான / கட்டாயமான",
-        "Process - செயல்முறை / செயலாக்கம் / நடைமுறை.",
-        "Through - மூலம் / வழியாக / ஊடாக.",
-        "Refers - குறிப்பிடுகிறது / குறிக்கிறது / தொடர்புபடுத்துகிறது.",
-        "onboarding - அறிமுகப்படுத்துதல்",
-        "Along -  கூடவே / சேர்ந்து / நெடுக",
-        "For instance = உதாரணமாக",
-        "Recreated - மீண்டும் உருவாக்கப்பட்டது",
-        "Recomputed - மீண்டும் கணக்கிடப்பட்டது",
-        "Recalculates - மீண்டும் கணக்கிடுகிறது.",
-        "Recreated the component - Component-ai மீண்டும் உருவாக்கியது.",
-        "Recomputed the value - Value-ai மீண்டும் கணக்கிட்டது.",
         "Early - ஆரம்பத்திலேயே / முன்கூட்டியே / சீக்கிரமாக.",
         "Computation = கணக்கீடு",
         "Re-computation = மீண்டும் கணக்கீடு செய்தல்",
@@ -4309,7 +4302,53 @@ export const communicationData = {
     },
     {
       tamil: "ஒருங்கிணைத்தல்",
-      english: "integrating",
+      english: "Integrating",
+    },
+    {
+      tamil: "செயல்முறை / செயலாக்கம் / நடைமுறை.",
+      english: "Process",
+    },
+    {
+      tamil: "மூலம் / வழியாக / ஊடாக.",
+      english: "Through",
+    },
+    {
+      tamil: "குறிப்பிடுகிறது / குறிக்கிறது / தொடர்புபடுத்துகிறது",
+      english: "Refers",
+    },
+
+    {
+      tamil: "அறிமுகப்படுத்துதல்",
+      english: "Onboarding",
+    },
+    {
+      tamil: "கூடவே / சேர்ந்து / நெடுக",
+      english: "Along",
+    },
+    {
+      tamil: "உதாரணமாக",
+      english: "For instance",
+    },
+    {
+      tamil: "மீண்டும் உருவாக்கப்பட்டது",
+      english: "Recreated",
+    },
+
+    {
+      tamil: "மீண்டும் கணக்கிடப்பட்டது",
+      english: "Recomputed",
+    },
+    {
+      tamil: "மீண்டும் கணக்கிடுகிறது",
+      english: "Recalculates",
+    },
+    {
+      tamil: "Component-ai மீண்டும் உருவாக்கியது",
+      english: "Recreated the component",
+    },
+    {
+      tamil: "Value-ai மீண்டும் கணக்கிட்டது",
+      english: "Recomputed the value",
     },
   ],
 };

@@ -27,8 +27,8 @@ const Sidebar = ({ open, setOpen }) => {
     { name: "Express.js", path: "/express", icon: Server },
     { name: "MongoDB", path: "/mongodb", icon: Database },
     { name: "Git & GitHub", path: "/gitgithub", icon: GitBranch },
-    { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Docker", path: "/docker", icon: Box },
+    { name: "CI/CD", path: "/cicd", icon: Cpu },
     { name: "Interview Questions", path: "/Interview", icon: Database },
     { name: "English To Tamil", path: "/english-to-tamil", icon: Database },
   ];
